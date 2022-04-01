@@ -1,6 +1,6 @@
-# Mobile Automation Testing with Java and Appium
+# Web Automation Testing with Java and Selenium
 
-- Main Objective is to test android app using java, appium ,TestNg
+- Main Objective is to test android app using java, Slenium ,TestNg
 
 
 
@@ -10,7 +10,7 @@
 - Intelij - https://www.jetbrains.com/idea/download/#section=linux
 - Maven - https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-18-04/
 - TestNg - https://www.guru99.com/install-testng-in-eclipse.html
-- Appium - https://appium.io/docs/en/about-appium/intro/
+- selenium - https://www.selenium.dev/
 
 
 
