@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SikshaLokamTest">
+	<listeners>
+		<listener class-name="com.sikshalokam.listners.IAnnotation" />
+		<listener class-name="com.sikshalokam.listners.TestListeners" />
+
+	</listeners>
+	<test thread-count="5" name="Test" preserve-order="true">
+		<classes>
+		      <class name="com.sikshalokam.test.LoginPageTest"/>
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+ 

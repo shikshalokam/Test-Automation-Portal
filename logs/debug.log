@@ -1,0 +1,49 @@
+Tue Mar 29 15:46:51 IST 2022 INFO TestListeners-onStart-84 *********************onStart********************* mode null
+Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-setDriverManager-32 SetAppiumManager Global
+Tue Mar 29 15:46:51 IST 2022 INFO TestListeners-onStart-92 Running in local
+Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-setDriverManager-32 SetAppiumManager Global
+Tue Mar 29 15:46:51 IST 2022 INFO ExtentTestManager-InitReport-23 On InitReports
+Tue Mar 29 15:46:51 IST 2022 INFO ExtentManager-getExtent-23 On GetExtent
+Tue Mar 29 15:46:51 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
+Tue Mar 29 15:46:51 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* loginToApplication
+Tue Mar 29 15:46:51 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Tue Mar 29 15:46:51 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Tue Mar 29 15:46:51 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Tue Mar 29 15:46:51 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Tue Mar 29 15:46:51 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Tue Mar 29 15:46:51 IST 2022 INFO PropUtlis-readConfig-29 false
+Tue Mar 29 15:46:52 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Tue Mar 29 15:46:52 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Tue Mar 29 15:46:56 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Tue Mar 29 15:46:56 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Tue Mar 29 15:46:56 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Tue Mar 29 15:46:56 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Tue Mar 29 15:46:56 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Tue Mar 29 15:46:56 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Tue Mar 29 15:46:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Tue Mar 29 15:46:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Tue Mar 29 15:46:57 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Tue Mar 29 15:47:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Tue Mar 29 15:47:08 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Tue Mar 29 15:47:08 IST 2022 ERROR TestListeners-onTestFailure-66 OnTestFailure
+Tue Mar 29 15:47:08 IST 2022 ERROR TestListeners-onTestFailure-67 org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=92.0.4515.131)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'qualitrix-HP-EliteBook-840-G2', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-25-generic', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.zSwTyz}, goog:chromeOptions: {debuggerAddress: localhost:38011}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c429dcaf7a14e2bf2652fede4b722f4
+*** Element info: {Using=xpath, value=(//button[contains(.,'Explore Diksha')])[1]}
+Tue Mar 29 15:47:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Tue Mar 29 15:47:08 IST 2022 INFO SikshaLokamClient-getScreenShot-95 on GetScreenShot
+Tue Mar 29 15:47:09 IST 2022 ERROR TestListeners-onTestFailure-76 Exception onTestFailure: chrome not reachable
+  (Session info: chrome=92.0.4515.131)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'qualitrix-HP-EliteBook-840-G2', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-25-generic', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.zSwTyz}, goog:chromeOptions: {debuggerAddress: localhost:38011}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c429dcaf7a14e2bf2652fede4b722f4
+Tue Mar 29 15:47:09 IST 2022 INFO TestListeners-onFinish-108 *********************onFinish*********************
