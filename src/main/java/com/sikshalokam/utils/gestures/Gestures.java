@@ -158,7 +158,7 @@ public class Gestures {
     }
 
     // Method to Wait till the Element is Visible and Clickable
-    private void waitTillTheElementIsVisibleAndClickable(WebElement element) {
+    public void waitTillTheElementIsVisibleAndClickable(WebElement element) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 30);
             wait.until(ExpectedConditions.visibilityOf(element));

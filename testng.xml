@@ -8,7 +8,12 @@
 	</listeners>
 	<test thread-count="5" name="Test" preserve-order="true">
 		<classes>
-		      <class name="com.sikshalokam.test.LoginPageTest"/>
+		        <class name="com.sikshalokam.test.LoginPageTest"/>
+		        <class name="com.sikshalokam.test.ObservationPageTest"/>
+		        <class name="com.sikshalokam.test.ReportPageTest"/>
+		   <!--     <class name="com.sikshalokam.test.ObservationPageTest"/>
+		        <class name="com.sikshalokam.test.LoginPageTest"/> -->
+
 
 		</classes>
 	</test> <!-- Test -->
