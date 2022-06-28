@@ -2,6 +2,7 @@ package com.sikshalokam.pages.actions;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.sikshalokam.client.SikshaLokamClient;
 import com.sikshalokam.pages.objects.LoginPageObjects;
@@ -45,33 +46,33 @@ public class ReportPageAction {
     	//******************Verify*********************************************************//
     	
     	public void verifyMyReportsTitle() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(reportPageObjects.myReportsTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.myReportsTitle),"My reports title is not displayed.");
     		Logger.logAndReportPass("My reports title is displayed succesfully. ");
     	}
     
     	public void verifyEntityFilterOption() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(reportPageObjects.entityFilterForReport);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.entityFilterForReport),"Entity Filter for report is not displayed.");
     		Logger.logAndReportPass("Entity Filter for report is displayed succesfully.");
     	}
     	
     	public void verifyQuestionTabInReport() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(reportPageObjects.questionTabFromReport);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.questionTabFromReport),"Question Tab inside the report is not displayed.");
     		Logger.logAndReportPass("Question Tab inside the report is displayed succesfully.");
     	}
     	
     	public void verifyCriteriaTabInReport() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(reportPageObjects.critiriaTabFromReport);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.critiriaTabFromReport),"Criteria Tab inside the report is not displayed.");
     		js.executeScript("arguments[0].scrollIntoView(true);", reportPageObjects.critiriaTabFromReport);
     		Logger.logAndReportPass("Criteria Tab inside the report is displayed succesfully.");
     	}
     	
     	public void verifyExportAsButtonInReport() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(reportPageObjects.exportAsButtonInReport);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.exportAsButtonInReport),"Export button is not displayed.");
     		Logger.logAndReportPass("Export button is displayed succesfully.");
     	}
     	
     	public void verifyPdfButtonInReport() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(reportPageObjects.pdfButton);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.pdfButton),"PDF Button is not displayed.");
     		Logger.logAndReportPass("PDF Button is displayed succesfully.");
     	}
 }

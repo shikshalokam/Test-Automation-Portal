@@ -5,10 +5,14 @@ import com.sikshalokam.client.SikshaLokamClient;
 import com.sikshalokam.pages.objects.LoginPageObjects;
 import com.sikshalokam.report.SikshaLokamReport;
 import com.sikshalokam.test.LoginPageTest;
+import com.sikshalokam.utils.gestures.Gestures;
 import com.sikshalokam.utils.logger.Logger;
+import com.sikshalokam.utils.prop.PropUtlis;
+import com.sun.mail.iap.Argument;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class LoginPageAction {
 
@@ -20,6 +24,11 @@ public class LoginPageAction {
     }
 
     JavascriptExecutor js = (JavascriptExecutor) SikshaLokamClient.get().driver();
+    
+    String appUrl;
+    public String getEnvironmentValue() throws Exception {
+    	return appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+    }
     
     // switch to webview for inspect elements
     public void switchToWebView() throws Exception {
@@ -113,14 +122,32 @@ public class LoginPageAction {
 
     public void selectState() throws Exception {
         SikshaLokamClient.get().gestures().click(loginPageObjects.selectState);
-        SikshaLokamClient.get().gestures().click(loginPageObjects.andhraPradeshSate);
-        SikshaLokamClient.get().report().log(Status.INFO, "State selected.");
+		//js.executeScript("arguments[0].scrollIntoView(true);", loginPageObjects.keralaState);
+        if(getEnvironmentValue().contains("diksha")) {
+            SikshaLokamClient.get().gestures().click(loginPageObjects.keralaState);
+            SikshaLokamClient.get().report().log(Status.INFO, "Kerala State selected.");	
+        } else if(getEnvironmentValue().contains("preprod")) {
+        	SikshaLokamClient.get().gestures().click(loginPageObjects.uttarPradeshSate);
+            SikshaLokamClient.get().report().log(Status.INFO, "Uttara Pradesh State selected.");	
+        } else {
+        	SikshaLokamClient.get().gestures().click(loginPageObjects.andhraPradeshSate);
+            SikshaLokamClient.get().report().log(Status.INFO, "Andhra Pradesh State selected.");
+        }
+        
     }
 
     public void selectDistrict() throws Exception {
         SikshaLokamClient.get().gestures().click(loginPageObjects.selectDistrict);
-        SikshaLokamClient.get().gestures().click(loginPageObjects.ananthpurDistrict);
-        SikshaLokamClient.get().report().log(Status.INFO, "District Selected.");
+        if(getEnvironmentValue().contains("diksha")) {
+            SikshaLokamClient.get().gestures().click(loginPageObjects.alappuzhaDistrict);
+            SikshaLokamClient.get().report().log(Status.INFO, "Alappuzha District Selected.");
+        } else if(getEnvironmentValue().contains("preprod")) {
+            SikshaLokamClient.get().gestures().click(loginPageObjects.agraDistrict);
+            SikshaLokamClient.get().report().log(Status.INFO, "Agra District Selected.");
+        } else {
+        	SikshaLokamClient.get().gestures().click(loginPageObjects.ananthpurDistrict);
+            SikshaLokamClient.get().report().log(Status.INFO, "Ananathpura District Selected.");        	
+        }
     }
 
     public void clickOnSubmit2() throws Exception {
@@ -136,7 +163,6 @@ public class LoginPageAction {
     public void clickOnProfileIcon() throws Exception {
         SikshaLokamClient.get().gestures().click(loginPageObjects.profile);
         SikshaLokamClient.get().report().log(Status.INFO, "Clicked on User Icon");
-
     }
 
     public void ClickOnSubmit() throws Exception {
@@ -171,16 +197,18 @@ public class LoginPageAction {
     }
     
     public void clickOnMediumDropDown() throws Exception {
+    	Thread.sleep(1000);
     	SikshaLokamClient.get().gestures().click(loginPageObjects.mediumDropdown);
     	Logger.logAndReportInfo("Clicked on the medium drop down");
     }
     
     public void selectEnglishOption() throws Exception {
-    	SikshaLokamClient.get().gestures().click(loginPageObjects.cbseNcertOption);
+    	SikshaLokamClient.get().gestures().click(loginPageObjects.englishOption);
     	Logger.logAndReportInfo("Selected the option english.");
     }
     
     public void clickOnClassDropDown() throws Exception {
+    	Thread.sleep(1000);
     	SikshaLokamClient.get().gestures().click(loginPageObjects.gradeLevelDropdown);
     	Logger.logAndReportInfo("Clicked on the board drop down");
     }
@@ -225,6 +253,21 @@ public class LoginPageAction {
     	SikshaLokamClient.get().gestures().click(loginPageObjects.nextButton);
     	Logger.logAndReportInfo("Clicked on the next button");
     	Thread.sleep(2000);
+    }
+    
+    public void clickOnLoginWithStateSystem() throws Exception {
+        SikshaLokamClient.get().gestures().click(loginPageObjects.signInStateSystem);
+        Logger.logAndReportInfo("Clicked on sign in with State System.");
+    }
+    
+    public void clickOnSelectStateDropDown() throws Exception {
+    	SikshaLokamClient.get().gestures().click(loginPageObjects.selectStateDropDownForLogin);
+    	Logger.logAndReportInfo("Clicked on the select state dropdown.");
+    }
+    
+    public void selectFirstStateFromDropdown() throws Exception {
+    	SikshaLokamClient.get().gestures().click(loginPageObjects.selectFirstState);
+    	Logger.logAndReportInfo("Selected the first state from dropdown.");
     }
     
     public void clickOnBMCWindowTitle() throws Exception {
@@ -279,40 +322,58 @@ public class LoginPageAction {
     	Logger.logAndReportInfo("Clicked on the searched observation title.");
     }
     
-    
+    public void clickOnSubmitButtonOnStateLogin() throws Exception {
+    	SikshaLokamClient.get().gestures().click(loginPageObjects.submitButtonOnStateLogin);
+    	Logger.logAndReportInfo("Clicked on the submit button on state login");
+    }
     
     //************** Verify Actions *************************************//
     public void verifyObservationTile() throws Exception {
-        SikshaLokamClient.get().gestures().isDisplayed(loginPageObjects.observations);
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.observations),"Observation title is not displayed.");
         Logger.logAndReportPass("Observation title is verified");
     }
 
 	public void verifyWelcomeTitle() throws Exception {
-        SikshaLokamClient.get().gestures().isDisplayed(loginPageObjects.welcomeTitle);
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.welcomeTitle),"Welocme title is not displayed.");
         Logger.logAndReportPass("Welcome title is displayed succesfully.");
-//        SikshaLokamClient.get().report().log(Status.PASS, "Welcome title is displayed succesfully.");
 	}
 	
 	public void verifyHomeButton() throws Exception {
-		SikshaLokamClient.get().gestures().isDisplayed(loginPageObjects.homeButton);
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.homeButton),"Home button is not displayed.");
 		Logger.logAndReportPass("Home button is displayed succesfully");
 	}
 	
 	public void verifyRegisterWindowTitle() throws Exception {
-		SikshaLokamClient.get().gestures().isDisplayed(loginPageObjects.registerTitle);
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.registerTitle),"Register to DIKSHA title is not displayed.");
 		Logger.logAndReportPass("Register to DIKSHA title is displayed succesfully.");
 	}
 	
 	public void verifyInvalidLoginError() throws Exception {
-		SikshaLokamClient.get().gestures().isDisplayed(loginPageObjects.loginErorMessage);
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.loginErorMessage),"Login Error message is not displayed.");
 		Logger.logAndReportPass("login error message displayed succesfully.");
 	}
 	
 	public void verifyForgotPasswordTitle() throws Exception {
-		SikshaLokamClient.get().gestures().isDisplayed(loginPageObjects.forgotPasswordTitle);
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.forgotPasswordTitle),"Forgot password window title is not displayed.");
 		Logger.logAndReportPass("Forgot password window title is displayed succesfully.");
 	}
 	
+	public void verifySelectYourStateTitle() throws Exception {
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.selectYourStateTitle),"Select state title is not displayed.");
+		Logger.logAndReportPass("Select State window title is displayed succesfully.");
+	}
 	
+	public void verifySubmitButtonStatusOnStateLogin() throws Exception {
+		boolean status =loginPageObjects.submitButtonOnStateLogin.isEnabled();
+		if(status) {
+			Logger.logAndReportPass("Submit button is enabled");
+		} else {
+			Logger.logAndReportWarning("Submit button is not enabled");
+		}
+	}
 	
+	public void verifyDikshaUATLoginTitle() throws Exception {
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.dikshaUATLoginTitle),"Diksha UAT title is not displayed.");
+		Logger.logAndReportPass("Diksha UAT login title is displayed succesfully.");
+	}
 }

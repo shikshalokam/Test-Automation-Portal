@@ -9,12 +9,14 @@ import com.sikshalokam.pages.actions.LoginPageAction;
 import com.sikshalokam.pages.actions.ObservationPageAction;
 import com.sikshalokam.pages.actions.ReportPageAction;
 import com.sikshalokam.utils.gSheet.TestData;
+import com.sikshalokam.utils.prop.PropUtlis;
 
 public class ReportPageTest {
 
 	Map<String, String> loginTestData;
     Map<String, String> observationPageTestData;
     Map<String, String> reportPageTestData;
+    String appUrl;
     
     public LoginPageAction getLoginPageActions() throws Exception {
         return new LoginPageAction();
@@ -33,6 +35,11 @@ public class ReportPageTest {
     public void observationWithRubricReport() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+        if(appUrl.contentEquals("https://preprod.ntp.net.in/"))
+        {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -52,6 +59,11 @@ public class ReportPageTest {
     public void observationWithOutRubricReport() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+        if(appUrl.contentEquals("https://preprod.ntp.net.in/"))
+        {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -71,6 +83,11 @@ public class ReportPageTest {
     @Author(name = "Manjunatha K")
     public void visitMyReportsAndVerifyFeatures() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+        appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+        if(appUrl.contentEquals("https://preprod.ntp.net.in/"))
+        {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();

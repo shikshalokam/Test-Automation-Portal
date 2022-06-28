@@ -38,6 +38,9 @@ public class ObservationPageObjects {
 	@FindBy(xpath="//button[text()=' No ']")
 	public WebElement noConfirmationForEntityDelete;
 	
+	@FindBy(xpath="(//label)[4]")
+	public WebElement firstEntity;
+	
 	@FindBy(xpath="//label[contains(text(),'MPPS HANUMANNAHALLI')]")
 	public WebElement hanumanahalliEntity;
 	
@@ -74,7 +77,7 @@ public class ObservationPageObjects {
 	@FindBy(xpath="//button[text()='Start ']")
 	public WebElement startButtonForObservation;
 	
-	@FindBy(xpath="//button//span[text()='Back']")
+	@FindBy(xpath="//button//i[contains(@class,'icon-back')]")
 	public WebElement backButton;
 	
 	@FindBy(xpath = "//h4//bdi[text()='QA solution - entity type block - Parent Child - FD 345']")

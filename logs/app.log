@@ -1,0 +1,34 @@
+Fri Jun 24 19:11:53 IST 2022 INFO Logger-logAndReportPass-110 Welcome title is displayed succesfully.
+Fri Jun 24 19:11:53 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: (//div[contains(text(),'School head OR Officials')])[1]] status = true
+Fri Jun 24 19:11:53 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //button[.=' Continue ']] status = true
+Fri Jun 24 19:11:53 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the continue button
+Fri Jun 24 19:11:53 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //*[@id="board"]] status = true
+Fri Jun 24 19:11:53 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the board drop down
+Fri Jun 24 19:11:54 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //span[contains(text(),'CBSE')]] status = true
+Fri Jun 24 19:11:54 IST 2022 INFO Logger-logAndReportInfo-95 Selected the option cbse or ncert.
+Fri Jun 24 19:11:58 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //button[contains(.,'Submit')]] status = true
+Fri Jun 24 19:11:58 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the submit button on BMC selection window.
+Fri Jun 24 19:11:58 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //div[contains(@aria-label, 'Select State')]] status = true
+Fri Jun 24 19:11:59 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: (//span[contains(text(),'Andhra Pradesh')])] status = true
+Fri Jun 24 19:11:59 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //div[contains(@aria-label, 'Select District')]] status = true
+Fri Jun 24 19:11:59 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //div[@tabindex='0']//span[text()='Anantapur']] status = true
+Fri Jun 24 19:11:59 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //button[contains(.,'Submit')]] status = true
+Fri Jun 24 19:11:59 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the submit button on location selection window.
+Fri Jun 24 19:11:59 IST 2022 INFO Logger-logAndReportPass-110 Home button is displayed succesfully
+Fri Jun 24 19:12:52 IST 2022 INFO Gestures-click-65 Method: click for locator = Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(.,'Login')]' status = true
+Fri Jun 24 19:12:52 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //input[@id='username']] status = true
+Fri Jun 24 19:12:52 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //button[@id='login']] status = true
+Fri Jun 24 19:13:00 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //a[text()=' Observation ']] status = true
+Fri Jun 24 19:13:01 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the observation button
+Fri Jun 24 19:13:01 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the user profile icon
+Fri Jun 24 19:13:41 IST 2022 INFO Gestures-click-65 Method: click for locator = Proxy element for: DefaultElementLocator 'By.xpath: //li[text()=' My Reports ']' status = true
+Fri Jun 24 19:13:41 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the my reports tab .
+Fri Jun 24 19:13:41 IST 2022 INFO Logger-logAndReportPass-110 My reports title is displayed succesfully. 
+Fri Jun 24 19:13:41 IST 2022 INFO Logger-logAndReportPass-110 Entity Filter for report is displayed succesfully.
+Fri Jun 24 19:14:22 IST 2022 INFO Gestures-click-65 Method: click for locator = Proxy element for: DefaultElementLocator 'By.xpath: //table//tr//td[text()='1']' status = true
+Fri Jun 24 19:14:22 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the 1st report from my report section.
+Fri Jun 24 19:14:22 IST 2022 INFO Logger-logAndReportPass-110 Question Tab inside the report is displayed succesfully.
+Fri Jun 24 19:14:22 IST 2022 INFO Logger-logAndReportPass-110 Criteria Tab inside the report is displayed succesfully.
+Fri Jun 24 19:14:22 IST 2022 INFO Logger-logAndReportPass-110 Export button is displayed succesfully.
+Fri Jun 24 19:14:22 IST 2022 INFO Gestures-click-65 Method: click for locator = [[ChromeDriver: chrome on WINDOWS (a83be92c262b3b3e1f58153880ab9755)] -> xpath: //button[text()=' Export As ']] status = true
+Fri Jun 24 19:14:22 IST 2022 INFO Logger-logAndReportInfo-95 Clicked on the export as button in report.

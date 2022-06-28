@@ -10,12 +10,13 @@ import com.sikshalokam.pages.actions.ObservationPageAction;
 import com.sikshalokam.pages.actions.ReportPageAction;
 import com.sikshalokam.pages.objects.ObservationPageObjects;
 import com.sikshalokam.utils.gSheet.TestData;
+import com.sikshalokam.utils.prop.PropUtlis;
 
 public class ObservationPageTest {
 
 	Map<String, String> loginTestData;
     Map<String, String> observationPageTestData;
-    
+    String appUrl;
     public LoginPageAction getLoginPageActions() throws Exception {
         return new LoginPageAction();
     }
@@ -32,7 +33,13 @@ public class ObservationPageTest {
     @Author(name = "Manjunatha K")
     public void loginAndVerifyObservationTile() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         //getLoginPageActions().clickOnExploreDiksha();
+        appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+        if(appUrl.contentEquals("https://preprod.ntp.net.in/"))
+        {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -43,11 +50,16 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObservationButton();
         Thread.sleep(5000);
         getObservationPageActions().verifyObservationTitle();
-        getObservationPageActions().clickOnObservationWithRub_SliderWithScore();
+        getLoginPageActions().enterNameToSearchbox(observationPageTestData.get("observatonForVerifyObservationTile"));
+        getLoginPageActions().clickOnSerachButton();
+        getObservationPageActions().clickOnObservationButton();
+        getLoginPageActions().clickOnSearchedObservationTitle();
+        //getObservationPageActions().clickOnObservationWithRub_SliderWithScore();
         getObservationPageActions().clickOnEntityDeleteOption();
         getObservationPageActions().clickOnEntityDeleteConfirmationYes();
         getObservationPageActions().clickOnAddSchoolButton();
-        getObservationPageActions().selectHanumanahallyEntityAsSchool();
+        getObservationPageActions().selectFirstEntityAsSchool();
+        //getObservationPageActions().selectHanumanahallyEntityAsSchool();
         getObservationPageActions().clickOnSubmitButtonOnAddEntityWindow();
         getObservationPageActions().clickOnObserveAgainButton();
         getObservationPageActions().clickOnObserveAgainYesConfirmation();
@@ -56,8 +68,10 @@ public class ObservationPageTest {
         getObservationPageActions().verifyStartButtonFromObservation();
         getObservationPageActions().clickOnThreeDotEllipseOnObservation();
         getObservationPageActions().clickOnDeleteOptionFromThreeDotObservation();
-        //getObservationPageActions().clickOnbackButton();
-        //getObservationPageActions().verifyThrashSymbolForEntityDelete();
+        getObservationPageActions().clickOnYesConfirmationForObservationDelete();
+       /* getObservationPageActions().clickOnBackButtonOnObservationPage();
+        getObservationPageActions().clickOnObservationWithRub_SliderWithScore();
+        getObservationPageActions().verifyThrashSymbolForEntityDelete(); */
         
     }
     
@@ -67,6 +81,11 @@ public class ObservationPageTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         //getLoginPageActions().clickOnExploreDiksha();
+        appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+        if(appUrl.contentEquals("https://preprod.ntp.net.in/"))
+        {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -105,8 +124,8 @@ public class ObservationPageTest {
         getObservationPageActions().verifyFormSubmitSuccessMsg(observationPageTestData.get("observationFormSubmitSuccessMsg"));
         
         //for report tab
-        getObservationPageActions().clickOnOkButtonOnSubmitFormSuccess();
-        getLoginPageActions().clickOnProfileIcon();
-        getReportPageActions().clickOnMyReportsTab();
+        //getObservationPageActions().clickOnOkButtonOnSubmitFormSuccess();
+        //getLoginPageActions().clickOnProfileIcon();
+        //getReportPageActions().clickOnMyReportsTab();
     }
 }

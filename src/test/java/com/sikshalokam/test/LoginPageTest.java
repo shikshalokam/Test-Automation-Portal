@@ -3,6 +3,7 @@ package com.sikshalokam.test;
 import com.sikshalokam.annotation.Author;
 import com.sikshalokam.pages.actions.LoginPageAction;
 import com.sikshalokam.utils.gSheet.TestData;
+import com.sikshalokam.utils.prop.PropUtlis;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,15 +17,29 @@ public class LoginPageTest {
 
     Map<String, String> loginTestData;
 
+    String appUrl;
+    
     public LoginPageAction getLoginPageActions() throws Exception {
         return new LoginPageAction();
     }
-
+    
+    public String getEnvironmentValue() throws Exception {
+    	return appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+    }
+    
+    public void switchEnvironment() throws Exception {
+    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("prod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
+    }
+    
     @Test(description = "login to application with valid Credentials")
     @Author(name = "Sunil H N")
     public void loginToApplication() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        getLoginPageActions().clickOnExploreDiksha();
+        if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userName"));
@@ -37,7 +52,9 @@ public class LoginPageTest {
     @Author(name = "Manjunatha K")
     public void loginAsHeadTeacher() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
+        if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -51,7 +68,9 @@ public class LoginPageTest {
     @Author(name = "Sunil H N")
     public void loginToWithInvalidCredentails() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-       // getLoginPageActions().clickOnExploreDiksha();
+        if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -66,7 +85,10 @@ public class LoginPageTest {
     @Author(name = "Sunil H N")
     public void registerToAnApplication() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
+        /*if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }*/
+        switchEnvironment();
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -75,11 +97,33 @@ public class LoginPageTest {
 
     }
 
+    @Test(description = "State System Login Enable")
+    @Author(name = "Manjunatha K")
+    public void loginWithStateSystem() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().clickOnLoginWithStateSystem();
+        getLoginPageActions().verifySelectYourStateTitle();
+        getLoginPageActions().verifySubmitButtonStatusOnStateLogin();
+        getLoginPageActions().clickOnSelectStateDropDown();
+        getLoginPageActions().selectFirstStateFromDropdown();
+        getLoginPageActions().verifySubmitButtonStatusOnStateLogin();
+        getLoginPageActions().clickOnSubmitButtonOnStateLogin();
+        getLoginPageActions().verifyDikshaUATLoginTitle();
+        
+    }
+    
     @Test(description = "Forgot password check")
     @Author(name = "Manjunatha K")
     public void forgotPasswordToLogin() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         //getLoginPageActions().clickOnExploreDiksha();
+        if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -93,6 +137,9 @@ public class LoginPageTest {
     @Author(name = "Sunil H N")
     public void verifyTeacherRoleForLogin() throws Exception {
         //getLoginPageActions().clickOnExploreDiksha();
+    	if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().selectTeacher();
         getLoginPageActions().selectBoard();
         getLoginPageActions().selectMedium();
@@ -111,6 +158,9 @@ public class LoginPageTest {
     //@Test(description = "Verify Observation Tile")
     @Author(name = "Sunil H N")
     public void VerifyObservationTile() throws Exception {
+    	if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().clickOnProfileIcon();
         getLoginPageActions().selectProfile();
         getLoginPageActions().selectRoleHTAndOffical();
@@ -126,6 +176,9 @@ public class LoginPageTest {
     @Author(name = "Manjunatha K")
     public void verifyGmailSignIn() throws Exception {
     	loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+    	if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -144,6 +197,9 @@ public class LoginPageTest {
     public void BMCAndLocationEditAndVerify() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         //getLoginPageActions().clickOnExploreDiksha();
+        if(getEnvironmentValue().contains("preprod")) {
+        	getLoginPageActions().clickOnExploreDiksha();
+        }
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectRoleHTAndOffical();
         getLoginPageActions().clickOnContinue();
@@ -152,12 +208,8 @@ public class LoginPageTest {
         getLoginPageActions().clickOnBMCWindowTitle();
         getLoginPageActions().clickOnMediumDropDown();
         getLoginPageActions().selectEnglishOption();
-        Thread.sleep(2000);
-        getLoginPageActions().clickOnBMCWindowTitle(); //need to remove bcz dropdown not closing after click
         getLoginPageActions().clickOnClassDropDown();
         getLoginPageActions().selectClass1Option();
-        Thread.sleep(2000);
-        getLoginPageActions().clickOnBMCWindowTitle(); //need to remove bcz dropdown not closing after click
         getLoginPageActions().clickOnSubmitButtonOnCourseWindow();
         getLoginPageActions().enterNameInLocationWindow(loginTestData.get("userNameOnLocationWindow"));
         getLoginPageActions().selectState();

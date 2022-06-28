@@ -173,7 +173,7 @@ public class Gestures {
 
     // New
 
-    private boolean isElementPresent(WebElement locator) {
+    public boolean isElementPresent(WebElement locator) {
         try {
             waitForElementToAppear(locator);
             if (locator.isDisplayed())

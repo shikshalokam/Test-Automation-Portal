@@ -1,6 +1,7 @@
 package com.sikshalokam.pages.objects;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 import io.appium.java_client.MobileElement;
@@ -123,6 +124,9 @@ public class LoginPageObjects {
     @FindBy(xpath = "//div[@tabindex='0']//span[text()='Anantapur']")
     public WebElement ananthpurDistrict;
     
+    @FindBy(xpath = "//div[@tabindex='0']//span[text()='Alappuzha']")
+    public WebElement alappuzhaDistrict;
+    
     @FindBy(xpath = "//button[contains(.,'Submit')]")
     public WebElement  courseWindowSubmitButton;
 
@@ -140,7 +144,7 @@ public class LoginPageObjects {
     @FindBy(xpath="(//div[contains(@class,'avatar') and text()=' G '])[2]")
     public WebElement guestIcon;
     
-    @FindBy(xpath="//h1[contains(text(),'Welcome to sunbird')]")
+    @FindBy(xpath="//h1[contains(text(),'Welcome to')]")
     public WebElement welcomeTitle;
     
     @FindBy(xpath="//div[contains(text(),'Teacher')]")
@@ -173,11 +177,14 @@ public class LoginPageObjects {
     @FindBy(xpath = "//div[@aria-label='Select State']")
     public WebElement  selectStateDropdown;
     
-    @FindBy(xpath="//span[contains(text(),'Uttar Pradesh')]")
+    @FindBy(xpath="(//span[contains(text(),'Uttar Pradesh')])[2]")
     public WebElement uttarPradeshSate;
     
-    @FindBy(xpath="//span[contains(text(),'Andhra Pradesh')]")
+    @FindBy(xpath="(//span[contains(text(),'Andhra Pradesh')])")
     public WebElement andhraPradeshSate;
+    
+    @FindBy(xpath="(//span[contains(text(),'Kerala')])[2]")
+    public WebElement keralaState;
     
     @FindBy(xpath="//a[text()=' Home ']")
     public WebElement homeButton;
@@ -202,6 +209,25 @@ public class LoginPageObjects {
     
     @FindBy(xpath = "//input[@type='password']")
     public WebElement emailPasswordToLogin;
+    
+    @FindBy(xpath = "//button[@id='stateButton']")
+    public WebElement signInStateSystem;
+    
+    @FindBy(xpath = "//div[text()='Select your State']")
+    public WebElement selectYourStateTitle;
+    
+    @FindBy(xpath = "//div[contains(@id,'select')]")
+    ////div[@aria-label='Select State']
+    public WebElement selectStateDropDownForLogin;
+    
+    @FindBy(xpath = "(//div[@aria-label='Select State']/mat-option)[1]")
+    public WebElement selectFirstState;
+    
+    @FindBy(xpath = "//button[text()='Submit']")
+    public WebElement submitButtonOnStateLogin;
+    
+    @FindBy(xpath = "//h2[text()='Diksha UAT SSO Login']")
+    public WebElement dikshaUATLoginTitle;
     
     @FindBy(xpath = "//span[text()='Next']")
     public WebElement nextButton;

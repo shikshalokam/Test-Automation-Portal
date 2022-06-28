@@ -60,6 +60,12 @@ public class ObservationPageAction {
     		Thread.sleep(2000);
     	}
     	
+    	public void selectFirstEntityAsSchool() throws Exception {
+        	SikshaLokamClient.get().gestures().waitForElementToAppear(observationPageObjects.firstEntity);
+    		SikshaLokamClient.get().gestures().click(observationPageObjects.firstEntity);
+    		Logger.logAndReportInfo("Selected first entity for the school.");
+    	}
+    	
     	public void selectHanumanahallyEntityAsSchool() throws Exception {
         	SikshaLokamClient.get().gestures().waitForElementToAppear(observationPageObjects.hanumanahalliEntity);
     		SikshaLokamClient.get().gestures().click(observationPageObjects.hanumanahalliEntity);
@@ -67,9 +73,9 @@ public class ObservationPageAction {
     	}
     	
     	public void clickOnSubmitButtonOnAddEntityWindow() throws Exception {
-        	SikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(observationPageObjects.submitButtonOnAddEntityWindow);
-    		SikshaLokamClient.get().gestures().click(observationPageObjects.submitButtonOnAddEntityWindow);
+        	SikshaLokamClient.get().gestures().click(observationPageObjects.submitButtonOnAddEntityWindow);
     		Logger.logAndReportInfo("Clicked on the submit button on add entity window.");
+    		Thread.sleep(1000);
     	}
     	
     	public void clickOnObserveAgainButton() throws Exception {
@@ -84,10 +90,12 @@ public class ObservationPageAction {
     	}
     	public void clickOnObserveAgainYesConfirmation() throws Exception {
     		SikshaLokamClient.get().gestures().click(observationPageObjects.yesConfirmationObserveAgain);
+    		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.observeAgainButton);
     		Logger.logAndReportInfo("Clicked on the yes button for obsere again button.");
     	}
     	
     	public void clickOnThreeDotEllipseOnObservation() throws Exception {
+    		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.observeAgainButton);
     		SikshaLokamClient.get().gestures().click(observationPageObjects.threeDotOnObservation);
     		Logger.logAndReportInfo("Clicked on the three dot on observation. ");
     		Thread.sleep(2000);
@@ -95,7 +103,18 @@ public class ObservationPageAction {
     	
     	public void clickOnDeleteOptionFromThreeDotObservation() throws Exception {
     		SikshaLokamClient.get().gestures().click(observationPageObjects.deleteOptionForObservation);
+    		//SikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(observationPageObjects.deleteOptionForObservation);
+    		//js.executeScript("arguments[0].click();", observationPageObjects.deleteOptionForObservation);
     		Logger.logAndReportInfo("Clicked on the delete option from observation three dot ellipse.");
+    	}
+    	
+    	public void clickOnYesConfirmationForObservationDelete() throws Exception {
+    		SikshaLokamClient.get().gestures().click(observationPageObjects.yesConfirmationForObservationDelete);
+    		Logger.logAndReportInfo("Clicked on the yes confirmation for deleting observation.");
+    	}
+    	public void clickOnBackButtonOnObservationPage() throws Exception {
+    		SikshaLokamClient.get().gestures().click(observationPageObjects.backButton);
+    		Logger.logAndReportInfo("Clicked on the back button on the observation page.");
     	}
     	
     	public void clickOnStartButtonOnObservation() throws Exception {
@@ -104,8 +123,8 @@ public class ObservationPageAction {
     	}
     	
     	public void clickOnObservationParentChild() throws Exception {
-    		SikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(observationPageObjects.parentChildObservation);
-    		//SikshaLokamClient.get().gestures().click(observationPageObjects.parentChildObservation);
+    		//SikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(observationPageObjects.parentChildObservation);
+    		SikshaLokamClient.get().gestures().click(observationPageObjects.parentChildObservation);
     		Logger.logAndReportInfo("Clicked on the parent child observation.");
     	}
     	
@@ -217,33 +236,38 @@ public class ObservationPageAction {
     	//******************Verify*********************************************************//
     	
     	public void verifyObservationButton() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.observationButton);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.observationButton),"Observation button is not displayed.");
     		Logger.logAndReportPass("Observation button is displayed succesfully");
     	}
     
     	public void verifyObservationTitle() throws Exception {
     		SikshaLokamClient.get().gestures().waitForElementToAppear(observationPageObjects.observationTitle);
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.observationTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.observationTitle),"Observation title is not displayed.");
     		Logger.logAndReportPass("Observation title is displayed succesfully.");
     	}
     
     	public void verifyObservationDetailsTitle() throws Exception {
-    		SikshaLokamClient.get().gestures().click(observationPageObjects.observationDetailsTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.observationDetailsTitle),"Observation Details title is not displayed.");
     		Logger.logAndReportPass("Observation Details title is displayed succesfully.");
     	}
     	
     	public void verifyObserveAgainPopupTitle() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.observeAgainTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.observeAgainTitle),"Observe again title is not displayed.");
     		Logger.logAndReportPass("Observe again title is displayed succesfully.");
     	}
     	public void verifyObservation1Title() throws Exception {
-    		SikshaLokamClient.get().gestures().click(observationPageObjects.observation1Title);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.observation1Title),"Observation 1 title is not displayed.");
     		Logger.logAndReportPass("Observation 1 title is displayed succesfully.");
     	}
     	
     	public void verifyStartButtonFromObservation() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.startButtonForObservation);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.startButtonForObservation),"Start button for the observation is not displayed.");
     		Logger.logAndReportPass("Start button for the observation is displayed succesfully.");
+    	}
+    	
+    	public void verifyThrashSymbolForEntityDelete() throws Exception {
+    		Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.backButton), "Back button is not available on page");
+    		Logger.logAndReportPass("Back symbol on observation is displayed succesfully.");
     	}
     	/**
     	//parent child verify
@@ -271,35 +295,35 @@ public class ObservationPageAction {
     	**/
     	//new parent child verify actions
     	public void verifyParent1QuestionTitle() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.parent1QuestionTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.parent1QuestionTitle),"Parent 1 Question title is not displayed.");
     		Logger.logAndReportPass("Parent 1 Question title is displayed succesfully.");
     	}
     	
     	public void verifyParent1Child1QuestionTitle() throws Exception {
     		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.parent1Child1Question);
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.parent1Child1Question);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.parent1Child1Question),"Parent 1 child 1 Question title is not displayed.");
     		Logger.logAndReportPass("Parent 1 child 1 Question is displayed succesfully.");
     	}
     	
     	public void verifyParent2QuestionTitle() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.parent2QuestionTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.parent2QuestionTitle),"Parent 2 Question title is not displayed.");
     		Logger.logAndReportPass("Parent 2 Question title is displayed succesfully.");
     	}
     	
     	public void verifyParent2Child2QuestionTitle() throws Exception {
     		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.parent2Child2QuestionTitle);
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.parent2Child2QuestionTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.parent2Child2QuestionTitle),"Parent 2 Child 2 Question title is not displayed.");
     		Logger.logAndReportPass("Parent 2 Child 2 Question title is displayed succesfully.");
     	}
     	
     	public void verifyparent3QuestionTitle() throws Exception {
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.parent3QuestionTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.parent3QuestionTitle),"Parent 3 question title title is not displayed.");
     		Logger.logAndReportPass("Parent 3 question title is displayed succesfully.");
     	}
     	
     	public void verifyParent3Child1QuestionTitle() throws Exception {
     		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.parent3Child1QuestionTitle);
-    		SikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.parent3Child1QuestionTitle);
+            Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.parent3Child1QuestionTitle),"Parent 3 child 1 question title is not displayed.");
     		Logger.logAndReportPass("Parent 3 child 1 question title is displayed succesfully.");
     	}
     	

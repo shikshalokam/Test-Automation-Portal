@@ -1,49 +1,1356 @@
-Tue Mar 29 15:46:51 IST 2022 INFO TestListeners-onStart-84 *********************onStart********************* mode null
-Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
-Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-setDriverManager-32 SetAppiumManager Global
-Tue Mar 29 15:46:51 IST 2022 INFO TestListeners-onStart-92 Running in local
-Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
-Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-setDriverManager-32 SetAppiumManager Global
-Tue Mar 29 15:46:51 IST 2022 INFO ExtentTestManager-InitReport-23 On InitReports
-Tue Mar 29 15:46:51 IST 2022 INFO ExtentManager-getExtent-23 On GetExtent
-Tue Mar 29 15:46:51 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
-Tue Mar 29 15:46:51 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* loginToApplication
-Tue Mar 29 15:46:51 IST 2022 INFO PropUtlis-readConfig-29 Chrome
-Tue Mar 29 15:46:51 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
-Tue Mar 29 15:46:51 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
-Tue Mar 29 15:46:51 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
-Tue Mar 29 15:46:51 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
-Tue Mar 29 15:46:51 IST 2022 INFO PropUtlis-readConfig-29 Chrome
-Tue Mar 29 15:46:51 IST 2022 INFO PropUtlis-readConfig-29 false
-Tue Mar 29 15:46:52 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
-Tue Mar 29 15:46:52 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
-Tue Mar 29 15:46:56 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
-Tue Mar 29 15:46:56 IST 2022 INFO DriverManager-setDriver-42 Driver is set
-Tue Mar 29 15:46:56 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
-Tue Mar 29 15:46:56 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
-Tue Mar 29 15:46:56 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
-Tue Mar 29 15:46:56 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
-Tue Mar 29 15:46:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
-Tue Mar 29 15:46:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
-Tue Mar 29 15:46:57 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
-Tue Mar 29 15:47:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
-Tue Mar 29 15:47:08 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
-Tue Mar 29 15:47:08 IST 2022 ERROR TestListeners-onTestFailure-66 OnTestFailure
-Tue Mar 29 15:47:08 IST 2022 ERROR TestListeners-onTestFailure-67 org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=92.0.4515.131)
+Fri Jun 24 18:48:02 IST 2022 INFO TestListeners-onStart-84 *********************onStart********************* mode null
+Fri Jun 24 18:48:02 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:48:02 IST 2022 INFO GlobalSession-setDriverManager-32 SetAppiumManager Global
+Fri Jun 24 18:48:02 IST 2022 INFO TestListeners-onStart-92 Running in local
+Fri Jun 24 18:48:02 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:48:02 IST 2022 INFO GlobalSession-setDriverManager-32 SetAppiumManager Global
+Fri Jun 24 18:48:02 IST 2022 INFO ExtentTestManager-InitReport-23 On InitReports
+Fri Jun 24 18:48:02 IST 2022 INFO ExtentManager-getExtent-23 On GetExtent
+Fri Jun 24 18:48:02 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
+Fri Jun 24 18:48:02 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* BMCAndLocationEditAndVerify
+Fri Jun 24 18:48:02 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:48:02 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:48:02 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 18:48:02 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 18:48:02 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 18:48:02 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:48:02 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 18:48:05 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 18:48:05 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:48:14 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 18:48:14 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 18:48:14 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 18:48:14 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 18:48:14 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 18:48:14 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 18:48:16 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:20 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:20 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:20 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:20 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:20 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:23 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:24 IST 2022 ERROR TestListeners-onTestFailure-66 OnTestFailure
+Fri Jun 24 18:48:24 IST 2022 ERROR TestListeners-onTestFailure-67 java.lang.AssertionError: ***Method: click: Exception occured for locator= element click intercepted: Element <mat-form-field _ngcontent-urt-c2="" appearance="fill" class="sb-mat__dropdown w-100 mb-8 mat-form-field ng-tns-c30-14 mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-untouched ng-pristine ng-valid ng-star-inserted" id="gradeLevel">...</mat-form-field> is not clickable at point (631, 241). Other element would receive the click: <span class="mat-option-text">...</span>
+  (Session info: chrome=102.0.5005.115)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'qualitrix-HP-EliteBook-840-G2', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-25-generic', java.version: '14.0.2'
+System info: host: 'DESKTOP-NH5UOIJ', ip: '192.168.213.138', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.zSwTyz}, goog:chromeOptions: {debuggerAddress: localhost:38011}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5c429dcaf7a14e2bf2652fede4b722f4
-*** Element info: {Using=xpath, value=(//button[contains(.,'Explore Diksha')])[1]}
-Tue Mar 29 15:47:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
-Tue Mar 29 15:47:08 IST 2022 INFO SikshaLokamClient-getScreenShot-95 on GetScreenShot
-Tue Mar 29 15:47:09 IST 2022 ERROR TestListeners-onTestFailure-76 Exception onTestFailure: chrome not reachable
-  (Session info: chrome=92.0.4515.131)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\T460s\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:5476}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8fefaa36254c74c8ccfb0c0289e27457 expected [true] but found [false]
+Fri Jun 24 18:48:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:24 IST 2022 INFO SikshaLokamClient-getScreenShot-95 on GetScreenShot
+Fri Jun 24 18:48:24 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:48:24 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 18:48:25 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 18:48:25 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
+Fri Jun 24 18:48:25 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* forgotPasswordToLogin
+Fri Jun 24 18:48:25 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:48:25 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:48:25 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 18:48:25 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 18:48:25 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 18:48:25 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:48:25 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 18:48:26 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 18:48:27 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:48:32 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 18:48:32 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 18:48:32 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 18:48:32 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 18:48:32 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 18:48:32 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 18:48:34 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:42 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:48:42 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:48:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:48:43 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:48:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:49:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:49:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:49:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:49:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:49:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:18 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:18 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:18 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:18 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:18 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:18 IST 2022 INFO TestListeners-onTestSuccess-53 @onTestSuccess
+Fri Jun 24 18:50:18 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:50:18 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 18:50:19 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 18:50:19 IST 2022 INFO TestListeners-onTestSuccess-57 Driver closed
+Fri Jun 24 18:50:19 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
+Fri Jun 24 18:50:19 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* loginAsHeadTeacher
+Fri Jun 24 18:50:19 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:50:19 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:50:19 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 18:50:19 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 18:50:19 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 18:50:19 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:50:19 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 18:50:20 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 18:50:21 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:50:26 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 18:50:26 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 18:50:26 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 18:50:26 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 18:50:26 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 18:50:26 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 18:50:27 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:50:27 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:27 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:27 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:27 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 18:50:27 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:27 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 18:50:27 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:27 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:32 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:50:32 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:50:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:50:33 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:33 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:50:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:21 IST 2022 INFO TestListeners-onTestSuccess-53 @onTestSuccess
+Fri Jun 24 18:51:21 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:51:21 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 18:51:22 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 18:51:22 IST 2022 INFO TestListeners-onTestSuccess-57 Driver closed
+Fri Jun 24 18:51:22 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
+Fri Jun 24 18:51:22 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* loginToWithInvalidCredentails
+Fri Jun 24 18:51:22 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:51:22 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:51:22 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 18:51:22 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 18:51:22 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 18:51:22 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:51:22 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 18:51:24 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 18:51:24 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:51:30 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 18:51:30 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 18:51:30 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 18:51:30 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 18:51:30 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 18:51:30 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 18:51:31 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:51:35 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:51:35 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:51:44 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:24 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:25 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:25 IST 2022 INFO TestListeners-onTestSuccess-53 @onTestSuccess
+Fri Jun 24 18:52:25 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:52:25 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 18:52:26 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 18:52:26 IST 2022 INFO TestListeners-onTestSuccess-57 Driver closed
+Fri Jun 24 18:52:26 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
+Fri Jun 24 18:52:26 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* loginWithStateSystem
+Fri Jun 24 18:52:26 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:52:26 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:52:26 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 18:52:26 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 18:52:26 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 18:52:26 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:52:26 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 18:52:28 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 18:52:28 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:52:33 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 18:52:33 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 18:52:33 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 18:52:33 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 18:52:33 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 18:52:33 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 18:52:34 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:52:34 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:52:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:34 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 18:52:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:34 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 18:52:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:52:38 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:52:38 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:44 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:44 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:44 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:44 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:44 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:52:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:53:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:53:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:53:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:53:28 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:53:31 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:13 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:54:53 IST 2022 INFO TestListeners-onTestSuccess-53 @onTestSuccess
+Fri Jun 24 18:54:53 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:54:53 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 18:54:54 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 18:54:54 IST 2022 INFO TestListeners-onTestSuccess-57 Driver closed
+Fri Jun 24 18:54:54 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
+Fri Jun 24 18:54:54 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* registerToAnApplication
+Fri Jun 24 18:54:54 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:54:54 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:54:54 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 18:54:54 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 18:54:54 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 18:54:54 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:54:54 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 18:54:56 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 18:54:56 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:55:02 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 18:55:02 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 18:55:02 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 18:55:02 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 18:55:02 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 18:55:02 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 18:55:03 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:55:03 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:55:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:03 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:05 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:05 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:05 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:07 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:07 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:07 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:07 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:55:08 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:55:08 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:08 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:17 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:55:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:56:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:56:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:56:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:56:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:56:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:41 IST 2022 ERROR TestListeners-onTestFailure-66 OnTestFailure
+Fri Jun 24 18:58:41 IST 2022 ERROR TestListeners-onTestFailure-67 java.lang.AssertionError: Register to DIKSHA title is not displayed. expected [true] but found [false]
+Fri Jun 24 18:58:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:41 IST 2022 INFO SikshaLokamClient-getScreenShot-95 on GetScreenShot
+Fri Jun 24 18:58:41 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:58:41 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 18:58:42 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 18:58:42 IST 2022 INFO TestListeners-onTestStart-34 .LoginPageTest
+Fri Jun 24 18:58:42 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* verifyGmailSignIn
+Fri Jun 24 18:58:42 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:58:42 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 18:58:42 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 18:58:42 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 18:58:42 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 18:58:42 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 18:58:42 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 18:58:44 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 18:58:44 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:58:52 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 18:58:52 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 18:58:52 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 18:58:52 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 18:58:52 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 18:58:52 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 18:58:53 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:57 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:58:57 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:58:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:58:58 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:58:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 18:59:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:32 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:00:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:43 IST 2022 ERROR TestListeners-onTestFailure-66 OnTestFailure
+Fri Jun 24 19:02:43 IST 2022 ERROR TestListeners-onTestFailure-67 java.lang.AssertionError: Home button is not displayed. expected [true] but found [false]
+Fri Jun 24 19:02:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:43 IST 2022 INFO SikshaLokamClient-getScreenShot-95 on GetScreenShot
+Fri Jun 24 19:02:43 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:02:43 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 19:02:44 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 19:02:44 IST 2022 INFO TestListeners-onTestStart-34 .ObservationPageTest
+Fri Jun 24 19:02:44 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* loginAndVerifyObservationTile
+Fri Jun 24 19:02:44 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:02:44 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:02:44 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 19:02:44 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 19:02:44 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 19:02:44 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:02:44 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 19:02:45 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 19:02:46 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:02:53 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 19:02:53 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 19:02:53 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 19:02:53 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 19:02:53 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 19:02:53 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 19:02:56 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:02:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:02 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:03:03 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:03 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:03:03 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:03:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:09 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:16 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:03:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:05 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:10 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:10 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:10 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:10 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:10 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:10 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:10 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:10 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:11 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:13 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:13 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:13 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:13 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:13 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:14 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:04:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:35 IST 2022 ERROR TestListeners-onTestFailure-66 OnTestFailure
+Fri Jun 24 19:05:35 IST 2022 ERROR TestListeners-onTestFailure-67 java.lang.AssertionError: ***Method: click: Exception occured for locator= element not interactable
+  (Session info: chrome=102.0.5005.115)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'qualitrix-HP-EliteBook-840-G2', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-25-generic', java.version: '14.0.2'
+System info: host: 'DESKTOP-NH5UOIJ', ip: '192.168.213.138', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.zSwTyz}, goog:chromeOptions: {debuggerAddress: localhost:38011}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5c429dcaf7a14e2bf2652fede4b722f4
-Tue Mar 29 15:47:09 IST 2022 INFO TestListeners-onFinish-108 *********************onFinish*********************
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\T460s\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:12034}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 97508790115a89bfb6df9efc6570f4de expected [true] but found [false]
+Fri Jun 24 19:05:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:35 IST 2022 INFO SikshaLokamClient-getScreenShot-95 on GetScreenShot
+Fri Jun 24 19:05:35 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:05:35 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 19:05:35 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 19:05:35 IST 2022 INFO TestListeners-onTestStart-34 .ObservationPageTest
+Fri Jun 24 19:05:35 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* saveAndSubmitObservation
+Fri Jun 24 19:05:35 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:05:35 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:05:35 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 19:05:35 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 19:05:35 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 19:05:35 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:05:35 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 19:05:37 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 19:05:37 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:05:44 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 19:05:44 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 19:05:44 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 19:05:44 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 19:05:44 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 19:05:44 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 19:05:47 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:54 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:05:54 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:05:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:05:55 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:05:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:00 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:00 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:00 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:00 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:00 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:02 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:06:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:34 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:35 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:36 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-getAsserts-61 On GetAsserts
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:38 IST 2022 INFO TestListeners-onTestSuccess-53 @onTestSuccess
+Fri Jun 24 19:07:38 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:07:38 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 19:07:39 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 19:07:39 IST 2022 INFO TestListeners-onTestSuccess-57 Driver closed
+Fri Jun 24 19:07:39 IST 2022 INFO TestListeners-onTestStart-34 .ReportPageTest
+Fri Jun 24 19:07:39 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* observationWithOutRubricReport
+Fri Jun 24 19:07:39 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:07:39 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:07:39 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 19:07:39 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 19:07:39 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 19:07:39 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:07:39 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 19:07:41 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 19:07:41 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:07:47 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 19:07:47 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 19:07:47 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 19:07:47 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 19:07:47 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 19:07:47 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 19:07:49 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:07:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:49 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 19:07:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:49 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 19:07:49 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:07:56 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:07:56 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:07:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:02 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:02 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:02 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:02 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:02 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:07 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:48 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:08:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:38 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:40 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:40 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:40 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:40 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:40 IST 2022 INFO SikshaLokamClient-getAsserts-61 On GetAsserts
+Fri Jun 24 19:09:40 IST 2022 ERROR TestListeners-onTestFailure-66 OnTestFailure
+Fri Jun 24 19:09:40 IST 2022 ERROR TestListeners-onTestFailure-67 java.lang.AssertionError: Observation Name not matching.. expected [Leadership Self Assessment] but found [Obs Program Dashboard - WO Rubric 4.8]
+Fri Jun 24 19:09:40 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:40 IST 2022 INFO SikshaLokamClient-getScreenShot-95 on GetScreenShot
+Fri Jun 24 19:09:40 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:09:40 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 19:09:41 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 19:09:41 IST 2022 INFO TestListeners-onTestStart-34 .ReportPageTest
+Fri Jun 24 19:09:41 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* observationWithRubricReport
+Fri Jun 24 19:09:41 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:09:41 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:09:41 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 19:09:41 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 19:09:41 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 19:09:41 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:09:41 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 19:09:42 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 19:09:43 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:09:47 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 19:09:47 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 19:09:47 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 19:09:47 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 19:09:47 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 19:09:47 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 19:09:50 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:50 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:51 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:53 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:09:53 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:09:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:09:54 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:09:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:03 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:43 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:55 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:56 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:10:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:37 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:39 IST 2022 INFO SikshaLokamClient-getAsserts-61 On GetAsserts
+Fri Jun 24 19:11:39 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:39 IST 2022 INFO TestListeners-onTestSuccess-53 @onTestSuccess
+Fri Jun 24 19:11:39 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:11:39 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 19:11:40 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 19:11:40 IST 2022 INFO TestListeners-onTestSuccess-57 Driver closed
+Fri Jun 24 19:11:40 IST 2022 INFO TestListeners-onTestStart-34 .ReportPageTest
+Fri Jun 24 19:11:40 IST 2022 INFO TestListeners-onTestStart-35 *********************onTestStart********************* visitMyReportsAndVerifyFeatures
+Fri Jun 24 19:11:40 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:11:40 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:11:40 IST 2022 INFO DriverManager-createDriver-51 On Create Driver...
+Fri Jun 24 19:11:40 IST 2022 INFO DriverManager-setDriver-38 on **************** setDriver
+Fri Jun 24 19:11:40 IST 2022 INFO WebDriverManagerUtils-initialization-33 On initialization 
+Fri Jun 24 19:11:40 IST 2022 INFO PropUtlis-readConfig-29 Chrome
+Fri Jun 24 19:11:40 IST 2022 INFO PropUtlis-readConfig-29 false
+Fri Jun 24 19:11:42 IST 2022 DEBUG WebDriverManagerUtils-initialization-48 Chrome Browser launched in Head Mode
+Fri Jun 24 19:11:42 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:11:51 IST 2022 INFO DriverManager-setDriverToThreadLocal-27 On SetDriverToThreadLocal
+Fri Jun 24 19:11:51 IST 2022 INFO DriverManager-setDriver-42 Driver is set
+Fri Jun 24 19:11:51 IST 2022 INFO DriverManager-getDriver-32 On GetAppiumDriver
+Fri Jun 24 19:11:51 IST 2022 INFO SikshaLokamClient-<init>-35 On Constructor SikshaLokamClient
+Fri Jun 24 19:11:51 IST 2022 INFO SikshaLokamClient-setSikshaLokamClient-40 On SetGoodWorkerClient
+Fri Jun 24 19:11:51 IST 2022 INFO TestListeners-onTestStart-42 instance created for Web
+Fri Jun 24 19:11:53 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-gestures-109 On Gestures
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-logger-78 On GetLogUtlis
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:53 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:54 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:57 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:58 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:11:58 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:11:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:58 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:11:59 IST 2022 INFO PropUtlis-readConfig-29 https://staging.sunbirded.org/
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:11:59 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:04 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:12 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:12:52 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:00 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:01 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:41 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:13:42 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:22 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:47 IST 2022 ERROR TestListeners-onTestFailure-66 OnTestFailure
+Fri Jun 24 19:14:47 IST 2022 ERROR TestListeners-onTestFailure-67 java.lang.AssertionError: PDF Button is not displayed. expected [true] but found [false]
+Fri Jun 24 19:14:47 IST 2022 INFO SikshaLokamClient-get-45 On SikshaLokamClient
+Fri Jun 24 19:14:47 IST 2022 INFO SikshaLokamClient-getScreenShot-95 on GetScreenShot
+Fri Jun 24 19:14:48 IST 2022 INFO GlobalSession-get-23 On GetAppiumManger Global
+Fri Jun 24 19:14:48 IST 2022 INFO DriverManager-quitDriver-60 On QuitDriver
+Fri Jun 24 19:14:48 IST 2022 INFO DriverManager-quitDriver-62 ***************************QUTTING**************************
+Fri Jun 24 19:14:48 IST 2022 INFO TestListeners-onFinish-108 *********************onFinish*********************
