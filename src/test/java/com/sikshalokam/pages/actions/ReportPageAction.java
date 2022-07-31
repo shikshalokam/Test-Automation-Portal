@@ -37,7 +37,12 @@ public class ReportPageAction {
     		SikshaLokamClient.get().gestures().click(reportPageObjects.exportAsButtonInReport);
     		Logger.logAndReportInfo("Clicked on the export as button in report.");
     	}
-    	
+    
+    	public void moveonExportAsButton() throws Exception {
+    		SikshaLokamClient.get().gestures().moveToElement(reportPageObjects.exportAsButtonInReport);
+    		Thread.sleep(5000);
+    		Logger.logAndReportInfo("Moved on to the export as button.");
+    	}
     	public void clickOnPDFButton() throws Exception {
     		SikshaLokamClient.get().gestures().click(reportPageObjects.pdfButton);
     		Logger.logAndReportInfo("Clicked on the pdf button.");
@@ -72,7 +77,14 @@ public class ReportPageAction {
     	}
     	
     	public void verifyPdfButtonInReport() throws Exception {
+    		//SikshaLokamClient.get().gestures().moveToElement(reportPageObjects.pdfButton);
+    		//Assert.assertTrue(SikshaLokamClient.get().gestures().isDisplayed(reportPageObjects.pdfButton));
             Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.pdfButton),"PDF Button is not displayed.");
     		Logger.logAndReportPass("PDF Button is displayed succesfully.");
+    	}
+    	
+    	public void verifyPdfButtonInReportBoolean() throws Exception {
+    		Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.pdfButton));
+    		Logger.logAndReportPass("Pdf button is displayed.");
     	}
 }

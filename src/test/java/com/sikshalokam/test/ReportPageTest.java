@@ -103,7 +103,9 @@ public class ReportPageTest {
         getReportPageActions().verifyQuestionTabInReport();
         getReportPageActions().verifyCriteriaTabInReport();
         getReportPageActions().verifyExportAsButtonInReport();
-        getReportPageActions().clickOnExportAsButton();
+        //getReportPageActions().clickOnExportAsButton();
+        getReportPageActions().moveonExportAsButton();
         getReportPageActions().verifyPdfButtonInReport();
+        //getReportPageActions().verifyPdfButtonInReportBoolean();
     }
 }

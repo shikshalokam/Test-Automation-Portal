@@ -26,7 +26,7 @@ public class ReportPageObjects {
 	@FindBy(xpath = "//button[text()=' Export As ']")
 	public WebElement exportAsButtonInReport;
 	
-	@FindBy(xpath = "//button[text()=' Pdf ']")
+	@FindBy(xpath = "(//div//button[text()=' Pdf '])[2]")
 	public WebElement pdfButton;
 	
 	@FindBy(xpath = "//button[text()=' Filters ']")
