@@ -10,6 +10,9 @@ import com.sikshalokam.utils.logger.Logger;
 import com.sikshalokam.utils.prop.PropUtlis;
 import com.sun.mail.iap.Argument;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -56,7 +59,8 @@ public class LoginPageAction {
 
     // enter user name to field.
     public void enterUserName(String userName) throws Exception {
-        SikshaLokamClient.get().gestures().click(loginPageObjects.userName);
+       // SikshaLokamClient.get().gestures().click(loginPageObjects.userName);
+        //SikshaLokamClient.get().gestures().waitAndClickElementisVisible(loginPageObjects.userName);
         SikshaLokamClient.get().gestures().sendValueToTextBox(loginPageObjects.userName, userName);
         SikshaLokamClient.get().report().log(Status.INFO, "Entered user name is : " + userName );
     }
@@ -161,7 +165,7 @@ public class LoginPageAction {
     }
 
     public void clickOnProfileIcon() throws Exception {
-        SikshaLokamClient.get().gestures().click(loginPageObjects.profile);
+        SikshaLokamClient.get().gestures().click(loginPageObjects.guestIcon);
         SikshaLokamClient.get().report().log(Status.INFO, "Clicked on User Icon");
     }
 
@@ -182,7 +186,8 @@ public class LoginPageAction {
     }
 
     public void clickOnContinue() throws Exception {
-    	SikshaLokamClient.get().gestures().click(loginPageObjects.continueButton);
+    	//SikshaLokamClient.get().gestures().click(loginPageObjects.continueButton);
+    	SikshaLokamClient.get().gestures().waitAndClickElementisVisible(loginPageObjects.continueButton);
     	Logger.logAndReportInfo("Clicked on the continue button");
     }
     
@@ -197,14 +202,18 @@ public class LoginPageAction {
     }
     
     public void clickOnMediumDropDown() throws Exception {
-    	Thread.sleep(1000);
+    	//Thread.sleep(1000);
+    	//SikshaLokamClient.get().gestures().click(loginPageObjects.mediumDropdown);
+    	SikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(loginPageObjects.mediumDropdown);
     	SikshaLokamClient.get().gestures().click(loginPageObjects.mediumDropdown);
     	Logger.logAndReportInfo("Clicked on the medium drop down");
     }
     
-    public void selectEnglishOption() throws Exception {
+    public void selectEnglishOption() throws Exception {	
     	SikshaLokamClient.get().gestures().click(loginPageObjects.englishOption);
+        Thread.sleep(2000);
     	Logger.logAndReportInfo("Selected the option english.");
+    	SikshaLokamClient.get().gestures().tabKeyAndWait();
     }
     
     public void clickOnClassDropDown() throws Exception {
@@ -215,7 +224,9 @@ public class LoginPageAction {
     
     public void selectClass1Option() throws Exception {
     	SikshaLokamClient.get().gestures().click(loginPageObjects.class1Option);
+    	Thread.sleep(2000);
     	Logger.logAndReportInfo("Selected the option class1.");
+    	SikshaLokamClient.get().gestures().tabKeyAndWait();
     }
     public void clickOnSubmitButtonOnCourseWindow() throws Exception {
     	SikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(loginPageObjects.courseWindowSubmitButton);
@@ -224,7 +235,8 @@ public class LoginPageAction {
     }
     
     public void clickOnSubmitButtonOnLocationWindow() throws Exception {
-    	SikshaLokamClient.get().gestures().click(loginPageObjects.LocationWindowSubmitButton);
+		js.executeScript("arguments[0].click();", loginPageObjects.LocationWindowSubmitButton);
+    	//SikshaLokamClient.get().gestures().click(loginPageObjects.LocationWindowSubmitButton);
     	Logger.logAndReportInfo("Clicked on the submit button on location selection window.");
     }
     
@@ -265,9 +277,14 @@ public class LoginPageAction {
     	Logger.logAndReportInfo("Clicked on the select state dropdown.");
     }
     
-    public void selectFirstStateFromDropdown() throws Exception {
-    	SikshaLokamClient.get().gestures().click(loginPageObjects.selectFirstState);
-    	Logger.logAndReportInfo("Selected the first state from dropdown.");
+    public void selectTNStateForStateLoginInStaging() throws Exception {
+    	SikshaLokamClient.get().gestures().click(loginPageObjects.TNStateForStateLogin);
+    	Logger.logAndReportInfo("Selected the Tamilnadu state from dropdown.");
+    }
+    
+    public void selectPreprodStateForStateLoginInPreprod() throws Exception {
+    	SikshaLokamClient.get().gestures().click(loginPageObjects.preprodclientStateLogin);
+    	Logger.logAndReportInfo("Selected the Preprod state from dropdown.");
     }
     
     public void clickOnBMCWindowTitle() throws Exception {
@@ -292,6 +309,11 @@ public class LoginPageAction {
     	return actualUserName;
     }
     
+    public boolean verifyNameOnProfile() throws Exception {
+    	SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.userNameOnProfile);
+    	Logger.logAndReportPass("User name on profile is present");
+		return true;
+    }
   //BMCL = Board, medium, class and location selection
     public void BMCLSelection() throws Exception {
     	 verifyWelcomeTitle();
@@ -327,6 +349,18 @@ public class LoginPageAction {
     	Logger.logAndReportInfo("Clicked on the submit button on state login");
     }
     
+    public void clickOnLoggedInProfileIcon() throws Exception {
+		js.executeScript("arguments[0].click();", loginPageObjects.loggedinProfileIcon);
+    	//SikshaLokamClient.get().gestures().click(loginPageObjects.loggedinProfileIcon);
+    	Logger.logAndReportInfo("Clicked on the logged in profile icon ");
+    }
+    
+    public void clickOnProgramDashboard() throws Exception {
+    	SikshaLokamClient.get().gestures().click(loginPageObjects.programDashboard);
+    	Logger.logAndReportInfo("Clicked on the program dashboard.");
+    }
+    
+    
     //************** Verify Actions *************************************//
     public void verifyObservationTile() throws Exception {
         Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.observations),"Observation title is not displayed.");
@@ -344,8 +378,8 @@ public class LoginPageAction {
 	}
 	
 	public void verifyRegisterWindowTitle() throws Exception {
-        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.registerTitle),"Register to DIKSHA title is not displayed.");
-		Logger.logAndReportPass("Register to DIKSHA title is displayed succesfully.");
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.registerTitle),"Register to DIKSHA / Sunbird title is not displayed.");
+		Logger.logAndReportPass("Register to DIKSHA / Sunbird title is displayed succesfully.");
 	}
 	
 	public void verifyInvalidLoginError() throws Exception {
@@ -375,5 +409,15 @@ public class LoginPageAction {
 	public void verifyDikshaUATLoginTitle() throws Exception {
         Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.dikshaUATLoginTitle),"Diksha UAT title is not displayed.");
 		Logger.logAndReportPass("Diksha UAT login title is displayed succesfully.");
+	}
+	
+	public void verifyDikshaUATLoginTitleForStaging() throws Exception {
+        Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.dikshaUATLoginTitle),"Diksha UAT title is not displayed.");
+		Logger.logAndReportPass("Diksha UAT login title is displayed succesfully.");
+	}
+	
+	public void verifyProgramDashboard() throws Exception {
+		Assert.assertTrue(SikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.programDashboard), "Program Dashboard is not displayed.");
+		Logger.logAndReportPass("Program Dashboard is displayed succesfully");
 	}
 }

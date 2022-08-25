@@ -171,13 +171,14 @@ public class LoginPageObjects {
     @FindBy(xpath="(//span[contains(text(),'English')])[2]")
     public WebElement englishOption;
     
-    @FindBy(xpath="//span[contains(text(),'Class1')]")
+    @FindBy(xpath="//mat-option[@aria-label=\"Class 1\"]")
     public WebElement class1Option;
     
     @FindBy(xpath = "//div[@aria-label='Select State']")
     public WebElement  selectStateDropdown;
     
-    @FindBy(xpath="(//span[contains(text(),'Uttar Pradesh')])[2]")
+    //@FindBy(xpath="(//span[contains(text(),'Uttar Pradesh')])[2]")
+    @FindBy(xpath="//span[contains(text(),'Uttar Pradesh')]")
     public WebElement uttarPradeshSate;
     
     @FindBy(xpath="(//span[contains(text(),'Andhra Pradesh')])")
@@ -189,7 +190,7 @@ public class LoginPageObjects {
     @FindBy(xpath="//a[text()=' Home ']")
     public WebElement homeButton;
     
-    @FindBy(xpath = "//h2[contains(text(),' Register on')]")
+    @FindBy(xpath = "//h5[contains(text(),' Register on')]")
     public WebElement registerTitle;
     
     @FindBy(xpath="//div[@id='error-summary']")
@@ -220,8 +221,11 @@ public class LoginPageObjects {
     ////div[@aria-label='Select State']
     public WebElement selectStateDropDownForLogin;
     
-    @FindBy(xpath = "(//div[@aria-label='Select State']/mat-option)[1]")
-    public WebElement selectFirstState;
+    @FindBy(xpath = "//span[text()='TN Staging SSO']")
+    public WebElement TNStateForStateLogin;
+    
+    @FindBy(xpath="//span[text()='Preprod Client']")
+    public WebElement preprodclientStateLogin;
     
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButtonOnStateLogin;
@@ -259,5 +263,10 @@ public class LoginPageObjects {
     @FindBy(xpath = "////h4[@class='mb-4']")
     public WebElement Ot;
     
+    @FindBy(xpath="(//div[contains(@class,'avatar')])[1]")
+    public WebElement loggedinProfileIcon;
+    
+    @FindBy(xpath = "(//div[@class='profile__actions']//li)[2]")
+    public WebElement programDashboard;
 }
 

@@ -6,10 +6,14 @@ import com.sikshalokam.report.SikshaLokamReport;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import static com.sikshalokam.utils.logger.DebugLogger.debugLogger;
@@ -198,5 +202,23 @@ public class Gestures {
         element.click();
     }
 
-
+    public void tabKeyAndWait() throws AWTException, InterruptedException {
+    	Robot r = new Robot();
+        r.keyPress(KeyEvent.VK_TAB);  
+         
+        //Release Enter
+         r.keyRelease(KeyEvent.VK_TAB);
+         Thread.sleep(2000);
+    }
+    
+    public void moveToElement(WebElement element) throws Exception {
+    	Thread.sleep(5000);
+    	Actions a = new Actions(driver);
+    	a.moveToElement(element).perform();
+    	/**a.moveByOffset(10,20).perform();
+    	a.click().perform();
+    	//move to an element
+    	//IWebElement l = driver.FindElement(By.name("txtnam"));
+    	a.moveToElement(element).perform(); **/
+    }
 }
