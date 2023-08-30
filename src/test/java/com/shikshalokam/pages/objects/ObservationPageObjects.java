@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ObservationPageObjects {
 
-	@FindBy(xpath = "//a[text()=' Observation ']")
+	@FindBy(xpath = "//a[text()=' Observations ']")
 	public WebElement observationButton;
 	
 	@FindBy(xpath = "//button[text()=' Update ']")
@@ -255,8 +255,8 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "//div[contains(text(),'Browse Other Categories')]")
     public WebElement browseOtherCategories;
-    
-    @FindBy(xpath = "//label[normalize-space()='Observation']")
+  //label[normalize-space()='Observation']
+    @FindBy(xpath = "//label[normalize-space()='Observations']")
     public WebElement observationTileunderBrowseOtherCategories;
     
     @FindBy(xpath = "//h4//bdi[normalize-space()='Automation rubric with multiple submission - Teacher']")
@@ -350,7 +350,7 @@ public class ObservationPageObjects {
     public WebElement observationWithoutRubric;
     
     
-    @FindBy(xpath = "//button[normalize-space()='Auto Capture']")
+    @FindBy(xpath = "//button[normalize-space()='Capture']")
     public WebElement withOutRubricAnswer1;
     
     @FindBy(xpath = "//label[normalize-space()='abc']")

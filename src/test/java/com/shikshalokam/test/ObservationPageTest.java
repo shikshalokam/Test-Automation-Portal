@@ -282,9 +282,9 @@ public class ObservationPageTest {
         getLoginPageActions().clickOnLoginButton();
         
         //using refreshpage due to blank screen showing up after login 
-        /* Thread.sleep(10000);
+         Thread.sleep(10000);
          getLoginPageActions().refreshpage();
-         Thread.sleep(5000);  */
+         Thread.sleep(5000);  
         
         
         switchEnvironmentforHomeButton();
@@ -367,20 +367,8 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnShareButton();
         getObservationPageActions().verifyUserIsAbleToConsumeObservation();
         //
-        
-        
-        
-        
+          
     }
     
-
-
-
-
-
-
-
-
-
 
 }
