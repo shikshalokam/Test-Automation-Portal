@@ -311,9 +311,9 @@ public class ObservationPageTest {
 
     }
 
-    @Test(description = "Verify Join Program and PII Pop up")
+    @Test(description = "Login as Ht & Officials to verify Join Program and PII Pop up")
     @Author(name = "SHREEJITH")
-    public void joiningProgramandVerifyingPIIpopupFromObservationTab() throws Exception {
+    public void joinProgramAndVerifyingPIIpopupFromObservationTab() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!L:M");
        // observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -336,13 +336,13 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObservationButton();
         Thread.sleep(3000);
         getObservationPageActions().verifyObservationTitle();
-       getObservationPageActions().clickOnObservationWithoutRubric2();
+       getObservationPageActions().clickOnObservationWithoutRubric2();         //Solution:  Without rubrics 2
         getObservationPageActions().verifyJoinProgramButton();
         getObservationPageActions().clickOnJoinProgramButton();
         getObservationPageActions().verifyPiiPopup();
         getObservationPageActions().verifyPiiPopupContents();
         getLoginPageActions().browserBackButton();
-        getObservationPageActions().clickOnObservationWithoutRubric2();
+        getObservationPageActions().clickOnObservationWithoutRubric2();           //Solution: Without rubrics 2
         getObservationPageActions().verifyPiiPopup();
         getObservationPageActions().checkTheCheckBox();
         getObservationPageActions().verifyshareButtonGotEnabled();
@@ -350,7 +350,7 @@ public class ObservationPageTest {
         getObservationPageActions().verifyUserIsAbleToConsumeObservation();
         getObservationPageActions().clickOnBackButton(); 
        Thread.sleep(2000);
-        getObservationPageActions().clickOnObservation2();
+        getObservationPageActions().clickOnObservation2();                              //Solution: Observation 2
         getObservationPageActions().clickOnAddSchoolButton();
         getObservationPageActions().verifyJoinProgramPopup();
         getObservationPageActions().verifyJoinProgramPopupContents();
@@ -370,5 +370,61 @@ public class ObservationPageTest {
           
     }
     
+    
+    @Test(description = "Login as Teacher to verify Join Program and PII Pop up")
+    @Author(name = "SHREEJITH")
+    public void teacherLoginJoinProgramAndVerifyingPIIpopupFromObservationTab() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!L:M");
+       
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("TeacherNewUserName"));
+        getLoginPageActions().enterPassword(loginTestData.get("TeacherNewpassword"));
+        getLoginPageActions().clickOnLoginButton();
+        
+        //using refreshpage due to blank screen showing up after login 
+         Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        
+        switchEnvironmentforHomeButton();
+        getObservationPageActions().clickOnObservationTileunderBrowseOtherCategories();
+        Thread.sleep(3000);
+        getObservationPageActions().verifyObservationTitle();
+       getObservationPageActions().clickOnObservationWithoutRubricTeacher();   ////Solution:  Observation Without Rubric Teacher
+        getObservationPageActions().verifyJoinProgramButton();
+        getObservationPageActions().clickOnJoinProgramButton();
+        getObservationPageActions().verifyPiiPopup();
+        getObservationPageActions().verifyPiiPopupContents();
+        getLoginPageActions().browserBackButton();
+        getObservationPageActions().clickOnObservationWithoutRubricTeacher();   //Solution:  Observation Without Rubric Teacher
+        getObservationPageActions().verifyPiiPopup(); 
+        getObservationPageActions().checkTheCheckBox();
+        getObservationPageActions().verifyshareButtonGotEnabled();
+        getObservationPageActions().clickOnShareButton();
+        getObservationPageActions().verifyUserIsAbleToConsumeObservation();
+        getObservationPageActions().clickOnBackButton(); 
+       Thread.sleep(2000);
+        getObservationPageActions().clickOnObservation2();    //Solution: Observation 2
+        getObservationPageActions().clickOnAddSchoolButton();
+        getObservationPageActions().verifyJoinProgramPopup();
+        getObservationPageActions().verifyJoinProgramPopupContents();
+        getObservationPageActions().clickOnCloseButtonOnPopup();
+        Thread.sleep(2000);
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().verifyJoinProgramPopup();
+        getObservationPageActions().verifyJoinProgramPopupContents();
+        getObservationPageActions().clickOnJoinProgramButtonOnPopup();
+        getObservationPageActions().verifyPiiPopup();
+        getObservationPageActions().verifyPiiPopupContents();
+        getObservationPageActions().checkTheCheckBox();
+        getObservationPageActions().verifyshareButtonGotEnabled();
+        getObservationPageActions().clickOnShareButton();
+        getObservationPageActions().verifyUserIsAbleToConsumeObservation();
 
 }
+    }

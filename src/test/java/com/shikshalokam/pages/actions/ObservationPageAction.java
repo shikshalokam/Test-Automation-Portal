@@ -173,6 +173,13 @@ public class ObservationPageAction {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithoutRubric2);
     	    Logger.logAndReportInfo("Clicked on Without rubric 2.");
     	}
+    	public void clickOnObservationWithoutRubricTeacher() throws Exception {
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.obsObservationWithoutRubricTeacher);
+    	    Logger.logAndReportInfo("Clicked on Observation Without Rubrics Teacher.");
+
+    		
+    	}
+    	
     	//parent child actions
     	/*public void clickOn1stAnswerFor1stParent() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.parent1firstAnswer);

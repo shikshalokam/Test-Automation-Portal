@@ -417,6 +417,9 @@ public class ObservationPageObjects {
  	public WebElement checkbox;
 	
 	
+	@FindBy(xpath = "(//h4//bdi[.= 'Observation without Rubrics Teacher'])[1]")
+	public WebElement obsObservationWithoutRubricTeacher;
+	
 	@FindBy(xpath = "(//h4//bdi[.= 'Observation 2'])[1]")
 	public WebElement obsObservation2;
 	
