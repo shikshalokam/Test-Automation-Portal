@@ -465,6 +465,28 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
     	Thread.sleep(2000);	
     }
     
+    
+    public void clickOnSelectroleDropdown() throws Exception {
+        ShikshaLokamClient.get().gestures().click(loginPageObjects.roledropdown);
+        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked role dropdown");
+    }
+    
+    public void selectTeacherOnProfile() throws Exception {
+    	ShikshaLokamClient.get().gestures().click(loginPageObjects.teacherRoleonprofile);
+        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Teacher ");
+    }
+    
+    public void selectStudentOnProfile() throws Exception {
+    	ShikshaLokamClient.get().gestures().click(loginPageObjects.studentRoleonprofile);
+        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Student ");
+    }
+
+    public void selectParentOnProfile() throws Exception {
+    	ShikshaLokamClient.get().gestures().click(loginPageObjects.parentRoleonprofile);
+        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Parent ");
+    }
+  
+    
     //************** Verify Actions *************************************//
     public void verifyObservationTile() throws Exception {
         Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.observations),"Observation title is not displayed.");
@@ -554,7 +576,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
 	    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.YourLocationPopUp),"Your Location pop-up is not displayed");  
 	    	Logger.logAndReportInfo("Your Location pop-up is displayed");
 	    }
-	    public void verifySubmitButtonEnabledonPersonaldetailspage() throws Exception {
+	    public void verifyAndClickOnSubmitButtonOnPersonaldetailspage() throws Exception {
 			   ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(loginPageObjects.submitbuttonpersonadetailspage);
 			  Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(loginPageObjects.submitbuttonpersonadetailspage),"Submit button not Enabled on Personal Details page.");
 			   Logger.logAndReportInfo("Submit button is Enabled on Personal Details page.");
@@ -586,4 +608,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
 	         verifyHomeButton();
 	    }
 	    
+	   
+	    
+	  
 }

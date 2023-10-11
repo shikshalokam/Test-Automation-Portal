@@ -681,7 +681,15 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		 Thread.sleep(2000);
   	  } 
     
+    public void ClickCloseDashboardButton() throws Exception {
+    	ShikshaLokamClient.get().gestures().click(programDashboardObjects.CloseDashboardButton);
+		Logger.logAndReportInfo("Close Dashboard is present and clicked on it and user is landed on the Home page.");
+	  }
     
+    public void ClickResetFilterButton() throws Exception {
+    	ShikshaLokamClient.get().gestures().click(programDashboardObjects.ResetFilterButton);
+		Logger.logAndReportInfo("Clicked on Reser filter Button.");
+	  }
     
     }
 

@@ -254,5 +254,84 @@ public class ProgramDashboardTest {
     
 
 }
+    //..................................REG..............................................//
+
+    @Test(description = "To verify when user clicks on back button and Close dashboard on the page will takes user to the Home screen of the portal")
+    @Author(name = "GAGAN")
+    public void programDashboardBackButtonCloseDashboardButton_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();  
+        
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
+        getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
+        //Thread.sleep(2000);
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(3000);
+        
+        //using refreshpage due to blank screen showing up after login 
+        Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        getLoginPageActions().clickOnGuest();
+
+        getProgramDashboardActions().clickOnprogramdashboard();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectNewProgram();
+        Thread.sleep(2000);
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+        getLoginPageActions().clickOnBackbutton();
+        getLoginPageActions().clickOnGuest();
+        getProgramDashboardActions().clickOnprogramdashboard();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectNewProgram();
+        Thread.sleep(2000);
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+        getProgramDashboardActions().ClickCloseDashboardButton();
+    }
     
+    
+    
+    @Test(description = "To verify if User is able to Reset the filters.")
+    @Author(name = "GAGAN")
+    public void ResetFilterPD_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();  
+        
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
+        getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
+        //Thread.sleep(2000);
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(3000);
+        
+        //using refreshpage due to blank screen showing up after login 
+        Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        getLoginPageActions().clickOnGuest();
+
+        getProgramDashboardActions().clickOnprogramdashboard();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectOldProgram();
+        Thread.sleep(2000);
+      //  getProgramDashboardActions().selectProjectResource();
+      
+       
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+        getProgramDashboardActions().clickOnProgramDatasetsTab();
+        getProgramDashboardActions().selectProjectResource();
+        getProgramDashboardActions().selectDistrictandOrgPD();
+        getProgramDashboardActions().ClickResetFilterButton();
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+
+    }
 }

@@ -243,12 +243,14 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="//span[normalize-space()='Survey 4.4 Reg Test - FD 235']")
      public  WebElement surveystaging;
      
-     
      @FindBy(xpath="//span[normalize-space()='Survey Test Expiry -29/12/2021 -- FD 196']")
      public  WebElement surveypreprod;
      
-    
+     @FindBy(xpath="//button[@class='sb-btn sb-btn-primary sb-btn-normal px-24']")
+     public WebElement CloseDashboardButton;
   
+     @FindBy(xpath="//button[normalize-space()='Reset filters']")
+     public WebElement ResetFilterButton;
 }
 		
 		

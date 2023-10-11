@@ -41,6 +41,12 @@ public class ObservationPageObjects {
 	@FindBy(xpath="/html[1]/body[1]/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/mat-dialog-content[2]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]")                //(//label)[4]
 	public WebElement firstEntity;
 	
+	@FindBy(xpath="/html[1]/body[1]/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/mat-dialog-content[2]/div[1]/div[1]/div[1]/div[2]/div[1]/label[1]")                
+	public WebElement secondEntity;
+	
+	@FindBy(xpath="/html[1]/body[1]/div[2]/div[2]/div[1]/mat-dialog-container[1]/div[1]/mat-dialog-content[2]/div[1]/div[1]/div[1]/div[3]/div[1]/label[1]")                
+	public WebElement thirdEntity;
+	
 	@FindBy(xpath="//label[contains(text(),'MPPS HANUMANNAHALLI')]")
 	public WebElement hanumanahalliEntity;
 	
@@ -416,6 +422,8 @@ public class ObservationPageObjects {
 	@FindBy(xpath = "//input[@type='checkbox']")
  	public WebElement checkbox;
 	
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+ 	public WebElement checkbox1;
 	
 	@FindBy(xpath = "(//h4//bdi[.= 'Observation without Rubrics Teacher'])[1]")
 	public WebElement obsObservationWithoutRubricTeacher;
@@ -437,8 +445,75 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-questionnaire[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/sl-input[1]/div[1]/div[1]/div[1]/div[2]/sl-page-questions[1]/sl-input[1]/div[8]/div[1]/div[1]/div[1]/div[1]/div[1]")
     public WebElement demoq9;
+    
+    @FindBy(xpath = "//bdi[normalize-space()='Observation with rubric(Multiple submission)FD830D']")
+    public WebElement ObservationNamePresentOnCard;
    
+    @FindBy(xpath = "//div[@id='3']//span[@title='English'][normalize-space()='English']")
+    public WebElement LanguagePresentOnCard;
+    
+    @FindBy(xpath = "//div[@id='3']//span[@title='Support'][normalize-space()='Support']")
+    public WebElement CreatorNamePresentOnCard;
+   
+    @FindBy(xpath = "//div[@id='3']//div[@class='sb--card__meta2 text-left']")
+    public WebElement ProgramNamePresentOnCard;
+    
+    @FindBy(xpath = "//bdi[normalize-space()='Obs with rubrics HT']")
+    public WebElement ObsWithRubric;
+    
+    @FindBy(xpath = "//div[@id='1']//bdi[contains(text(),'Without rubric 2')]")
+    public WebElement ObsWithoutRubric;
+    
+    @FindBy(xpath = "//h4[@class='mb-4']")
+    public WebElement ObservationNameOnObservationDetailsPage;
+    
+    @FindBy(xpath = "//div[@class='fsmall']")
+    public WebElement ProramNameOnObservationDetailsPage;
+    
+    @FindBy(xpath = "//button[@class='sb-btn sb-btn-primary sb-btn-normal mr-8']")
+    public WebElement clickOnAddEntityButton;
+    
+    @FindBy(xpath = "//button[@aria-label='close dialog']")
+    public WebElement crossIconOnAddEntityPopup;
+   
+    @FindBy(xpath = "(//label[@class='d-flex w-100 flex-jc-space-between'])[1]")
+    public WebElement SchoolNameAddedByDefaultInObservationDetailsPage;
+    
+    @FindBy(xpath = "(//div//input[@type='checkbox'])[2]")
+	public WebElement AddentityCheckBox;
+    
+    @FindBy(xpath = "//div[@id='0']//bdi[contains(text(),'Observation Without Rubrics NOC Test')]")
+    public WebElement ObservationWithoutRubricInstanceName;
+    
+    @FindBy(xpath = "//div[normalize-space()='Edit']")
+    public WebElement EditOnThreedots;
+    
+    @FindBy(xpath = "(//div//input[@type='text'])[2]")
+    public WebElement TextOnEditInstanceName;
+    
+    @FindBy(xpath = "//button[normalize-space()='Update']")
+    public WebElement UpdateButtonOnObservationInstancepopup;
+    
+    @FindBy(xpath = "//button[normalize-space()='Cancel']")
+    public WebElement CancelButtonOnObservationInstancepopup;
+    
+    @FindBy(xpath = "//div[@id='0']//bdi[contains(text(),'Observation with Rubrics for program 1')]")
+    public WebElement ObsWithRubricSingleSubmission;
+    
+    @FindBy(xpath = "//label[@for='493590d5-ab64-4e2d-8b0a-c2820cb86020'][1]")
+    public WebElement DefaultEntityAddedObsWithRubricSingleSubmission;
+    
+    @FindBy(xpath = "//h4[@class='font-weight-bold']")
+    public WebElement ObservationDetailsText;
+    
+    @FindBy(xpath = "//div[@class='popup-body ng-star-inserted']")
+    public WebElement CloseButtonOnAddEntityPage;  
+    
+    @FindBy(xpath = "//div[@class='popup-body ng-star-inserted']")
+    public WebElement DeleteEntityMessage;  
     
   
-   
+
+    
+    
 }

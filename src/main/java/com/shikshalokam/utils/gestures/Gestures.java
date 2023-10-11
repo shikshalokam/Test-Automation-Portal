@@ -6,6 +6,7 @@ import com.shikshalokam.report.ShikshaLokamReport;
 import com.shikshalokam.utils.logger.Logger;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -321,7 +322,10 @@ public class Gestures {
 	  public void getuserdir() {
 		 System.getProperty("user.dir");
 	    }
-
+	  public void scrollToElement(WebElement element) throws Exception {
+		   JavascriptExecutor js = (JavascriptExecutor) ShikshaLokamClient.get().driver();
+		   js.executeScript("arguments[0].scrollIntoView(true);", element);	
+	   }
 	
 	}
 

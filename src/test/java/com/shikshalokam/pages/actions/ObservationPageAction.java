@@ -72,7 +72,12 @@ public class ObservationPageAction {
     	
     	public void clickOnEntityDeleteConfirmationYes() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.yesConfirmationForEntityDelete);
-    		Logger.logAndReportInfo("Clicked on the yes confirmation for entity deletion.");
+    		Logger.logAndReportInfo("Clicked on the yes confirmation for entity deletion and entity gets deleted");
+    	}
+    	
+    	public void clickOnEntityDeleteConfirmationNo() throws Exception {
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.noConfirmationForEntityDelete);
+    		Logger.logAndReportInfo("Clicked on the no confirmation for entity deletion.");
     	}
     	
     	public void clickOnAddSchoolButton() throws Exception {
@@ -133,6 +138,11 @@ public class ObservationPageAction {
     		Logger.logAndReportInfo("Clicked on the three dot on observation. ");
     		Thread.sleep(2000);
     	}
+    	
+    	public void verifyThreeDotNotPresent() throws Exception {  
+            Assert.assertTrue(ShikshaLokamClient.get().gestures().verifyNoelement(observationPageObjects.observeAgainButton),"Three Dot is Present");
+        	   Logger.logAndReportPass("Three Dot is Not present for single submission observation");
+         }
     	
     	public void clickOnDeleteOptionFromThreeDotObservation() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.deleteOptionForObservation);
@@ -770,7 +780,11 @@ public class ObservationPageAction {
                }
                return false;
             }
-            catch(Exception e)
+            cpublic void verifyObservationListingScreen() throws Exception {
+    		Thread.sleep(2000);
+            Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.observationTitle),"Not Redirected to Observation listing page");
+    		Logger.logAndReportPass("Redirected to Observation listing page");
+    	}atch(Exception e)
             {
             	Logger.logAndReportPass("No entity added by default");
                 return true;
@@ -1073,8 +1087,146 @@ public class ObservationPageAction {
     	    	    observationPageObjects.fileUpload1.sendKeys(filepath+"//Fileupload_files//Shikshalokam.jpg");
     	            ShikshaLokamClient.get().gestures().click(observationPageObjects.okOnevidenceUplodedPopup);
     		}
-               ////////
-            
+          
+               public void verifyNoObservationTab() throws Exception {
+          		  Assert.assertTrue(ShikshaLokamClient.get().gestures().verifyNoelement(observationPageObjects.observationButton),"observation tab is present");
+         	    	Logger.logAndReportPass("Observation tab is not present");
+                }
+               
+               public void verifyObservationNameOnCard() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ObservationNamePresentOnCard),"Observation name is not displayed.");
+           		Logger.logAndReportPass("Observation name is displayed succesfully on card i,e Observation with rubric(Multiple submission)FD830D");
+           	}
+               
+               public void verifyLanguageOnCard() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.LanguagePresentOnCard),"Language is not displayed.");
+           		Logger.logAndReportPass("Language is displayed succesfully on card i,e English");
+           	}
+               
+               public void verifyCreatorNameOnCard() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.CreatorNamePresentOnCard),"Creator name is not displayed.");
+           		Logger.logAndReportPass("Creator Name displayed succesfully on card i,e Support");
+           	}
+               
+               public void verifyProgramNameOnCard() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ProgramNamePresentOnCard),"Program name is not displayed.");
+           		Logger.logAndReportPass("Program Name displayed succesfully on card i,e Testing program 5.0.2");
+           	}
+               public void clickObservationWithRubric() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithRubric),"Not clicked on observation");
+           		Logger.logAndReportPass("Clicked on Observation with rubric observation and landed on Observation details page");
+           	}
+               
+               public void clickObservationWithoutRubric() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithoutRubric),"Not clicked on observation");
+           		Logger.logAndReportPass("Clicked on Observation without rubric observation and landed on Observation details page");
+           	}
+               public void clickOnAddEntityButton() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.clickOnAddEntityButton),"Not clicked on Add entity button");
+           		Logger.logAndReportPass("Clicked on Add entity button");
+           	}
+               public void clickOnCrossIconOnAddEntityPage() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.crossIconOnAddEntityPopup),"Not clicked on cross icon");
+           		Logger.logAndReportPass("Clicked on Cross Icon on add entity pop up and user stays on the observation details page");
+           	} 
+               public void DefaultEntityAdded() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.SchoolNameAddedByDefaultInObservationDetailsPage),"School Entity not added by default");
+           		Logger.logAndReportPass("School entity added by default in Observation details page for rubric with singlw submission observation");
+           	} 
+               public void SelectEntityInThePopup() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.AddentityCheckBox),"School Entity not added by default");
+           		Logger.logAndReportPass("School entity added by default in Observation details page");
+           	} 
+              
+               public void selectMultipleEntities() throws Exception {
+               	ShikshaLokamClient.get().gestures().waitForElementToAppear(observationPageObjects.firstEntity);
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.firstEntity);
+           		Logger.logAndReportInfo("Selected first entity.");
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.secondEntity);
+           		Logger.logAndReportInfo("Selected second entity");
+           	    Thread.sleep(1000);
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.thirdEntity);
+           		Logger.logAndReportInfo("Selected third entity");
+           	    Thread.sleep(1000);
+           	} 
+               public void DeselectEntities() throws Exception {
+                  	ShikshaLokamClient.get().gestures().waitForElementToAppear(observationPageObjects.firstEntity);
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.firstEntity);
+              		Logger.logAndReportInfo("DeSelected first entity.");
+              		 Thread.sleep(1000);
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.secondEntity);
+               		Logger.logAndReportInfo("Selected second entity");
+               		
+            }
+               
+               public void verifyDeleteIconisNotPresent() throws Exception {  
+               Assert.assertTrue(ShikshaLokamClient.get().gestures().verifyNoelement(observationPageObjects.deleteButtonForEntity),"Delete icon is Present");
+           	   Logger.logAndReportPass("Delete icon is not Present since instance is already generated");
+            }
+               
+               public void verifyNoObserveAgainButton() throws Exception {
+           		//ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(observationPageObjects.observeAgainButton);;
+            	Assert.assertTrue(ShikshaLokamClient.get().gestures().verifyNoelement(observationPageObjects.observeAgainButton),"Observe again button is Present");
+           		Logger.logAndReportInfo("observe again button is not present for single submission observations.");
+           	    }
+               
+               public void ClickedOnObservationWithoutRubric() throws Exception {  
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.ObservationWithoutRubricInstanceName),"Not clicked on observation without rubric");
+               	   Logger.logAndReportInfo("Clicked on Observation without rubric");
+                }
+               
+               public void ClickedOnEditIconOnThreeDots() throws Exception {  
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.EditOnThreedots),"Not clicked on Edit icon");
+               	   Logger.logAndReportInfo("Clicked on Edit icon under 3 dots");
+                }
+               
+               public void ClearAndEnterTextNewObservationInstanceName() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.TextOnEditInstanceName);
+            	   ShikshaLokamClient.get().gestures().clear(observationPageObjects.TextOnEditInstanceName);               	   
+            	   Logger.logAndReportInfo("Instance name cleared");
+               	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.TextOnEditInstanceName, "Test Engineerrr");
+            	   Logger.logAndReportInfo("New instance name entered");
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.UpdateButtonOnObservationInstancepopup);
+               	   Logger.logAndReportInfo("Updated the observation instance name");
+               	   ShikshaLokamClient.get().gestures().click(observationPageObjects.CancelButtonOnObservationInstancepopup);
+            	   Logger.logAndReportInfo("Clicked on cancel on observation instance name change popup");
+                }
+               
+               public void ClickedOnCancelButtonOnObservationInstancePopup() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.CancelButtonOnObservationInstancepopup);
+            	   Logger.logAndReportInfo("Clicked on cancel on observation instance name change popup");
+                }
+               
+               public void ClickedOnObsevationWithRubricSingleSubmission() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithRubricSingleSubmission);
+            	   Logger.logAndReportInfo("Clicked on observation with rubric single submission");
+                }
+               
+               public void DefaultEntityAddedForObsWithRubricSingleSubmission() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.DefaultEntityAddedObsWithRubricSingleSubmission),"Default entity not added.");
+           		Logger.logAndReportPass("Default entity added for observation with rubric single submission");
+           	}
+               public void verifyTextOnObservationDetailsPage() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ObservationDetailsText),"Not landed on observation details page");
+           		Logger.logAndReportPass("Landed on observation details page");
+           	}
+               public void ClickedOnCloseButton() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.CloseButtonOnAddEntityPage);
+            	   Logger.logAndReportInfo("Clicked on Close Button on add entity pop up");
+                }
+               
+               public void verifyTextMessageOnDeleteEntityPopup() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.DeleteEntityMessage),"Message not displayed");
+           		Logger.logAndReportPass("Delete entity popup message is displayed");
+           	}
+                  
+                  
+               
+           
+             
+               
+               
+                     
 }
 
 

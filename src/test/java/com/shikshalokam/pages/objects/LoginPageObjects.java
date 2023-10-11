@@ -336,13 +336,28 @@ public class LoginPageObjects {
     @FindBy(xpath = "//span[.='AGALI']")
     public WebElement AgaliBlock;
     
+  //-----------------------------------REG-----------------------------------//
     
-    //////////////
+    @FindBy(xpath = "//div[@id='persona']//sb-caret-down[@class='cfe-multiselect-field-caret caret-down ng-star-inserted']//*[name()='svg']")
+    public WebElement roledropdown;
+    
+    @FindBy(xpath = "//div//span[.='Teacher']")
+    public WebElement teacherRoleonprofile;
+    
+    @FindBy(xpath = "//div//span[.='Student']")
+    public WebElement studentRoleonprofile;
+  
+    @FindBy(xpath = "//div//span[.='Parent']")
+    public WebElement parentRoleonprofile;
+
+
+
+  
   
     
   
  
     
-    ///html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/ng-component[1]/div[2]/div[1]/div[1]/section[2]/div[1]/div[4]/button[1]
-}//span[.='AGALI']
+    
+}
 
