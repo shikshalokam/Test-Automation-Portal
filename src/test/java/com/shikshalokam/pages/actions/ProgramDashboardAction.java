@@ -16,10 +16,13 @@ import com.shikshalokam.utils.prop.PropUtlis;
 public class ProgramDashboardAction {
 	
 	ProgramDashboardObjects programDashboardObjects;
+	LoginPageObjects loginPageObjects;
 	
-	 public ProgramDashboardAction() throws Exception {
+	public ProgramDashboardAction() throws Exception {
 		 programDashboardObjects = PageFactory.initElements(ShikshaLokamClient.get().driver(), ProgramDashboardObjects.class);
+		 loginPageObjects = PageFactory.initElements(ShikshaLokamClient.get().driver(), LoginPageObjects.class);
 	    }
+	 
 	      SoftAssert softAssert = new SoftAssert();
 
 	    JavascriptExecutor js = (JavascriptExecutor) ShikshaLokamClient.get().driver();
@@ -55,14 +58,44 @@ public class ProgramDashboardAction {
 			ShikshaLokamClient.get().gestures().click(programDashboardObjects.Programdatasets);
 ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets Tab");
 	 }
-	
-	
+	 
+	 public void clickOnDistrictWiseStatusTab() throws Exception {
+	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.DistrictWiseStatus);
+		Logger.logAndReportInfo("Clicked On District Wise Status Tab");
+	 }
+	 
+	 public void clickOnBlockWiseStatusTab() throws Exception {
+	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.BlockWiseStatus);
+		Logger.logAndReportInfo("Clicked On Block Wise Status Tab");
+	 }
 	 
 
 		public void verifyselectProgramPopup() throws Exception {
 	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectProgramPopup),"Select Program Pop-up is not displayed.");
 			Logger.logAndReportPass("Select Program is displayed. succesfully");
 		}
+		
+		public void verifyContentsOfSelectProgramPopup() throws Exception {
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.infoIcon),"Info icon is not displayed.");
+			Logger.logAndReportPass("Info icon is displayed succesfully");
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectProgramPopup),"Select Program Pop-up is not displayed.");
+			Logger.logAndReportPass("Header - Note: Please select a program. is displayed");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.crossIcon),"Cross icon 'x' icon is not displayed.");
+			Logger.logAndReportPass("Cross icon 'x' icon is displayed succesfully");
+		}
+		
+		public void clickOnCrossIcon() throws Exception {
+			 ShikshaLokamClient.get().gestures().click(programDashboardObjects.crossIcon);
+	        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Cross icon 'X'");
+	    }
+		
+		public void verifyUserOnHomePage() throws Exception {
+			 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(loginPageObjects.homeButton);
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.homeButton),"User is not Redirected to Home page");
+			Logger.logAndReportPass("User is Redirected to Home page");	
+	    }
+		
+		
 		
 		 public void clickOnSelectProgramDropdown() throws Exception {
 			 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.selectprogramdropdownonpopup);
@@ -84,9 +117,30 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		        	 js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.programTesting4point4);
 		    		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.programTesting4point4);
 		    	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected Testing 4.4 Program");
+		    	        Thread.sleep(2000);
+		    	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.programTesting4point4) ,"Same Program is not selected under Datasets Tab");
+		   			 Logger.logAndReportPass("Same Program is selected under Datasets Tab by Default");
 		        }
 		        
 		    }
+		 public void selectProgramAgain() throws Exception {
+			 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectprogramFromFilter);
+			Thread.sleep(2000);
+		        if(getEnvironmentValue().contains("diksha")) {
+		            ShikshaLokamClient.get().report().log(Status.INFO, "NO Program");	
+		        } else if(getEnvironmentValue().contains("preprod")) {
+		        	 js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.programTestingProgram4point4);
+		    		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.programTestingProgram4point4);
+		    	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected Testing Program 4.4 Program");
+		        } else {
+		        	 js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.programTesting4point4);
+		    		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.programTesting4point4);
+		    		 Logger.logAndReportPass("selected Program Again from filter on Program Datasets Tab");
+		    	          
+		        }
+		        
+		    }
+		 
 		 public void selectNewProgram() throws Exception {
 			 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectprogramdropdownonpopup);
 			Thread.sleep(2000);
@@ -249,7 +303,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
    	    	
    	    	public void VerifySelectResourceMessage() throws Exception {
    	            Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.SelectResourceMessage),"*Please select the resource name to get data message doesn't shows up.");
-   	    		Logger.logAndReportInfo("*Please select the resource name to get data message shows up.");
+   	    		Logger.logAndReportInfo("*Please select the resource name to get data - message shows up.");
    	    	}
    	    	
    	    	//selecting district and organisation in staging
@@ -327,21 +381,72 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
    	  public void requestTaskreport() throws Exception {
    		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.taskReport);
    		 Logger.logAndReportPass("Selected Task Report .");
-		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.requestReport),"Request Report button is not Enabled.");
+		
+   		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.requestReport),"Request Report button is not Enabled.");
 		 Logger.logAndReportPass("Request Report button is Enabled.");
 		
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
 		 Logger.logAndReportInfo("Clicked on Request Report.");
-		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Request Report Password Pop-up is not Displayed");
-		 Logger.logAndReportPass("Request Report Password Pop-up is Displayed");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+	     
 		 ShikshaLokamClient.get().gestures().sendValueToTextBox(programDashboardObjects.enterPassword,"Test1234");
 		 Logger.logAndReportInfo("Entered password as : Test1234");
+		
 		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.yesbutton),"Yes button is not Enabled.");
 		 Logger.logAndReportPass("Yes button is Enabled.");
 		 //********
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.nobutton);
 		 Thread.sleep(2000);
    	  } 
+   	  
+   	public void requestTaskreportYes() throws Exception {
+   	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
+  		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.taskReport);
+  		 Logger.logAndReportPass("Selected Task Report .");
+		
+  		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.requestReport),"Request Report button is not Enabled.");
+		 Logger.logAndReportPass("Request Report button is Enabled.");
+		
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
+		 Logger.logAndReportInfo("Clicked on Request Report.");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+	     
+		 ShikshaLokamClient.get().gestures().sendValueToTextBox(programDashboardObjects.enterPassword,"Test1234");
+		 Logger.logAndReportInfo("Entered password as : Test1234");
+		
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.yesbutton),"Yes button is not Enabled.");
+		 Logger.logAndReportPass("Yes button is Enabled.");
+		 //********
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.yesbutton);
+		 Thread.sleep(2000);
+		 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.reportRequestedPopup);
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.reportRequestedPopup),"Your Report Has Been Requested Pop-up is not Displayed");
+		 Logger.logAndReportPass("Your report has been requested and will be available to download after 24 hours - Pop-up is Displayed");
+		 ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("OK button is Enabled ");
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("Clicked on OK button on Report Requested Popup");
+  	  } 
    	  
   	public void requestStatusreport() throws Exception {	
   		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
@@ -389,9 +494,12 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		Thread.sleep(2000);
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.yesbutton);
 		 Logger.logAndReportInfo("Clicked Yes Button on Request Report Yes No Pop-up.");
-		ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.reportRequestedPopup);
+		
+		 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.reportRequestedPopup);
 		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.reportRequestedPopup),"Your Report Has Been Requested Pop-up is not Displayed");
-		 Logger.logAndReportPass("Your Report Has Been Requested Pop-up is Displayed");
+		 Logger.logAndReportPass("Your report has been requested and will be available to download after 24 hours - Pop-up is Displayed");
+		 ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("OK button is Enabled ");
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.okButtonOnReportRequestedPopup);
 		 Logger.logAndReportInfo("Clicked on OK button on Report Requested Popup");
  	}
@@ -434,8 +542,19 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
 		 Logger.logAndReportInfo("Clicked on Request Report.");
-		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Request Report Password Pop-up is not Displayed");
-		 Logger.logAndReportPass("Request Report Password Pop-up is Displayed");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+	     
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+		 
 		 ShikshaLokamClient.get().gestures().sendValueToTextBox(programDashboardObjects.enterPassword,"Test1234");
 		 Logger.logAndReportInfo("Entered password as : Test1234");
 		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.yesbutton),"Yes button is not Enabled.");
@@ -445,6 +564,53 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		 Thread.sleep(2000);
   	  } 
     
+    public void requestFilteredTaskDetailreportYes() throws Exception {
+    	Thread.sleep(2000);
+    	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
+    	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.filteredtaskReport);
+    	 Logger.logAndReportPass("Selected Filtered Task Detail Report .");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.requestReport),"Request Report button is not Enabled.");
+		 Logger.logAndReportPass("Request Report button is Enabled.");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.mintasksinProject),"Minimum no. of tasks in the project textfield is not Present.");
+    	 Logger.logAndReportInfo("Minimum no. of tasks in the project textfield is Present.");
+         Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.mintaskEvidence),"Minimum no. of task evidence textfield is not Present.");
+	     Logger.logAndReportInfo("Minimum no. of task evidence textfield is Present.");
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.minprojectEvidence),"Minimum no. of project evidence textfield is not Present.");
+		 Logger.logAndReportInfo("Minimum no. of project evidence textfield is Present.");
+		 
+		
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
+		 Logger.logAndReportInfo("Clicked on Request Report.");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+	     
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+		 
+		 ShikshaLokamClient.get().gestures().sendValueToTextBox(programDashboardObjects.enterPassword,"Test1234");
+		 Logger.logAndReportInfo("Entered password as : Test1234");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.yesbutton),"Yes button is not Enabled.");
+		 Logger.logAndReportPass("Yes button is Enabled.");
+		 //********
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.yesbutton);
+		 Thread.sleep(2000);
+		 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.reportRequestedPopup);
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.reportRequestedPopup),"Your Report Has Been Requested Pop-up is not Displayed");
+		 Logger.logAndReportPass("Your report has been requested and will be available to download after 24 hours - Pop-up is Displayed");
+		 ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("OK button is Enabled ");
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("Clicked on OK button on Report Requested Popup");
+  	  } 
+   
     public void selectObswithrubrics() throws Exception {
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectresoursedropdown);
 		Thread.sleep(2000);
@@ -554,8 +720,18 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
 		 Logger.logAndReportInfo("Clicked on Request Report.");
-		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Request Report Password Pop-up is not Displayed");
-		 Logger.logAndReportPass("Request Report Password Pop-up is Displayed");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+	     
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+		 
 		 ShikshaLokamClient.get().gestures().sendValueToTextBox(programDashboardObjects.enterPassword,"Test1234");
 		 Logger.logAndReportInfo("Entered password as : Test1234");
 		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.yesbutton),"Yes button is not Enabled.");
@@ -565,6 +741,44 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		 Thread.sleep(2000);
   	  } 
     
+    public void requestQuestionreportYes() throws Exception {
+    	ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
+ 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.questionReport);
+ 		 Logger.logAndReportPass("Selected Question Report .");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.requestReport),"Request Report button is not Enabled.");
+		 Logger.logAndReportPass("Request Report button is Enabled.");
+		
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
+		 Logger.logAndReportInfo("Clicked on Request Report.");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+	     
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+		 
+		 ShikshaLokamClient.get().gestures().sendValueToTextBox(programDashboardObjects.enterPassword,"Test1234");
+		 Logger.logAndReportInfo("Entered password as : Test1234");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.yesbutton),"Yes button is not Enabled.");
+		 Logger.logAndReportPass("Yes button is Enabled.");
+		 
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.yesbutton);
+		 Thread.sleep(2000);
+		 
+		 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.reportRequestedPopup);
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.reportRequestedPopup),"Your Report Has Been Requested Pop-up is not Displayed");
+		 Logger.logAndReportPass("Your report has been requested and will be available to download after 24 hours - Pop-up is Displayed");
+		 ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("OK button is Enabled ");
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("Clicked on OK button on Report Requested Popup");
+ 	  } 
+   
     public void requestDomainCriteriareport() throws Exception {	
       	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
    	 
@@ -581,6 +795,31 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		Thread.sleep(2000);
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.nobutton);
     }
+    
+    public void requestDomainCriteriareportYes() throws Exception {	
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
+		 
+  		ShikshaLokamClient.get().gestures().click(programDashboardObjects.domaincriteriaReport);
+  	 Logger.logAndReportPass("Selected Domain Criteria Report .");
+  		Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.requestReport),"Request Report button is not Enabled.");
+		 Logger.logAndReportPass("Request Report button is Enabled.");
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
+		 Logger.logAndReportInfo("Clicked on Request Report.");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportYesNoPopup),"Request Report Yes No Pop-up is not Displayed");
+		 Logger.logAndReportPass("Request Report Yes No Pop-up is Displayed");
+		 //***********
+		Thread.sleep(2000);
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.yesbutton);
+		 Logger.logAndReportInfo("Clicked Yes Button on Request Report Yes No Pop-up.");
+		
+		 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.reportRequestedPopup);
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.reportRequestedPopup),"Your Report Has Been Requested Pop-up is not Displayed");
+		 Logger.logAndReportPass("Your report has been requested and will be available to download after 24 hours - Pop-up is Displayed");
+		 ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("OK button is Enabled ");
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("Clicked on OK button on Report Requested Popup");
+	}
     
     public void selectObswithoutrubrics() throws Exception {
     	Thread.sleep(2000);
@@ -690,6 +929,28 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
     	ShikshaLokamClient.get().gestures().click(programDashboardObjects.ResetFilterButton);
 		Logger.logAndReportInfo("Clicked on Reser filter Button.");
 	  }
+    
+    public void verifyRequestReportPasswordPopup()throws Exception {
+		
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
+		 Logger.logAndReportInfo("Clicked on Request Report.");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+	     
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+		 
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.nobutton);
+		 Thread.sleep(2000);
+    	
+    	
+    }
     
     }
 

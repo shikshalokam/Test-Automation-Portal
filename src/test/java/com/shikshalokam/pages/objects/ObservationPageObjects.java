@@ -482,7 +482,7 @@ public class ObservationPageObjects {
     @FindBy(xpath = "(//div//input[@type='checkbox'])[2]")
 	public WebElement AddentityCheckBox;
     
-    @FindBy(xpath = "//div[@id='0']//bdi[contains(text(),'Observation Without Rubrics NOC Test')]")
+    @FindBy(xpath = "(//h4//bdi[contains(text(),'Observation Without Rubrics NOC Test')])[1]")
     public WebElement ObservationWithoutRubricInstanceName;
     
     @FindBy(xpath = "//div[normalize-space()='Edit']")
@@ -512,7 +512,8 @@ public class ObservationPageObjects {
     @FindBy(xpath = "//div[@class='popup-body ng-star-inserted']")
     public WebElement DeleteEntityMessage;  
     
-  
+    @FindBy(xpath = "//div[@class='white-space-wrap']")
+    public WebElement instanceName; 
 
     
     

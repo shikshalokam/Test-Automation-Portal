@@ -1180,16 +1180,23 @@ public class ObservationPageAction {
                	   Logger.logAndReportInfo("Clicked on Edit icon under 3 dots");
                 }
                
-               public void ClearAndEnterTextNewObservationInstanceName() throws Exception { 
+               public void clearObservationInstanceName() throws Exception { 
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.TextOnEditInstanceName);
             	   ShikshaLokamClient.get().gestures().clear(observationPageObjects.TextOnEditInstanceName);               	   
             	   Logger.logAndReportInfo("Instance name cleared");
-               	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.TextOnEditInstanceName, "Test Engineerrr");
-            	   Logger.logAndReportInfo("New instance name entered");
+               }
+               
+               public void enterAndVerifyNewInstanceName(String enterInstanceName,String actualinstanceName) throws Exception {
+               	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.TextOnEditInstanceName, enterInstanceName);
+            	   Logger.logAndReportInfo("New instance name entered as :" + enterInstanceName);
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.UpdateButtonOnObservationInstancepopup);
-               	   Logger.logAndReportInfo("Updated the observation instance name");
-               	   ShikshaLokamClient.get().gestures().click(observationPageObjects.CancelButtonOnObservationInstancepopup);
-            	   Logger.logAndReportInfo("Clicked on cancel on observation instance name change popup");
+               	   Logger.logAndReportInfo("clicked on Update button");
+               	   Thread.sleep(3000);
+               	   ShikshaLokamClient.get().gestures().isDisplayed(observationPageObjects.instanceName);
+        		   String instanceName = ShikshaLokamClient.get().gestures().getText(observationPageObjects.instanceName);
+        		   ShikshaLokamClient.get().getAsserts().assertEquals(instanceName.trim(), actualinstanceName.trim(),
+        				"Instance name is not matching..");
+        		   Logger.logAndReportPass("Instance name is matched and displayed succesfully.");
                 }
                
                public void ClickedOnCancelButtonOnObservationInstancePopup() throws Exception {  

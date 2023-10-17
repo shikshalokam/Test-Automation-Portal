@@ -21,6 +21,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 
 @SuppressWarnings("rawtypes")
 public class Gestures {
@@ -54,6 +55,7 @@ public class Gestures {
     public boolean isEnabled(WebElement element) {
         return element.isEnabled();
     }
+    
     
    
 
@@ -175,9 +177,9 @@ public class Gestures {
     // Method to Wait till the Element is Visible and Clickable
     public void waitTillTheElementIsVisibleAndClickable(WebElement element) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 30);     //30
+            WebDriverWait wait = new WebDriverWait(this.driver,Duration.ofSeconds(30));     //30
             wait.until(ExpectedConditions.visibilityOf(element));
-            wait = new WebDriverWait(driver, 25);                     //25
+            wait = new WebDriverWait(this.driver,Duration.ofSeconds(25));                     //25
             wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (Exception e) {
             e.printStackTrace();
@@ -252,14 +254,14 @@ public class Gestures {
 */
 	
     public WebElement waitForElementToAppear(WebElement id) {
-        WebDriverWait wait = new WebDriverWait(this.driver, 25);
+        WebDriverWait wait = new WebDriverWait(this.driver,Duration.ofSeconds(25));
         wait.until(ExpectedConditions.visibilityOf(id));
         return id;
     }
 
 
     public void waitAndClickElementisVisible(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebDriverWait wait = new WebDriverWait(this.driver,Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOf(element));
         element.click();
     }

@@ -18,8 +18,12 @@ public class ProgramDashboardObjects {
 
      @FindBy(xpath="(//span[.='Select program'])[2]")
      public  WebElement selectprogramdropdownonpopup;
-  
-     @FindBy(xpath="//span[.=' Testing 4.4 ']")
+     
+     @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-datasets[1]/div[2]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/form[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]")
+     public  WebElement selectprogramFromFilter;
+ 
+   //span[.=' Testing 4.4 ']
+     @FindBy(xpath="//span[normalize-space()='Testing 4.4']")
      public  WebElement programTesting4point4;
      
    //span[.=' Program - HT and officials ']
@@ -251,6 +255,18 @@ public class ProgramDashboardObjects {
   
      @FindBy(xpath="//button[normalize-space()='Reset filters']")
      public WebElement ResetFilterButton;
+     
+     @FindBy(xpath="//div//p[normalize-space()='Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report.']")
+     public WebElement pwdCriteriaMsg;
+     
+     @FindBy(xpath="//div//mat-icon[.='info']")
+     public WebElement infoIcon;
+     
+     @FindBy(xpath="//div//mat-icon[.='highlight_off']")
+     public WebElement crossIcon;
+     
+     
+     
 }
 		
 		

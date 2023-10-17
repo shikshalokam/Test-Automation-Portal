@@ -482,7 +482,7 @@ public class ObservationPageTest {
     
     @Test(description = "To verify user will be able to view meta data 'Name of solution' , 'Program Name', 'Language' , ''Creator Name' on observations listed in tiles form.")
     @Author(name = "GAGAN")
-    public void MetaDataOnObservationCard_REG() throws Exception {
+    public void metaDataOnObservationCard_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -506,7 +506,7 @@ public class ObservationPageTest {
     
     @Test(description = "To verify when user selects an observation, user is re-directed to details page of observation form")
     @Author(name = "GAGAN")
-    public void ObservationDetails_REG() throws Exception {
+    public void observationDetails_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -531,7 +531,7 @@ public class ObservationPageTest {
     
     @Test(description = "To verify user can go back to observation listing page from the details page on clicking back button")
     @Author(name = "GAGAN")
-    public void BackButtonOnObservationDetails_REG() throws Exception {
+    public void backButtonOnObservationDetails_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -555,7 +555,7 @@ public class ObservationPageTest {
     
     @Test(description = "To verify when user clicks on 'Close' button then entity list pop-up window closes")
     @Author(name = "GAGAN")
-    public void CrossIconCloseButtonOnAddEntityPopup_REG() throws Exception {
+    public void crossIconCloseButtonOnAddEntityPopup_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -582,7 +582,7 @@ public class ObservationPageTest {
     // Note - In profile already school entity should be selected
     @Test(description = "To verify user can see entity added by default")
     @Author(name = "GAGAN")
-    public void DefaultEntityAdded_REG() throws Exception {
+    public void defaultEntityAdded_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -608,7 +608,7 @@ public class ObservationPageTest {
     
     @Test(description = "To verify user is able to select multiple entities or deselect the entities in the list of entities and delete and submit")
     @Author(name = "GAGAN")
-    public void EntityselectAndDeselectAndDelete_REG() throws Exception {
+    public void entityselectAndDeselectAndDelete_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -643,7 +643,7 @@ public class ObservationPageTest {
     
     @Test(description = "To verify user doesn't see the observe again button for observation which user can only submit once")
     @Author(name = "GAGAN")
-    public void VerifyNoObserveAgainButtonNoThreeDot_REG() throws Exception {
+    public void noObserveAgainButtonNoThreeDot_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -666,7 +666,7 @@ public class ObservationPageTest {
     
     @Test(description = "To verify user sees pop-up box to edit the instance name with 'Cancel' and 'Update' options.")
     @Author(name = "GAGAN")
-    public void VerifyObservationInstanceNameChange_REG() throws Exception {
+    public void observationInstanceNameChange_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
@@ -688,17 +688,15 @@ public class ObservationPageTest {
         getObservationPageActions().ClickedOnCancelButtonOnObservationInstancePopup();
         getObservationPageActions().clickOnThreeDotEllipseOnObservation();
         getObservationPageActions().ClickedOnEditIconOnThreeDots();
-        getObservationPageActions().ClearAndEnterTextNewObservationInstanceName();
-        getObservationPageActions().clickOnThreeDotEllipseOnObservation();
-        getObservationPageActions().ClickedOnEditIconOnThreeDots();
-        
-        
+        getObservationPageActions().clearObservationInstanceName();
+        getObservationPageActions().enterAndVerifyNewInstanceName(observationPageTestData.get("enterInstanceName"),observationPageTestData.get("enteredInstanceName"));
+     
         }
     
  // Note - In profile already school entity should be selected
     @Test(description = "To verify user can see entity added by default")
     @Author(name = "GAGAN")
-    public void DefaultEntityAddedObsWithRubric_REG() throws Exception {
+    public void defaultEntityAddedObsWithRubric_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
