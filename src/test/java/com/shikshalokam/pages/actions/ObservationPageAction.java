@@ -45,7 +45,7 @@ public class ObservationPageAction {
     	public void clickOnObservationButton() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.observationButton);
     		Thread.sleep(1000);
-    		Logger.logAndReportInfo("Clicked on the observation button");
+    		Logger.logAndReportInfo("Clicked on the observation button & relevent observations seen");
     	}
     	
     	public void clickOnUpdateButtonOnProfileUpdatePopup() throws Exception {
@@ -131,6 +131,11 @@ public class ObservationPageAction {
     		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.observeAgainButton);
     		Logger.logAndReportInfo("Clicked on the yes button for observe again button.");
     	}
+    	public void clickOnObserveAgainNoConfirmation() throws Exception {
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.noConfirmationForObserveAgain);
+    		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.observeAgainButton);
+    		Logger.logAndReportInfo("Clicked on the no button for observe again button.");
+    	}
     	
     	public void clickOnThreeDotEllipseOnObservation() throws Exception {
     		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.observeAgainButton);
@@ -166,7 +171,20 @@ public class ObservationPageAction {
     	
     	public void clickOnStartButtonOnObservation() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.startButtonForObservation);
-    		Logger.logAndReportInfo("Clicked on the start button from observation.");
+    		Logger.logAndReportPass("Clicked on the start button next to the domain .");
+    	}
+    	
+    	public void AnswerRadioQuestion2() throws Exception {
+    		//js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.radio5);
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.radio5);
+    		Logger.logAndReportInfo("Click on radio option 5.");
+    	}	
+    		public void AnswerRadioQuestion4() throws Exception {
+    		//js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.radio6);
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.radio9);
+    		Logger.logAndReportInfo("Click on radio option 4.");
+    		
+    		
     	}
     	
     	public void clickOnObservationParentChild() throws Exception {
@@ -204,11 +222,25 @@ public class ObservationPageAction {
     	public void clickOnSaveObservationForm() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.saveButtonForObservation);
     		Logger.logAndReportInfo("Clicked on the save button on observation question form");
+    		  Thread.sleep(2000);
     	}
+    	
+    	public void verifySaveButtonenabled() throws Exception {
+  		  js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.saveButtonForObservation);
+  		ShikshaLokamClient.get().gestures().isEnabled(observationPageObjects.saveButtonForObservation);
+  		Logger.logAndReportPass("save button is enabled on questions page by default");
+  	}
     	
     	public void clickOnSaveFormConirmationYes() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.yesConfirmationForSaveForm);
     		Logger.logAndReportInfo("Clicked on the Yes confirmation to save observation form.");
+    		  Thread.sleep(2000);
+    	}
+    	
+    	public void clickOnSaveFormConirmationNo() throws Exception {
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.noConfirmationForSaveForm);
+    		Logger.logAndReportInfo("Clicked on the No confirmation to save observation form.");
+    		  Thread.sleep(2000);
     	}
     	
     	/*public void clickOnQ2ParentSecondAnswer() throws Exception {
@@ -269,6 +301,22 @@ public class ObservationPageAction {
     	public void clickOnSubmitButtonOnQuestionForm() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.submitButtonForObservation);
     		Logger.logAndReportInfo("Clicked on the submit button on observation form.");
+    	}
+    	
+    	public void verifySubmitButtonEnabled() throws Exception {
+    		ShikshaLokamClient.get().gestures().isEnabled(observationPageObjects.submitButtonForObservation);
+    		Logger.logAndReportInfo("Submit button is enabled on observation form.");
+    	}
+    	
+    	public void verifySubmitButtonDisabled() throws Exception {
+    		ShikshaLokamClient.get().gestures().isDisabled(observationPageObjects.submitButtonForObservation);
+    		Logger.logAndReportPass("Submit button is disabled on observation form by default.");
+    	}
+    	
+    	public void verifySubmitButtonOnQuestionForm() throws Exception {
+     	   //js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.submitButtonForObservation);
+    		ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.submitButtonForObservation);
+    		Logger.logAndReportInfo("Submit button is present.");
     	}
     	
     	public void clickOnContinueButtonOnSaveObservationForm() throws Exception {
@@ -1180,9 +1228,9 @@ public class ObservationPageAction {
                	   Logger.logAndReportInfo("Clicked on Edit icon under 3 dots");
                 }
                
-               public void clearObservationInstanceName() throws Exception { 
+               public void clearObservationInstanceName() throws Exception {
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.TextOnEditInstanceName);
-            	   ShikshaLokamClient.get().gestures().clear(observationPageObjects.TextOnEditInstanceName);               	   
+            	   ShikshaLokamClient.get().gestures().clear(observationPageObjects.TextOnEditInstanceName);               	  
             	   Logger.logAndReportInfo("Instance name cleared");
                }
                
@@ -1197,7 +1245,7 @@ public class ObservationPageAction {
         		   ShikshaLokamClient.get().getAsserts().assertEquals(instanceName.trim(), actualinstanceName.trim(),
         				"Instance name is not matching..");
         		   Logger.logAndReportPass("Instance name is matched and displayed succesfully.");
-                }
+               }
                
                public void ClickedOnCancelButtonOnObservationInstancePopup() throws Exception {  
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.CancelButtonOnObservationInstancepopup);
@@ -1208,6 +1256,7 @@ public class ObservationPageAction {
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithRubricSingleSubmission);
             	   Logger.logAndReportInfo("Clicked on observation with rubric single submission");
                 }
+               
                
                public void DefaultEntityAddedForObsWithRubricSingleSubmission() throws Exception {
                    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.DefaultEntityAddedObsWithRubricSingleSubmission),"Default entity not added.");
@@ -1227,12 +1276,168 @@ public class ObservationPageAction {
            		Logger.logAndReportPass("Delete entity popup message is displayed");
            	}
                   
-                  
+               public void verifyProgramNameResourceName() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ProgramName),"Program name not displayed.");
+           		Logger.logAndReportInfo("Program name is displayed");
+           		Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ResourceName),"Resource name not displayed.");
+           		Logger.logAndReportInfo("Resource name is displayed");
+           	}  
                
-           
+               public void clickOnCrossIcon() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.CrossiconOnEntitydeletepopup);
+            	   Logger.logAndReportInfo("Clicked on Cross icon on delete pop up");
+                }
+               
+              
+               
+               public void clickstartnexttodomain() throws Exception {  
+            	   //js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.clickstartnexttodomain);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.clickstartnexttodomain);
+            	   Logger.logAndReportInfo("Click on Start button next to the domain name");
+                }
+               
              
                
+             
                
+               public void clickContinuebutton() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.continueButton);
+            	   Logger.logAndReportInfo("Click on continue button next to domain");
+            	   Thread.sleep(2000);
+                }
+           
+            
+               
+               public void clickCloseIconOnSavePopup() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.closeIconOnSavePopup);
+            	   Logger.logAndReportInfo("Click on close icon on save pop up message");
+            	   Thread.sleep(2000);
+                }
+               
+               public void verifyTextmessageonContinuepopup() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.textmessageoncontinuepopup);
+            	   Logger.logAndReportInfo("Message is displayed on the Continue popup");
+                }
+               
+               public void clickBackbuttononthepopup() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.backbuttononsave);
+            	   Logger.logAndReportInfo("Click on back button on the save popup");
+                }
+               
+               public void verifyandclickViewbutton() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ViewbuttononDomainInstance);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.ViewbuttononDomainInstance);
+            	   Logger.logAndReportInfo("View button is displayed and click on it and user landed on question page");
+                }
+               
+               public void verifyNoSaveAndNosubmitbutton() throws Exception {
+           		ShikshaLokamClient.get().gestures().isElementnotPresent(observationPageObjects.saveButtonForObservation);
+           		Logger.logAndReportInfo("Save button is not displayed in questions page");
+        		ShikshaLokamClient.get().gestures().isElementnotPresent(observationPageObjects.submitButtonForObservation);
+                Logger.logAndReportInfo("submit button is not displayed in questions page");
+           	}
+               public void verifyNoJoinProgramButton() throws Exception {
+                   ShikshaLokamClient.get().gestures().isElementnotPresent(observationPageObjects.JoinProgramButton);
+           		Logger.logAndReportPass("Join program button is not seen for old program/observations ");
+           	}
+               
+               public void clickNoJoinProgramButtonObservation() throws Exception {
+            	   ShikshaLokamClient.get().gestures().waitForElementToAppear(observationPageObjects.clickobservation);
+                   ShikshaLokamClient.get().gestures().isElementnotPresent(observationPageObjects.clickobservation);
+           		Logger.logAndReportPass("Click on old observations ");
+           	}
+               public void clickNoOnSubmitPopup() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.noOnSubmitSavePopup);
+            	   Logger.logAndReportInfo("click on No button on submit pop up and user stays on the same page");
+                }
+               
+               public void clickNoOnSavePopup() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.noOnSubmitSavePopup);
+            	   Logger.logAndReportInfo("click on No button on Save pop up and user stays on the same page");
+                }
+               
+               public void clickOnObservationDomain() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.Domainstatusobs);
+            	   Logger.logAndReportInfo("click on the observations which has domains");
+                }
+               
+               public void clickDomainDropdown() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.addedInstance);
+            	   Logger.logAndReportInfo("clicked on added instance");
+                }
+               
+               public void verifyDomainStatusNotstarted() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusNotStarted);
+            	   Logger.logAndReportPass("Status not started is displayed");
+                }
+               
+               public void verifyDomainStatusDraft() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusDraft);
+            	   Logger.logAndReportPass("Status Draft is displayed");
+                }
+               
+               public void verifyDomainStatusCompleted() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusCompleted);
+            	   Logger.logAndReportPass("Status Completed is displayed");
+                }
+               
+               public void clickcontinueButton() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.continueButton);
+            	   Logger.logAndReportInfo("Click on continue button next to domain");
+                }
+               
+               public void clickcontinueButtonOnSecondSavePopup() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.continuebuttononsecondsave);
+            	   Logger.logAndReportInfo("Click on continue button and user stays on the same page");
+                }
+               
+               public void enterAnswer1() throws Exception { 
+           		//js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.answer1);
+
+            	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.answer1, "Working" );
+            	   Logger.logAndReportInfo("Answered 1st question");
+                }
+               
+               public void enterAnswer3() throws Exception { 
+              		//js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.answer3);
+
+            	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.answer3, "12334" );
+            	   Logger.logAndReportInfo("Answered 3rd question");
+                }
+               
+               public void verifyQuestion1() throws Exception {  
+            	   js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.Question1);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.Question1);
+            	   Logger.logAndReportInfo("Question1 is displayed");
+                }
+               
+               public void verifyQuestion3() throws Exception {  
+            	   js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.Question3);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.Question3);
+            	   Logger.logAndReportInfo("Question3 is displayed");
+                }
+               
+               public void verifyQuestion2() throws Exception {  
+            	   js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.Question2);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.Question2);
+            	   Logger.logAndReportInfo("Question2 is displayed");
+                }
+               
+               public void verifyQuestion4() throws Exception {  
+            	   js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.Question4);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.Question4);
+            	   Logger.logAndReportInfo("Question4 is displayed");
+                }
+               
+               public void verifySaveConfirmationMessage() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.saveConfirmationMessage);
+            	   Logger.logAndReportPass("Confirmation message on save popup is displayed");
+                }
+               
+               public void verifysecondSavePopup() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.secondSaveConfirmationMessage);
+            	   Logger.logAndReportPass("Confirmation message on second save popup is displayed");
+                }
                      
 }
 

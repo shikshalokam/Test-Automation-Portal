@@ -56,8 +56,18 @@ public class Gestures {
         return element.isEnabled();
     }
     
-    
-   
+    public boolean isDisabled(WebElement locator) {
+        try {
+            waitForElementToAppear(locator);
+            if (locator.isEnabled())
+                System.out.println("Element is Enabled on screen ***********" + locator);
+            return false;
+        } catch (Exception e) {
+            System.out.println("Element is Disabled on screen **************" + locator);
+            return true;
+        }
+    }
+
 
     public boolean click(WebElement element) throws Exception {
         String identifyBy = "xpath";
@@ -179,7 +189,7 @@ public class Gestures {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver,Duration.ofSeconds(30));     //30
             wait.until(ExpectedConditions.visibilityOf(element));
-            wait = new WebDriverWait(this.driver,Duration.ofSeconds(25));                     //25
+            wait = new WebDriverWait(this.driver,Duration.ofSeconds(25));                    //25
             wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (Exception e) {
             e.printStackTrace();

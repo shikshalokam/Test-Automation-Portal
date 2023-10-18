@@ -106,6 +106,12 @@ public class ObservationPageObjects {
 	@FindBy(xpath="(//div//input[@type='radio'])[1]")
 	public WebElement parent1QuestionfirstAnswer;
 	
+	@FindBy(xpath="(//div//input[@type='radio'])[5]")
+	public WebElement radio5;
+	
+	@FindBy(xpath="(//div//input[@type='radio'])[9]")
+	public WebElement radio9;
+	
 	@FindBy(xpath = "//div[contains(text(),'Child 1')]")
 	public WebElement parent1Child1Question;
 	
@@ -156,6 +162,9 @@ public class ObservationPageObjects {
 	
 	@FindBy(xpath="//button[text()='Continue ']")
 	public WebElement continueButtonOnObservation;
+	
+	@FindBy(xpath="(//button[text()='Continue '])[1]")
+	public WebElement continueButton;
 	
 	@FindBy(xpath = "//button[text()=' Yes ']")
 	public WebElement yesConfirmationForSubmitForm;
@@ -342,6 +351,9 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "//i[@class='close inside icon']")
     public WebElement closeIconOnPrivacyPolicyPopup;
+    
+    @FindBy(xpath = "//i[@class='close inside icon']")
+    public WebElement closeIconOnSavePopup;
     //******
     
   //i[@class='close inside icon']
@@ -484,7 +496,7 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "(//h4//bdi[contains(text(),'Observation Without Rubrics NOC Test')])[1]")
     public WebElement ObservationWithoutRubricInstanceName;
-    
+  
     @FindBy(xpath = "//div[normalize-space()='Edit']")
     public WebElement EditOnThreedots;
     
@@ -496,8 +508,8 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "//button[normalize-space()='Cancel']")
     public WebElement CancelButtonOnObservationInstancepopup;
-    
-    @FindBy(xpath = "//div[@id='0']//bdi[contains(text(),'Observation with Rubrics for program 1')]")
+                        
+    @FindBy(xpath = "//h4//bdi[contains(text(),'Observation with Rubrics for program 1')]")
     public WebElement ObsWithRubricSingleSubmission;
     
     @FindBy(xpath = "//label[@for='493590d5-ab64-4e2d-8b0a-c2820cb86020'][1]")
@@ -513,8 +525,77 @@ public class ObservationPageObjects {
     public WebElement DeleteEntityMessage;  
     
     @FindBy(xpath = "//div[@class='white-space-wrap']")
-    public WebElement instanceName; 
-
+    public WebElement instanceName;
     
+    @FindBy(xpath = "//h4[@class='mb-4']")
+    public WebElement ProgramName;
     
+    @FindBy(xpath = "//div[@class='fsmall']")
+    public WebElement ResourceName;
+    
+    @FindBy(xpath = "//i[@class='close inside icon']")
+    public WebElement CrossiconOnEntitydeletepopup;
+  
+    @FindBy(xpath = "//div[@class='expanded']//div[2]//div[2]//button[1]")
+    public WebElement clickstartnexttodomain;
+     
+    @FindBy(xpath = "//button[normalize-space()='Continue']")
+    public WebElement continuebuttononsecondsave;
+    
+    @FindBy(xpath = "//div[@class='popup-body ng-star-inserted']")
+    public WebElement textmessageoncontinuepopup;
+    
+    @FindBy(xpath = "//button[@class='sb-btn sb-btn-normal sb-btn-primary'][normalize-space()='Back']")
+    public WebElement backbuttononsave;
+    
+    @FindBy(xpath = "//button[normalize-space()='View']")
+    public WebElement Viewbutton;
+    
+    @FindBy(xpath = "(//button[normalize-space()='View'])[1]")
+    public WebElement ViewbuttononDomainInstance;
+    
+    @FindBy(xpath = "//button[normalize-space()='No']")
+    public WebElement noOnSubmitSavePopup;
+    
+    @FindBy(xpath = "//h4//bdi[contains(text(),'Test-சோதனை கண்காணிப்பு அறிக்கை hotfix - தமிழ்(Tami'))]")
+    public WebElement clickobservation;
+    
+    @FindBy(xpath = "//h4[@title='OCI-Observation with rubric--Isrubricdriven-True-Criterialevelreport-False-Multiplesubmission-True']//bdi[contains(text(),'OCI-Observation with rubric--Isrubricdriven-True-C')]")
+    public WebElement Domainstatusobs;
+    
+    @FindBy(xpath = "/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-observation-details[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/submission[1]/sui-accordion[1]/sui-accordion-panel[1]/div[1]/div[1]")
+    public WebElement DomainDropdown;
+    
+    @FindBy(xpath = "(//div//small[normalize-space()='Status : Not started'])[1]")
+    public WebElement statusNotStarted;
+    
+    @FindBy(xpath = "(//div//small[normalize-space()='Status : draft'])[1]")
+    public WebElement statusDraft;
+    
+    @FindBy(xpath = "(//div//small[normalize-space()='Status : completed'])[1]")
+    public WebElement statusCompleted;
+    
+    @FindBy(xpath = "//input[@placeholder='Enter your response'][1]")
+    public WebElement answer1;
+    
+    @FindBy(xpath = "(//input[@placeholder='Enter your response'])[2]")
+    public WebElement answer3;
+    
+    @FindBy(xpath = "(//div[contains(text(),'As the district official')])[1]")
+    public WebElement Question1;
+    
+    @FindBy(xpath = "(//div[contains(text(),'Age')])[1]")
+    public WebElement Question3;
+    
+    @FindBy(xpath = "(//div[contains(text(),'Hira as the education officer as part of his duties ')])[1]")
+    public WebElement Question2;
+    
+    @FindBy(xpath = "(//div[contains(text(),'As the district official')])[2]")
+    public WebElement Question4;
+    
+    @FindBy(xpath = "//div[normalize-space()='Are you sure you want to save this form?']")
+    public WebElement saveConfirmationMessage;
+    
+    @FindBy(xpath = "//div[normalize-space()='Your Form has been saved successfully!']")
+    public WebElement secondSaveConfirmationMessage;
 }

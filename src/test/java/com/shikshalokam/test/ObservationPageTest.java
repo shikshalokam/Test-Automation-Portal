@@ -524,6 +524,8 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObservationButton();
         getObservationPageActions().clickObservationWithRubric();
         getObservationPageActions().verifyTextOnObservationDetailsPage();
+        getObservationPageActions().verifyProgramNameResourceName();
+        getObservationPageActions().verifyProgramNameResourceName();
        
        
     }
@@ -633,6 +635,8 @@ public class ObservationPageTest {
         getObservationPageActions().verifyTextMessageOnDeleteEntityPopup();
         getObservationPageActions().clickOnEntityDeleteConfirmationNo();
         getObservationPageActions().clickOnEntityDeleteOption();
+        getObservationPageActions().clickOnCrossIcon();
+        getObservationPageActions().clickOnEntityDeleteOption();
         getObservationPageActions().clickOnEntityDeleteConfirmationYes();
         getObservationPageActions().clickOnEntityDeleteOption();
         getObservationPageActions().clickOnEntityDeleteConfirmationYes();
@@ -690,7 +694,7 @@ public class ObservationPageTest {
         getObservationPageActions().ClickedOnEditIconOnThreeDots();
         getObservationPageActions().clearObservationInstanceName();
         getObservationPageActions().enterAndVerifyNewInstanceName(observationPageTestData.get("enterInstanceName"),observationPageTestData.get("enteredInstanceName"));
-     
+   
         }
     
  // Note - In profile already school entity should be selected
@@ -716,4 +720,140 @@ public class ObservationPageTest {
         getObservationPageActions().DefaultEntityAddedForObsWithRubricSingleSubmission();
         
     }
+         
+    
+  
+   
+    @Test(description = "To verify, user should be able to access the Observations directly (old observations)")
+    @Author(name = "GAGAN")
+    public void verifyAccessOldObservationsDirectly_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+        getLoginPageActions().enterPassword(loginTestData.get("password"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickOnObservationParentChild();
+        getObservationPageActions().verifyNoJoinProgramButton();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainNoConfirmation();
+        
+    }
+  
+    
+    @Test(description = "File upload flow")
+    @Author(name = "GAGAN")
+    public void verifyFileUpload_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName3"));
+        getLoginPageActions().enterPassword(loginTestData.get("password3"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        Thread.sleep(10000);
+        getObservationPageActions().clickNoJoinProgramButtonObservation();
+        Thread.sleep(10000);
+    }
+    
+    @Test(description = "Observation domain status")
+    @Author(name = "GAGAN")
+    public void observationInstanceStatusSaveSubmitButton_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName3"));
+        getLoginPageActions().enterPassword(loginTestData.get("password3"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickOnObservationDomain();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(5000);
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().verifyDomainStatusNotstarted();
+        getObservationPageActions().clickOnStartButtonOnObservation();
+        Thread.sleep(5000);
+        getObservationPageActions().verifyQuestion2();
+        getObservationPageActions().AnswerRadioQuestion2();
+        Thread.sleep(1000);
+        getObservationPageActions().verifyQuestion4();
+        getObservationPageActions().AnswerRadioQuestion4();
+        
+        getObservationPageActions().verifySaveButtonenabled();
+        getObservationPageActions().verifySubmitButtonDisabled();
+        
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().clickNoOnSavePopup();
+        
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().verifySaveConfirmationMessage();
+        
+        
+        getObservationPageActions().clickOnSaveFormConirmationYes();
+        getObservationPageActions().verifysecondSavePopup();
+        getObservationPageActions().clickcontinueButtonOnSecondSavePopup();
+        getObservationPageActions().verifyQuestion4();
+        getObservationPageActions().AnswerRadioQuestion4();
+        
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().clickOnSaveFormConirmationYes();
+        
+        getObservationPageActions().clickBackbuttononthepopup();
+       
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().verifyDomainStatusDraft();
+        Thread.sleep(5000);
+        getObservationPageActions().clickcontinueButton();
+        Thread.sleep(5000);
+        getObservationPageActions().verifyQuestion1();
+        getObservationPageActions().enterAnswer1();
+        Thread.sleep(5000);
+        getObservationPageActions().verifyQuestion3();
+        getObservationPageActions().enterAnswer3();
+        Thread.sleep(5000);
+        getObservationPageActions().verifySubmitButtonEnabled();
+        getObservationPageActions().clickOnSubmitButtonOnQuestionForm();
+        getObservationPageActions().clickNoOnSubmitPopup();
+        
+        getObservationPageActions().clickOnSubmitButtonOnQuestionForm();
+        
+        
+        getObservationPageActions().clickOnYesForSubmitFormConfirmation();
+        getObservationPageActions().clickOnOkButtonOnSubmitFormSuccess();
+        
+        getObservationPageActions().clickDomainDropdown();
+        Thread.sleep(5000);
+        getObservationPageActions().verifyDomainStatusCompleted();
+        
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().verifyandclickViewbutton();
+        getObservationPageActions().verifyNoSaveAndNosubmitbutton();
+        
+}
 }
