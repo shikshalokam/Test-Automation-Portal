@@ -582,5 +582,140 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().selectProjectResource();
     }
     
+    @Test(description = "To verify if same Program and Resource Name is dispalyed across all tabs")
+    @Author(name = "SHREEJITH")
+    public void programAndResourceNameAcrossAllTabs_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();  
+        
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
+        getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
+        //Thread.sleep(2000);
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(3000);
+        
+        //using refreshpage due to blank screen showing up after login 
+        Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        getLoginPageActions().clickOnGuest();
+
+        getProgramDashboardActions().clickOnprogramdashboard();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectOldProgram();
+        Thread.sleep(2000);
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+        
+        getProgramDashboardActions().selectProjectResource();
+        getProgramDashboardActions().VerifyProgramNameAndResourceName();
+        getProgramDashboardActions().clickOnGraphsTab();
+        getProgramDashboardActions().VerifyProgramNameAndResourceName();
+        getProgramDashboardActions().clickOnDistrictWiseStatusTab();
+        getProgramDashboardActions().VerifyProgramNameAndResourceName();
+        getProgramDashboardActions().clickOnBlockWiseStatusTab();
+        getProgramDashboardActions().VerifyProgramNameAndResourceName();
     
+    }
+    
+    
+    
+    @Test(description = "Verify that the table name is displayed on the top left of the table")
+    @Author(name = "SHREEJITH")
+    public void tableHeadersAcrossTableTabs_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();  
+        
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
+        getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
+        //Thread.sleep(2000);
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(3000);
+        
+        //using refreshpage due to blank screen showing up after login 
+        Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        getLoginPageActions().clickOnGuest();
+
+        getProgramDashboardActions().clickOnprogramdashboard();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectOldProgram();
+        Thread.sleep(2000);
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+        
+        getProgramDashboardActions().selectProjectResource();
+        getProgramDashboardActions().clickOnDistrictWiseStatusTab();
+        getProgramDashboardActions().verifyDistrictWiseHeader();
+       
+        getProgramDashboardActions().clickOnBlockWiseStatusTab();
+        getProgramDashboardActions().verifyBlockWiseHeader();
+    
+    }
+    
+    @Test(description = "To verify if the status report is selected, then the select Dropdown consists of following values and it is Multiselectable")
+    @Author(name = "SHREEJITH")
+    public void selectStatusDropdownValues_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();  
+        
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
+        getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
+        //Thread.sleep(2000);
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(3000);
+        
+        //using refreshpage due to blank screen showing up after login 
+        Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        getLoginPageActions().clickOnGuest();
+
+        getProgramDashboardActions().clickOnprogramdashboard();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectOldProgram();
+        Thread.sleep(2000);
+  
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+
+        getProgramDashboardActions().selectProjectResource();
+        getProgramDashboardActions().clickOnSelectReportDropdown();
+        getProgramDashboardActions().selectStatusReport();
+        getProgramDashboardActions().verifyProjectStatusFilters();
+        
+        //commenting out this piece code as Observations and survye Statusfilters is a knownbud ED-678
+       /* getProgramDashboardActions(). selectObswithrubrics();
+        getProgramDashboardActions().clickOnSelectReportDropdown();
+        getProgramDashboardActions().selectStatusReport();
+        getProgramDashboardActions().verifyObsWithRubricsStatusFilters();
+        
+        getProgramDashboardActions().selectObswithoutrubrics();
+        getProgramDashboardActions().clickOnSelectReportDropdown();
+        getProgramDashboardActions().selectStatusReport();
+        getProgramDashboardActions().verifyObsWithoutRubricsStatusFilters(); 
+       
+        
+        getProgramDashboardActions().selectSurvey();
+        getProgramDashboardActions().clickOnSelectReportDropdown();
+        getProgramDashboardActions().selectStatusReport();
+        getProgramDashboardActions().verifySurveyStatusFilters();
+        */
+       
+    }
+    
+
     }

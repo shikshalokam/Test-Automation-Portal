@@ -265,6 +265,13 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="//div//mat-icon[.='highlight_off']")
      public WebElement crossIcon;
      
+   //div[.=' District wise Status ']
+     @FindBy(xpath="(//div[normalize-space()='District wise Status'])[3]")
+     public WebElement districtWiseTableHeader;
+    
+     @FindBy(xpath="(//div[normalize-space()='Block wise Status'])[3]")
+     public WebElement blockWiseTableHeader;
+     
      
      
 }

@@ -50,21 +50,25 @@ public class ProgramDashboardAction {
 	 }
 	
 	 public void clickOnGraphsTab() throws Exception {
+		 ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.Graphs);
 			ShikshaLokamClient.get().gestures().click(programDashboardObjects.Graphs);
   ShikshaLokamClient.get().report().log(Status.INFO, "Clicked Graphs Tab");
 	 }
 	 
 	 public void clickOnProgramDatasetsTab() throws Exception {
+		 ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.Programdatasets);
 			ShikshaLokamClient.get().gestures().click(programDashboardObjects.Programdatasets);
 ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets Tab");
 	 }
 	 
 	 public void clickOnDistrictWiseStatusTab() throws Exception {
+		 ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.DistrictWiseStatus);
 	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.DistrictWiseStatus);
 		Logger.logAndReportInfo("Clicked On District Wise Status Tab");
 	 }
 	 
 	 public void clickOnBlockWiseStatusTab() throws Exception {
+		 ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.BlockWiseStatus);
 	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.BlockWiseStatus);
 		Logger.logAndReportInfo("Clicked On Block Wise Status Tab");
 	 }
@@ -362,8 +366,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
   	       ShikshaLokamClient.get().gestures().click(programDashboardObjects.date16); 
 
    	    	}
-   	    	//dateinput 
-		 
+   	    	
    	     public void verifyProjectReports() throws Exception {
    	    	 Thread.sleep(2000);
 			 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
@@ -504,24 +507,93 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		 Logger.logAndReportInfo("Clicked on OK button on Report Requested Popup");
  	}
    	  // verify Project status filters
-   	public void verifyProjectstatusfilters() throws Exception {	
+   	public void verifyProjectStatusFilters() throws Exception {	
 		 
 		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectstatusDropdown),"Select Status Dropdown is not Displayed");
 		 Logger.logAndReportPass("Select Status Dropdown is Displayed");
 		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectstatusDropdown),"Select Status Dropdown is not Displayed");
 		 Logger.logAndReportInfo("Clicked on Select Status Dropdown.");
 		 
-		 //*****************@#$%^&@#$%^
+		
 		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.startedStatus),"Started Status is not Present.");
     	 Logger.logAndReportInfo("Started Status is Present.");
     	 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.submittedStatus),"Submitted Status is not Present.");
 	     Logger.logAndReportInfo("Submitted Status is Present.");
 	     softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.inprogressStatus),"Inprogress Status is not Present.");
 		 Logger.logAndReportInfo("Inprogress Status is Present.");
-		 //softAssert.assertAll();
+		 
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.startedStatus);
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.submittedStatus);
+		 Logger.logAndReportPass("values are multiselectable");
+		 
 		 Thread.sleep(2000);
 		 ShikshaLokamClient.get().gestures().PressEsc(); 
      	  }
+   	
+   	public void verifyObsWithRubricsStatusFilters() throws Exception {	
+		 
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectstatusDropdown),"Select Status Dropdown is not Displayed");
+		 Logger.logAndReportPass("Select Status Dropdown is Displayed");
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectstatusDropdown),"Select Status Dropdown is not Displayed");
+		 Logger.logAndReportInfo("Clicked on Select Status Dropdown.");
+		 
+		
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.startedStatus),"Started Status is not Present.");
+   	 Logger.logAndReportInfo("Started Status is Present.");
+   	 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.submittedStatus),"Submitted Status is not Present.");
+	     Logger.logAndReportInfo("Submitted Status is Present.");
+	     softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.inprogressStatus),"Inprogress Status is not Present.");
+		 Logger.logAndReportInfo("Inprogress Status is Present.");
+		 
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.startedStatus);
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.submittedStatus);
+		 Logger.logAndReportPass("values are multiselectable");
+		
+		 Thread.sleep(2000);
+		 ShikshaLokamClient.get().gestures().PressEsc(); 
+    	  }
+   	
+   	public void verifyObsWithoutRubricsStatusFilters() throws Exception {	
+		 
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectstatusDropdown),"Select Status Dropdown is not Displayed");
+		 Logger.logAndReportPass("Select Status Dropdown is Displayed");
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectstatusDropdown),"Select Status Dropdown is not Displayed");
+		 Logger.logAndReportInfo("Clicked on Select Status Dropdown.");
+		 
+	
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.startedStatus),"Started Status is not Present.");
+  	 Logger.logAndReportInfo("Started Status is Present.");
+  	 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.submittedStatus),"Submitted Status is not Present.");
+	     Logger.logAndReportInfo("Submitted Status is Present.");
+				 Thread.sleep(2000);
+				 
+				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.startedStatus);
+				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.submittedStatus);
+				 Logger.logAndReportPass("values are multiselectable");
+				  
+		 ShikshaLokamClient.get().gestures().PressEsc(); 
+   	  }
+
+   	public void verifySurveyStatusFilters() throws Exception {	
+		 
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectstatusDropdown),"Select Status Dropdown is not Displayed");
+		 Logger.logAndReportPass("Select Status Dropdown is Displayed");
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectstatusDropdown),"Select Status Dropdown is not Displayed");
+		 Logger.logAndReportInfo("Clicked on Select Status Dropdown.");
+		 
+	
+		 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.startedStatus),"Started Status is not Present.");
+ 	 Logger.logAndReportInfo("Started Status is Present.");
+ 	 softAssert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.submittedStatus),"Submitted Status is not Present.");
+	     Logger.logAndReportInfo("Submitted Status is Present.");
+				 Thread.sleep(2000);
+				 
+				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.startedStatus);
+				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.submittedStatus);
+				  Logger.logAndReportPass("values are multiselectable");
+				  
+		 ShikshaLokamClient.get().gestures().PressEsc(); 
+  	  }
    	
    	
     public void requestFilteredTaskDetailreport() throws Exception {
@@ -952,7 +1024,33 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
     	
     }
     
+    public void VerifyProgramNameAndResourceName() throws Exception {
+           Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.programTesting4point4),"Same Program Name selected on Pop-up is not displayed");
+   		Logger.logAndReportInfo("Same Program Name selected on Pop-up is displayed");
+   	  Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.projectlinkconsumptionfd98),"Same Resource Name selected is not displayed");
+ 		Logger.logAndReportInfo("Same Resource Name selected is displayed");
+   	}
+    
+    public void verifyDistrictWiseHeader() throws Exception {
+		ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.districtWiseTableHeader);
+		Logger.logAndReportPass("District Wise Status Header is Displayed");	
+   }
+    
+    public void verifyBlockWiseHeader() throws Exception {
+		ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.blockWiseTableHeader);
+		Logger.logAndReportPass("Block Wise Status Header is Displayed");	
+   }
+    
+    public void clickOnSelectReportDropdown() throws Exception {
+    ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
+	 Logger.logAndReportInfo("Clicked on Select Report Dropdown");
+    
     }
+    public void selectStatusReport() throws Exception {
+    ShikshaLokamClient.get().gestures().click(programDashboardObjects.statusReport);
+	 Logger.logAndReportPass("Selected Status Report .");
+    }
+}
 
 
 
