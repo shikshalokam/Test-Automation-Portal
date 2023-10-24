@@ -584,7 +584,7 @@ public class ProgramDashboardTest {
     
     @Test(description = "To verify if same Program and Resource Name is dispalyed across all tabs")
     @Author(name = "SHREEJITH")
-    public void programAndResourceNameAcrossAllTabs_REG() throws Exception {
+    public void programAndResourceNameRetainedAcrossAllTabs_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
@@ -697,8 +697,8 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().selectStatusReport();
         getProgramDashboardActions().verifyProjectStatusFilters();
         
-        //commenting out this piece code as Observations and survye Statusfilters is a knownbud ED-678
-       /* getProgramDashboardActions(). selectObswithrubrics();
+        //commenting out this piece code as Observations and survey Statusfilters is a knownbud ED-678
+        getProgramDashboardActions(). selectObswithrubrics();
         getProgramDashboardActions().clickOnSelectReportDropdown();
         getProgramDashboardActions().selectStatusReport();
         getProgramDashboardActions().verifyObsWithRubricsStatusFilters();
@@ -713,9 +713,110 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnSelectReportDropdown();
         getProgramDashboardActions().selectStatusReport();
         getProgramDashboardActions().verifySurveyStatusFilters();
-        */
+        
+    }
+   
+    
+    @Test(description = "Verify that when user selects the filtered task detail report from dropdown, 3 more filters appears on program dashboard screen.")
+    @Author(name = "SHREEJITH")
+    public void filteredTaskDetailReportFilters_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();  
+        
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
+        getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
+        //Thread.sleep(2000);
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(3000);
+        
+        //using refreshpage due to blank screen showing up after login 
+        Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        getLoginPageActions().clickOnGuest();
+
+        getProgramDashboardActions().clickOnprogramdashboard();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectOldProgram();
+        Thread.sleep(2000);
+  
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+
+        getProgramDashboardActions().selectProjectResource();
+        getProgramDashboardActions().clickOnSelectReportDropdown();
+        getProgramDashboardActions().selectFilteredTaskDetailReport();
+        getProgramDashboardActions().verifyFilteredTaskDetailReportFilters();
+    
+    }
+    
+    @Test(description = "Verify that the user is able to select other filters District, Organization to filter all Graphs / Tables " + "&"
+    		+ "  Verify that the user is able to reset the filters applied and post which user is shown with the pop-up to select the program")
+    @Author(name = "SHREEJITH")
+    public void selectDistrictOrgFiltersAndResetFiltersAcrossGraphsAndTablesTabs_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();  
+        
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
+        getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
+        //Thread.sleep(2000);
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(3000);
+        
+        //using refreshpage due to blank screen showing up after login 
+        Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        getLoginPageActions().clickOnGuest();
+
+        getProgramDashboardActions().clickOnprogramdashboard();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectOldProgram();
+        Thread.sleep(2000);
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+
+        getProgramDashboardActions().selectProjectResource();
+        
+        getProgramDashboardActions().clickOnGraphsTab();
+        getProgramDashboardActions().VerifyProgramNameAndResourceName();
+        getProgramDashboardActions().selectDistrictandOrgPD();
+        getProgramDashboardActions().ClickResetFilterButton();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectOldProgram();
+        Thread.sleep(2000);
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+        getProgramDashboardActions().selectProjectResource();
+       
+        
+        getProgramDashboardActions().clickOnDistrictWiseStatusTab();
+        getProgramDashboardActions().VerifyProgramNameAndResourceName();
+        getProgramDashboardActions().selectDistrictandOrgPD();
+        getProgramDashboardActions().ClickResetFilterButton();
+        getProgramDashboardActions().verifyselectProgramPopup();
+        getProgramDashboardActions().selectOldProgram();
+        Thread.sleep(2000);
+        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+        getProgramDashboardActions().selectProjectResource();
+        
+        
+        getProgramDashboardActions().clickOnBlockWiseStatusTab();
+        getProgramDashboardActions().VerifyProgramNameAndResourceName();
+        getProgramDashboardActions().selectDistrictandOrgPD();
+        getProgramDashboardActions().ClickResetFilterButton();
+        getProgramDashboardActions().verifyselectProgramPopup();
+       
+        
        
     }
     
-
-    }
+    
+}

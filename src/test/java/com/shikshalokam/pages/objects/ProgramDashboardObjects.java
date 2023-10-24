@@ -93,7 +93,7 @@ public class ProgramDashboardObjects {
      public  WebElement SelectResourceMessage;
      
      
-     @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-datasets[1]/div[2]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/form[1]/div[1]/div[1]/div[3]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]")
+     @FindBy(xpath="//span[.='Select district']")
      public  WebElement districtDropdown;
      
     
@@ -110,7 +110,7 @@ public class ProgramDashboardObjects {
      public  WebElement Ambedkarnagardistrict;
      
    //span[.=' Agra '] //span[normalize-space()='Agra']   //span[normalize-space()='Ambedkar Nagar']
-     @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-datasets[1]/div[2]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/form[1]/div[1]/div[1]/div[5]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]")
+     @FindBy(xpath="//span[.='Select organisation']")
      public  WebElement organisationsDropdown;
      
      @FindBy(xpath="//span[normalize-space()='Staging Custodian Organization']")
@@ -272,6 +272,9 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="(//div[normalize-space()='Block wise Status'])[3]")
      public WebElement blockWiseTableHeader;
      
+   //div//input[@id='mat-input-14']
+     @FindBy(xpath="//div//input[@class='mat-input-element mat-form-field-autofill-control ng-tns-c191-102 ng-pristine ng-valid cdk-text-field-autofill-monitored ng-touched']")
+     public WebElement minNoTaskInProj5;
      
      
 }
