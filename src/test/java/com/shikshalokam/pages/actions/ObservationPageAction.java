@@ -171,7 +171,7 @@ public class ObservationPageAction {
     	
     	public void clickOnStartButtonOnObservation() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.startButtonForObservation);
-    		Logger.logAndReportPass("Clicked on the start button next to the domain .");
+    		Logger.logAndReportPass("Clicked on the start button .");
     	}
     	
     	public void AnswerRadioQuestion2() throws Exception {
@@ -222,6 +222,12 @@ public class ObservationPageAction {
     	public void clickOnSaveObservationForm() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.saveButtonForObservation);
     		Logger.logAndReportInfo("Clicked on the save button on observation question form");
+    		  Thread.sleep(2000);
+    	}
+    	
+    	public void clickOnSaveonNotapplicablepopup() throws Exception {
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.saveButtonForObservation);
+    		Logger.logAndReportInfo("Clicked on the save button");
     		  Thread.sleep(2000);
     	}
     	
@@ -304,13 +310,14 @@ public class ObservationPageAction {
     	}
     	
     	public void verifySubmitButtonEnabled() throws Exception {
-    		ShikshaLokamClient.get().gestures().isEnabled(observationPageObjects.submitButtonForObservation);
+    		Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(observationPageObjects.submitButtonForObservation),"Submit button is not enabled");
     		Logger.logAndReportInfo("Submit button is enabled on observation form.");
     	}
     	
     	public void verifySubmitButtonDisabled() throws Exception {
-    		ShikshaLokamClient.get().gestures().isDisabled(observationPageObjects.submitButtonForObservation);
-    		Logger.logAndReportPass("Submit button is disabled on observation form by default.");
+    		Assert.assertFalse(ShikshaLokamClient.get().gestures().isEnabled(observationPageObjects.submitButtonForObservation),"submit button is enabled");
+	    	Logger.logAndReportInfo("Submit button is disabled on observation form by default");
+	    
     	}
     	
     	public void verifySubmitButtonOnQuestionForm() throws Exception {
@@ -1177,6 +1184,10 @@ public class ObservationPageAction {
                    Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.crossIconOnAddEntityPopup),"Not clicked on cross icon");
            		Logger.logAndReportPass("Clicked on Cross Icon on add entity pop up and user stays on the observation details page");
            	} 
+               public void clickOnCrossIconOnNotApplicablePopup() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.crossIconOnAddEntityPopup),"Not clicked on cross icon");
+           		Logger.logAndReportPass("Clicked on Cross Icon on not applicable pop up and user stays on observation details page");
+           	} 
                public void DefaultEntityAdded() throws Exception {
                    Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.SchoolNameAddedByDefaultInObservationDetailsPage),"School Entity not added by default");
            		Logger.logAndReportPass("School entity added by default in Observation details page for rubric with singlw submission observation");
@@ -1325,9 +1336,9 @@ public class ObservationPageAction {
                 }
                
                public void verifyandclickViewbutton() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ViewbuttononDomainInstance);
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.ViewbuttononDomainInstance);
-            	   Logger.logAndReportInfo("View button is displayed and click on it and user landed on question page");
+            	   ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(observationPageObjects.ViewbuttononDomainInstance);
+                   ShikshaLokamClient.get().gestures().click(observationPageObjects.ViewbuttononDomainInstance);
+            	   Logger.logAndReportInfo("Clicked on View button and user landed on question page");
                 }
                
                public void verifyNoSaveAndNosubmitbutton() throws Exception {
@@ -1361,23 +1372,25 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("click on the observations which has domains");
                 }
                
-               public void clickDomainDropdown() throws Exception {  
+               public void clickDomainDropdown() throws Exception { 
+            	   //js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.addedInstance);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.addedInstance);
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.addedInstance);
             	   Logger.logAndReportInfo("clicked on added instance");
                 }
                
                public void verifyDomainStatusNotstarted() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusNotStarted);
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusNotStarted),"Not started status not displayed");
             	   Logger.logAndReportPass("Status not started is displayed");
                 }
                
                public void verifyDomainStatusDraft() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusDraft);
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusDraft),"Draft status not displayed");
             	   Logger.logAndReportPass("Status Draft is displayed");
                 }
                
                public void verifyDomainStatusCompleted() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusCompleted);
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.statusCompleted),"Completed status not displayed");
             	   Logger.logAndReportPass("Status Completed is displayed");
                 }
                
@@ -1438,6 +1451,39 @@ public class ObservationPageAction {
             	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.secondSaveConfirmationMessage);
             	   Logger.logAndReportPass("Confirmation message on second save popup is displayed");
                 }
+               
+               public void verifyAndClickNotapplicableButton() throws Exception { 
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.notapplicable),"Not applicable button is  ot present");
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.notapplicable);
+            	   Logger.logAndReportPass("Not applicable button is present and Clicked on it");
+                }
+               
+               public void verifyNotapplicablePopup() throws Exception { 
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.NotApplicablePopup),"Not applicable pop up not appeared");
+            	   Logger.logAndReportPass("Not applicable pop up appeared");
+                }
+               
+               public void verifyTextOnNotapplicablePopup() throws Exception { 
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.TextOnAotapplicablepopup),"Text on Not applicable pop up not displayed");
+            	   Logger.logAndReportPass("Text on Not applicable pop up displayed");
+                }
+
+
+               public void clickGoBackButton() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.GobackButton);
+            	   Logger.logAndReportInfo("Clicked on go back button on popup");
+                }
+               
+               public void clickBackButton() throws Exception {  
+            	   js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.BackButtonOnQuestionPage);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.BackButtonOnQuestionPage);
+            	   Logger.logAndReportInfo("Clicked on go back button on popup");
+                }
+               public void enterTextOnNotapplicable() throws Exception { 
+           	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.TextBox, "Not relevant domain hence marking not applicable" );
+           	   Logger.logAndReportPass("Entered reason for marking as not applicable");
+               }
+               
                      
 }
 

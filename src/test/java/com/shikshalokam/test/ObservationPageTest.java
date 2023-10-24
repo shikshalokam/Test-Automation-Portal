@@ -769,11 +769,11 @@ public class ObservationPageTest {
         getObservationPageActions().verifyObservationButton();
         getObservationPageActions().clickOnObservationButton();
         Thread.sleep(10000);
-        getObservationPageActions().clickNoJoinProgramButtonObservation();
-        Thread.sleep(10000);
+        //getObservationPageActions().clickNoJoinProgramButtonObservation();
+        
     }
     
-    @Test(description = "Observation domain status")
+    @Test(description = "Observation domain status & save & submit flow")
     @Author(name = "GAGAN")
     public void observationInstanceStatusSaveSubmitButton_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
@@ -850,10 +850,52 @@ public class ObservationPageTest {
         getObservationPageActions().clickDomainDropdown();
         Thread.sleep(5000);
         getObservationPageActions().verifyDomainStatusCompleted();
+        Thread.sleep(5000);
         
         getObservationPageActions().clickDomainDropdown();
+        Thread.sleep(5000);
         getObservationPageActions().verifyandclickViewbutton();
         getObservationPageActions().verifyNoSaveAndNosubmitbutton();
         
 }
+    
+    @Test(description = "Not applicable flow")
+    @Author(name = "GAGAN")
+    public void notApplicable_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName4"));
+        getLoginPageActions().enterPassword(loginTestData.get("password4"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickOnObservationDomain();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(5000);
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().verifyAndClickNotapplicableButton();
+        Thread.sleep(5000);
+        getObservationPageActions().verifyNotapplicablePopup();
+        getObservationPageActions().verifyTextOnNotapplicablePopup();
+        getObservationPageActions().clickGoBackButton();
+        getObservationPageActions().verifyTextOnObservationDetailsPage();
+        getObservationPageActions().verifyAndClickNotapplicableButton();
+        getObservationPageActions().clickOnCrossIconOnNotApplicablePopup();
+        getObservationPageActions().verifyAndClickNotapplicableButton();
+       // getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().verifyTextOnNotapplicablePopup();
+        getObservationPageActions().enterTextOnNotapplicable();
+        getObservationPageActions().clickOnSaveonNotapplicablepopup();
+        
+    }
+   
 }

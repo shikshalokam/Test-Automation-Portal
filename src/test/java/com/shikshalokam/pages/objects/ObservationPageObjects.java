@@ -598,4 +598,23 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "//div[normalize-space()='Your Form has been saved successfully!']")
     public WebElement secondSaveConfirmationMessage;
+    
+    @FindBy(xpath = "//button[normalize-space()='Not Applicable']")
+    public WebElement notapplicable;
+  
+    @FindBy(xpath = "//button[normalize-space()='Go back']")
+    public WebElement GobackButton;
+    
+    @FindBy(xpath = "//button[normalize-space()='Back']")
+    public WebElement BackButtonOnQuestionPage;
+    
+    @FindBy(xpath = "//h4[normalize-space()='Not Applicable']")
+    public WebElement NotApplicablePopup;
+    
+    @FindBy(xpath = "//p[text()='Please add your remarks here before making the Domain Not applicable.']")
+    public WebElement TextOnAotapplicablepopup;
+    
+    @FindBy(xpath = "//input[@class='edit-sub-input ng-pristine ng-valid ng-touched']")
+    public WebElement TextBox;
+    
 }
