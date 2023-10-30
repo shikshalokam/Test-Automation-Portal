@@ -27,8 +27,11 @@ public class ProgramDashboardObjects {
      public  WebElement programTesting4point4;
      
    //span[.=' Program - HT and officials ']
-     @FindBy(xpath="//span[.=' Program - HT and officials ']")
+     @FindBy(xpath="//span[normalize-space()='Program - HT and officials']")
      public  WebElement programHtandOfficials;
+     
+     @FindBy(xpath="//span[.=' Program – Teacher ']")
+     public  WebElement programTeacher;
      
      @FindBy(xpath="//span[normalize-space()='Testing Program 4.4']")
      public  WebElement programTestingProgram4point4;
@@ -91,11 +94,15 @@ public class ProgramDashboardObjects {
      
      @FindBy(xpath="//div[normalize-space()='*Please select the resource name to get data']")
      public  WebElement SelectResourceMessage;
-     
+   //div[normalize-space()='*Please select a district first from the district filter']
+     @FindBy(xpath="//div[normalize-space()='*Please select a district first from the district filter']")
+     public  WebElement errorMessageToSelectDistrict;
      
      @FindBy(xpath="//span[.='Select district']")
      public  WebElement districtDropdown;
      
+     @FindBy(xpath="//span[.='Select block']")
+     public  WebElement blockDropdown;
     
      @FindBy(xpath="//span[normalize-space()='Ananthapuram']")
      public  WebElement Anantapurdistrict;
@@ -276,8 +283,89 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="//div//input[@class='mat-input-element mat-form-field-autofill-control ng-tns-c191-102 ng-pristine ng-valid cdk-text-field-autofill-monitored ng-touched']")
      public WebElement minNoTaskInProj5;
      
+   //th[normalize-space()='In progress projects with evidence']
      
+     
+   //span[normalize-space()='Improvement Project - Teacher']
+     @FindBy(xpath="//span[normalize-space()='Improvement Project - Teacher']")
+     public WebElement impProjTeacher;
+     
+     @FindBy(xpath="//span[normalize-space()='obs with rubrics Teacher']")
+     public WebElement obsWithRubricsReacher;
+    
+     @FindBy(xpath="//span[normalize-space()='Observation without Rubrics Teacher']")
+     public WebElement obsWithoutRubricsTeacher;
+     
+     @FindBy(xpath="//span[normalize-space()='Survey HT']")
+     public WebElement surveyHT;
+   //div//label[.='Detailed report']
+     
+     @FindBy(xpath="//div//label[.='Detailed report']")
+     public WebElement detailedReportHeader;
+     
+   //div[normalize-space()='Table view is not available for this report']
+     
+     @FindBy(xpath="//div[normalize-space()='Table view is not available for this report']")
+     public WebElement tableViewIsNotAvailable;
+     
+     @FindBy(xpath="//th[normalize-space()='Program Name']")
+     public WebElement programNameColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='Improvement Project Name']")
+     public WebElement improvementProjectNameColumn;
+   
+     @FindBy(xpath="//th[normalize-space()='District Name']")
+     public WebElement districtNameColumn;
+    
+     @FindBy(xpath="//th[normalize-space()='Block Name']")
+     public WebElement blockNameColumn;
+    
+     @FindBy(xpath="//th[normalize-space()='Organisation Name']")
+     public WebElement organizationNameColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='Started']")
+     public WebElement startedColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='In-Progress']")
+     public WebElement inprogressColumn;
+    
+     @FindBy(xpath="//th[normalize-space()='In progress projects with evidence']")
+     public WebElement inprogressProjectWithEvidenceColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='Submitted']")
+     public WebElement submittedColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='Submitted projects with evidence']")
+     public WebElement submittedProjectWithEvidenceColumn;
+    
+     @FindBy(xpath="//th[normalize-space()='Observation Name']")
+     public WebElement observationNameColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='District']")
+     public WebElement districtColumn;
+   
+     @FindBy(xpath="//th[normalize-space()='Block']")
+     public WebElement blockColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='No. of users (started)']")
+     public WebElement noOfUsersStartedColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='No. of users (submitted)']")
+     public WebElement noOfUsersSubmittedColumn;
+   
+     @FindBy(xpath="//th[normalize-space()='Total Submissions']")
+     public WebElement totalSubmissionsColumn;
+     
+     @FindBy(xpath="//th[normalize-space()='Entities Observed']")
+     public WebElement entitiesObservedColumn;
+     
+     @FindBy(xpath="//span[normalize-space()='Amadagur']")
+     public WebElement amadagurBlock;
+    
+     @FindBy(xpath="//span[normalize-space()='Anantapur']")
+     public WebElement anatapurBlock;
 }
+
 		
 		
 		

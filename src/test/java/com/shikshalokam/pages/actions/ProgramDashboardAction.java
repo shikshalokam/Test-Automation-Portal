@@ -121,9 +121,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		        	 js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.programTesting4point4);
 		    		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.programTesting4point4);
 		    	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected Testing 4.4 Program");
-		    	        Thread.sleep(2000);
-		    	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.programTesting4point4) ,"Same Program is not selected under Datasets Tab");
-		   			 Logger.logAndReportPass("Same Program is selected under Datasets Tab by Default");
+		    	     
 		        }
 		        
 		    }
@@ -145,7 +143,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		        
 		    }
 		 
-		 public void selectNewProgram() throws Exception {
+		 public void selectNewProgramProgramHTandOfficials() throws Exception {
 			 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectprogramdropdownonpopup);
 			Thread.sleep(2000);
 		        if(getEnvironmentValue().contains("diksha")) {
@@ -162,6 +160,8 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		        
 		    }
 		 
+		
+		
 		 public void selectProjectResource() throws Exception {
 			 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectresourse);
 			Thread.sleep(2000);
@@ -203,9 +203,10 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		 
 		 public void verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup() throws Exception {
 			 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.confirmbuttonOnSelectprogramPopup);
-			   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.confirmbuttonOnSelectprogramPopup),"Confirm Button got Enabled on Program Resource Pop-up.");
-			   Logger.logAndReportPass("Confirm Button got Enabled on Program Resource Pop-up.");
+			   Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.confirmbuttonOnSelectprogramPopup),"Confirm Button got Enabled on Program Resource Pop-up.");
+			   Logger.logAndReportInfo("Confirm Button got Enabled on Program Resource Pop-up.");
 		    	ShikshaLokamClient.get().gestures().click(programDashboardObjects.confirmbuttonOnSelectprogramPopup);
+		    	Logger.logAndReportInfo("Clicked on Confirm Button ");
               }
 		 
 	
@@ -306,8 +307,13 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
    	    	
    	    	
    	    	public void VerifySelectResourceMessage() throws Exception {
-   	            Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.SelectResourceMessage),"*Please select the resource name to get data message doesn't shows up.");
+   	            Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.SelectResourceMessage),"*Please select the resource name to get data - message doesn't shows up.");
    	    		Logger.logAndReportInfo("*Please select the resource name to get data - message shows up.");
+   	    	}
+   	    	
+   	    	public void verifyErrorMessageToSelectDistrictFirst() throws Exception {
+   	            Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.errorMessageToSelectDistrict),"*Please select a district first from the district filter -error message doesn't shows up.");
+   	    		Logger.logAndReportInfo("*Please select a district first from the district filter - error message shows up.");
    	    	}
    	    	
    	    	//selecting district and organisation in staging
@@ -322,14 +328,10 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
    	      if(getEnvironmentValue().contains("diksha")) {
 	            ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");	
 	        } else if(getEnvironmentValue().contains("preprod")) {
-	        	
-	              
 	              ShikshaLokamClient.get().gestures().click(programDashboardObjects.Agradistrict);
 	              ShikshaLokamClient.get().report().log(Status.INFO, "Selected Agra District");
 	        
 	        } else {
-			    
-	             
 	              ShikshaLokamClient.get().gestures().click(programDashboardObjects.Chittordistrict);
 	              ShikshaLokamClient.get().report().log(Status.INFO, "Selected Chittor District");
 	        }
@@ -349,6 +351,12 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
                     ShikshaLokamClient.get().report().log(Status.INFO, "Selected Staging Custodian Organization");
                 }
   		    }
+   	    	
+   	    	public void clickOnBlockPD() throws Exception {
+      	         ShikshaLokamClient.get().gestures().click(programDashboardObjects.blockDropdown);
+      	      ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Block Dropdown");
+   		      Thread.sleep(2000);
+   	    }
    	    	
 
    	    	public void selectdate() throws Exception {
@@ -478,8 +486,31 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
    	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.nobutton);
    	 }
   	
+	public void requestStatusreportYesPD() throws Exception {	
+	   	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.statusReport);
+	   	 Logger.logAndReportPass("Selected Status Report .");
+	   	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.requestReport),"Request Report button is not Enabled.");
+	   	 Logger.logAndReportPass("Request Report button is Enabled.");
+	   	 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
+	   	 Logger.logAndReportInfo("Clicked on Request Report.");
+	   	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportYesNoPopup),"Request Report Yes No Pop-up is not Displayed");
+	   	 Logger.logAndReportPass("Request Report Yes No Pop-up is Displayed");
+	   	 //***********
+	   	Thread.sleep(2000);
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.yesbutton);
+		 Logger.logAndReportInfo("Clicked Yes Button on Request Report Yes No Pop-up.");
+		
+		 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.reportRequestedPopup);
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.reportRequestedPopup),"Your Report Has Been Requested Pop-up is not Displayed");
+		 Logger.logAndReportPass("Your report has been requested and will be available to download after 24 hours - Pop-up is Displayed");
+		 ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("OK button is Enabled ");
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("Clicked on OK button on Report Requested Popup");
+	   	 }
   	
-	public void requestStatusreportYES() throws Exception {	
+  	
+	public void requestStatusreportYes() throws Exception {	
  		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
  		 
    		ShikshaLokamClient.get().gestures().click(programDashboardObjects.statusReport);
@@ -893,6 +924,12 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
    		Logger.logAndReportInfo("Big Number Chart is Present .");
    	}
     
+    public void VerifyNoBigNumberChart() throws Exception {
+        Assert.assertFalse(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.BigNumberChart),"Big Number Chart is Available.");
+		Logger.logAndReportInfo("Big Number Chart is not Available .");
+	}
+    
+    
     public void verifyPmUdrReport() throws Exception {
 	    	 Thread.sleep(2000);
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectReportDropdown);
@@ -900,6 +937,16 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		 Thread.sleep(2000);
 		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.udrReport),"User Detail Report type is not Present.");
    	 Logger.logAndReportInfo("User Detail Report type  is Present ."); 
+    }
+    
+    public void verifyUdrReport() throws Exception {
+    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.udrReport),"User Detail Report type is not Present.");
+  	 Logger.logAndReportInfo("User Detail Report type  is Present ."); 
+    }
+    public void verifyNoUserDetailReport() throws Exception {
+    Assert.assertFalse(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.udrReport),"User Detail Report type  is Present .");
+  	 Logger.logAndReportPass("User Detail Report type  is not Present ."); 
+  	ShikshaLokamClient.get().gestures().PressEsc(); 
     }
     
     public void requestUDRreport() throws Exception {
@@ -910,17 +957,65 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
 		 Logger.logAndReportInfo("Clicked on Request Report.");
-		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Request Report Password Pop-up is not Displayed");
-		 Logger.logAndReportPass("Request Report Password Pop-up is Displayed");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+	     
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+		 
 		 ShikshaLokamClient.get().gestures().sendValueToTextBox(programDashboardObjects.enterPassword,"Test1234");
 		 Logger.logAndReportInfo("Entered password as : Test1234");
+		
 		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.yesbutton),"Yes button is not Enabled.");
 		 Logger.logAndReportPass("Yes button is Enabled.");
 		 //********
 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.nobutton);
 		 Thread.sleep(2000);
   	  } 
-    
+    public void requestUDRreportYes() throws Exception {
+ 		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.udrReport);
+ 		 Logger.logAndReportPass("Selected User Detail Report .");
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.requestReport),"Request Report button is not Enabled.");
+		 Logger.logAndReportPass("Request Report button is Enabled.");
+		
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.requestReport);
+		 Logger.logAndReportInfo("Clicked on Request Report.");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.requestReportPasswordPopup),"Pop-up header is incorrect");
+		 Logger.logAndReportPass("Pop-up header displayed as - Are you sure you want to request this report?");
+		 
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.enterPassword),"Password Placeholder is incorrect");
+	     Logger.logAndReportPass("Password Placeholder displayed as - Enter a password to request Report");
+	     
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.pwdCriteriaMsg),"Password criteria message is incorrect");
+	     Logger.logAndReportPass("Password criteria message displayed as - Your password should be 8 characters, alphanumeric, and without special characters or spaces. Remember your password, as you will require the same password to view the generated report."); 
+		 
+	     Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.nobutton),"No button is not Enabled.");
+		 Logger.logAndReportPass("No button is Enabled.");
+		 
+		 ShikshaLokamClient.get().gestures().sendValueToTextBox(programDashboardObjects.enterPassword,"Test1234");
+		 Logger.logAndReportInfo("Entered password as : Test1234");
+		
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.yesbutton),"Yes button is not Enabled.");
+		 Logger.logAndReportPass("Yes button is Enabled.");
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.yesbutton);
+		 Logger.logAndReportPass("Clicked On Yes Button.");
+		 Thread.sleep(2000);
+		 ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(programDashboardObjects.reportRequestedPopup);
+		 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.reportRequestedPopup),"Your Report Has Been Requested Pop-up is not Displayed");
+		 Logger.logAndReportPass("Your report has been requested and will be available to download after 24 hours - Pop-up is Displayed");
+		 ShikshaLokamClient.get().gestures().isEnabled(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("OK button is Enabled ");
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.okButtonOnReportRequestedPopup);
+		 Logger.logAndReportInfo("Clicked on OK button on Report Requested Popup"); 
+    } 
     public void ClickCloseDashboardButton() throws Exception {
     	ShikshaLokamClient.get().gestures().click(programDashboardObjects.CloseDashboardButton);
 		Logger.logAndReportInfo("Close Dashboard is present and clicked on it and user is landed on the Home page.");
@@ -995,8 +1090,199 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
     Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.minprojectEvidence),"Minimum no. of project evidence textfield is not Present.");
     Logger.logAndReportPass("Minimum no. of project evidence filter is Present.");
 }
-    
+    public void verifyInprogressAndSubmittedProjectsWithEvidencesTableColumns() throws Exception {
+    	ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.districtWiseTableHeader);
+        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.inprogressProjectWithEvidenceColumn),"In progress projects with evidence - column is not Present.");
+    	 Logger.logAndReportPass("In progress projects with evidence - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.submittedProjectWithEvidenceColumn),"Submitted projects with evidence - column is not Present.");
+    	 Logger.logAndReportPass("Submitted projects with evidence - column is Present.");
    
+    }
+    
+    public void selectNewProgramProgramTeacher() throws Exception {
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectprogramdropdownonpopup);
+		 ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on select Program");	
+		Thread.sleep(2000);
+	        if(getEnvironmentValue().contains("diksha")) {
+	            ShikshaLokamClient.get().report().log(Status.INFO, "NO Program");	
+	        } else if(getEnvironmentValue().contains("preprod")) {
+	    	        ShikshaLokamClient.get().report().log(Status.INFO, "NO Program");
+	        } else {
+	        	 js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.programTeacher);
+	    		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.programTeacher);
+	    	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected Program - Teacher");
+	        }
+	        
+    }
+    
+    public void selectProgramTeacherProjectResource() throws Exception {
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectresourse);
+		Thread.sleep(2000);
+	        if(getEnvironmentValue().contains("diksha")) {
+	            ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");	
+	        } else if(getEnvironmentValue().contains("preprod")) {
+	    	        ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");
+	        } else {
+	        	js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.impProjTeacher);
+				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.impProjTeacher);
+			         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Improvement Project - Teacher");   
+	        }
+	        
+	    }
+    
+    public void selectProgramTeacherObsWithRubricsResource() throws Exception {
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectresoursedropdown);
+		Thread.sleep(2000);
+	        if(getEnvironmentValue().contains("diksha")) {
+	            ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");	
+	        } else if(getEnvironmentValue().contains("preprod")) {
+	    	        ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");
+	        } else {
+	        	js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.obsWithRubricsReacher);
+				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.obsWithRubricsReacher);
+			         ShikshaLokamClient.get().report().log(Status.INFO, "Selected obs with rubrics Teacher");   
+	        }
+	        
+	    }
+    
+    public void selectProgramTeacherObsWithoutRubricsResource() throws Exception {
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectresoursedropdown);
+		Thread.sleep(2000);
+	        if(getEnvironmentValue().contains("diksha")) {
+	            ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");	
+	        } else if(getEnvironmentValue().contains("preprod")) {
+	    	        ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");
+	        } else {
+	        	js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.obsWithoutRubricsTeacher);
+				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.obsWithoutRubricsTeacher);
+			         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Observation without Rubrics Teacher");   
+	        }
+	        
+	    }
+    
+    public void selectProgramHTandOfficialsSurveyHTResource() throws Exception {
+		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectresourse);
+		Thread.sleep(2000);
+	        if(getEnvironmentValue().contains("diksha")) {
+	            ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");	
+	        } else if(getEnvironmentValue().contains("preprod")) {
+	    	        ShikshaLokamClient.get().report().log(Status.INFO, "NO Resource");
+	        } else {
+	        	js.executeScript("arguments[0].scrollIntoView(true);", programDashboardObjects.surveyHT);
+				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.surveyHT);
+			         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Survey HT ");   
+	        }
+	        
+	    }
+    
+    public void verifySelectReportisNotClickable() throws Exception {
+    Assert.assertFalse(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectReportDropdown),"Select Report button is Clickable .");
+	 Logger.logAndReportPass("Select Report Dropdown is not Clickable , therefore No Reports Available");
+}
+    
+    public void verifyByDefaultOnProgramDatasetsTab() throws Exception {
+        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.detailedReportHeader),"Detailed Report Section is not present - therefore User Did not land on Program Datasets Tab");
+		Logger.logAndReportPass("Detailed Report Section is present - therefore User landed on Program Datasets Tab  by Default");
+	}
+    
+    public void verifyByDefaultNoResouceIsSelected() throws Exception {
+        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectresourse),"Select Resource Placeholder is not Displayed - therefore Resource is selected under Datasets by Default");
+		Logger.logAndReportPass("Select Resource Placeholder is Displayed - therefore Resource is not selected under Datasets by Default ");
+	}
+    
+    public void verifySelectedProgramHTandOfficialsOnPopupIsByDefaultSelected() throws Exception {
+    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.programHtandOfficials) ,"Same Program is not selected under Datasets Tab");
+	 Logger.logAndReportPass("Same Program is selected under Datasets Tab by Default");
+    }
+    
+    public void verifyImprovementProjectTableColumnsOfBlockWiseStatusTab() throws Exception {
+    	ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.blockWiseTableHeader);
+         Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.programNameColumn),"Program Name - column is not Present.");
+    	 Logger.logAndReportPass("Program Name - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.improvementProjectNameColumn),"Improvement Project Name - column is not Present.");
+    	 Logger.logAndReportPass("Improvement Project Name - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.districtNameColumn),"District Name - column is not Present.");
+    	 Logger.logAndReportPass("District Name - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.blockNameColumn),"Block Name - column is not Present.");
+    	 Logger.logAndReportPass("Block Name - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.organizationNameColumn),"Organisation Name - column is not Present.");
+    	 Logger.logAndReportPass("Organisation Name  - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.startedColumn),"Started - column is not Present.");
+    	 Logger.logAndReportPass("Started - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.inprogressColumn),"In-Progress - column is not Present.");
+    	 Logger.logAndReportPass("In-Progress  - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.inprogressProjectWithEvidenceColumn),"In progress projects with evidence - column is not Present.");
+    	 Logger.logAndReportPass("In progress projects with evidence  - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.submittedColumn),"Submitted - column is not Present.");
+    	 Logger.logAndReportPass("Submitted  - column is Present.");
+    	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.submittedProjectWithEvidenceColumn),"Submitted projects with evidence - column is not Present.");
+    	 Logger.logAndReportPass("Submitted projects with evidence  - column is Present.");
+
+   
+    }
+    
+    public void verifyTableViewNotAvailableFotThisReportUnderBlockWiseStatusTabForSurveyResource() throws Exception {
+    	ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.tableViewIsNotAvailable);
+         Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.tableViewIsNotAvailable),"Table view is not available for this report - error message is not Displayed.");
+    	 Logger.logAndReportPass("Table view is not available for this report - error message is Displayed.");
+    }
+    
+    public void verifyObservationsTableColumnsOfBlockWiseStatusTab() throws Exception {
+    	ShikshaLokamClient.get().gestures().waitForElementToAppear(programDashboardObjects.blockWiseTableHeader);
+    	Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.programNameColumn),"Program Name - column is not Present.");
+   	    Logger.logAndReportPass("Program Name - column is Present.");
+
+   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.observationNameColumn),"Observation Name - column is not Present.");
+   	    Logger.logAndReportPass("Observation Name - column is Present.");
+   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.organizationNameColumn),"Organisation Name - column is not Present.");
+	    Logger.logAndReportPass("Organisation Name  - column is Present.");
+	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.districtColumn),"District - column is not Present.");
+   	    Logger.logAndReportPass("District - column is Present.");
+   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.blockColumn),"Block - column is not Present.");
+   	    Logger.logAndReportPass("Block - column is Present.");
+   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.noOfUsersStartedColumn),"No. of users (started) - column is not Present.");
+	    Logger.logAndReportPass("No. of users (started) - column is Present.");
+	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.noOfUsersSubmittedColumn),"No. of users (submitted) - column is not Present.");
+	    Logger.logAndReportPass("No. of users (submitted) - column is Present.");
+	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.totalSubmissionsColumn),"Total Submissions - column is not Present.");
+	    Logger.logAndReportPass("Total Submissions - column is Present.");
+	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.entitiesObservedColumn),"Entities Observed - column is not Present.");
+	    Logger.logAndReportPass("Entities Observed - column is Present.");
+
+    }
+    
+    public void clickOnDistrictDropdown() throws Exception {
+	         ShikshaLokamClient.get().gestures().click(programDashboardObjects.districtDropdown);
+	      ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on District Dropdown");
+	      Thread.sleep(2000);
+    }
+    
+    public void selectDistrictUdr() throws Exception {
+	      if(getEnvironmentValue().contains("diksha")) {
+           ShikshaLokamClient.get().report().log(Status.INFO, "No District");	
+       } else if(getEnvironmentValue().contains("preprod")) {
+            
+             ShikshaLokamClient.get().report().log(Status.INFO, "No District");
+       } else {
+    	   ShikshaLokamClient.get().gestures().scrollToElement(programDashboardObjects.Anantapurdistrict);
+             ShikshaLokamClient.get().gestures().click(programDashboardObjects.Anantapurdistrict);
+             ShikshaLokamClient.get().report().log(Status.INFO, "Selected Ananthapuram District");
+       }
+   }
+    
+    public void selectBlock() throws Exception {
+	      if(getEnvironmentValue().contains("diksha")) {
+         ShikshaLokamClient.get().report().log(Status.INFO, "NO Block");	
+     } else if(getEnvironmentValue().contains("preprod")) {
+           
+           ShikshaLokamClient.get().report().log(Status.INFO, "No Block");
+     } else {
+    	 ShikshaLokamClient.get().gestures().scrollToElement(programDashboardObjects.amadagurBlock);
+           ShikshaLokamClient.get().gestures().click(programDashboardObjects.amadagurBlock);
+           ShikshaLokamClient.get().report().log(Status.INFO, "Selected Amadagur Block");
+           ShikshaLokamClient.get().gestures().PressEsc();
+     }
+ }
     
 }
 
