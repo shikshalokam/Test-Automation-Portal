@@ -15,6 +15,9 @@ public class ProgramDashboardObjects {
        
      @FindBy(xpath="//div[.=' Note: Please select a program.']")
      public  WebElement selectProgramPopup;
+     
+   	 @FindBy(xpath="(//label[normalize-space()='Program'])[2]")
+      public  WebElement programFilterOnSelectProgramPopup;
 
      @FindBy(xpath="(//span[.='Select program'])[2]")
      public  WebElement selectprogramdropdownonpopup;
@@ -362,8 +365,12 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="//span[normalize-space()='Amadagur']")
      public WebElement amadagurBlock;
     
-     @FindBy(xpath="//span[normalize-space()='Anantapur']")
-     public WebElement anatapurBlock;
+     @FindBy(xpath="//span[normalize-space()='Amarapuram']")
+     public WebElement amarapuramBlock;
+     
+   //span[normalize-space()='Amarapuram, Amadagur']
+     @FindBy(xpath="//span[normalize-space()='Amarapuram, Amadagur']")
+     public WebElement multipleBlockSelected;
 }
 
 		

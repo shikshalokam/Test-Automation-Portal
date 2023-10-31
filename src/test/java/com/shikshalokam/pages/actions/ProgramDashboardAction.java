@@ -76,10 +76,12 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 
 		public void verifyselectProgramPopup() throws Exception {
 	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectProgramPopup),"Select Program Pop-up is not displayed.");
-			Logger.logAndReportPass("Select Program is displayed. succesfully");
+			Logger.logAndReportPass("Select Program Pop-up is displayed. succesfully");
 		}
 		
 		public void verifyContentsOfSelectProgramPopup() throws Exception {
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.programFilterOnSelectProgramPopup),"Program Filter is not displayed.");
+			Logger.logAndReportPass("Program Filter is displayed succesfully");
 			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.infoIcon),"Info icon is not displayed.");
 			Logger.logAndReportPass("Info icon is displayed succesfully");
 	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.selectProgramPopup),"Select Program Pop-up is not displayed.");
@@ -123,8 +125,9 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		    	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected Testing 4.4 Program");
 		    	     
 		        }
-		        
-		    }
+		        Thread.sleep(2000);
+		        }
+		 
 		 public void selectProgramAgain() throws Exception {
 			 ShikshaLokamClient.get().gestures().click(programDashboardObjects.selectprogramFromFilter);
 			Thread.sleep(2000);
@@ -140,7 +143,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		    		 Logger.logAndReportPass("selected Program Again from filter on Program Datasets Tab");
 		    	          
 		        }
-		        
+		        Thread.sleep(2000);
 		    }
 		 
 		 public void selectNewProgramProgramHTandOfficials() throws Exception {
@@ -157,7 +160,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 		    		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.programHtandOfficials);
 		    	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected Program - HT and officials");
 		        }
-		        
+		        Thread.sleep(2000); 
 		    }
 		 
 		
@@ -176,7 +179,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 					 ShikshaLokamClient.get().gestures().click(programDashboardObjects.projectlinkconsumptionfd98);
 				         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Project link consumption -FD 98");   
 		        }
-		        
+		        Thread.sleep(2000);
 		    }
 		 
 	
@@ -207,6 +210,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 			   Logger.logAndReportInfo("Confirm Button got Enabled on Program Resource Pop-up.");
 		    	ShikshaLokamClient.get().gestures().click(programDashboardObjects.confirmbuttonOnSelectprogramPopup);
 		    	Logger.logAndReportInfo("Clicked on Confirm Button ");
+		    	 Thread.sleep(2000);
               }
 		 
 	
@@ -1112,6 +1116,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 	    		 ShikshaLokamClient.get().gestures().click(programDashboardObjects.programTeacher);
 	    	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected Program - Teacher");
 	        }
+	        Thread.sleep(2000);
 	        
     }
     
@@ -1127,6 +1132,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.impProjTeacher);
 			         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Improvement Project - Teacher");   
 	        }
+	        Thread.sleep(2000);
 	        
 	    }
     
@@ -1142,6 +1148,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.obsWithRubricsReacher);
 			         ShikshaLokamClient.get().report().log(Status.INFO, "Selected obs with rubrics Teacher");   
 	        }
+	        Thread.sleep(2000);
 	        
 	    }
     
@@ -1157,6 +1164,8 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.obsWithoutRubricsTeacher);
 			         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Observation without Rubrics Teacher");   
 	        }
+	        Thread.sleep(2000);
+
 	        
 	    }
     
@@ -1172,7 +1181,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
 				 ShikshaLokamClient.get().gestures().click(programDashboardObjects.surveyHT);
 			         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Survey HT ");   
 	        }
-	        
+	        Thread.sleep(2000);    
 	    }
     
     public void verifySelectReportisNotClickable() throws Exception {
@@ -1283,6 +1292,29 @@ ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Program Datasets 
            ShikshaLokamClient.get().gestures().PressEsc();
      }
  }
+    public void selectMultipleBlocks() throws Exception {
+	      if(getEnvironmentValue().contains("diksha")) {
+       ShikshaLokamClient.get().report().log(Status.INFO, "NO Block");	
+   } else if(getEnvironmentValue().contains("preprod")) {
+         
+         ShikshaLokamClient.get().report().log(Status.INFO, "No Block");
+   } else {
+  	 ShikshaLokamClient.get().gestures().scrollToElement(programDashboardObjects.amadagurBlock);
+         ShikshaLokamClient.get().gestures().click(programDashboardObjects.amadagurBlock);
+         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Amadagur Block");
+         ShikshaLokamClient.get().gestures().scrollToElement(programDashboardObjects.amarapuramBlock);
+         ShikshaLokamClient.get().gestures().click(programDashboardObjects.amarapuramBlock);
+         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Amarapuram Block");
+         ShikshaLokamClient.get().report().log(Status.INFO, "Selected Multiple Blocks");
+         ShikshaLokamClient.get().gestures().PressEsc();
+   }
+}
+    
+    public void VerifyMultiSelectedBlocks() throws Exception {
+           Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(programDashboardObjects.multipleBlockSelected),"Selected Amadurga and Anatapur, is Not Displayed in Block Filter ");
+   		Logger.logAndReportPass("Selected Amadurga and Anatapur Block, is Displayed in Block Filter ");
+   		Thread.sleep(2000);
+   	}
     
 }
 

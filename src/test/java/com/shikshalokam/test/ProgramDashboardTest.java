@@ -51,15 +51,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -67,12 +64,9 @@ public class ProgramDashboardTest {
          Thread.sleep(5000);  
         
         getLoginPageActions().clickOnGuest();
-
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
-  
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().verifyByDefaultOnProgramDatasetsTab();
         getProgramDashboardActions().verifyTabsOnProgramdashboardPage();
@@ -126,16 +120,18 @@ public class ProgramDashboardTest {
     getLoginPageActions().clickOnLogin();
     getLoginPageActions().enterUserName(loginTestData.get("userNamePD"));
     getLoginPageActions().enterPassword(loginTestData.get("passwordPD"));
-    //Thread.sleep(2000);
     getLoginPageActions().clickOnLoginButton();
-    Thread.sleep(3000);
+    
+  //using refreshpage due to blank screen showing up after login 
+    Thread.sleep(10000);
+    getLoginPageActions().refreshpage();
+    Thread.sleep(5000);  
+    
     
     getLoginPageActions().clickOnGuest();
     getProgramDashboardActions().clickOnprogramdashboard();
     getProgramDashboardActions().verifyselectProgramPopup();
     getProgramDashboardActions().selectOldProgram();
-    Thread.sleep(2000);
- 
     getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
     getProgramDashboardActions().verifyTabsOnProgramdashboardPage();
     getProgramDashboardActions().VerifySelectResourceMessage();
@@ -164,15 +160,13 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
+     
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -180,11 +174,9 @@ public class ProgramDashboardTest {
          Thread.sleep(5000);  
         
         getLoginPageActions().clickOnGuest();
-
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().clickOnGraphsTab();
         getProgramDashboardActions().VerifyBigNumberChart();
@@ -208,7 +200,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().clickOnGraphsTab();
         getProgramDashboardActions().VerifyBigNumberChart();
@@ -222,15 +213,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -242,7 +230,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         
         getProgramDashboardActions().verifyPmUdrReport();
@@ -252,33 +239,29 @@ public class ProgramDashboardTest {
 }
     //..................................REG..............................................//
 
-    @Test(description = "To verify when user clicks on back button and Close dashboard on the page will takes user to the Home screen of the portal")
+    @Test(description = "To verify when user clicks on back button and Close dashboard on the page will takes user to the Home screen of the portal"+
+    "  To Verify user is able to navigate to Diksha portal home page when user clicks on back button.")
     @Author(name = "GAGAN")
     public void programDashboardBackButtonCloseDashboardButton_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
-         getLoginPageActions().refreshpage();
-         Thread.sleep(5000);  
+        getLoginPageActions().refreshpage();
+        Thread.sleep(5000);  
         
         getLoginPageActions().clickOnGuest();
-
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getLoginPageActions().clickOnBackbutton();
         getProgramDashboardActions().verifyUserOnHomePage();
@@ -286,7 +269,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().ClickCloseDashboardButton();
         getProgramDashboardActions().verifyUserOnHomePage();
@@ -294,7 +276,8 @@ public class ProgramDashboardTest {
     
     
     
-    @Test(description = "To verify if User is able to Reset the filters.")
+    @Test(description = "To verify if User is able to Reset the filters."+
+    "  To verify user will remain on same tab on the program dashboard after users closes the program & resource filter pop-up when they click on reset filter button.")
     @Author(name = "GAGAN")
     public void resetFilter_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
@@ -306,9 +289,7 @@ public class ProgramDashboardTest {
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -320,8 +301,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
-       
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().clickOnProgramDatasetsTab();
         getProgramDashboardActions().selectProjectResource();
@@ -339,15 +318,13 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
+        
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -355,10 +332,8 @@ public class ProgramDashboardTest {
          Thread.sleep(5000);  
         
         getLoginPageActions().clickOnGuest();
-
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
        
         getProgramDashboardActions().clickOnGraphsTab();
@@ -372,15 +347,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -392,7 +364,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
     
         getProgramDashboardActions().clickOnDistrictWiseStatusTab();
@@ -408,16 +379,13 @@ public class ProgramDashboardTest {
     public void selectResourceMsgAcrossTabsPD_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
-        getLoginPageActions().BMCLSelection();  
-        
+        getLoginPageActions().BMCLSelection();   
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePD"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPD"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -429,7 +397,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
     
         getProgramDashboardActions().clickOnDistrictWiseStatusTab();
@@ -447,15 +414,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
-        Thread.sleep(3000);
+         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePMPD"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPMPD"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -467,7 +431,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
     
         getProgramDashboardActions().clickOnDistrictWiseStatusTab();
@@ -477,21 +440,23 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().VerifySelectResourceMessage();
 }
     
-    @Test(description = "Verify pop up appears when user clicks on 'Yes' button on Request Report Pop-up")
+    @Test(description = "Verify pop up appears when user clicks on 'Yes' button.  "+
+    "  To verify the pop-up meesage has 'OK' button. "+
+    "  To verify report requested pop-up closes when user clicks on 'OK' button.  "+
+    "  To verify pop-up message 'Your report has been requested and will be available to download after 24 hours' appears when user clicks on 'Yes' button.  "+
+    "  To verify the pop-up meesage has 'OK' button.  "+
+    "  Verify pop up should contain a message -Are you sure you want to request this report -Box containing a text-Enter a password to request a report -'No' and 'Yes' button where 'Yes' button will be disabled")
     @Author(name = "SHREEJITH")
     public void downloadReportPopup_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -503,7 +468,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         
         getProgramDashboardActions().selectProjectResource();
@@ -516,21 +480,20 @@ public class ProgramDashboardTest {
     
     }
     
-    @Test(description = "Verify Select Program Pop-up")
+    @Test(description = " To verify if user is able to see the Info Icon and a text.  " +
+    "  To verify if user is able to see the close(x) option as an icon in red on program and resource pop-up. " +
+    "  To verify if user is able to redirect to home page when user closes the program and resource filter pop-up when they come on the Program Dashboard first time. ")
     @Author(name = "SHREEJITH")
     public void selectProgramPopupConents_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -545,21 +508,19 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().verifyUserOnHomePage();
     }
    
-    @Test(description = "To verify if User is able to add the program and Resource name through the filter drop-down again.")
+    @Test(description = "To verify if User is able to add the program and Resource name through the filter drop-down again." +
+    "  To verify User is able to select the resource for the newly selected program in the drop down")
     @Author(name = "SHREEJITH")
     public void selectProgramAgainOnDatasetsTab_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -571,7 +532,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
   
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().selectProgramAgain();
@@ -579,21 +539,18 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().selectProjectResource();
     }
     
-    @Test(description = "To verify if same Program and Resource Name is dispalyed across all tabs")
+    @Test(description = "Verify that the program and resource selected is retained in the all three tabs ")
     @Author(name = "SHREEJITH")
     public void programAndResourceNameRetainedAcrossAllTabs_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -605,7 +562,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         
         getProgramDashboardActions().selectProjectResource();
@@ -627,15 +583,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -647,7 +600,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         
         getProgramDashboardActions().selectProjectResource();
@@ -659,21 +611,23 @@ public class ProgramDashboardTest {
     
     }
     
-    @Test(description = "To verify if the status report is selected, then the select Dropdown consists of following values and it is Multiselectable")
+    @Test(description = "To verify Status filter is unhidden and placeholder text of Status label is \"Select Status\" when status report is selected of any resource( projects, observations, observation with rubric, survey) is selected in the Report type. "+
+    "  To verify Status filter is multi selectable"+
+    "  To verify if the project status report is selected, then the filter will show three values in the dropdown: Started.Submitted and Inprogress"+
+    "  To verify if observation with rubric status report is selected then the filter will show two values: Started and completed"+
+    "  To verify if observation without rubric status report is selected then the filter will show two values: Started and Completed"+
+    "  To verify if the survey status report is selected then the filter will show two values: Started and Submitted")
     @Author(name = "SHREEJITH")
     public void selectStatusDropdownValues_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -681,11 +635,9 @@ public class ProgramDashboardTest {
          Thread.sleep(5000);  
         
         getLoginPageActions().clickOnGuest();
-
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
   
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
 
@@ -720,15 +672,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -740,7 +689,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
   
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
 
@@ -751,22 +699,19 @@ public class ProgramDashboardTest {
     
     }
     
-    @Test(description = "Verify that the user is able to select other filters District, Organization to filter all Graphs / Tables " + "&"
-    		+ "  Verify that the user is able to reset the filters applied and post which user is shown with the pop-up to select the program")
+    @Test(description = "Verify that the user is able to select other filters District, Organization to filter all Graphs / Tables " +
+    "  Verify that the user is able to reset the filters applied and post which user is shown with the pop-up to select the program")
     @Author(name = "SHREEJITH")
     public void selectDistrictOrgFiltersAndResetFiltersAcrossGraphsAndTablesTabs_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -778,7 +723,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
 
         getProgramDashboardActions().selectProjectResource();
@@ -789,7 +733,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().ClickResetFilterButton();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().selectProjectResource();
        
@@ -800,7 +743,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().ClickResetFilterButton();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().selectProjectResource();
         
@@ -813,20 +755,19 @@ public class ProgramDashboardTest {
          
     }
    
-    @Test(description = "Verify If a user tries to select block level filter without selecting any district an error message will come up below the filters on the screen" )
+    @Test(description = "Verify if district is not selected then user will not be able to see any block in the block filter.  "+
+    "  Verify If a user tries to select block level filter without selecting any district an error message will come up below the filters on the screen" )
     @Author(name = "SHREEJITH")
     public void errorMessageToSelectDistrictFirst_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -838,7 +779,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
 
         getProgramDashboardActions().selectProjectResource();
@@ -848,20 +788,19 @@ public class ProgramDashboardTest {
       
     }
     
-    @Test(description = "To verify, User is able to see In progress projects with evidence for Improvement project report in Program dashboard " +  "&" +  "To verify, User is able to see Submitted Projects with evidence for Improvement project report in Program dashboard" )
+    @Test(description = "To verify, User is able to see In progress projects with evidence for Improvement project report in Program dashboard " + 
+    "   To verify, User is able to see Submitted Projects with evidence for Improvement project report in Program dashboard" )
     @Author(name = "SHREEJITH")
     public void inprogressAndSubmittedProjectsWithEvidenceTableHeaders_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
 
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -872,7 +811,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().selectProjectResource();
     
@@ -887,15 +825,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
 
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -907,9 +842,7 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramTeacher(); 
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
-        Thread.sleep(2000);
         getProgramDashboardActions().selectProgramTeacherProjectResource();
         getProgramDashboardActions().clickOnSelectReportDropdown();
         getProgramDashboardActions().verifyNoUserDetailReport();
@@ -925,9 +858,7 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().ClickResetFilterButton();  //clicking on reset filter due to unavailablity of all the resources in a single new Program
         
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
-        Thread.sleep(2000);
         
         getProgramDashboardActions().selectProgramHTandOfficialsSurveyHTResource();
         getProgramDashboardActions().clickOnSelectReportDropdown();
@@ -941,15 +872,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePD"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPD"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -961,7 +889,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
        
         getProgramDashboardActions().verifySelectReportisNotClickable();
@@ -974,15 +901,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePMPD"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPMPD"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -994,7 +918,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().clickOnSelectReportDropdown();
         getProgramDashboardActions().verifyUdrReport();
@@ -1007,15 +930,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -1027,29 +947,26 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
        
         getProgramDashboardActions().verifySelectReportisNotClickable();
         
     }
     
-    @Test(description = "Verify user lands on dataset tab by default when clicks on confirm button on the pop up  " + "  Verify resource will not be selected by default in the dataset tab on the program dashboard")
+    @Test(description = "Verify the selected program in the pop up will be selected by default in the dataset tab " +
+    " Verify resource will not be selected by default in the dataset tab on the program dashboard")
     @Author(name = "SHREEJITH")
     public void programSelectedByDefaultAndresourceNotSelectedByDefault_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
-        
+     
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
          getLoginPageActions().refreshpage();
@@ -1060,7 +977,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().verifySelectedProgramHTandOfficialsOnPopupIsByDefaultSelected(); 
         getProgramDashboardActions().verifyByDefaultNoResouceIsSelected();
@@ -1073,16 +989,13 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
-        
+       
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
          getLoginPageActions().refreshpage();
@@ -1093,7 +1006,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectOldProgram();
-        Thread.sleep(2000);
   
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().clickOnGraphsTab();
@@ -1109,15 +1021,12 @@ public class ProgramDashboardTest {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
 
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -1129,9 +1038,7 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramTeacher(); 
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
-        Thread.sleep(2000);
         getProgramDashboardActions().selectProgramTeacherProjectResource();
         getProgramDashboardActions().clickOnBlockWiseStatusTab();
         getProgramDashboardActions().verifyImprovementProjectTableColumnsOfBlockWiseStatusTab();
@@ -1151,9 +1058,7 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().ClickResetFilterButton();  //clicking on reset filter due to unavailablity of all the resources in a single new Program
         
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
-        Thread.sleep(2000);
         
         getProgramDashboardActions().selectProgramHTandOfficialsSurveyHTResource();
         getProgramDashboardActions().clickOnBlockWiseStatusTab();
@@ -1162,7 +1067,7 @@ public class ProgramDashboardTest {
        
     }
     
-    @Test(description = "To verify, If user has selected the resource as 'Improvement Project' then user should see the Table columns as mentioned in the Expected results   " +
+            @Test(description = "To verify, If user has selected the resource as 'Improvement Project' then user should see the Table columns as mentioned in the Expected results   " +
     	    "  To verify, If user has selected the resource as 'Observation without rubric' then user should see the Table columns as mentioned in the Expected results    " +
     	    "  To verify, If user has selected the resource as 'Observation with rubric' then user should see the Table columns as mentioned in the Expected results  " +
     	    "  To verify, If user has selected the resource as 'Survey' then user should see the Table columns as mentioned in the Expected results")
@@ -1171,15 +1076,12 @@ public class ProgramDashboardTest {
     	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
     	        switchEnvironment();
     	        getLoginPageActions().BMCLSelection();  
-    	        
     	        Thread.sleep(3000);
     	        getLoginPageActions().clickOnGuest();
     	        getLoginPageActions().clickOnLogin();
     	        getLoginPageActions().enterUserName(loginTestData.get("userNamePD"));
     	        getLoginPageActions().enterPassword(loginTestData.get("passwordPD"));
-    	        //Thread.sleep(2000);
     	        getLoginPageActions().clickOnLoginButton();
-    	        Thread.sleep(3000);
 
     	        //using refreshpage due to blank screen showing up after login 
     	        Thread.sleep(10000);
@@ -1191,9 +1093,7 @@ public class ProgramDashboardTest {
     	        getProgramDashboardActions().clickOnprogramdashboard();
     	        getProgramDashboardActions().verifyselectProgramPopup();
     	        getProgramDashboardActions().selectNewProgramProgramTeacher(); 
-    	        Thread.sleep(2000);
     	        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
-    	        Thread.sleep(2000);
     	        getProgramDashboardActions().selectProgramTeacherProjectResource();
     	        getProgramDashboardActions().clickOnBlockWiseStatusTab();
     	        getProgramDashboardActions().verifyImprovementProjectTableColumnsOfBlockWiseStatusTab();
@@ -1213,32 +1113,25 @@ public class ProgramDashboardTest {
     	        getProgramDashboardActions().ClickResetFilterButton();  //clicking on reset filter due to unavailablity of all the resources in a single new Program
     	        
     	        getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-    	        Thread.sleep(2000);
     	        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
-    	        Thread.sleep(2000);
-    	        
     	        getProgramDashboardActions().selectProgramHTandOfficialsSurveyHTResource();
     	        getProgramDashboardActions().clickOnBlockWiseStatusTab();
-    	        
     	        getProgramDashboardActions().verifyTableViewNotAvailableFotThisReportUnderBlockWiseStatusTabForSurveyResource();
     }
     
-    @Test(description = "Verify Request report button gets enabled when user clicks on User Detail Report , Whith selecting filters(i.e district, block , organisation...etc )  " + 
-    " Verify user is able to request for User detail report with selecting other filters except resource filter  ")
-    @Author(name = "SHREEJITH")
-    public void RequestingUserDetailReportWithSelectingFilters_REG() throws Exception {
+     @Test(description = "Verify Request report button gets enabled when user clicks on User Detail Report , Whith selecting filters(i.e district, block , organisation...etc )  " + 
+     " Verify user is able to request for User detail report with selecting other filters except resource filter  ")
+     @Author(name = "SHREEJITH")
+     public void RequestingUserDetailReportWithSelectingFilters_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();  
-        
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
         getLoginPageActions().enterUserName(loginTestData.get("userNamePM"));
         getLoginPageActions().enterPassword(loginTestData.get("passwordPM"));
-        //Thread.sleep(2000);
         getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(3000);
         
         //using refreshpage due to blank screen showing up after login 
         Thread.sleep(10000);
@@ -1250,7 +1143,6 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnprogramdashboard();
         getProgramDashboardActions().verifyselectProgramPopup();
         getProgramDashboardActions().selectNewProgramProgramHTandOfficials();
-        Thread.sleep(2000);
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         getProgramDashboardActions().clickOnDistrictDropdown();
         getProgramDashboardActions().selectDistrictUdr();
@@ -1263,5 +1155,90 @@ public class ProgramDashboardTest {
     
 
 }
+            @Test(description = "To verify Select District & Select Organisation dropdowns are not dependent")
+    	    @Author(name = "SHREEJITH")
+    	    public void requestReportsBySelectingOnlyDistrictOrOrganisationPMPD_REG() throws Exception {
+    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+    	        switchEnvironment();
+    	        getLoginPageActions().BMCLSelection();  
+    	        Thread.sleep(3000);
+    	        getLoginPageActions().clickOnGuest();
+    	        getLoginPageActions().clickOnLogin();
+    	        getLoginPageActions().enterUserName(loginTestData.get("userNamePMPD"));
+    	        getLoginPageActions().enterPassword(loginTestData.get("passwordPMPD"));
+    	        getLoginPageActions().clickOnLoginButton();
+
+    	        //using refreshpage due to blank screen showing up after login 
+    	        Thread.sleep(10000);
+    	         getLoginPageActions().refreshpage();
+    	         Thread.sleep(5000);  
+    	    
+    	        getLoginPageActions().clickOnGuest();
+
+    	        getProgramDashboardActions().clickOnprogramdashboard();
+    	        getProgramDashboardActions().verifyselectProgramPopup();
+    	        getProgramDashboardActions().selectNewProgramProgramTeacher(); 
+    	        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();   	       
+    	        getProgramDashboardActions().selectProgramTeacherProjectResource();
+    	        getProgramDashboardActions().clickOnDistrictDropdown();
+    	        getProgramDashboardActions().selectDistrictUdr();
+    	        getProgramDashboardActions().requestStatusreportYes();
+   			    Logger.logAndReportPass("Requested Report by Selecting Only District");
+    	        
+    	        getProgramDashboardActions().ClickResetFilterButton(); 
+    	        
+    	        getProgramDashboardActions().verifyselectProgramPopup();
+    	        getProgramDashboardActions().selectNewProgramProgramTeacher(); 
+    	        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+    	        getProgramDashboardActions().selectProgramTeacherProjectResource();
+    	        getProgramDashboardActions().selectOrgPD();
+    	        getProgramDashboardActions().requestStatusreportYes(); 
+    	        Logger.logAndReportPass("Requested Report by Selecting Only Organisation");
+    	        
+    	        
+    }
+            
+            @Test(description = " To verify, block filter dropdown is multi selectable "+
+            "  Verify user is able to select one/more blocks in the block filter at global level for the selected district and see the relevant data (Program dataset tab/Graphs tab/Block-wise status tab) "+
+            "  Verify block level filter is applicable on all 3 tabs (Dataset/graphs/Block-wise status) selection of the block made in one tab should also reflect on other 2 tabs also")
+    	    @Author(name = "SHREEJITH")
+    	    public void blockLevelFiltersAreMultiSelectablePMPD_REG() throws Exception {
+    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
+    	        switchEnvironment();
+    	        getLoginPageActions().BMCLSelection();  
+    	        Thread.sleep(3000);
+    	        getLoginPageActions().clickOnGuest();
+    	        getLoginPageActions().clickOnLogin();
+    	        getLoginPageActions().enterUserName(loginTestData.get("userNamePMPD"));
+    	        getLoginPageActions().enterPassword(loginTestData.get("passwordPMPD"));
+    	        getLoginPageActions().clickOnLoginButton();
+
+    	        //using refreshpage due to blank screen showing up after login 
+    	        Thread.sleep(10000);
+    	         getLoginPageActions().refreshpage();
+    	         Thread.sleep(5000);  
+    	    
+    	        getLoginPageActions().clickOnGuest();
+
+    	        getProgramDashboardActions().clickOnprogramdashboard();
+    	        getProgramDashboardActions().verifyselectProgramPopup();
+    	        getProgramDashboardActions().selectNewProgramProgramTeacher(); 
+    	        getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
+    	        getProgramDashboardActions().verifyByDefaultOnProgramDatasetsTab();
+    	        getProgramDashboardActions().selectProgramTeacherProjectResource();
+    	        getProgramDashboardActions().clickOnDistrictDropdown();
+    	        getProgramDashboardActions().selectDistrictUdr();
+    	        getProgramDashboardActions().clickOnBlockPD();
+    	        getProgramDashboardActions().selectMultipleBlocks();
+    	        getProgramDashboardActions().VerifyMultiSelectedBlocks();
+    	        
+    	        getProgramDashboardActions().clickOnGraphsTab();
+    	        getProgramDashboardActions().VerifyMultiSelectedBlocks();
+    	        
+    	        getProgramDashboardActions().clickOnBlockWiseStatusTab();
+    	        getProgramDashboardActions().VerifyMultiSelectedBlocks(); 	        
+    	        
+    }
+    
     
 }
