@@ -1,16 +1,10 @@
 package com.shikshalokam.test;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-
-
 import java.util.Map;
-
 import com.shikshalokam.annotation.Author;
 import com.shikshalokam.pages.actions.LoginPageAction;
-import com.shikshalokam.pages.actions.ObservationPageAction;
 import com.shikshalokam.pages.actions.ProgramDashboardAction;
-import com.shikshalokam.pages.actions.ReportPageAction;
 import com.shikshalokam.utils.gSheet.TestData;
 import com.shikshalokam.utils.logger.Logger;
 import com.shikshalokam.utils.prop.PropUtlis;
@@ -24,16 +18,9 @@ public class ProgramDashboardTest {
     public LoginPageAction getLoginPageActions() throws Exception {
         return new LoginPageAction();
     }
+    
     public ProgramDashboardAction getProgramDashboardActions() throws Exception {
         return new ProgramDashboardAction();
-    }
-    
-    public ObservationPageAction getObservationPageActions() throws Exception {
-        return new ObservationPageAction();
-    }
-    
-    public ReportPageAction getReportPageActions() throws Exception {
-    	return new ReportPageAction();
     }
     
     public String getEnvironmentValue() throws Exception {

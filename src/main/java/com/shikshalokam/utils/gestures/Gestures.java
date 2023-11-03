@@ -3,11 +3,10 @@ package com.shikshalokam.utils.gestures;
 import com.aventstack.extentreports.Status;
 import com.shikshalokam.client.ShikshaLokamClient;
 import com.shikshalokam.report.ShikshaLokamReport;
-import com.shikshalokam.utils.logger.Logger;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -23,7 +22,6 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.time.Duration;
 
-@SuppressWarnings("rawtypes")
 public class Gestures {
     public WebDriver driver;
 
@@ -203,31 +201,17 @@ public class Gestures {
 	public boolean verifyNoelement(WebElement element) throws Exception {
         try
         {
-           if(element.isDisplayed())
-        	   
+           if(element.isDisplayed())   
            {
            return false;
            }
            return false;
         }
-        catch(Exception e)
-        {
+        catch(Exception e) {
         	
             return true;
         }
 	}
-	
-	public boolean verifyNoelement1(WebElement locator)  {
-        try
-        {
-           if(locator.isDisplayed())
-         return false;                                                          
-        }
-        catch(Exception e) {
-        }
-         return true;
-        }
-		
 	
 	
 	

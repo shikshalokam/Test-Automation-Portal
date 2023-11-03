@@ -17,21 +17,24 @@ public class AdminDashboardObjects {
 	 @FindBy(xpath="(//input[@type='search'])[1]")
      public  WebElement globalSearchFilter;
 
+	 @FindBy(xpath="//h6[normalize-space()='Improvement Projects Report']/../../../../td[2]/button/i")
+     public  WebElement impProjectReport;
+	
+	 @FindBy(xpath="//h6[normalize-space()='Improvement Consumption Report']/../../../../td[2]/button/i")
+     public  WebElement improvementConsumptionReport;
 	 
-	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-list-all-reports[1]/div[2]/div[1]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/button[1]/i[1]")
-     public  WebElement impProjectReportStaging;
-	 
-	 @FindBy(xpath="//tbody//i[1]")
-     public  WebElement impProjectReportPreprod;
-	 
-	 @FindBy(xpath="//tbody//i[1]")
+	 @FindBy(xpath="//h6[normalize-space()='Observation with rubric report']/../../../../td[2]/button/i")
+     public  WebElement observationWithRubricReport;
+	
+	 @FindBy(xpath="//h6[normalize-space()='Observation report']/../../../../td[2]/button/i")
      public  WebElement observationReport;
+	
+	 @FindBy(xpath="//h6[normalize-space()='Observation consumption Report']/../../../../td[2]/button/i")
+     public  WebElement observationConsumptionReport;
 	 
-	 @FindBy(xpath="//tbody//i[1]")
+	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-list-all-reports[1]/div[2]/div[1]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/button[1]")
      public  WebElement surveyReport;
-	//tbody//i[1]
-	//tbody//i[1]
-	 
+	
 	 @FindBy(xpath="//th[@class='sorting_asc']")  
      public  WebElement serialNoColumn;
 	 
@@ -41,18 +44,24 @@ public class AdminDashboardObjects {
 	 @FindBy(xpath="//th[@class='text-center sorting'][normalize-space()='Status']")
      public  WebElement StatusColumn;
 	 
-
 	 @FindBy(xpath="(//input[@type='search'])[2]")
      public  WebElement localSearchFilter;
 	 
-	 @FindBy(xpath="//td[normalize-space()='up']")
-     public  WebElement upPararmeter;
+	 @FindBy(xpath="//td[normalize-space()='apekx']")
+     public  WebElement apekxPararmeter;
 	 
 	 @FindBy(xpath="//span[normalize-space()='Graphs']")
      public  WebElement graphsTab;
-	//span[normalize-space()='Graphs']
-	 
-	 
+
+	 @FindBy(xpath="//span[normalize-space()='Improvement projects status by District']")
+     public  WebElement improvementProjectsStatusByDistrictTab;
+
+	 @FindBy(xpath="//span[normalize-space()='Improvement projects status by Block']")
+     public  WebElement improvementProjectsStatusByBlockTab;
+	
+	 @FindBy(xpath="//span[normalize-space()='District wise observation status and entities observed']")
+     public  WebElement districtWiseObservationStatusAndEntitiesObservedTab;
+	
 	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
      public  WebElement selectProgramFilter;
 	 
@@ -62,57 +71,73 @@ public class AdminDashboardObjects {
 	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
      public  WebElement selectDistrictFilter;
 	 
-	 
 	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[4]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
-     public  WebElement selectOrganisationFilter;
+     public  WebElement selectBlockFilter;
 	
-	 @FindBy(xpath="(//span[@class='mat-checkbox-label'])[1]")     // (//span[@class='mat-checkbox-ripple mat-focus-indicator mat-ripple'])[2]
-     public  WebElement filterCheckBox1;                             //  (//span[@class='mat-checkbox-frame'])[1]   
+	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[5]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
+     public  WebElement selectOrganisationFilter;
 	 
-	 @FindBy(xpath="(//span[@class='mat-checkbox-label'])[2]")             //(//li[@class='ng-star-inserted'])[2]
+	 @FindBy(xpath="(//span[@class='mat-checkbox-label'])[1]")    
+     public  WebElement filterCheckBox1;                             
+	 
+	 @FindBy(xpath="(//span[@class='mat-checkbox-label'])[2]")             
      public  WebElement filterCheckBox2;
-	 
 	 
 	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[1]/div[3]/div[1]/label[1]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]/span[1]")             //(//li[@class='ng-star-inserted'])[2]
      public  WebElement exportAs;
 	 
-	 
-	 @FindBy(xpath="//span[normalize-space()='Pdf']")             //(//li[@class='ng-star-inserted'])[2]
+	 @FindBy(xpath="//span[normalize-space()='Pdf']")           
      public  WebElement pdf;
 	 
-	 @FindBy(xpath="//span[normalize-space()='Img']")             //(//li[@class='ng-star-inserted'])[2]
+	 @FindBy(xpath="//span[normalize-space()='Img']")            
      public  WebElement img;
 	 
-	 @FindBy(xpath="//button[@aria-label='back-button']")             //(//li[@class='ng-star-inserted'])[2]
+	 @FindBy(xpath="//button[@aria-label='back-button']")            
      public  WebElement backButton;
-	//button[@aria-label='back-button']
 	 
-	//span[normalize-space()='Img']
-	//span[normalize-space()='Pdf']
+	 @FindBy(xpath="//label[normalize-space()='Program']")            
+     public  WebElement programLabel;
 	 
+	 @FindBy(xpath="//label[normalize-space()='Improvement project']")            
+     public  WebElement improvementProjectLabel;
+
+	 @FindBy(xpath="//label[normalize-space()='District']")            
+     public  WebElement districtLabel;
 	 
+	 @FindBy(xpath="//label[normalize-space()='Block']")            
+     public  WebElement blockLabel;
 	 
-	 // /html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[4]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]
-//	 /html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]
+	 @FindBy(xpath="//label[normalize-space()='Organisation']")            
+     public  WebElement organisationLabel;
 	 
-	// /html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]
-	//td[normalize-space()='up']
-	 //	 /html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-list-all-reports[1]/div[2]/div[1]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/div[1]/label[1]/input[1]
-	//th[@class='text-center sorting_asc']
-	//th[@aria-label='Parameter: activate to sort column ascending']
-	//th[@class='sorting_asc']
-	 //tbody/tr[1]/td[2]/button[1]/i[1]	 
+	 @FindBy(xpath="//button[normalize-space()='Reset Filters']")            
+     public  WebElement resetFilters;
 	 
+	 @FindBy(xpath="//span[normalize-space()='Program name:']")            
+     public  WebElement selectedProgramNameSection;
+
+	 @FindBy(xpath="//span[normalize-space()='Project name:']")            
+     public  WebElement selectedProjectNameSection;
 	 
+
+	 @FindBy(xpath="//span[normalize-space()='District name:']")            
+     public  WebElement selectedDistrictNameSection;
+	
+	 @FindBy(xpath="//span[normalize-space()='Block name:']")            
+     public  WebElement selectedBlockNameSection;
+	
+	 @FindBy(xpath="//span[normalize-space()='Organisation:']")            
+     public  WebElement selectedOrganisationSection;
 	 
+	 @FindBy(xpath="//div[contains(text(),'Showing 1 to ')]")            
+     public  WebElement showing1To;
 	 
-	//div[contains(text(),'Datasets')]
-	//div[contains(text(),'Reports')]
-	 //input[@type='search']
+	 @FindBy(xpath="//div[contains(text(),'Showing 11 to ')]")            
+     public  WebElement showing11To;
 	 
+	 @FindBy(xpath="//span//a[.='2']")            
+     public  WebElement pagination2;
 	 
-	 
-	//th[@class='sorting_asc']
-	//th[@aria-label='Parameter: activate to sort column ascending']
-	//th[@class='text-center sorting'][normalize-space()='Status']
+	  @FindBy(xpath="//div[normalize-space()='*Please select a district first from the district filter']")
+	  public  WebElement errorMessageToSelectDistrict;
 }

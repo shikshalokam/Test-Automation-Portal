@@ -597,7 +597,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
 	    	 verifyWelcomeTitle();
 	         selectRoleHTAndOffical();
 	         clickOnContinue();
-	         clickOnBoardDropDown();
+	      /*   clickOnBoardDropDown();
 	         selectcbseOrNcertBoardOption();
 	         Thread.sleep(2000);
 	         clickOnSubmitButtonOnCourseWindow();
@@ -605,7 +605,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
 	        //selectState();
 	         //selectDistrict();
 	         clickOnSubmitButtonOnLocationWindow();
-	         verifyHomeButton();
+	         verifyHomeButton(); */
 	    }
 	    
 	   

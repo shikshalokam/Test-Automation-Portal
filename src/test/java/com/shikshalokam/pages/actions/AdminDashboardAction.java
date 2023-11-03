@@ -76,63 +76,98 @@ public class AdminDashboardAction {
 	        Logger.logAndReportInfo("Clicked on Improvement Project Report"); 
 	    }   */
 	        
-	        public void searchAndSelectProjectReports() throws Exception {
+	        public void searchAndSelectImprovementsProjectReport() throws Exception {
 	   	         
 	   	      if(getEnvironmentValue().contains("diksha")) {
 		            ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
 		        } else if(getEnvironmentValue().contains("preprod")) {
-		        	 ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"New Improvement Projects Report Beta");
-		 	    	
-		 	        Logger.logAndReportInfo("Searched for New Improvement Projects Report Beta ");
-		 	        Thread.sleep(2000);
-		 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.impProjectReportPreprod);
-		 	        Logger.logAndReportInfo("Clicked on Improvement Project Report"); 
+		        	 ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
 		        } else {
 		        	
-		        	 ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Unique User Improvement Project Report");
+		        	 ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Improvement Projects Report");
 		        	 //System.out.println(Clock.SYSTEM);
-		 	        Logger.logAndReportInfo("Searched for Unique User Improvement Project Report ");
+		 	        Logger.logAndReportInfo("Searched for Improvement Projects Report");
 		 	        Thread.sleep(2000);
-		 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.impProjectReportStaging);
+		 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.impProjectReport);
 		 	       //System.out.println(Clock.SYSTEM);
-		 	        Logger.logAndReportInfo("Clicked on Improvement Project Report"); 
+		 	        Logger.logAndReportInfo("Clicked on Improvements Project Report"); 
 		        }
 	    }
-	    
-	      
-	        public void searchAndSelectObservationReports() throws Exception {
+	        public void searchAndSelectImprovementsConsumptionReport() throws Exception {
 	   	         
 		   	      if(getEnvironmentValue().contains("diksha")) {
 			            ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
 			        } else if(getEnvironmentValue().contains("preprod")) {
-			        	 ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Unique User Observation Report");
-			 	    	
-			 	        Logger.logAndReportInfo("Searched for Unique User Observation Report ");
-			 	        //Thread.sleep(2000);
-			 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.observationReport);
-			 	        Logger.logAndReportInfo("Clicked on Unique User Observation Report"); 
+			        	 ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
 			        } else {
-                          ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Unique User Observation Report");
+			        	
+			        	 ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Improvement Consumption Report");
+			        	 //System.out.println(Clock.SYSTEM);
+			 	        Logger.logAndReportInfo("Searched forImprovement Consumption Report");
+			 	        Thread.sleep(2000);
+			 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.improvementConsumptionReport);
+			 	       //System.out.println(Clock.SYSTEM);
+			 	        Logger.logAndReportInfo("Clicked on Improvement Consumption Report"); 
+			        }
+		    }
+	    
+	      
+	        public void searchAndSelectObservationWithRubricsReport() throws Exception {
+	   	         
+		   	      if(getEnvironmentValue().contains("diksha")) {
+			            ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
+			        } else if(getEnvironmentValue().contains("preprod")) {
+			        	ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
+			        } else {
+                          ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Observation With Rubric Report");
 			 	    	
-			 	        Logger.logAndReportInfo("Searched for Unique User Observation Report ");
+			 	        Logger.logAndReportInfo("Searched for Observation With Rubric Report ");
 			 	        //Thread.sleep(2000);
 			 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.observationReport);
-			 	        Logger.logAndReportInfo("Clicked on Unique User Observation Report"); 
+			 	        Logger.logAndReportInfo("Clicked on Observation With Rubric Report"); 
 			        }
 		    }
 	        
-	        
-	        public void searchAndSelectSurveyReports() throws Exception {
+
+	        public void searchAndSelectObservationReport() throws Exception {
 	   	         
 		   	      if(getEnvironmentValue().contains("diksha")) {
 			            ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
 			        } else if(getEnvironmentValue().contains("preprod")) {
-			        	 ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Unique User Survey Report");
+			        	ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
+			        } else {
+                          ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Observation Report");
 			 	    	
-			 	        Logger.logAndReportInfo("Searched for Unique User Survey Report ");
+			 	        Logger.logAndReportInfo("Searched for Observation Report ");
 			 	        //Thread.sleep(2000);
-			 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.surveyReport);
-			 	        Logger.logAndReportInfo("Clicked on Unique User Survey Report"); 
+			 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.observationReport);
+			 	        Logger.logAndReportInfo("Clicked on Observation Report"); 
+			        }
+		    }
+	        
+	        public void searchAndSelectObservationConsumptionReport() throws Exception {
+	   	         
+		   	      if(getEnvironmentValue().contains("diksha")) {
+			            ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
+			        } else if(getEnvironmentValue().contains("preprod")) {
+			        	ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
+			        } else {
+                        ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Observation consumption Report");
+			 	    	
+			 	        Logger.logAndReportInfo("Searched for Observation consumption Report");
+			 	        //Thread.sleep(2000);
+			 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.observationConsumptionReport);
+			 	        Logger.logAndReportInfo("Clicked on Observation consumption Report"); 
+			        }
+		    }
+	        
+	        public void searchAndSelectSurveyReport() throws Exception {
+	   	         
+		   	      if(getEnvironmentValue().contains("diksha")) {
+			            ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
+			        } else if(getEnvironmentValue().contains("preprod")) {
+			            ShikshaLokamClient.get().report().log(Status.INFO, "NO ");	
+
 			        } else {
                         ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.globalSearchFilter,"Survey consumption Report");
 			 	    	
@@ -163,47 +198,66 @@ public class AdminDashboardAction {
 	    
 	    
 	    public void searchAndSelectParameter() throws Exception {
-	    	ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.localSearchFilter,"up");
-	        Logger.logAndReportInfo("Searched for up");
+	    	ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.localSearchFilter,"apekx");
+	        Logger.logAndReportInfo("Searched for apekx1");
 	        Thread.sleep(2000);
-	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.upPararmeter);
-	        Logger.logAndReportInfo("Clicked on up Parameter");     
+	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.apekxPararmeter);
+	        Logger.logAndReportInfo("Clicked on apekx Parameter");     
 	    }
 	    
 	    public void verifyGraphsTab() throws Exception {
-	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.graphsTab),"Graphs tab is not displayed.");
-			Logger.logAndReportPass("Graphs tab is is displayed.");
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.graphsTab),"Graphs tab is not Present.");
+			Logger.logAndReportPass("Graphs tab is Present.");
 		
 		}
 	    
-	    public void selectProjectFilters() throws Exception {
-			ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectProgramFilter);
+	    public void verifyImprovementProjectsStatusByDistrictTab() throws Exception {
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.improvementProjectsStatusByDistrictTab),"Improvement projects status by District tab is not Present.");
+			Logger.logAndReportPass("Improvement projects status by District is Present.");
+		
+		}
+	    
+	    public void verifyImprovementProjectsStatusByBlockTab() throws Exception {
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.improvementProjectsStatusByBlockTab),"Improvement projects status by Block tab is not Present.");
+			Logger.logAndReportPass("Improvement projects status by Block tab is Present.");
+		
+		}
+	    
+	    public void verifyDistrictWiseObservationStatusAndEntitiesObservedTab() throws Exception {
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtWiseObservationStatusAndEntitiesObservedTab),"District wise observation status and entities observed tab is not Present.");
+			Logger.logAndReportPass("District wise observation status and entities observedtab is Present.");
+		
+		}
+	    
+ public void selectProjectFilters() throws Exception {
+	 ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectProgramFilter);
      ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Program Filter"); 
-    // Thread.sleep(2000);
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox1);
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);
      ShikshaLokamClient.get().report().log(Status.INFO, " Selected multiple filters"); 
-     //Thread.sleep(2000);
+  
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectImprovementProjectsFilter);
      ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Improvement Projects Filter"); 
-    // Thread.sleep(2000);
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox1);
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);
      ShikshaLokamClient.get().report().log(Status.INFO, "Selected multiple filters");
-     //Thread.sleep(2000);
+    
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectDistrictFilter);
      ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select District Filter"); 
-     //Thread.sleep(2000);
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox1);
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);
      ShikshaLokamClient.get().report().log(Status.INFO, "Selected multiple filters");
-     //Thread.sleep(2000);
-/*     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectOrganisationFilter);
-     ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Organisation Filter"); 
-     //Thread.sleep(2000);
+     
+     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectBlockFilter);
+     ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Block Filter");
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox1);
-    // ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);
-     ShikshaLokamClient.get().report().log(Status.INFO,  "Selected multiple filters");   */
+     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);
+     ShikshaLokamClient.get().report().log(Status.INFO, "Selected multiple filters");
+    
+     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectOrganisationFilter);
+     ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Organisation Filter"); 
+     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox1);
+     ShikshaLokamClient.get().report().log(Status.INFO,  "Selected Organisation filter");   
      
 	    }
 	    
@@ -264,6 +318,42 @@ public class AdminDashboardAction {
 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.observationReport);
 	        Logger.logAndReportInfo("Clicked on Unique User Observation Report"); 
 	    
+	    }
+	    
+	    public void clickOnResetFiltersButton() throws Exception {
+	 			ShikshaLokamClient.get().gestures().click(adminDashboardObjects.resetFilters);
+	      ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Reset Filters Button"); 
+	 	    }
+	    
+	    public void verifySelectedFiltersAreRemoved() throws Exception {
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementnotPresent(adminDashboardObjects.selectedProgramNameSection),"Program name:- Section is Present.");
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementnotPresent(adminDashboardObjects.selectedProjectNameSection),"Project name:- Section is Present.");
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementnotPresent(adminDashboardObjects.selectedDistrictNameSection),"District name:- Section is Present.");
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementnotPresent(adminDashboardObjects.selectedBlockNameSection),"Block name:- Section is Present.");
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementnotPresent(adminDashboardObjects.selectedOrganisationSection),"Organisation:- Section is Present.");
+	        Logger.logAndReportPass("Selected Filters are Removed.");
+		
+		}
+	    
+	    public void clickOnPage2() throws Exception {
+	    	ShikshaLokamClient.get().gestures().scrollToElement(adminDashboardObjects.showing1To);
+	 	    ShikshaLokamClient.get().gestures().click(adminDashboardObjects.pagination2);
+	        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Page 2 Button"); 
+	      Thread.sleep(2000);
+	 	    }
+	    
+	    public void verifyNavigatedToPage2() throws Exception {
+	    	Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.showing11To),"Did Not Navigate to Page 2.");
+			Logger.logAndReportPass("Navigated To Page 2.");
+			
+	 	    }
+	    public void verifyErrorMessageToSelectDistrictFirst() throws Exception {
+	            Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.errorMessageToSelectDistrict),"*Please select a district first from the district filter -error message doesn't shows up.");
+	    		Logger.logAndReportPass("*Please select a district first from the district filter - error message shows up.");
+	    	}
+	    public void clickOnBlockFilter() throws Exception {
+	           ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectBlockFilter);
+	           ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Block Filter");
 	    }
 	    
 

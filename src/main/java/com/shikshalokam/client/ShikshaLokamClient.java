@@ -20,7 +20,6 @@ import org.openqa.selenium.WebDriver;
  * @author: Sunil H N Date: 07/02/2022 Purpose: set driver and access utils
  * packages
  */
-@SuppressWarnings("rawtypes")
 public class ShikshaLokamClient {
 
     private static final ThreadLocal<ShikshaLokamClient> shikshalokamClient = new ThreadLocal<>();
