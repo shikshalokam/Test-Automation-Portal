@@ -1484,7 +1484,99 @@ public class ObservationPageAction {
            	   Logger.logAndReportPass("Entered reason for marking as not applicable");
                }
                
-                     
+               public void clickAddRemarkObservation() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddRemarkObs);
+            	   Logger.logAndReportInfo("Clicked on Observation which has add remark option");
+                }    
+               
+               public void clickStartButton() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.StartButton);
+            	   Thread.sleep(5000);
+            	   Logger.logAndReportInfo("Clicked on Start button");
+                } 
+               
+               public void clickAddRemarksButton() throws Exception {  
+            	   //js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.AddRemarksButton);
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.question);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddRemarksButton);
+            	   Logger.logAndReportInfo("Clicked on Add remarks button");
+                }
+               
+               public void enterTextOnAddremarks() throws Exception { 
+            	   //js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.AddremarksTextbox);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddremarksTextbox);
+               	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.AddremarksTextbox, "Observation remarks automation testing" );
+               	   Logger.logAndReportPass("Entered the remarks");
+               	   ShikshaLokamClient.get().gestures().selectAllandDelete();
+               	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.AddremarksTextbox, "Observation remarks portal automation testing" );
+            	   Logger.logAndReportPass("Edited the remarks");
+                }
+               
+               public void clickDeleteIcon() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.RemarksDeleteIcon);
+            	   Logger.logAndReportPass("Clicked on Delete icon");
+                } 
+               
+               public void clickradio1andenterremarks() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.question3);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.radio1);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddRemarksButton);
+            	   Logger.logAndReportInfo("Clicked on Add remarks button");
+                }
+               
+               public void enterTextOnAddremarks2() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddremarksTextbox2);
+               	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.AddremarksTextbox2, "mobile testing" );
+               	   Logger.logAndReportPass("Entered the remarks");
+               	}
+               
+               public void clickcheckBox() throws Exception {  
+            	  // js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.checkboxquestion);
+            	   //ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.checkboxquestion);
+            	   //Thread.sleep(5000);
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.checkboxquestion);
+            	   Thread.sleep(5000);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.checkbox3);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.checkbox4);
+            	   //ShikshaLokamClient.get().gestures().click(observationPageObjects.checkbox5);
+            	   Logger.logAndReportPass("Clicked on multiple checkboxes");
+                }
+               
+               public void clickOnFileUpload() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.fileUploadicon1);
+            	   Logger.logAndReportInfo("Clicked on file upload icon");
+                } 
+               
+               public void clickDonotUpload() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.doNotUploadButtonOnPrivacyPolicyPopup);
+            	   Logger.logAndReportPass("Clicked on Do not upload option");
+                }
+               
+               public void clickCloseIcon() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.closeIconOnPrivacyPolicyPopup);
+            	   Logger.logAndReportPass("Clicked on close icon");
+                }
+               
+               public void verifyTextonPrivacyPolicy() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.textonprivacypolicypopup);
+            	   Logger.logAndReportPass("You cannot upload evidences, please agree the content policies and try again - message is displayed");
+                }
+               
+               public void verifyQuestionThree() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.tipquestion);
+            	   Thread.sleep(5000);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.tipquestion);
+            	   Logger.logAndReportPass("question 3 is displayed");
+            	   
+                }
+               
+               public void verifyTipForQuestion() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.tip);
+            	   Logger.logAndReportPass("Use the name of the locality where the school is - Tip is displayed");
+                }
+              
+               
+               
 }
 
 

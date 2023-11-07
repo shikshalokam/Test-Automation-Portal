@@ -323,6 +323,9 @@ public class ObservationPageObjects {
     @FindBy(xpath = "(//i[@class='plus icon'])[2]")
     public WebElement addFile2;
     
+    @FindBy(xpath = "(//i[@class='plus icon'])[1]")
+    public WebElement fileUploadicon1;
+    
     //(//i[@class='plus icon'])[1]
     @FindBy(xpath = "(//input[@type='file'])[1]")
     public WebElement fileUpload1;
@@ -430,6 +433,17 @@ public class ObservationPageObjects {
 	
 	@FindBy(xpath = "//button[text()='Share']")
  	public WebElement shareButton;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+ 	public WebElement checkbox2;
+	
+	@FindBy(xpath = "//label[.=' Smart phone without internet/data pack ' ]")
+ 	public WebElement checkbox3;
+	
+	@FindBy(xpath = "//label[.=' TV ' ]")
+ 	public WebElement checkbox4;
+	@FindBy(xpath = "(//input[@type='checkbox'])[4]")
+ 	public WebElement checkbox5;
 	
 	@FindBy(xpath = "//input[@type='checkbox']")
  	public WebElement checkbox;
@@ -617,4 +631,42 @@ public class ObservationPageObjects {
     @FindBy(xpath = "//input[@class='edit-sub-input ng-pristine ng-valid ng-touched']")
     public WebElement TextBox;
     
+    @FindBy(xpath = "//h4//bdi[contains(text(),'OCI-Observation without rubric - oci regression-sc')]")
+    public WebElement AddRemarkObs;
+    
+    @FindBy(xpath = "(//button[text()='Start '])[1]")
+    public WebElement StartButton; 
+    
+    @FindBy(xpath = "(//button[normalize-space ()='Add remarks'])[1]")
+    public WebElement AddRemarksButton; 
+    
+    @FindBy(xpath = "/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-questionnaire[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/sl-input[1]/div[1]/div[1]/div[1]/div[2]/sl-page-questions[1]/sl-input[1]/div[2]/div[1]/div[1]/div[2]/sl-ques-remarks[1]/div[2]/textarea[1]")
+    public WebElement AddremarksTextbox; 
+    
+    @FindBy(xpath = "/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-questionnaire[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/sl-input[1]/div[1]/div[1]/div[1]/div[2]/sl-page-questions[1]/sl-input[1]/div[3]/div[1]/div[1]/div[3]/sl-ques-remarks[1]/div[2]/textarea[1]")
+    public WebElement AddremarksTextbox2; 
+    
+    @FindBy(xpath = "(//i[@class='trash large icon'])[2]")
+    public WebElement RemarksDeleteIcon; 
+    
+    @FindBy(xpath = "//div[contains(text(),'2 .  Which class does your child study in?')]")
+    public WebElement question; 
+    
+    @FindBy(xpath = "(//div//input[@type='radio'])[1]")
+    public WebElement radio1; 
+    
+    @FindBy(xpath = "//div[@class='sb-h5 ng-star-inserted'][normalize-space()='3 .  Are you currently living in the vicinity of the school?']")
+    public WebElement question3;
+    
+    @FindBy(xpath = "//div[contains(text(),' 5 . ')]")
+    public WebElement checkboxquestion; 
+    
+    @FindBy(xpath = "//div[contains(text(),'You cannot upload evidences, please agree the content policies and try again')]")
+    public WebElement textonprivacypolicypopup; 
+    
+    @FindBy(xpath = "//div[contains(text(),' 3 . ')]")
+    public WebElement tipquestion; 
+    
+    @FindBy(xpath = "//small[normalize-space()='Use the name of the locality where the school is']")
+    public WebElement tip; 
 }

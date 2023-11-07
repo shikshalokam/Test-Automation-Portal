@@ -748,30 +748,6 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObserveAgainNoConfirmation();
         
     }
-  
-    
-    @Test(description = "File upload flow")
-    @Author(name = "GAGAN")
-    public void verifyFileUpload_REG() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
-        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
-        switchEnvironment();
-        getLoginPageActions().BMCLSelection();
-        Thread.sleep(5000);
-        getLoginPageActions().clickOnGuest();
-        getLoginPageActions().clickOnLogin();
-        getLoginPageActions().enterUserName(loginTestData.get("userName3"));
-        getLoginPageActions().enterPassword(loginTestData.get("password3"));
-        getLoginPageActions().clickOnLoginButton();
-        Thread.sleep(10000);
-        getLoginPageActions().refreshpage();
-        Thread.sleep(10000);
-        getObservationPageActions().verifyObservationButton();
-        getObservationPageActions().clickOnObservationButton();
-        Thread.sleep(10000);
-        //getObservationPageActions().clickNoJoinProgramButtonObservation();
-        
-    }
     
     @Test(description = "Observation domain status & save & submit flow")
     @Author(name = "GAGAN")
@@ -895,6 +871,132 @@ public class ObservationPageTest {
         getObservationPageActions().verifyTextOnNotapplicablePopup();
         getObservationPageActions().enterTextOnNotapplicable();
         getObservationPageActions().clickOnSaveonNotapplicablepopup();
+        
+    }
+    
+    @Test(description = "To verify that the user is able to add remark in questions + To verify that the user is able to edit added remark + To verify that the user is able to delete added remark")
+    @Author(name = "GAGAN")
+    public void addRemarksFlow_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName4"));
+        getLoginPageActions().enterPassword(loginTestData.get("password4"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickAddRemarkObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(5000);
+        getObservationPageActions().clickStartButton();
+        getObservationPageActions().clickAddRemarksButton();
+        getObservationPageActions().enterTextOnAddremarks();
+        getObservationPageActions().clickradio1andenterremarks();
+        getObservationPageActions().enterTextOnAddremarks2();
+        getObservationPageActions().clickDeleteIcon();
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().clickOnSaveFormConirmationYes();
+        getObservationPageActions().clickBackbuttononthepopup();
+    }
+    
+    @Test(description = "To verify that the user is able to select multiple response in checkbox questions")
+    @Author(name = "GAGAN")
+    public void checkBoxFlow_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName4"));
+        getLoginPageActions().enterPassword(loginTestData.get("password4"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickAddRemarkObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(5000);
+        getObservationPageActions().clickStartButton();
+        getObservationPageActions().clickcheckBox();
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().clickOnSaveFormConirmationYes();
+        getObservationPageActions().clickBackbuttononthepopup();
+        
+    }
+    
+    @Test(description = "To verify when user clicks on 'Do not Upload' option from the 'Upload Evidences' pop-up, a toast message should come up ")
+    @Author(name = "GAGAN")
+    public void DoNotuploadFile_REG()throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName4"));
+        getLoginPageActions().enterPassword(loginTestData.get("password4"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickAddRemarkObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(5000);
+        getObservationPageActions().clickStartButton();
+        getObservationPageActions().clickOnFileUpload();
+        getObservationPageActions().clickDonotUpload();
+        
+        getObservationPageActions().verifyTextonPrivacyPolicy();
+        getObservationPageActions().clickOnOkButtonOnEvidenceUploadedPopup();
+        getObservationPageActions().clickOnFileUpload();
+        getObservationPageActions().clickDonotUpload();
+        getObservationPageActions().clickCloseIcon();
+        
+    }
+    
+    @Test(description = "To verify that the user is able to view the tip added below the question")
+    @Author(name = "GAGAN")
+    public void verifyQuestionTip_REG()throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName4"));
+        getLoginPageActions().enterPassword(loginTestData.get("password4"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickAddRemarkObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(5000);
+        getObservationPageActions().clickStartButton();
+        getObservationPageActions().verifyQuestionThree();
+        getObservationPageActions().verifyTipForQuestion();
+       
         
     }
    
