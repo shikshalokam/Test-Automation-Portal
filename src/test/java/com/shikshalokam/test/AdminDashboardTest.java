@@ -223,5 +223,85 @@ public class AdminDashboardTest {
 	    	       
 	    	      
 	    	  }
+	    	  
+	    	  @Test(description = "To verify user is able to type on the search bar."+
+		      "    To verify user is given a list of options and option for the keyword searched." +
+	    	  "    To verify user should be able to select the option from the list relevant to the search."+
+		      "    Verify that when the user chooses any value from any field and checks it from the drop-down list, the chosen field & values are displayed below the filters")
+		    
+		    	    @Author(name = "SHREEJITH")
+		    	    public void searchFromTextFieldAndSelectAD_REG() throws Exception {
+		    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+		    	
+		    	        switchEnvironment();
+		    	        getLoginPageActions().BMCLSelection();
+		    	        Thread.sleep(2000);
+		    	        getLoginPageActions().clickOnGuest();
+		    	        getLoginPageActions().clickOnLogin();
+		    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+		    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+		    	        getLoginPageActions().clickOnLoginButton();
+		    	        
+		    	        
+		    	        Thread.sleep(10000);
+		    	        getLoginPageActions().refreshpage();
+		    	        Thread.sleep(5000); 
+		    	       
+		    	        
+		    	        getLoginPageActions().clickOnGuest();
+		    	        //getProgramDashboardActions().clickOnProfileIcon();
+		    	   
+		    	        getAdminDashboardActions().clickOnadmindashboard();
+		    	       
+		    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+		    	        getAdminDashboardActions().searchAndSelectParameter();
+		    	        Thread.sleep(20000);
+		    	        getAdminDashboardActions().clickOnProgramFilter();
+		    	        getAdminDashboardActions().enterSearchTextIntoSelectProgramFilterAndSelect();
+		    	        
+		    	        getAdminDashboardActions().clickOnImprovementProjectFilter();
+		    	        getAdminDashboardActions().enterSearchTextIntoSelectImprovementProjectFilterAndSelect();
+		    	        
+		    	        getAdminDashboardActions().clickOnDistrictFilter();
+		    	        getAdminDashboardActions().enterSearchTextIntoSelectDistrictFilterAndSelect();
+		    	        
+		    	        getAdminDashboardActions().clickOnBlockFilter();
+		    	        getAdminDashboardActions().enterSearchTextIntoSelectBlockFilterAndSelect();
+		    	        
+		    	        getAdminDashboardActions().clickOnOrganisationFilter();
+		    	        getAdminDashboardActions().enterSearchTextIntoSelectOrganisationFilterAndSelect();
+		    	        getAdminDashboardActions().verifySelectedFiltersAreDispalyed();
+	    	  }
+	    	  
+	    	  @Test(description = "To verify there can be multiple global filters in a report")
+	    	    @Author(name = "SHREEJITH")
+	    	    public void multipleGlobalFilters_REG() throws Exception {
+	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	    	
+	    	        switchEnvironment();
+	    	        getLoginPageActions().BMCLSelection();
+	    	        Thread.sleep(2000);
+	    	        getLoginPageActions().clickOnGuest();
+	    	        getLoginPageActions().clickOnLogin();
+	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	    	        getLoginPageActions().clickOnLoginButton();
+	    	        
+	    	        
+	    	        Thread.sleep(10000);
+	    	        getLoginPageActions().refreshpage();
+	    	        Thread.sleep(5000); 
+	    	       
+	    	        
+	    	        getLoginPageActions().clickOnGuest();
+	    	        //getProgramDashboardActions().clickOnProfileIcon();
+	    	   
+	    	        getAdminDashboardActions().clickOnadmindashboard();
+	    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+	    	        getAdminDashboardActions().searchAndSelectParameter();
+	    	        Thread.sleep(10000);
+	    	        getAdminDashboardActions().verifyMultipleGlobalFilters();
+	    	  }
+
 
 }

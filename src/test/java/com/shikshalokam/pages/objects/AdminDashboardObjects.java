@@ -62,19 +62,19 @@ public class AdminDashboardObjects {
 	 @FindBy(xpath="//span[normalize-space()='District wise observation status and entities observed']")
      public  WebElement districtWiseObservationStatusAndEntitiesObservedTab;
 	
-	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
+	 @FindBy(xpath="//div//label[.='Program']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
      public  WebElement selectProgramFilter;
 	 
-	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
+	 @FindBy(xpath="//div//label[.='Improvement project']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
      public  WebElement selectImprovementProjectsFilter;
 	 
-	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
+	 @FindBy(xpath="//div//label[.='District']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
      public  WebElement selectDistrictFilter;
 	 
-	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[4]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
+	 @FindBy(xpath="//div//label[.='Block']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
      public  WebElement selectBlockFilter;
 	
-	 @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-report[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[2]/div[1]/app-filter[1]/form[1]/div[1]/div[1]/div[1]/div[5]/div[1]/app-material-auto-complete[1]/div[1]/mat-form-field[1]/div[1]/div[1]")
+	 @FindBy(xpath="//div//label[.='Organisation']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
      public  WebElement selectOrganisationFilter;
 	 
 	 @FindBy(xpath="(//span[@class='mat-checkbox-label'])[1]")    
@@ -140,4 +140,19 @@ public class AdminDashboardObjects {
 	 
 	  @FindBy(xpath="//div[normalize-space()='*Please select a district first from the district filter']")
 	  public  WebElement errorMessageToSelectDistrict;
+	  	  
+	  @FindBy(xpath="//span[contains(text(),'program – teacher')]")
+	  public  WebElement programTeacherProgram;
+	  
+	  @FindBy(xpath="//span[contains(text(),'improvement project - teacher')]")
+	  public  WebElement ImprovementProjectTeacher;
+	  
+	  @FindBy(xpath="//span[contains(text(),'ananthapuram')]")
+	  public  WebElement ananthapuramDistrict;
+	  
+	  @FindBy(xpath="//span[contains(text(),'amadagur')]")
+	  public  WebElement amadagurBlock;
+	  
+	  @FindBy(xpath="//span[contains(text(),'staging custodian organization')]")
+	  public  WebElement stagingCustodianOrganization;
 }
