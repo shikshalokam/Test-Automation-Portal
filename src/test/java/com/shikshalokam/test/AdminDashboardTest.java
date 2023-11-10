@@ -39,7 +39,7 @@ public class AdminDashboardTest {
 	        }}
 
 	    	
-	    	  @Test(description = "login as Admin ")
+	    	  @Test(description = "-login as Admin ")
 	    	    @Author(name = "SHREEJITH")
 	    	    public void adminDashboard() throws Exception {
 	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
@@ -78,6 +78,16 @@ public class AdminDashboardTest {
 	    	        getAdminDashboardActions().ExportAs();
 	    	        getAdminDashboardActions().clickOnBackButton();
 	    	        
+	    	        getAdminDashboardActions().searchAndSelectObservationReport();
+	    	        getAdminDashboardActions().searchAndSelectParameter();
+	    	        Thread.sleep(10000);
+	    	        getAdminDashboardActions().verifyGraphsTab();
+	    	        getAdminDashboardActions().verifyDistrictWiseObservationStatusAndEntitiesObservedTab();
+	    	        getAdminDashboardActions().verifyBlockWiseObservationStatusAndEntitiesObserved();
+	    	        getAdminDashboardActions().selectObservationFilters();
+	    	        getAdminDashboardActions().ExportAs();
+	    	        getAdminDashboardActions().clickOnBackButton();
+	    	        
 	    	        getAdminDashboardActions().searchAndSelectObservationWithRubricsReport();
 	    	        getAdminDashboardActions().verifySelectedReportInTableFormat();
 	    	        getAdminDashboardActions().searchAndSelectParameter();
@@ -99,7 +109,7 @@ public class AdminDashboardTest {
 	    	  
 	    	  //---------------------------------------REG------------------------------------//
 	    	  
-	    	  @Test(description = "To verify clicking on Reset button all the previous selected values on the filter should get erased.")
+	    	  @Test(description = "-To verify clicking on Reset button all the previous selected values on the filter should get erased.")
 	    	    @Author(name = "SHREEJITH")
 	    	    public void resetFiltersButtonAD_REG() throws Exception {
 	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
@@ -133,7 +143,7 @@ public class AdminDashboardTest {
 
 	    	  }
 	    	  
-	    	  @Test(description = "To verify clicking on Page numbers users should be able to see the data on the selected page.")
+	    	  @Test(description = "-To verify clicking on Page numbers users should be able to see the data on the selected page.")
 	    	    @Author(name = "SHREEJITH")
 	    	    public void paginationAD_REG() throws Exception {
 	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
@@ -160,8 +170,8 @@ public class AdminDashboardTest {
 	    	       
 	    	  }
 	    	  
-	    	  @Test(description = "Verify if district is not selected then user will not be able to select any block in the block filter"
-	    	  		+ "  Verify If a user tries to select block level filter without selecting any district an error message will come up on the screen")
+	    	  @Test(description = "-Verify if district is not selected then user will not be able to select any block in the block filter"
+	    	  		+ "  -Verify If a user tries to select block level filter without selecting any district an error message will come up on the screen")
 	    	    @Author(name = "SHREEJITH")
 	    	    public void errorMessageToSelectDistrictFirstAD_REG() throws Exception {
 	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
@@ -224,10 +234,10 @@ public class AdminDashboardTest {
 	    	      
 	    	  }
 	    	  
-	    	  @Test(description = "To verify user is able to type on the search bar."+
-		      "    To verify user is given a list of options and option for the keyword searched." +
-	    	  "    To verify user should be able to select the option from the list relevant to the search."+
-		      "    Verify that when the user chooses any value from any field and checks it from the drop-down list, the chosen field & values are displayed below the filters")
+	    	  @Test(description = "-To verify user is able to type on the search bar."+
+		      "    -To verify user is given a list of options and option for the keyword searched." +
+	    	  "    -To verify user should be able to select the option from the list relevant to the search."+
+		      "    -Verify that when the user chooses any value from any field and checks it from the drop-down list, the chosen field & values are displayed below the filters")
 		    
 		    	    @Author(name = "SHREEJITH")
 		    	    public void searchFromTextFieldAndSelectAD_REG() throws Exception {
@@ -242,14 +252,12 @@ public class AdminDashboardTest {
 		    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
 		    	        getLoginPageActions().clickOnLoginButton();
 		    	        
-		    	        
 		    	        Thread.sleep(10000);
 		    	        getLoginPageActions().refreshpage();
 		    	        Thread.sleep(5000); 
 		    	       
 		    	        
 		    	        getLoginPageActions().clickOnGuest();
-		    	        //getProgramDashboardActions().clickOnProfileIcon();
 		    	   
 		    	        getAdminDashboardActions().clickOnadmindashboard();
 		    	       
@@ -273,9 +281,9 @@ public class AdminDashboardTest {
 		    	        getAdminDashboardActions().verifySelectedFiltersAreDispalyed();
 	    	  }
 	    	  
-	    	  @Test(description = "To verify there can be multiple global filters in a report")
+	    	  @Test(description = "- To verify there can be multiple global filters in a report")
 	    	    @Author(name = "SHREEJITH")
-	    	    public void multipleGlobalFilters_REG() throws Exception {
+	    	    public void multipleGlobalFiltersAD_REG() throws Exception {
 	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
 	    	
 	    	        switchEnvironment();
@@ -287,14 +295,11 @@ public class AdminDashboardTest {
 	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
 	    	        getLoginPageActions().clickOnLoginButton();
 	    	        
-	    	        
 	    	        Thread.sleep(10000);
 	    	        getLoginPageActions().refreshpage();
 	    	        Thread.sleep(5000); 
-	    	       
 	    	        
 	    	        getLoginPageActions().clickOnGuest();
-	    	        //getProgramDashboardActions().clickOnProfileIcon();
 	    	   
 	    	        getAdminDashboardActions().clickOnadmindashboard();
 	    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
@@ -302,6 +307,99 @@ public class AdminDashboardTest {
 	    	        Thread.sleep(10000);
 	    	        getAdminDashboardActions().verifyMultipleGlobalFilters();
 	    	  }
+	    	  
+	    	  @Test(description = "-To verify new added table chart on admin dashboard and Program dashboard called \"Observation with rubric report\" in the existing report "+
+	    	  "    -To verify new added table chart on admin dashboard and Program dashboard called \"Observation with rubric report\" in the existing report ")
+	    	    @Author(name = "SHREEJITH")
+	    	    public void districtWiseObservationStatusAndEntitiesObservedTabColumnsAD_REG() throws Exception {
+	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	  	
+	    	        switchEnvironment();
+	    	        getLoginPageActions().BMCLSelection();
+	    	        Thread.sleep(2000);
+	    	        getLoginPageActions().clickOnGuest();
+	    	        getLoginPageActions().clickOnLogin();
+	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	    	        getLoginPageActions().clickOnLoginButton();
+	    	        
+	    	        Thread.sleep(10000);
+	    	        getLoginPageActions().refreshpage();
+	    	        Thread.sleep(5000); 
+	    	       
+	    	        getLoginPageActions().clickOnGuest();
+	    	   
+	    	        getAdminDashboardActions().clickOnadmindashboard();
+	    	        getAdminDashboardActions().searchAndSelectObservationWithRubricsReport();
+	    	        getAdminDashboardActions().searchAndSelectParameter();
+	    	        getAdminDashboardActions().verifyDistrictWiseObservationStatusAndEntitiesObservedTab();
+	    	        getAdminDashboardActions().clickOnDistrictWiseObservationStatusAndEntitiesObservedTab();
+	    	        getAdminDashboardActions().verifyObservationWithRubricTableColumnsOfDistrictWiseObservationStatusAndEntitiesObservedTab();
+	    	        
+	    	  }
+	    	  
+	    	  @Test(description = "-To verify, User is able to see In progress projects with evidence column for Improvement project report in Admin dashboard"+
+	    	  " -To verify, User is able to see Submitted Projects with evidence column for Improvement project report in Admin dashboard")
+	    	    @Author(name = "SHREEJITH")
+	    	    public void improvementProjectsStatusByDistrictTabTablesColumnsAD_REG() throws Exception {
+	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	  	
+	    	        switchEnvironment();
+	    	        getLoginPageActions().BMCLSelection();
+	    	        Thread.sleep(2000);
+	    	        getLoginPageActions().clickOnGuest();
+	    	        getLoginPageActions().clickOnLogin();
+	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	    	        getLoginPageActions().clickOnLoginButton();
+	    	        
+	    	        Thread.sleep(10000);
+	    	        getLoginPageActions().refreshpage();
+	    	        Thread.sleep(5000); 
+	    	       
+	    	        getLoginPageActions().clickOnGuest();
+	    	   
+	    	        getAdminDashboardActions().clickOnadmindashboard();
+	    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+	    	        getAdminDashboardActions().searchAndSelectParameter();
+	    	        getAdminDashboardActions().verifyImprovementProjectsStatusByDistrictTab();
+	    	        getAdminDashboardActions().clickOnimprovementProjectsStatusByDistrictTab();
+	    	        getAdminDashboardActions().verifyimprovementProjectsStatusByDistrictTabTablesColumns();
+	    	        
+	    	  }
+	    	  
+	    	  @Test(description = "-To verify , user is able to view the respective global filters for the Block-wise observation status and entities observed by block as mentioned." +
+	    	  "- Verify the data that represented on the UI is in tabular form." +
+	    	  "- To Verify, user is able to view the respective columns in the tabular report .")
+	    	    	    @Author(name = "SHREEJITH")
+	    	    	    public void blockWiseObservationStatusAndEntitiesOobservedTabTablesColumnsAD_REG() throws Exception {
+	    	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	    	  	
+	    	    	        switchEnvironment();
+	    	    	        getLoginPageActions().BMCLSelection();
+	    	    	        Thread.sleep(2000);
+	    	    	        getLoginPageActions().clickOnGuest();
+	    	    	        getLoginPageActions().clickOnLogin();
+	    	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	    	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	    	    	        getLoginPageActions().clickOnLoginButton();
+	    	    	        
+	    	    	        Thread.sleep(10000);
+	    	    	        getLoginPageActions().refreshpage();
+	    	    	        Thread.sleep(5000); 
+	    	    	       
+	    	    	        getLoginPageActions().clickOnGuest();
+	    	    	   
+	    	    	        getAdminDashboardActions().clickOnadmindashboard();
+	    	    	        getAdminDashboardActions().searchAndSelectObservationReport();
+	    	    	        getAdminDashboardActions().searchAndSelectParameter();
+	    	    	        Thread.sleep(10000);
+	    	    	        getAdminDashboardActions().verifyBlockWiseObservationStatusAndEntitiesObserved();
+	    	    	        getAdminDashboardActions().clickOnBlockWiseObservationStatusAndEntitiesObservedTab();
+	    	    	        getAdminDashboardActions().verifyBlockWiseObservationStatusAndEntitiesObservedTabFilters();
+	    	    	        getAdminDashboardActions().verifyObservationReportTableColumnsOfBlockWiseObservationStatusAndEntitiesObservedTab();
 
+	    	    	        	    	    	        
+	    	    	  }
 
 }

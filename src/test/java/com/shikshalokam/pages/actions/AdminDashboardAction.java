@@ -123,7 +123,7 @@ public class AdminDashboardAction {
 			 	    	
 			 	        Logger.logAndReportInfo("Searched for Observation With Rubric Report ");
 			 	        //Thread.sleep(2000);
-			 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.observationReport);
+			 	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.observationWithRubricReport);
 			 	        Logger.logAndReportInfo("Clicked on Observation With Rubric Report"); 
 			        }
 		    }
@@ -225,9 +225,31 @@ public class AdminDashboardAction {
 	    
 	    public void verifyDistrictWiseObservationStatusAndEntitiesObservedTab() throws Exception {
 	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtWiseObservationStatusAndEntitiesObservedTab),"District wise observation status and entities observed tab is not Present.");
-			Logger.logAndReportPass("District wise observation status and entities observedtab is Present.");
+			Logger.logAndReportPass("District wise observation status and entities observed tab is Present.");
 		
 		}
+	    
+	    public void verifyBlockWiseObservationStatusAndEntitiesObserved() throws Exception {
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.blockWiseObservationStatusAndEntitiesObservedTab),"District wise observation status and entities observed tab is not Present.");
+			Logger.logAndReportPass("Block wise observation status and entities observed tab is Present.");
+		
+		}
+	    public void clickOnDistrictWiseObservationStatusAndEntitiesObservedTab() throws Exception {
+	       ShikshaLokamClient.get().gestures().click(adminDashboardObjects.districtWiseObservationStatusAndEntitiesObservedTab);
+		Logger.logAndReportPass("Clicked On District wise observation status and entities observed tab.");
+		
+		}
+	    
+	    public void clickOnBlockWiseObservationStatusAndEntitiesObservedTab() throws Exception {
+		       ShikshaLokamClient.get().gestures().click(adminDashboardObjects.blockWiseObservationStatusAndEntitiesObservedTab);
+			Logger.logAndReportPass("Clicked On Block wise observation status and entities observed tab.");
+			
+			}
+	    public void clickOnimprovementProjectsStatusByDistrictTab() throws Exception {
+		       ShikshaLokamClient.get().gestures().click(adminDashboardObjects.improvementProjectsStatusByDistrictTab);
+			Logger.logAndReportPass("Clicked On Improvement Projects Status By District tab.");
+			
+			}
 	    
  public void selectProjectFilters() throws Exception {
 	 ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectProgramFilter);
@@ -446,6 +468,85 @@ public class AdminDashboardAction {
 			Logger.logAndReportInfo("Organisation Filter is present.");
 			Logger.logAndReportPass("Multiple Global Filters are present.");
 		}
+	   
+	    public void verifyObservationWithRubricTableColumnsOfDistrictWiseObservationStatusAndEntitiesObservedTab() throws Exception {
+	    	Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.programNameColumn),"Program Name - column is not Present.");
+	   	    Logger.logAndReportPass("Program Name - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.observationNameColumn),"Observation Name - column is not Present.");
+	   	    Logger.logAndReportPass("Observation Name - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.organizationNameColumn),"Organisation Name - column is not Present.");
+		    Logger.logAndReportPass("Organisation Name  - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtColumn),"District - column is not Present.");
+	   	    Logger.logAndReportPass("District - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.noOfUsersStartedColumn),"No. of users (started) - column is not Present.");
+		    Logger.logAndReportPass("No. of users (started) - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.noOfUsersSubmittedColumn),"No. of users (submitted) - column is not Present.");
+		    Logger.logAndReportPass("No. of users (submitted) - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.totalSubmissionsColumn),"Total Submissions - column is not Present.");
+		    Logger.logAndReportPass("Total Submissions - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.entitiesObservedColumn),"Entities Observed - column is not Present.");
+		    Logger.logAndReportPass("Entities Observed - column is Present.");
+
+	    }
 	    
+	    public void verifyimprovementProjectsStatusByDistrictTabTablesColumns() throws Exception {
+	    	Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.programNameColumn),"Program Name - column is not Present.");
+	   	    Logger.logAndReportPass("Program Name - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.improvementProjectNameColumn),"Improvement Project Name - column is not Present.");
+	   	    Logger.logAndReportPass("Improvement Project Name - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.organizationNameColumn),"Organisation Name - column is not Present.");
+		    Logger.logAndReportPass("Organisation Name  - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtNameColumn),"District Name - column is not Present.");
+	   	    Logger.logAndReportPass("District Name - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.startedColumn),"Started - column is not Present.");
+		    Logger.logAndReportPass("Started - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.inprogressColumn),"In-Progress - column is not Present.");
+		    Logger.logAndReportPass("In-Progress - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.inprogressProjectWithEvidenceColumn),"Inprogress Project With Evidence - column is not Present.");
+		    Logger.logAndReportPass("Inprogress Project With Evidence - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.submittedColumn),"Submitted - column is not Present.");
+		    Logger.logAndReportPass("Submitted - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.submittedProjectWithEvidenceColumn),"Submitted Project With Evidence - column is not Present.");
+		    Logger.logAndReportPass("Submitted Project With Evidence - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.certificatesIssuedColumn),"Certificates Issued - column is not Present.");
+		    Logger.logAndReportPass("Certificates Issued - column is Present.");
+
+	    }
+	    
+	    public void verifyObservationReportTableColumnsOfBlockWiseObservationStatusAndEntitiesObservedTab() throws Exception {
+	    	Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.programNameColumn),"Program Name - column is not Present.");
+	   	    Logger.logAndReportPass("Program Name - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.observationNameColumn),"Observation Name - column is not Present.");
+	   	    Logger.logAndReportPass("Observation Name - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.organizationNameColumn),"Organisation Name - column is not Present.");
+		    Logger.logAndReportPass("Organisation Name  - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtColumn),"District - column is not Present.");
+	   	    Logger.logAndReportPass("District - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.blockColumn),"Block - column is not Present.");
+	   	    Logger.logAndReportPass("Block - column is Present.");
+	   	    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.noOfUsersStartedColumn),"No. of users (started) - column is not Present.");
+		    Logger.logAndReportPass("No. of users (started) - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.noOfUsersSubmittedColumn),"No. of users (submitted) - column is not Present.");
+		    Logger.logAndReportPass("No. of users (submitted) - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.totalSubmissionsColumn),"Total Submissions - column is not Present.");
+		    Logger.logAndReportPass("Total Submissions - column is Present.");
+		    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.entitiesObservedColumn),"Entities Observed - column is not Present.");
+		    Logger.logAndReportPass("Entities Observed - column is Present.");
+
+	    }
+	    
+	    public void verifyBlockWiseObservationStatusAndEntitiesObservedTabFilters() throws Exception {
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.selectProgramFilter),"Program Filter is not present.");
+			Logger.logAndReportInfo("Program Filter is present.");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.selectObservationFilter),"Observation Filter is not present.");
+			Logger.logAndReportInfo("Improvement Projects Filter is present.");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.selectDistrictFilter),"District Filter is not present.");
+			Logger.logAndReportInfo("IDistrict Filteris present.");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.selectBlockFilter),"Block Filter is not present.");
+			Logger.logAndReportInfo("Block Filter is present.");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.selectOrganisationFilter),"Organisation Filter is not present.");
+			Logger.logAndReportInfo("Organisation Filter is present.");
+			
+		}
 	    
 }

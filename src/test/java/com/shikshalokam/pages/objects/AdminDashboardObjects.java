@@ -62,8 +62,14 @@ public class AdminDashboardObjects {
 	 @FindBy(xpath="//span[normalize-space()='District wise observation status and entities observed']")
      public  WebElement districtWiseObservationStatusAndEntitiesObservedTab;
 	
+	 @FindBy(xpath="//span[normalize-space()='Block wise observation status and entities observed']")
+     public  WebElement blockWiseObservationStatusAndEntitiesObservedTab;
+	 
 	 @FindBy(xpath="//div//label[.='Program']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
      public  WebElement selectProgramFilter;
+	 
+	 @FindBy(xpath="//div//label[.='Observation']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
+     public  WebElement selectObservationFilter;
 	 
 	 @FindBy(xpath="//div//label[.='Improvement project']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
      public  WebElement selectImprovementProjectsFilter;
@@ -155,4 +161,60 @@ public class AdminDashboardObjects {
 	  
 	  @FindBy(xpath="//span[contains(text(),'staging custodian organization')]")
 	  public  WebElement stagingCustodianOrganization;
+	  
+	  @FindBy(xpath="//th[normalize-space()='Program Name']")
+	  public WebElement programNameColumn;
+	        
+	     @FindBy(xpath="//th[normalize-space()='Organisation Name']")
+	     public WebElement organizationNameColumn;
+	    
+	     @FindBy(xpath="//th[normalize-space()='Observation Name']")
+	     public WebElement observationNameColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='District']")
+	     public WebElement districtColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='Block']")
+	     public WebElement blockColumn;
+	   
+	     @FindBy(xpath="//th[normalize-space()='No. of users (started)']")
+	     public WebElement noOfUsersStartedColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='No. of users (submitted)']")
+	     public WebElement noOfUsersSubmittedColumn;
+	   
+	     @FindBy(xpath="//th[normalize-space()='Total Submissions']")
+	     public WebElement totalSubmissionsColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='Entities Observed']")
+	     public WebElement entitiesObservedColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='District Name']")
+	     public WebElement districtNameColumn;
+	    
+	     @FindBy(xpath="//th[normalize-space()='Block Name']")
+	     public WebElement blockNameColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='Started']")
+	     public WebElement startedColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='In-Progress']")
+	     public WebElement inprogressColumn;
+	  
+	    
+	     @FindBy(xpath="//th[normalize-space()='In progress projects with evidence']")
+	     public WebElement inprogressProjectWithEvidenceColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='Submitted']")
+	     public WebElement submittedColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='Submitted projects with evidence']")
+	     public WebElement submittedProjectWithEvidenceColumn;
+	 
+	     @FindBy(xpath="//th[normalize-space()='Certificates issued']")
+	     public WebElement certificatesIssuedColumn;
+	     
+	     @FindBy(xpath="//th[normalize-space()='Improvement Project Name']")
+	     public WebElement improvementProjectNameColumn;
+	    
 }
