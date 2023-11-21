@@ -83,6 +83,23 @@ public class AdminDashboardObjects {
 	 @FindBy(xpath="//div//label[.='Organisation']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
      public  WebElement selectOrganisationFilter;
 	 
+	 @FindBy(xpath="(//div//label[.='Program']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input)[2]")
+     public  WebElement chartFilterselectProgram;
+	 
+	 
+	 @FindBy(xpath="//div//label[.='Project']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input")
+     public  WebElement chartFilterSelectProject;
+	 
+	 @FindBy(xpath="(//div//label[.='District']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input)[2]")
+     public  WebElement chartFilterSelectDistrict;
+	 
+	 @FindBy(xpath="(//div//label[.='Block']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input)[2]")
+     public  WebElement chartFilterSelectBlock;
+	
+	 @FindBy(xpath="(//div//label[.='Organisation']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input)[2]")
+     public  WebElement chartFilterselectOrganisation;
+	//div//label[.='Program']/..//div//app-material-auto-complete//div//mat-form-field//div//div//div//input
+	 
 	 @FindBy(xpath="(//span[@class='mat-checkbox-label'])[1]")    
      public  WebElement filterCheckBox1;                             
 	 
@@ -217,4 +234,23 @@ public class AdminDashboardObjects {
 	     @FindBy(xpath="//th[normalize-space()='Improvement Project Name']")
 	     public WebElement improvementProjectNameColumn;
 	    
+	     @FindBy(xpath="(//button[.=' Filters '])[1]")
+	     public WebElement filtersButton;
+	     
+	     @FindBy(xpath="//div//label[text()='Show ']//select")
+	     public WebElement showEntries;
+	   //div//label[text()='Show ']//select
+	     
+	     @FindBy(xpath="//select//option[@value='10']")
+	     public WebElement entries10;
+	     
+	     @FindBy(xpath="//select//option[@value='25']")
+	     public WebElement entries25;
+	    
+	     @FindBy(xpath="//select//option[@value='50']")
+	     public WebElement entries50;
+	    
+	     @FindBy(xpath="//select//option[@value='100']")
+	     public WebElement entries100;
+	  
 }

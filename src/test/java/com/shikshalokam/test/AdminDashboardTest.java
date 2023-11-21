@@ -60,7 +60,6 @@ public class AdminDashboardTest {
 	    	       
 	    	        
 	    	        getLoginPageActions().clickOnGuest();
-	    	        //getProgramDashboardActions().clickOnProfileIcon();
 	    	   
 	    	        getAdminDashboardActions().clickOnadmindashboard();
 	    	        getAdminDashboardActions().verifyReportsandDatasetsTab();
@@ -83,7 +82,7 @@ public class AdminDashboardTest {
 	    	        Thread.sleep(10000);
 	    	        getAdminDashboardActions().verifyGraphsTab();
 	    	        getAdminDashboardActions().verifyDistrictWiseObservationStatusAndEntitiesObservedTab();
-	    	        getAdminDashboardActions().verifyBlockWiseObservationStatusAndEntitiesObserved();
+	    	        getAdminDashboardActions().verifyBlockWiseObservationStatusAndEntitiesObservedTab();
 	    	        getAdminDashboardActions().selectObservationFilters();
 	    	        getAdminDashboardActions().ExportAs();
 	    	        getAdminDashboardActions().clickOnBackButton();
@@ -192,7 +191,6 @@ public class AdminDashboardTest {
 	    	       
 	    	        
 	    	        getLoginPageActions().clickOnGuest();
-	    	        //getProgramDashboardActions().clickOnProfileIcon();
 	    	   
 	    	        getAdminDashboardActions().clickOnadmindashboard();
 	    	       
@@ -369,10 +367,11 @@ public class AdminDashboardTest {
 	    	  }
 	    	  
 	    	  @Test(description = "-To verify , user is able to view the respective global filters for the Block-wise observation status and entities observed by block as mentioned." +
+	    	  "- To verify , when user selects district filter i.e, \"Select District\" then only block filter \"Select Block\" gets selected/enabled"+
 	    	  "- Verify the data that represented on the UI is in tabular form." +
 	    	  "- To Verify, user is able to view the respective columns in the tabular report .")
 	    	    	    @Author(name = "SHREEJITH")
-	    	    	    public void blockWiseObservationStatusAndEntitiesOobservedTabTablesColumnsAD_REG() throws Exception {
+	    	    	    public void blockWiseObservationStatusAndEntitiesObservedTabTablesColumnsAD_REG() throws Exception {
 	    	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
 	    	  	
 	    	    	        switchEnvironment();
@@ -394,12 +393,257 @@ public class AdminDashboardTest {
 	    	    	        getAdminDashboardActions().searchAndSelectObservationReport();
 	    	    	        getAdminDashboardActions().searchAndSelectParameter();
 	    	    	        Thread.sleep(10000);
-	    	    	        getAdminDashboardActions().verifyBlockWiseObservationStatusAndEntitiesObserved();
+	    	    	        getAdminDashboardActions().verifyBlockWiseObservationStatusAndEntitiesObservedTab();
 	    	    	        getAdminDashboardActions().clickOnBlockWiseObservationStatusAndEntitiesObservedTab();
 	    	    	        getAdminDashboardActions().verifyBlockWiseObservationStatusAndEntitiesObservedTabFilters();
+	    	    	        getAdminDashboardActions().clickOnBlockFilter();
+	    	    	        getAdminDashboardActions().verifyErrorMessageToSelectDistrictFirst();
+	    	    	        getAdminDashboardActions().clickOnDistrictFilter();
+	    	    	        getAdminDashboardActions().selectDistrict();
+	    	    	        getAdminDashboardActions().clickOnBlockFilter();
+	    	    	        getAdminDashboardActions().selectBlock();
 	    	    	        getAdminDashboardActions().verifyObservationReportTableColumnsOfBlockWiseObservationStatusAndEntitiesObservedTab();
 
 	    	    	        	    	    	        
 	    	    	  }
+	    	  
+	    	  @Test(description = "- To verify , user is able to view the respective global filters for the Improvement project status by block as mentioned." +
+	    	    	  "- To verify , when user selects district filter i.e, \"Select District\" then only block filter \"Select Block\"  gets selected/enabled" +
+	    	    	  "- Verify the data that represented on the UI is in tabular form only"+
+	    	    	  "- Verify user is able to view the respective columns in the tabular report .")
+	    	    	    	    @Author(name = "SHREEJITH")
+	    	    	    	    public void improvementProjectsStatusByBlockTabTablesColumnsAD_REG() throws Exception {
+	    	    	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	    	    	  	
+	    	    	    	        switchEnvironment();
+	    	    	    	        getLoginPageActions().BMCLSelection();
+	    	    	    	        Thread.sleep(2000);
+	    	    	    	        getLoginPageActions().clickOnGuest();
+	    	    	    	        getLoginPageActions().clickOnLogin();
+	    	    	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	    	    	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	    	    	    	        getLoginPageActions().clickOnLoginButton();
+	    	    	    	        
+	    	    	    	        Thread.sleep(10000);
+	    	    	    	        getLoginPageActions().refreshpage();
+	    	    	    	        Thread.sleep(5000); 
+	    	    	    	       
+	    	    	    	        getLoginPageActions().clickOnGuest();
+	    	    	    	   
+	    	    	    	        getAdminDashboardActions().clickOnadmindashboard();
+	    	    	    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+	    	    	    	        getAdminDashboardActions().searchAndSelectParameter();
+	    	    	    	        Thread.sleep(10000);
+	    	    	    	        getAdminDashboardActions().verifyImprovementProjectsStatusByBlockTab();
+	    	    	    	        getAdminDashboardActions().clickOnimprovementProjectsStatusByBlockTab();
+	    	    	    	        getAdminDashboardActions().verifyimprovementProjectsStatusByBlockTabFilters();
+	    	    	    	        getAdminDashboardActions().clickOnBlockFilter();
+	    	    	    	        getAdminDashboardActions().verifyErrorMessageToSelectDistrictFirst();
+	    	    	    	        getAdminDashboardActions().clickOnDistrictFilter();
+	    	    	    	        getAdminDashboardActions().selectDistrict();
+	    	    	    	        getAdminDashboardActions().clickOnBlockFilter();
+	    	    	    	        getAdminDashboardActions().selectBlock();
+	    	    	    	        getAdminDashboardActions().verifyimprovementProjectsStatusByBlockTabTablesColumns();
+	    	  }
+	    	  
+	    	  @Test(description = "- Verify if user can select multiple blocks in the block filter at global level for the selected district"
+		    	  		+ "- To verify,district and block filter dropdown is multi selectable ")
+		    	    @Author(name = "SHREEJITH")
+		    	    public void MultiSelectableDistrictAndBlockFiltersAD_REG() throws Exception {
+		    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+		    	
+		    	        switchEnvironment();
+		    	        getLoginPageActions().BMCLSelection();
+		    	        Thread.sleep(2000);
+		    	        getLoginPageActions().clickOnGuest();
+		    	        getLoginPageActions().clickOnLogin();
+		    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+		    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+		    	        getLoginPageActions().clickOnLoginButton();
+		    	        
+		    	        
+		    	        Thread.sleep(10000);
+		    	        getLoginPageActions().refreshpage();
+		    	        Thread.sleep(5000); 
+		    	       
+		    	        
+		    	        getLoginPageActions().clickOnGuest();
+		    	
+		    	        getAdminDashboardActions().clickOnadmindashboard();
+		    	       
+		    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+		    	        getAdminDashboardActions().searchAndSelectParameter();
+		    	        Thread.sleep(10000);
+		    	        getAdminDashboardActions().clickOnDistrictFilter();
+		    	        getAdminDashboardActions().selectMultipleDistrict();
+		    	        getAdminDashboardActions().clickOnBlockFilter();
+		    	        getAdminDashboardActions().selectMultipleBlock();
+		    	        getAdminDashboardActions().clickOnBackButton();
+		    	        
+		    	        getAdminDashboardActions().searchAndSelectImprovementsConsumptionReport();
+		    	        getAdminDashboardActions().searchAndSelectParameter();
+		    	        Thread.sleep(10000);
+		    	        getAdminDashboardActions().clickOnDistrictFilter();
+		    	        getAdminDashboardActions().selectMultipleDistrict();
+		    	        getAdminDashboardActions().clickOnBlockFilter();
+		    	        getAdminDashboardActions().selectMultipleBlock();
+		    	        getAdminDashboardActions().clickOnBackButton();
+		    	        
+		    	        getAdminDashboardActions().searchAndSelectObservationReport();
+		    	        getAdminDashboardActions().searchAndSelectParameter();
+		    	        Thread.sleep(10000);
+		    	        getAdminDashboardActions().clickOnDistrictFilter();
+		    	        getAdminDashboardActions().selectMultipleDistrict();
+		    	        getAdminDashboardActions().clickOnBlockFilter();
+		    	        getAdminDashboardActions().selectMultipleBlock();
+		    	        getAdminDashboardActions().clickOnBackButton();
+		    	        
+		    	        getAdminDashboardActions().searchAndSelectObservationWithRubricsReport();
+		    	        getAdminDashboardActions().searchAndSelectParameter();
+		    	        Thread.sleep(10000);
+		    	        getAdminDashboardActions().clickOnDistrictFilter();
+		    	        getAdminDashboardActions().selectMultipleDistrict();
+		    	        getAdminDashboardActions().clickOnBlockFilter();
+		    	        getAdminDashboardActions().selectMultipleBlock();
+		    	        getAdminDashboardActions().clickOnBackButton();
+		    	       
+		    	        getAdminDashboardActions().searchAndSelectObservationConsumptionReport();
+		    	        getAdminDashboardActions().searchAndSelectParameter();
+		    	        Thread.sleep(10000);
+		    	        getAdminDashboardActions().clickOnDistrictFilter();
+		    	        getAdminDashboardActions().selectMultipleDistrict();
+		    	        getAdminDashboardActions().clickOnBlockFilter();
+		    	        getAdminDashboardActions().selectMultipleBlock();
+		    	       
+		    	       
+		    	      
+		    	  }
+	    	  
+	    	     
+	    	       @Test(description = "- To verify apart from dashboard level filter, charts can have their own filter too" +
+	    	    	  "- To verify user is able to make a search with the selected option from the list." )
+	    	    	    	    @Author(name = "SHREEJITH")
+	    	    	    	    public void chartFiltersAD_REG() throws Exception {
+	    	    	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	    	    	  	
+	    	    	    	        switchEnvironment();
+	    	    	    	        getLoginPageActions().BMCLSelection();
+	    	    	    	        Thread.sleep(2000);
+	    	    	    	        getLoginPageActions().clickOnGuest();
+	    	    	    	        getLoginPageActions().clickOnLogin();
+	    	    	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	    	    	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	    	    	    	        getLoginPageActions().clickOnLoginButton();
+	    	    	    	        
+	    	    	    	        Thread.sleep(10000);
+	    	    	    	        getLoginPageActions().refreshpage();
+	    	    	    	        Thread.sleep(5000); 
+	    	    	    	       
+	    	    	    	        getLoginPageActions().clickOnGuest();
+	    	    	    	   
+	    	    	    	        getAdminDashboardActions().clickOnadmindashboard();
+	    	    	    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+	    	    	    	        getAdminDashboardActions().searchAndSelectParameter();
+	    	    	    	        Thread.sleep(10000);
+	    	    	    	        getAdminDashboardActions().clickOnFilters();
+	    	    	    	        
+	    			    	        getAdminDashboardActions().enterSearchTextIntoSelectProgramFilterAndSelectChartFilters();
+	    			    	        
+	    			    	        getAdminDashboardActions().enterSearchTextIntoSelectImprovementProjectFilterAndSelectChartFilters();
+	    			    	        
+	    			    	        getAdminDashboardActions().enterSearchTextIntoSelectDistrictFilterAndSelectChartFilters();
+	    			    	        
+	    			    	        getAdminDashboardActions().enterSearchTextIntoSelectBlockFilterAndSelectChartFilters();
+	    			    	        
+	    			    	        getAdminDashboardActions().enterSearchTextIntoSelectOrganisationFilterAndSelectChartFilters();
+	    	    	    	        
+	    	  }
+	    	      
+	    	       
+	    	       @Test(description = "- Verify block filter is added in the chart filters under graphs ")
+	   	    	    @Author(name = "SHREEJITH")
+	   	    	    public void BlockFilterOnGraphTabAD_REG() throws Exception {
+	   	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	   	    	
+	   	    	        switchEnvironment();
+	   	    	        getLoginPageActions().BMCLSelection();
+	   	    	        Thread.sleep(2000);
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	        getLoginPageActions().clickOnLogin();
+	   	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	   	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	   	    	        getLoginPageActions().clickOnLoginButton();
+	   	    	        
+	   	    	        
+	   	    	        Thread.sleep(10000);
+	   	    	        getLoginPageActions().refreshpage();
+	   	    	        Thread.sleep(5000); 
+	   	    	       
+	   	    	        
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	   
+	   	    	        getAdminDashboardActions().clickOnadmindashboard();
+	   	    	       
+	   	    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().verifyBlockFilter();
+	   	    	        getAdminDashboardActions().clickOnBackButton();
+	   	    	        
+	   	    	        getAdminDashboardActions().searchAndSelectImprovementsConsumptionReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().verifyBlockFilter();
+	   	    	        getAdminDashboardActions().clickOnBackButton();
+	   	    	        
+	   	    	        getAdminDashboardActions().searchAndSelectObservationReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().verifyBlockFilter();
+	   	    	        getAdminDashboardActions().clickOnBackButton();
+	   	    	        
+	   	    	        getAdminDashboardActions().searchAndSelectObservationWithRubricsReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().verifyBlockFilter();
+	   	    	        getAdminDashboardActions().clickOnBackButton();
+	   	    	       
+	   	    	        getAdminDashboardActions().searchAndSelectObservationConsumptionReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().verifyBlockFilter();
+	   	    	        
+	   	    	       
+	   	    	      
+	   	    	  }	       
 
+	    	       @Test(description = "To verify above the table on top left, user sees a dropdown filter for no. of entries shown in the table.")
+	   	    	    @Author(name = "SHREEJITH")
+	   	    	    public void showEntriesAD_REG() throws Exception {
+	   	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	   	    	
+	   	    	        switchEnvironment();
+	   	    	        getLoginPageActions().BMCLSelection();
+	   	    	        Thread.sleep(2000);
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	        getLoginPageActions().clickOnLogin();
+	   	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	   	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	   	    	        getLoginPageActions().clickOnLoginButton();
+	   	    	        
+	   	    	        
+	   	    	        Thread.sleep(10000);
+	   	    	        getLoginPageActions().refreshpage();
+	   	    	        Thread.sleep(5000); 
+	   	    	       
+	   	    	        
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	   
+	   	    	        getAdminDashboardActions().clickOnadmindashboard();
+	   	    	        Thread.sleep(2000);
+	   	    	        getAdminDashboardActions().verifyShowEntriesDropdown();
+	   	    	        getAdminDashboardActions().ClickOnShowEntriesDropdown();
+	   	    	        Thread.sleep(5000);
+	   	    	        getAdminDashboardActions().verifyShowEntriesValues();
+	    	       }
 }
