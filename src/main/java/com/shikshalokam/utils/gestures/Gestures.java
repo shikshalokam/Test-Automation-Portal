@@ -306,10 +306,18 @@ public class Gestures {
 	  public void getuserdir() {
 		 System.getProperty("user.dir");
 	    }
+	  
 	  public void scrollToElement(WebElement element) throws Exception {
+		  while (!element.isDisplayed()) {
 		   JavascriptExecutor js = (JavascriptExecutor) ShikshaLokamClient.get().driver();
 		   js.executeScript("arguments[0].scrollIntoView(true);", element);	
-	   }
+		   
+		   try {
+               Thread.sleep(1000);  // Wait for 1 second
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+	   }}
 	
 	}
 
