@@ -863,14 +863,26 @@ public class ObservationPageTest {
         getObservationPageActions().verifyNotapplicablePopup();
         getObservationPageActions().verifyTextOnNotapplicablePopup();
         getObservationPageActions().clickGoBackButton();
+        Thread.sleep(5000);
+        //getObservationPageActions().verifyTextOnObservationDetailsPage();
+        getObservationPageActions().verifyAndClickNotapplicableButton();
+        getObservationPageActions().clickOnCrossIconOnNotApplicablePopupp();
+        getObservationPageActions().verifyAndClickNotapplicableButton();
+        getObservationPageActions().verifyTextOnNotapplicablePopup();
+        Thread.sleep(5000);
+        getObservationPageActions().enterTextOnNotapplicable();
+        Thread.sleep(5000);
+        getObservationPageActions().clickOnSaveonNotapplicablepopup();
         getObservationPageActions().verifyTextOnObservationDetailsPage();
+        //Thread.sleep(5000);
+        //getObservationPageActions().verifyDisabledStartButton();
+        //Thread.sleep(5000);
+        getObservationPageActions().verifyAndClickNotapplicableButton();
+        getObservationPageActions().verifyTextOnMarkedNotApplicable();
+        getObservationPageActions().clickGoBackButton();
         getObservationPageActions().verifyAndClickNotapplicableButton();
         getObservationPageActions().clickOnCrossIconOnNotApplicablePopup();
-        getObservationPageActions().verifyAndClickNotapplicableButton();
-       // getObservationPageActions().clickDomainDropdown();
-        getObservationPageActions().verifyTextOnNotapplicablePopup();
-        getObservationPageActions().enterTextOnNotapplicable();
-        getObservationPageActions().clickOnSaveonNotapplicablepopup();
+        getObservationPageActions().verifyTextOnObservationDetailsPage();
         
     }
     
@@ -999,5 +1011,107 @@ public class ObservationPageTest {
        
         
     }
+    
+    @Test(description = "To Verify, user should see response hints bulb icon, when user scrolls to particular question where response hints are added")
+    @Author(name = "GAGAN")
+    public void QuestionHint_REG()throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName5"));
+        getLoginPageActions().enterPassword(loginTestData.get("password5"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickQuestionHintObservation();
+        getObservationPageActions().clickInstance6();
+        getObservationPageActions().clickStartButtonQuestionHint();
+        getObservationPageActions().verifySectionHeader();
+        getObservationPageActions().clickQuestionBulb();
+        getObservationPageActions().verifyHint();    
+    }
+    
+    @Test(description = "To Verify, user should see response hints bulb icon, when user scrolls to particular question where response hints are added")
+    @Author(name = "GAGAN")
+    public void DependentQuestion_REG()throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName4"));
+        getLoginPageActions().enterPassword(loginTestData.get("password4"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickAlltypeObs();  
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        getObservationPageActions().clickOnStartButtonOnObservation();
+        getObservationPageActions().verifyQuestionThree();
+        getObservationPageActions().clickNoRadioOption();
+        getObservationPageActions().verifyQuestionFour();
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().clickOnSaveFormConirmationYes();
+        getObservationPageActions().clickBackbuttononthepopup();
+        
+    }
+    
+    @Test(description = "To verify user wouldn't get option to mark a domain Not applicable, if the domain status is submitted")
+    @Author(name = "GAGAN")
+    public void unAvailabilityOfNotApplicableButton_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName4"));
+        getLoginPageActions().enterPassword(loginTestData.get("password4"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickOnObservationDomain();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(5000);
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().ClickstartButton();
+        getObservationPageActions().verifyQuestionOne();
+        getObservationPageActions().enterResponseOnQuestionOne();
+        getObservationPageActions().verifyQuestionTwo();
+        getObservationPageActions().enterResponseOnQuestionTwo();
+        getObservationPageActions().verifyQuestionThree();
+        getObservationPageActions().enterResponseOnQuestionThree();
+        getObservationPageActions().verifyQuestionFour();
+        getObservationPageActions().enterResponseOnQuestionFour();
+        getObservationPageActions().clickOnSubmitButtonOnObservationSaveForm();
+        getObservationPageActions().clickOnYesForSubmitFormConfirmation();
+        getObservationPageActions().clickOnOkButtonOnSubmitFormSuccess();
+        //getObservationPageActions().clickOnSaveObservationForm();
+        //getObservationPageActions().clickOnSaveFormConirmationYes();
+        //getObservationPageActions().clickBackbuttononthepopup();
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().verifyUnavailableOfNotApplicableButton();
+        Thread.sleep(5000);
+        
+    }
+   
    
 }

@@ -227,7 +227,7 @@ public class ObservationPageAction {
     	
     	public void clickOnSaveonNotapplicablepopup() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.saveButtonForObservation);
-    		Logger.logAndReportInfo("Clicked on the save button");
+    		Logger.logAndReportInfo("Clicked on the save button and pop up closes");
     		  Thread.sleep(2000);
     	}
     	
@@ -1185,7 +1185,11 @@ public class ObservationPageAction {
            		Logger.logAndReportPass("Clicked on Cross Icon on add entity pop up and user stays on the observation details page");
            	} 
                public void clickOnCrossIconOnNotApplicablePopup() throws Exception {
-                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.crossIconOnAddEntityPopup),"Not clicked on cross icon");
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.CrossiconOnEntitydeletepopup),"Not clicked on cross icon");
+           		Logger.logAndReportPass("Clicked on Cross Icon on not applicable pop up and user stays on observation details page");
+           	} 
+               public void clickOnCrossIconOnNotApplicablePopupp() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.Crossicon),"Not clicked on cross icon");
            		Logger.logAndReportPass("Clicked on Cross Icon on not applicable pop up and user stays on observation details page");
            	} 
                public void DefaultEntityAdded() throws Exception {
@@ -1277,6 +1281,12 @@ public class ObservationPageAction {
                    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ObservationDetailsText),"Not landed on observation details page");
            		Logger.logAndReportPass("Landed on observation details page");
            	}
+               
+               public void verifyTextOnNotApplicablePopup() throws Exception {
+                   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.TextOnMarkedNotApplicablePopup),"Message not displayed");
+           		Logger.logAndReportPass("Message is displayed");
+           	}
+               
                public void ClickedOnCloseButton() throws Exception {  
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.CloseButtonOnAddEntityPage);
             	   Logger.logAndReportInfo("Clicked on Close Button on add entity pop up");
@@ -1374,6 +1384,8 @@ public class ObservationPageAction {
                
                public void clickDomainDropdown() throws Exception { 
             	   //js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.addedInstance);
+            	   //ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.addedInstance);
+            	   //Thread.sleep(5000);
             	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.addedInstance);
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.addedInstance);
             	   Logger.logAndReportInfo("clicked on added instance");
@@ -1453,9 +1465,16 @@ public class ObservationPageAction {
                 }
                
                public void verifyAndClickNotapplicableButton() throws Exception { 
-            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.notapplicable),"Not applicable button is  ot present");
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.notapplicable),"Not applicable button is not present");
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.notapplicable);
             	   Logger.logAndReportPass("Not applicable button is present and Clicked on it");
+                }
+               
+               public void verifyUnavailableOfNotApplicableButton() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.ObservationLabel);
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementnotPresent(observationPageObjects.DomainNotApplicableButton),"Not applicable button is present");
+            	   //ShikshaLokamClient.get().gestures().click(observationPageObjects.notapplicable);
+            	   Logger.logAndReportPass("Not applicable button is Not present");
                 }
                
                public void verifyNotapplicablePopup() throws Exception { 
@@ -1464,7 +1483,7 @@ public class ObservationPageAction {
                 }
                
                public void verifyTextOnNotapplicablePopup() throws Exception { 
-            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.TextOnAotapplicablepopup),"Text on Not applicable pop up not displayed");
+            	   Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.TextOnNotapplicablepopup),"Text on Not applicable pop up not displayed");
             	   Logger.logAndReportPass("Text on Not applicable pop up displayed");
                 }
 
@@ -1480,7 +1499,7 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("Clicked on go back button on popup");
                 }
                public void enterTextOnNotapplicable() throws Exception { 
-           	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.TextBox, "Not relevant domain hence marking not applicable" );
+           	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.TextOnEditInstanceName, "Not relevant domain hence marking not applicable" );
            	   Logger.logAndReportPass("Entered reason for marking as not applicable");
                }
                
@@ -1567,16 +1586,124 @@ public class ObservationPageAction {
             	   Thread.sleep(5000);
             	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.tipquestion);
             	   Logger.logAndReportPass("question 3 is displayed");
-            	   
-                }
+            	}
                
                public void verifyTipForQuestion() throws Exception {  
             	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.tip);
             	   Logger.logAndReportPass("Use the name of the locality where the school is - Tip is displayed");
                 }
+               
+               public void clickQuestionHintObservation() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.QuestionHintObservation);
+            	   Logger.logAndReportInfo("Clicked on observation which has question hint");
+                }
+               
+               public void clickStartButtonQuestionHint() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.domain2StartButton);
+            	   Logger.logAndReportInfo("Clicked on start button which has question hint");
+                }
               
+               public void verifySectionHeader() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.SectionHeader);
+            	   Thread.sleep(5000);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.SectionHeader);
+            	   Logger.logAndReportPass("Question header is displayed");
+            	}
+               
+               public void clickQuestionBulb() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.QuestionBulb);
+            	   Logger.logAndReportInfo("Hint bulb icon is displayed and Clicked on it");
+                }
+               
+               public void clickInstance6() throws Exception { 
+            	   //js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.addedInstance);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.instance6);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.instance6);
+            	   Logger.logAndReportInfo("clicked on added instance");
+                }
+               
+               public void verifyHint() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.HintText);
+            	   Logger.logAndReportInfo("Hint Text header is displayed");
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.HintTextBody);
+            	   Logger.logAndReportInfo("Hint Text body is displayed");
+            	   
+                }
+               
+               public void clickAlltypeObs() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AlltypeObservation);
+            	   Logger.logAndReportInfo("clicked on Observation");
+                }
+               
+               public void clickNoRadioOption() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.NoRadioOption);
+            	   Logger.logAndReportInfo("clicked on No radio option");
+            	   Thread.sleep(5000);                
+            	}
+               
+               public void verifyQuestionFour() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.DepedentQuestion);
+            	   Thread.sleep(5000);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.DepedentQuestion);
+            	   Logger.logAndReportPass("Dependent question 4 is displayed");
+            	}
+               
+               public void verifyDisabledStartButton() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementnotPresent(observationPageObjects.StartButton);            	   Thread.sleep(5000);
+            	   Logger.logAndReportInfo("Disabled start button is displayed");
+                }
+               
+               public void verifyTextOnMarkedNotApplicable() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.TextOnMarkedNotApplicablePopup);            	   Thread.sleep(5000);
+            	   Logger.logAndReportInfo("This Domain has been already marked as Not applicable. - message displayed");
+                }
+               
+               public void verifyText() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.Text);            	   Thread.sleep(5000);
+            	   Logger.logAndReportInfo("ObservationTextIsDisplayed");
+                }
+               
+               public void ClickstartButton() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.StartButton);          	   Thread.sleep(5000);
+            	   Logger.logAndReportInfo("Clicked on Start button");
+                }
+               
+               public void verifyQuestionOne() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.QuestionOne);
+            	   Thread.sleep(5000);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.QuestionOne);            	   Thread.sleep(5000);
+            	   Logger.logAndReportInfo("Question 1 is message displayed");
+                }
+               
+               public void verifyQuestionTwo() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.QuestionTwo);
+            	   Thread.sleep(5000);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.QuestionTwo);            	   Thread.sleep(5000);
+            	   Logger.logAndReportInfo("Question 2 is message displayed");
+                }
+               
+               public void enterResponseOnQuestionOne() throws Exception { 
+               	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.ResponseOne, "WorkFlow" );
+               	   Logger.logAndReportPass("Answered 1st question");
+                }
+               
+               public void enterResponseOnQuestionTwo() throws Exception {
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.parent1QuestionfirstAnswer);
+           		Logger.logAndReportInfo("Answered 2nd question");;
+           	    }
+               
+               public void enterResponseOnQuestionThree() throws Exception { 
+               	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.ResponseThree, "15" );
+               	   Logger.logAndReportPass("Answered 3rd question");
+                }
+               
+               public void enterResponseOnQuestionFour() throws Exception {
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.parent2QuestionSecondAnswer);
+              		Logger.logAndReportInfo("Answered 4th question");;
+              	    }
                
                
+           	
 }
 
 

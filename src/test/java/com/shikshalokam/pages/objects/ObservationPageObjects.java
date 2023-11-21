@@ -517,6 +517,9 @@ public class ObservationPageObjects {
     @FindBy(xpath = "(//div//input[@type='text'])[2]")
     public WebElement TextOnEditInstanceName;
     
+    @FindBy(xpath = "(//div//input[@type='text'])[2]")
+    public WebElement ResponseOne;
+    
     @FindBy(xpath = "//button[normalize-space()='Update']")
     public WebElement UpdateButtonOnObservationInstancepopup;
     
@@ -549,6 +552,9 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "//i[@class='close inside icon']")
     public WebElement CrossiconOnEntitydeletepopup;
+    
+    @FindBy(xpath = "//button[@aria-label='close dialog']")
+    public WebElement Crossicon;
   
     @FindBy(xpath = "//div[@class='expanded']//div[2]//div[2]//button[1]")
     public WebElement clickstartnexttodomain;
@@ -613,7 +619,7 @@ public class ObservationPageObjects {
     @FindBy(xpath = "//div[normalize-space()='Your Form has been saved successfully!']")
     public WebElement secondSaveConfirmationMessage;
     
-    @FindBy(xpath = "//button[normalize-space()='Not Applicable']")
+    @FindBy(xpath = "(//button[normalize-space()='Not Applicable'])[1]")
     public WebElement notapplicable;
   
     @FindBy(xpath = "//button[normalize-space()='Go back']")
@@ -626,10 +632,7 @@ public class ObservationPageObjects {
     public WebElement NotApplicablePopup;
     
     @FindBy(xpath = "//p[text()='Please add your remarks here before making the Domain Not applicable.']")
-    public WebElement TextOnAotapplicablepopup;
-    
-    @FindBy(xpath = "//input[@class='edit-sub-input ng-pristine ng-valid ng-touched']")
-    public WebElement TextBox;
+    public WebElement TextOnNotapplicablepopup;
     
     @FindBy(xpath = "//h4//bdi[contains(text(),'OCI-Observation without rubric - oci regression-sc')]")
     public WebElement AddRemarkObs;
@@ -669,4 +672,58 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "//small[normalize-space()='Use the name of the locality where the school is']")
     public WebElement tip; 
+    
+    @FindBy(xpath = "//h4//bdi[normalize-space()='TEACH Tool-support test']")
+    public WebElement QuestionHintObservation;
+    
+    @FindBy(xpath = "//div[5]//div[1]//h4[1]")
+    public WebElement SectionHeader;
+    
+    @FindBy(xpath = "//div[@id='SA1']//div[@class='sbt-page-content-area']//form[@class='adjust ng-invalid ng-touched ng-dirty']//sl-input//div[@class='ng-star-inserted']//div[@class='ng-star-inserted']//div//div[@class=\"sbt-page-content-questionnaireFormarea'\"]//sl-page-questions[@class='ng-star-inserted']//sl-input//div[@class='ng-star-inserted']//div[@class='ui card question-card sb--card relative9 ng-star-inserted']//div[@class='content']//div[@class='d-flex flex-ai-flex-start flex-jc-space-between']//div[@class='ng-star-inserted']//i[@class='icon large lightbulb']")
+    public WebElement QuestionBulb;
+    
+    @FindBy(xpath = "//div[@aria-label='Observation 6 accordion']")
+    public WebElement instance6;
+    
+    @FindBy(xpath = "//div[@class='font-weight-bold sb-color-primary modalNote']")
+    public WebElement HintText;
+    
+    @FindBy(xpath = "//h4[@class='ui header']")
+    public WebElement HintTextBody;
+    
+    @FindBy(xpath = "//h4//bdi[contains(text(),'Obs without rubrics')]")
+    public WebElement AlltypeObservation;
+    
+    @FindBy(xpath = "(//label[contains(text(),'No')])[1]")
+    public WebElement NoRadioOption;
+    
+    @FindBy(xpath = "//div[contains(text(),' 4 . ')]")
+    public WebElement DepedentQuestion; 
+    
+    @FindBy(xpath = "//div[normalize-space()='This Domain has been already marked as Not applicable.']")
+    public WebElement TextOnMarkedNotApplicablePopup; 
+    
+    @FindBy(xpath = "//div[contains(text(),'Observation form')]")
+    public WebElement Text; 
+    
+    @FindBy(xpath = "//div[contains(text(),' 1 . ')]")
+    public WebElement QuestionOne;
+    
+    @FindBy(xpath = "//div[contains(text(),' 2 . ')]")
+    public WebElement QuestionTwo;
+    
+    @FindBy(xpath = "//input[@type='number']")
+    public WebElement ResponseThree;
+    
+    @FindBy(xpath = "(//span[contains(text(),'Observation')])[1]")
+    public WebElement ObservationLabel;
+    
+    @FindBy(xpath = "(//div[contains(text(),'Domain')])[1]/../../following-sibling::div/button[.='Not Applicable ']")
+    public WebElement DomainNotApplicableButton;
+    
+    
+    
+    
+  
+  
 }
