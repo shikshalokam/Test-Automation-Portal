@@ -247,6 +247,13 @@ public class AdminDashboardAction {
 			Logger.logAndReportPass("Clicked On Improvement Projects Status By District tab.");
 			
 			}
+	
+	    
+	    public void clickOnimprovementStatusByDistrictTab() throws Exception {
+		       ShikshaLokamClient.get().gestures().click(adminDashboardObjects.improvementStatusByDistrictTab);
+			Logger.logAndReportPass("Clicked On Improvement Status By District tab.");
+			
+			}
 	    public void clickOnimprovementProjectsStatusByBlockTab() throws Exception {
 		       ShikshaLokamClient.get().gestures().click(adminDashboardObjects.improvementProjectsStatusByBlockTab);
 			Logger.logAndReportPass("Clicked On Improvement Projects Status By Block tab.");
@@ -432,6 +439,12 @@ public class AdminDashboardAction {
 	    public void selectMultipleDistrict() throws Exception {
 		     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox1);
 		     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);
+		     ShikshaLokamClient.get().report().log(Status.INFO, "District filter is Multiselectable");
+		    }
+	    
+	    public void selectMultipleDistrict1() throws Exception {
+		     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.ananthapuramDistrict1);
+		     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.alluriSitaRamaRajuDistrict1);
 		     ShikshaLokamClient.get().report().log(Status.INFO, "District filter is Multiselectable");
 		    }
 	    
@@ -753,4 +766,86 @@ public class AdminDashboardAction {
 			Logger.logAndReportInfo("Value 100 is present.");
 	    
 	    }
+	    
+	    public void verifyDistrictTabGlobalFilters() throws Exception {
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtTabSelectProgramFilter),"Program Filter is not present.");
+			Logger.logAndReportInfo("Program Filter is present.");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtTabSelectObservationFilter),"Observation Filter is not present.");
+			Logger.logAndReportInfo("Observation Filter is present.");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtTabSelectDistrictFilter),"District Filter is not present.");
+			Logger.logAndReportInfo("District Filter is present.");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.districtTabSelectOrganisationFilter),"Organisation Filter is not present.");
+			Logger.logAndReportInfo("Organisation Filter is present.");
+			
+		}
+	    
+	    public void clickOnDistrictTabProgramFilter() throws Exception {
+	           ShikshaLokamClient.get().gestures().click(adminDashboardObjects.districtTabSelectProgramFilter);
+	           ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Program Filter");
+	    }
+	    
+	    public void clickOnDistrictTabObservationFilter() throws Exception {
+	           ShikshaLokamClient.get().gestures().click(adminDashboardObjects.districtTabSelectObservationFilter);
+	           ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Observation Filter");
+	    }
+	    
+	    public void clickOnDistrictTabDistrictFilter() throws Exception {
+	           ShikshaLokamClient.get().gestures().click(adminDashboardObjects.districtTabSelectDistrictFilter);
+	           ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select District Filter");
+	    }
+	    
+	    public void clickOnDistrictTabOrganisationFilter() throws Exception {
+	           ShikshaLokamClient.get().gestures().click(adminDashboardObjects.districtTabSelectOrganisationFilter);
+	           ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Organisation Filter");
+	    }
+	    
+	    public void enterSearchTextIntoSelectProgramFilterAndSelect1() throws Exception {
+	    	ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.districtTabSelectProgramSearch,"program – teacher");
+	        Logger.logAndReportInfo("Searched for program – teacher");
+	        Thread.sleep(2000);
+	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.programTeacherProgram1);
+	       ShikshaLokamClient.get().report().log(Status.INFO, "Selected program – teacher from Dropdown list");
+	        
+	    }
+	    
+	    public void enterSearchTextIntoSelectObervationFilterAndSelect1() throws Exception {
+	    	ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.districtTabSelectObservationSearch,"obs with rubrics Teacher");
+	        Logger.logAndReportInfo("Searched for obs with rubrics Teacher");
+	        Thread.sleep(2000);
+	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.obsWithRubricTeacherObservation1);
+	       ShikshaLokamClient.get().report().log(Status.INFO, "Selected obs with rubrics Teacher from Dropdown list");
+	        
+	    }
+	    
+	    public void enterSearchTextIntoSelectDistrictFilterAndSelect1() throws Exception {
+	    	ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.districtTabSelectDistrictSearch,"ananthapuram");
+	        Logger.logAndReportInfo("Searched for ananthapuram ");
+	        Thread.sleep(2000);
+	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.ananthapuramDistrict1);
+	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected ananthapuram District from Dropdown list");
+	        
+	    }
+	    
+	    public void enterSearchTextIntoSelectOrganisationFilterAndSelect1() throws Exception {
+	    	ShikshaLokamClient.get().gestures().sendValueToTextBox(adminDashboardObjects.selectOrganisationFilter,"staging custodian organization");
+	        Logger.logAndReportInfo("Searched for staging custodian organization ");
+	        Thread.sleep(2000);
+	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.stagingCustodianOrganization1);
+	        ShikshaLokamClient.get().report().log(Status.INFO, "Selected staging custodian organization from Dropdown list");
+	        
+	    }
+	    
+	    public void verifyNoOfCertificatesIssuedLabel() throws Exception {
+	    	Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.noOfCertificatesIssuedLabel),"No. of certificates issued - Chart Label is not present.");
+			Logger.logAndReportPass("No. of certificates issued - Chart Label is present.");
+	    
+	    }
+	    
+	    public void verifNoOfImprovementsSubmittedWithEvidenceLabel() throws Exception {
+	    	Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(adminDashboardObjects.noOfImprovementsSubmittedWithEvidenceLabel),"No. of improvements submitted with evidence - Chart Label is not present.");
+			Logger.logAndReportPass("No. of improvements submitted with evidence - Chart Label is present.");
+	    
+	    }
+	    
+	    
 }

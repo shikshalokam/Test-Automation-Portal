@@ -55,10 +55,17 @@ public class AdminDashboardObjects {
 
 	 @FindBy(xpath="//span[normalize-space()='Improvement projects status by District']")
      public  WebElement improvementProjectsStatusByDistrictTab;
+	 
+	//span[normalize-space()='Improvement status by district']
+	 @FindBy(xpath="//span[normalize-space()='Improvement status by district']")
+     public  WebElement improvementStatusByDistrictTab;
 
 	 @FindBy(xpath="//span[normalize-space()='Improvement projects status by Block']")
      public  WebElement improvementProjectsStatusByBlockTab;
-	
+	 
+	 @FindBy(xpath="//span[normalize-space()='Improvement projects status by Block']")
+     public  WebElement improvementStatusByBlockTab;
+	 
 	 @FindBy(xpath="//span[normalize-space()='District wise observation status and entities observed']")
      public  WebElement districtWiseObservationStatusAndEntitiesObservedTab;
 	
@@ -163,7 +170,8 @@ public class AdminDashboardObjects {
 	 
 	  @FindBy(xpath="//div[normalize-space()='*Please select a district first from the district filter']")
 	  public  WebElement errorMessageToSelectDistrict;
-	  	  
+	//span[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'program – teacher')]
+  
 	  @FindBy(xpath="//span[contains(text(),'program – teacher')]")
 	  public  WebElement programTeacherProgram;
 	  
@@ -252,5 +260,66 @@ public class AdminDashboardObjects {
 	    
 	     @FindBy(xpath="//select//option[@value='100']")
 	     public WebElement entries100;
+
+	    @FindBy(xpath="//span/span[.='Select program']")
+	    public  WebElement districtTabSelectProgramFilter;
+	    
+	    @FindBy(xpath="//span/span[.='Select observation']")
+	    public  WebElement districtTabSelectObservationFilter;
+	    
+	    @FindBy(xpath="//span/span[.='Select district']")
+	    public  WebElement districtTabSelectDistrictFilter;
+	    
+	  
+	    @FindBy(xpath="//span/span[.='Select organisation']")
+	    public  WebElement districtTabSelectOrganisationFilter;
+	    
+	    @FindBy(xpath="(//span/span[.='Select program']/../../following-sibling::div/ul/li[2]/input)[1]")
+	    public  WebElement districtTabSelectProgramSearch;
+	    
+	    @FindBy(xpath="(//span/span[.='Select observation']/../../following-sibling::div/ul/li[2]/input)[1]")
+	    public  WebElement districtTabSelectObservationSearch;
+	    
+	    
+	    @FindBy(xpath="(//span/span[.='Select district']/../../following-sibling::div/ul/li[2]/input)[1]")
+	    public  WebElement districtTabSelectDistrictSearch;
+	    
+	    @FindBy(xpath="(//span/span[.='Select organisation']/../../following-sibling::div/ul/li[2]/input)[1]")
+	    public  WebElement districtTabSelectOrganisationSearch;
+	    
+	    @FindBy(xpath="//div[contains(text(),'Program – Teacher')]")
+		  public  WebElement programTeacherProgram1;
+	    
+	    @FindBy(xpath="//div[contains(text(),'obs with rubrics Teacher')]")
+		  public  WebElement obsWithRubricTeacherObservation1;
+		  
+		  
+		  @FindBy(xpath="//div[contains(text(),'Ananthapuram')]")
+		  public  WebElement ananthapuramDistrict1;
+		  
+		  @FindBy(xpath="//div[contains(text(),'Alluri Sita Rama Raju')]")
+		  public  WebElement alluriSitaRamaRajuDistrict1;
+		  
+		//div[contains(text(),'Alluri Sita Rama Raju')]
+		  
+		  @FindBy(xpath="//div[contains(text(),'Amadagur')]")
+		  public  WebElement amadagurBlock1;
+		  
+		  @FindBy(xpath="//div[contains(text(),'Staging Custodian Organization')]")
+		  public  WebElement stagingCustodianOrganization1;
+	    
+		//div[.='No. of certificates issued']
+		//div[.='No. of improvements submitted with evidence']
+		  
+		  @FindBy(xpath="//div[.='No. of certificates issued']")
+		  public  WebElement noOfCertificatesIssuedLabel;
+		  
+		  @FindBy(xpath="//div[.='No. of improvements submitted with evidence']")
+		  public  WebElement noOfImprovementsSubmittedWithEvidenceLabel;
+		  
+		// (//li//input[@aria-label='Alluri Sita Rama Raju'])/following-sibling::div
+		//  (//li//input[@aria-label='CHITTOOR'])/following-sibling::div
+			   
+	   
 	  
 }

@@ -617,7 +617,7 @@ public class AdminDashboardTest {
 	   	    	      
 	   	    	  }	       
 
-	    	       @Test(description = "To verify above the table on top left, user sees a dropdown filter for no. of entries shown in the table.")
+	    	       @Test(description = "- To verify above the table on top left, user sees a dropdown filter for no. of entries shown in the table.")
 	   	    	    @Author(name = "SHREEJITH")
 	   	    	    public void showEntriesAD_REG() throws Exception {
 	   	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
@@ -646,4 +646,168 @@ public class AdminDashboardTest {
 	   	    	        Thread.sleep(5000);
 	   	    	        getAdminDashboardActions().verifyShowEntriesValues();
 	    	       }
+	    	       
+
+	    	       @Test(description = "- To verify new added table chart on admin dashboard and Program dashboard called \"Observation with rubric report\" in the existing report ")
+	   	    	    @Author(name = "SHREEJITH")
+	   	    	    public void districtWiseObservationStatusAndEntitiesObservedGolbalFilters_REG() throws Exception {
+	   	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	   	    	
+	   	    	        switchEnvironment();
+	   	    	        getLoginPageActions().BMCLSelection();
+	   	    	        Thread.sleep(2000);
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	        getLoginPageActions().clickOnLogin();
+	   	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	   	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	   	    	        getLoginPageActions().clickOnLoginButton();
+	   	    	        
+	   	    	        
+	   	    	        Thread.sleep(10000);
+	   	    	        getLoginPageActions().refreshpage();
+	   	    	        Thread.sleep(5000); 
+	   	    	       
+	   	    	        
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	   
+	   	    	        getAdminDashboardActions().clickOnadmindashboard();
+	   	    	        getAdminDashboardActions().searchAndSelectObservationWithRubricsReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().clickOnDistrictWiseObservationStatusAndEntitiesObservedTab();
+	   	    	        getAdminDashboardActions().verifyDistrictTabGlobalFilters();
+	   	    	        
+	   	    	        getAdminDashboardActions().clickOnDistrictTabProgramFilter();
+	   	    	        getAdminDashboardActions().enterSearchTextIntoSelectProgramFilterAndSelect1();
+	   	    	        
+	   	    	        getAdminDashboardActions().clickOnDistrictTabObservationFilter();
+	   	    	        getAdminDashboardActions().enterSearchTextIntoSelectObervationFilterAndSelect1();
+	   	    	        
+	   	    	        getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
+	   	    	        getAdminDashboardActions().enterSearchTextIntoSelectDistrictFilterAndSelect1();
+	   	    	        
+	   	    	        getAdminDashboardActions().clickOnDistrictTabOrganisationFilter();
+	   	    	        getAdminDashboardActions().enterSearchTextIntoSelectOrganisationFilterAndSelect1();
+	   	    	        
+	    	       }
+	    	       
+
+	    	       @Test(description = "- Verify that the \"improvement project report\" is available in the admin dashboard" +
+	    	       "- Verify that there will be a chart ' No. of improvements submitted with evidence ' under the improvement project report")
+	   	    	    @Author(name = "SHREEJITH")
+	   	    	    public void improvementProjectBigNumberChartLabelAD_REG() throws Exception {
+	   	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	   	    	
+	   	    	        switchEnvironment();
+	   	    	        getLoginPageActions().BMCLSelection();
+	   	    	        Thread.sleep(2000);
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	        getLoginPageActions().clickOnLogin();
+	   	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	   	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	   	    	        getLoginPageActions().clickOnLoginButton();
+	   	    	        
+	   	    	        
+	   	    	        Thread.sleep(10000);
+	   	    	        getLoginPageActions().refreshpage();
+	   	    	        Thread.sleep(5000); 
+	   	    	       
+	   	    	        
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	        getAdminDashboardActions().clickOnadmindashboard();
+	   	    	        
+	   	    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().verifyNoOfCertificatesIssuedLabel();
+	   	    	        getAdminDashboardActions().verifNoOfImprovementsSubmittedWithEvidenceLabel();
+	   	    	        
+	    	       }
+	    	       
+	    	       @Test(description = "- Verify if user can see district level filter & select the district at global level in the admin dashboard (Graphs/Block-wise status/District-wise status) tab\n")
+	   	    	    @Author(name = "SHREEJITH")
+	   	    	    public void districtGlobalFilterisMultiSelectableAcrossAllTabsAD_REG() throws Exception {
+	   	    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+	   	    	
+	   	    	        switchEnvironment();
+	   	    	        getLoginPageActions().BMCLSelection();
+	   	    	        Thread.sleep(2000);
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	        getLoginPageActions().clickOnLogin();
+	   	    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+	   	    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+	   	    	        getLoginPageActions().clickOnLoginButton();
+	   	    	        
+	   	    	        
+	   	    	        Thread.sleep(10000);
+	   	    	        getLoginPageActions().refreshpage();
+	   	    	        Thread.sleep(5000); 
+	   	    	       
+	   	    	        
+	   	    	        getLoginPageActions().clickOnGuest();
+	   	    	   
+	   	    	        getAdminDashboardActions().clickOnadmindashboard();
+	   	    	       
+	   	    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().clickOnDistrictFilter();
+	   	    	        getAdminDashboardActions().selectMultipleDistrict();
+	   	    	        
+	   	    	    /*Placeholder camel case issue across all tabs wrt to globalfilters*/
+		    	    //  getAdminDashboardActions().clickOnimprovementProjectsStatusByDistrictTab();
+		    	    //  getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
+		    	    //  getAdminDashboardActions().selectMultipleDistrict1();
+    	    	        getAdminDashboardActions().clickOnimprovementProjectsStatusByBlockTab();
+    	    	        getAdminDashboardActions().clickOnDistrictFilter();
+	   	    	        getAdminDashboardActions().selectMultipleDistrict();
+
+
+	   	    	        getAdminDashboardActions().clickOnBackButton();
+	   	    	        
+	   	    	        getAdminDashboardActions().searchAndSelectImprovementsConsumptionReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().clickOnDistrictFilter();
+	   	    	        getAdminDashboardActions().selectMultipleDistrict();
+		    	      //getAdminDashboardActions().clickOnimprovementStatusByDistrictTab();
+		    	      //getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
+		    	      //getAdminDashboardActions().selectMultipleDistrict1();
+	   	    	       
+		    	        getAdminDashboardActions().clickOnBackButton();
+	   	    	        
+	   	    	        getAdminDashboardActions().searchAndSelectObservationReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().clickOnDistrictFilter();
+	   	    	        getAdminDashboardActions().selectMultipleDistrict();
+		    	        getAdminDashboardActions().clickOnDistrictWiseObservationStatusAndEntitiesObservedTab();
+		    	        getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
+		    	        getAdminDashboardActions().selectMultipleDistrict1();
+		    	        getAdminDashboardActions().clickOnBlockWiseObservationStatusAndEntitiesObservedTab();
+		    	        getAdminDashboardActions().clickOnDistrictFilter();
+	   	    	        getAdminDashboardActions().selectMultipleDistrict();
+    
+	   	    	        getAdminDashboardActions().clickOnBackButton();
+	   	    	        
+	   	    	        getAdminDashboardActions().searchAndSelectObservationWithRubricsReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().clickOnDistrictFilter();
+	   	    	        getAdminDashboardActions().selectMultipleDistrict();
+		    	        getAdminDashboardActions().clickOnDistrictWiseObservationStatusAndEntitiesObservedTab();
+		    	        getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
+		    	        getAdminDashboardActions().selectMultipleDistrict1();
+	   	    	      
+	   	    	        getAdminDashboardActions().clickOnBackButton();
+	   	    	       
+	   	    	        getAdminDashboardActions().searchAndSelectObservationConsumptionReport();
+	   	    	        getAdminDashboardActions().searchAndSelectParameter();
+	   	    	        Thread.sleep(10000);
+	   	    	        getAdminDashboardActions().clickOnDistrictFilter();
+	   	    	        getAdminDashboardActions().selectMultipleDistrict();
+	   	    	       
+	   	    	      
+	   	    	  }
+	    	       
 }

@@ -91,21 +91,15 @@ public class LoginPageObjects {
     @FindBy(xpath = "//*[@id='gradeLevel']")
     public WebElement gradeLevelDropdown;
 
-
     @FindBy(xpath = "//*[@id=\"medium\"]")
     public WebElement mediumDropdown;
 
 
-//(//*[@class="menu transition hidden"]//sui-select-option)[2]
-
     @FindBy(xpath = "//span[contains(.,'IGOT-Health')]")
     public WebElement IGOT_Health;
 
-
     @FindBy(xpath = "//span[contains(.,'English')]")
     public WebElement english;
-
-    //
 
     @FindBy(xpath = "//div[@aria-label='Select Class']")
     public WebElement  selectClass;
@@ -149,11 +143,9 @@ public class LoginPageObjects {
     @FindBy(xpath = "//input[@placeholder='Enter Name']")
     public WebElement  EnterName;
 
-   // New xpaths
-    //@FindBy(xpath="//a[@class='profile-avtar p-0'][1]")
     @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-header[1]/div[1]/div[1]/div[1]/header[1]/div[1]/div[3]/div[1]/a[2]/div[1]/sb-avatar[1]/div[1]/div[1]/div[1]/span[1]")
     public WebElement guestIcon;
- //   (//div[contains(@class,'avatar') and text()=' G '])[2]")
+
     @FindBy(xpath="//h1[contains(text(),'Welcome to')]")
     public WebElement welcomeTitle;
     
@@ -189,13 +181,13 @@ public class LoginPageObjects {
     
 
     
-    @FindBy(xpath=" (//span[contains(text(),'Uttar Pradesh')])")        // (//span[contains(text(),'Uttar Pradesh')])  //(//span[contains(text(),'Uttar Pradesh')])[2]
+    @FindBy(xpath=" (//span[contains(text(),'Uttar Pradesh')])")       
     public WebElement uttarPradeshSate;
     
     @FindBy(xpath="(//span[contains(text(),'Andhra Pradesh')])")
     public WebElement andhraPradeshSate;
     
-    @FindBy(xpath="(//span[contains(text(),'Kerala')])")   //(//span[contains(text(),'Kerala')])   //(//span[contains(text(),'Kerala')])[2]"
+    @FindBy(xpath="(//span[contains(text(),'Kerala')])")   
     public WebElement keralaState;
     
     @FindBy(xpath="//a[text()=' Home ']")
@@ -295,33 +287,13 @@ public class LoginPageObjects {
     @FindBy(xpath = "//span[.='DEO']")
     public WebElement DEOsubrole;
     
-    
     @FindBy(xpath = "//div[@aria-label='DEO, selected ,Select Subrole']")
     public WebElement DEOsubroleselectedbydefault;
-  //div[@aria-label='DEO, selected ,Select Subrole']
     
     @FindBy(xpath = "//sb-caret-up[@class='cfe-multiselect-field-caret caret-down ng-star-inserted']")
     public WebElement subroleDropdownup;
-  //sb-caret-up[@class='cfe-multiselect-field-caret caret-down ng-star-inserted']
     
-    
-  /*  @FindBy(xpath = "(//span[@class='cfe-multiselect-field-label ng-star-inserted'])[3]")
-    public WebElement DEOsubrolealreadyselected;
-  //.....##########nooo 
-    public void abc() throws Exception {
-    String deoselected = DEOsubrolealreadyselected.getText();
-    if(deoselected.contains(" DEO"))
-    	SikshaLokamClient.get().report().log(Status.INFO, "Already Selected DEO as Subrole");
-    else
-    	 SikshaLokamClient.get().gestures().click(subroleDropdown);
-    JavascriptExecutor js = (JavascriptExecutor) SikshaLokamClient.get().driver();
-    js.executeScript("arguments[0].scrollIntoView(true);", DEOsubrole);
-	 SikshaLokamClient.get().gestures().click(DEOsubrole);
-       SikshaLokamClient.get().report().log(Status.INFO, "Selected DEO as Subrole");
-    }  */
- 
-    
-    @FindBy(xpath = "//button[.='Submit ']")            ////button[.='Submit ']   //(//button[@type='submit'])[3]
+    @FindBy(xpath = "//button[.='Submit ']")           
     public WebElement submitbuttonpersonadetailspage;
     
     @FindBy(xpath = "//button[@aria-label='Back']")
@@ -349,6 +321,25 @@ public class LoginPageObjects {
   
     @FindBy(xpath = "//div//span[.='Parent']")
     public WebElement parentRoleonprofile;
+    
+    @FindBy(xpath = "//span[normalize-space()='Update Profile']")
+    public WebElement updateProfilePopup;
+  
+    @FindBy(xpath = "//div[normalize-space()='Please update your profile']")
+    public WebElement updateProfilePopupBody;
+    
+    @FindBy(xpath = "//i[@class='close inside icon']")
+    public WebElement closeIcon;
+  //i[@class='close inside icon']
+    @FindBy(xpath = "//div//button[normalize-space()='Update']")
+    public WebElement updateButton;
+    
+    @FindBy(xpath = "//p[normalize-space()='Edit Personal Details‎']")
+    public WebElement editPersonalDetailsPopup;
+    
+  //div//button[normalize-space()='Update']
+  //p[normalize-space()='Edit Personal Details‎']
+
 
 
 

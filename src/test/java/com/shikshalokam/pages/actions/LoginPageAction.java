@@ -44,7 +44,6 @@ public class LoginPageAction {
     	System.out.println("Waiting for 5 seconds");
     	Thread.sleep(5000);
     	ShikshaLokamClient.get().gestures().waitAndClickElementisVisible(loginPageObjects.guestIcon);
-        //ShikshaLokamClient.get().gestures().click(loginPageObjects.guestIcon);
         ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Guest Icon");
     }
 
@@ -60,16 +59,12 @@ public class LoginPageAction {
 
     // enter user name to field.
     public void enterUserName(String userName) throws Exception {
-       // ShikshaLokamClient.get().gestures().click(loginPageObjects.userName);
-        //ShikshaLokamClient.get().gestures().waitAndClickElementisVisible(loginPageObjects.userName);
         ShikshaLokamClient.get().gestures().sendValueToTextBox(loginPageObjects.userName, userName);
         ShikshaLokamClient.get().report().log(Status.INFO, "Entered user name is : " + userName );
     }
 
     // enter password to field.
     public void enterPassword(String password) throws Exception {
-        // ShikshaLokamClient.get().gestures().click(loginPageObjects.);
-        //     ShikshaLokamClient.get().gestures().sendValueToTextBox(loginPageObjects., password);
     	ShikshaLokamClient.get().gestures().sendValueToTextBox(loginPageObjects.Password, password);
         ShikshaLokamClient.get().report().log(Status.INFO, "Entered password is : " + password );
     }
@@ -79,21 +74,12 @@ public class LoginPageAction {
         ShikshaLokamClient.get().report().log(Status.INFO, "clicked on the login button ");
     }
 
-    public void verifyHomePage() throws Exception {
-        //     ShikshaLokamClient.get().gestures().isDisplayed(loginPageObjects.welcomeTitle);
-    }
-
-
     public void clickOnHeadTeacherOption() throws Exception {
         ShikshaLokamClient.get().gestures().click(loginPageObjects.schoolHeadOROfficial);
         ShikshaLokamClient.get().report().log(Status.PASS, "Clicked on the head teacher option");
     }
 
-    public void clickOnLoginWithDikshaOption() throws Exception {
-        //  ShikshaLokamClient.get().gestures().click(loginPageObjects.loginWithDiksha);
-
-    }
-
+  
     public void clickOnExploreDiksha() throws Exception {
         ShikshaLokamClient.get().gestures().click(loginPageObjects.exploreDiksha);
         ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Explore Diksha");
@@ -137,7 +123,6 @@ public class LoginPageAction {
 
     public void selectState() throws Exception {
         ShikshaLokamClient.get().gestures().click(loginPageObjects.selectState);
-		//js.executeScript("arguments[0].scrollIntoView(true);", loginPageObjects.keralaState);
         if(getEnvironmentValue().contains("diksha")) {
             ShikshaLokamClient.get().gestures().click(loginPageObjects.keralaState);
             ShikshaLokamClient.get().report().log(Status.INFO, "Kerala State selected.");	
@@ -237,9 +222,6 @@ public class LoginPageAction {
     	{
     		 ShikshaLokamClient.get().report().log(Status.INFO, "Already Selected DEO as Subrole");
     	}
-    		// ShikshaLokamClient.get().gestures().click(loginPageObjects.subroleDropdown);
-    	 //ShikshaLokamClient.get().report().log(Status.INFO, "Clicked subrole dropdown"); 
-    	// Thread.sleep(3000);
 		 else {
 			 ShikshaLokamClient.get().gestures().click(loginPageObjects.subroleDropdown);
 			 ShikshaLokamClient.get().report().log(Status.INFO, "Clicked subrole dropdown");
@@ -292,8 +274,6 @@ public class LoginPageAction {
     }
     
     public void clickOnMediumDropDown() throws Exception {
-    	//Thread.sleep(1000);
-    	//ShikshaLokamClient.get().gestures().click(loginPageObjects.mediumDropdown);
     	ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(loginPageObjects.mediumDropdown);
     	ShikshaLokamClient.get().gestures().click(loginPageObjects.mediumDropdown);
     	Logger.logAndReportInfo("Clicked on the medium drop down");
@@ -327,7 +307,6 @@ public class LoginPageAction {
     
     public void clickOnSubmitButtonOnLocationWindow() throws Exception {
 		js.executeScript("arguments[0].click();", loginPageObjects.LocationWindowSubmitButton);
-    	//ShikshaLokamClient.get().gestures().click(loginPageObjects.LocationWindowSubmitButton);
     	Logger.logAndReportInfo("Clicked on the submit button on location selection window.");
     }
     
@@ -389,8 +368,6 @@ public class LoginPageAction {
     }
     
     public void clickOnProfileIcon1() throws Exception {
-    	//ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(loginPageObjects.userProfileIcon);
-    	//ShikshaLokamClient.get().gestures().click(loginPageObjects.userProfileIcon);
 		js.executeScript("arguments[0].click();", loginPageObjects.userProfileIcon);
     	Logger.logAndReportInfo("Clicked on the user profile icon");
     }
@@ -569,7 +546,6 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
 		   Logger.logAndReportInfo("Submit button is disabled on BMC selection window.");
 	    		
 	    }
-	  //waitTillTheElementIsVisibleAndClickable
 	    
 	    public void verifyYourLocationPopUp() throws Exception {
 	    	ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(loginPageObjects.YourLocationPopUp);
@@ -608,7 +584,31 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
 	         verifyHomeButton(); */
 	    }
 	    
-	   
+	    public void verifyUpdateProfilePopup() throws Exception {
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.updateProfilePopup),"Update Profile Pop-up is not displayed.");
+			Logger.logAndReportPass("Update Profile Pop-up is displayed succesfully");
+		}
+		
+		public void verifyContentsOfUpdateProfilePopup() throws Exception {
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.updateProfilePopup),"Update Profile - Header is not displayed.");
+			Logger.logAndReportPass("Update Profile - Header is displayed succesfully");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.updateProfilePopupBody),"Please update your profile - Message is not displayed.");
+			Logger.logAndReportPass("Please update your profile - Message is displayed succesfully");
+	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.closeIcon),"Cross icon 'x' icon is not displayed.");
+			Logger.logAndReportPass("Cross icon 'x' icon is displayed succesfully");
+			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.updateButton),"Update Button is not displayed.");
+			Logger.logAndReportPass("Update Button is displayed succesfully");
+		}
+	    
+		 public void clickOnUpdateButton() throws Exception {
+		        ShikshaLokamClient.get().gestures().click(loginPageObjects.updateButton);
+		        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Update Button.");
+		    }
+		 
+		 public void verifyEditPersonalDetailsPopup() throws Exception {
+		        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.editPersonalDetailsPopup),"Edit Personal Details Pop-up is not displayed.");
+				Logger.logAndReportPass("Edit Personal Details Pop-up is displayed succesfully, therefore navigated to Profile Page");
+			}
 	    
 	  
 }

@@ -9,6 +9,7 @@ import com.shikshalokam.annotation.Author;
 import com.shikshalokam.pages.actions.LoginPageAction;
 import com.shikshalokam.pages.actions.ObservationPageAction;
 import com.shikshalokam.utils.gSheet.TestData;
+import com.shikshalokam.utils.logger.Logger;
 import com.shikshalokam.utils.prop.PropUtlis;
 
 import org.testng.Assert;
@@ -42,20 +43,6 @@ public class LoginPageTest {
         }
     }
     
-  /*  @Test(description = "login to application with valid Credentials")
-    @Author(name = "Sunil H N")
-    public void Application() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
-        getLoginPageActions().clickOnGuest();
-        getLoginPageActions().clickOnLogin();
-        getLoginPageActions().enterUserName(loginTestData.get("userName"));
-        getLoginPageActions().enterPassword(loginTestData.get("password"));
-        getLoginPageActions().clickOnLoginButton();  
-}  */ //i made this change ,flow is not correct and failing
-
     // not using..
     @Test(description = "login to application with valid Credentials")
     @Author(name = "Manjunatha K")
@@ -98,9 +85,6 @@ public class LoginPageTest {
     @Author(name = "Sunil H N")
     public void registerToAnApplication() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        /*if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }*/
         switchEnvironment();
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
@@ -143,7 +127,6 @@ public class LoginPageTest {
     @Author(name = "Manjunatha K")
     public void forgotPasswordToLogin() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
         if(getEnvironmentValue().contains("preprod")) {
         	getLoginPageActions().clickOnExploreDiksha();
         }
@@ -159,10 +142,7 @@ public class LoginPageTest {
     @Test(description = "Verify Teacher Role")
     @Author(name = "Sunil H N")
     public void verifyTeacherRoleForLogin() throws Exception {
-        //getLoginPageActions().clickOnExploreDiksha();
-    	if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().selectTeacher();
         getLoginPageActions().selectBoard();
         getLoginPageActions().selectMedium();
@@ -178,30 +158,11 @@ public class LoginPageTest {
     }
 
 
-    //@Test(description = "Verify Observation Tile")
-    @Author(name = "Sunil H N")
-    public void VerifyObservationTile() throws Exception {
-    	if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
-        getLoginPageActions().clickOnProfileIcon();
-        getLoginPageActions().selectProfile();
-        getLoginPageActions().selectRoleHTAndOffical();
-        getLoginPageActions().clickOnSubmit();
-        getLoginPageActions().clickOnProfileIcon();
-        getLoginPageActions().selectTeacher();
-        getLoginPageActions().ClickOnSubmit();
-        getLoginPageActions().verifyObservationTile();
-    }
-
-    
     @Test(description = "Verify Gmail login")
     @Author(name = "Manjunatha K")
     public void verifyGmailSignIn() throws Exception {
     	loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-    	if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -219,10 +180,7 @@ public class LoginPageTest {
     @Author(name = "Manjunatha K")
     public void BMCAndLocationEditAndVerify() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
-        if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectRoleHTAndOffical();
         getLoginPageActions().clickOnContinue();
@@ -241,16 +199,9 @@ public class LoginPageTest {
         getLoginPageActions().clickOnSubmitButtonOnLocationWindow();
         getLoginPageActions().verifyHomeButton();
         getLoginPageActions().clickOnGuest();
-
-        //getLoginPageActions().clickOnProfileIcon();
         getLoginPageActions().verifyNameOnProfile();
         Assert.assertTrue(true,"User name is not present on profile");
-        //getLoginPageActions().getUserNameFromProfile();
-        //Assert.assertEquals(getLoginPageActions().getUserNameFromProfile(), loginTestData.get("userNameOnLocationWindow"), "User name is not matching");
-    
-        
-        
-        //NEW TC'S login
+       
     }
     
     
@@ -259,10 +210,7 @@ public class LoginPageTest {
     @Author(name = "SHREEJITH")
     public void htofficialsAndSubmit() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
-        if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectRoleHTAndOffical();
         getLoginPageActions().clickOnContinue();
@@ -278,10 +226,7 @@ public class LoginPageTest {
     @Author(name = "SHREEJITH")
     public void htofficialsAndSubmitfail() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
-        if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectRoleHTAndOffical();
         getLoginPageActions().clickOnContinue();
@@ -300,10 +245,7 @@ public class LoginPageTest {
     @Author(name = "SHREEJITH")
     public void teacherAndSubmit() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
-        if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectTeacher();
         getLoginPageActions().clickOnContinue();
@@ -325,10 +267,7 @@ public class LoginPageTest {
     @Author(name = "SHREEJITH")
     public void studentAndSubmit() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
-        if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectStudent();
         getLoginPageActions().clickOnContinue();
@@ -348,10 +287,7 @@ public class LoginPageTest {
     @Author(name = "SHREEJITH")
     public void parentAndSubmit() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
-        if(getEnvironmentValue().contains("preprod")) {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectParent();
         getLoginPageActions().clickOnContinue();
@@ -369,7 +305,7 @@ public class LoginPageTest {
 }
     
     @Test(description = "login through observation tab")
-    @Author(name = "Manjunatha K")
+    @Author(name = "SHREEJITH")
     public void loginFromObservationTab() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         switchEnvironment();
@@ -382,6 +318,87 @@ public class LoginPageTest {
         getLoginPageActions().clickOnLoginButton();
         getObservationPageActions().verifyObservationListingScreen();
     }
-    //////////////
+ 
+    @Test(description = "-To verify a user with teacher role can see 'Browse other categories' section on the home page on portal"+
+    "-To verify a user with teacher role can see observation tile in the 'Browse other categories' section on portal home page"+
+    "-To verify a user with teacher role is taken to the login page when they click on the Observation tile ")
+    @Author(name = "SHREEJITH")
+    public void guestUserRoleAsTeacher() throws Exception {
+        switchEnvironment();
+        getLoginPageActions().verifyWelcomeTitle();
+        getLoginPageActions().selectTeacher();
+        getLoginPageActions().clickOnContinue();
+        getLoginPageActions().clickOnBoardDropDown();
+        getLoginPageActions().selectcbseOrNcertBoardOption();
+        Thread.sleep(5000);
+        System.out.println("5 Seconds wait is over");
+        getLoginPageActions().verifySubmitButtonisDisabled();
+        getLoginPageActions().clickOnMediumDropDown();
+        getLoginPageActions().selectEnglishOption();
+        getLoginPageActions().clickOnClassDropDown();
+        getLoginPageActions().selectClass1Option();
+        getLoginPageActions().verifySubmitButtonEnabled();
+        getLoginPageActions().verifyYourLocationPopUp();
+     // getLoginPageActions().selectState();
+     // getLoginPageActions().selectDistrict();
+        getLoginPageActions().clickOnSubmitButtonOnLocationWindow();
+        getLoginPageActions().verifyHomeButton();
+        getLoginPageActions().clickOnHomeButton();
+        getObservationPageActions().verifyBrowseOtherCategories();
+        getObservationPageActions().verifyObservationTileunderBrowseOtherCategories();
+        getObservationPageActions().clickOnObservationTileunderBrowseOtherCategories();
+        getLoginPageActions().verifyLoginScreen();
+    }
+    
+    //..................................REG..............................................//
   
+    
+    @Test(description = "-To verify the existing teacher user gets a prompt to update profile when they click on the observation tile, if all details are not filled." +
+    	    "-To verify the existing teacher user comes to profile page after clicking on update profile on the pop up prompt message" 
+    	   )
+    	    @Author(name = "SHREEJITH")
+    	    public void updateProfilePopupTeacherFlow_REG() throws Exception {
+    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+    	        switchEnvironment();
+    	        getLoginPageActions().BMCLSelection();  
+    	        Thread.sleep(3000);
+    	        getLoginPageActions().clickOnGuest();
+    	        getLoginPageActions().clickOnLogin();
+    	        getLoginPageActions().enterUserName(loginTestData.get("updateprofileuserName"));
+    	        getLoginPageActions().enterPassword(loginTestData.get("updateprofileuserPassword"));
+    	        getLoginPageActions().clickOnLoginButton();
+    	       
+    	        Thread.sleep(10000);
+   	            getLoginPageActions().refreshpage();
+   	            Thread.sleep(5000);  
+   	            
+    	        getLoginPageActions().verifyHomeButton();
+    	        getLoginPageActions().clickOnHomeButton();
+    	        getObservationPageActions().clickOnObservationTileunderBrowseOtherCategories();
+    	        getLoginPageActions().verifyUpdateProfilePopup();
+    	        getLoginPageActions().verifyContentsOfUpdateProfilePopup();
+    	        getLoginPageActions().clickOnUpdateButton();
+    	        getLoginPageActions().verifyEditPersonalDetailsPopup();
+    }
+    
+    @Test(description = "-To verify a new user should be able to enter their credentials and login to portal. And navigated to complete my Profile details (i.e add sub role and location) ")
+    	    @Author(name = "SHREEJITH")
+    	    public void completeProfileDetails_REG() throws Exception {
+    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+    	        switchEnvironment();
+    	        getLoginPageActions().BMCLSelection();  
+    	        Thread.sleep(3000);
+    	        getLoginPageActions().clickOnGuest();
+    	        getLoginPageActions().clickOnLogin();
+    	        getLoginPageActions().enterUserName(loginTestData.get("newuserht"));
+    	        getLoginPageActions().enterPassword(loginTestData.get("newuserhtPassword"));
+    	        getLoginPageActions().clickOnLoginButton();
+    	       
+    	        Thread.sleep(10000);
+   	            getLoginPageActions().refreshpage();
+   	            Thread.sleep(5000);  
+   	            getLoginPageActions().verifyYourLocationPopUp();
+   	            Logger.logAndReportPass("As a first time user , user is asked to complete my Profile details (i.e add sub role and location) ");
+    }
+    	       
 }
