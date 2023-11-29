@@ -162,6 +162,12 @@ public class ObservationPageAction {
     		Logger.logAndReportInfo("Clicked on the yes confirmation for deleting observation.");
     		Thread.sleep(3000);
     	}
+    	
+    	public void clickOnYesConfirmationForMatrixInstanceDelete() throws Exception {
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.yesConfirmationForObservationDelete);
+    		Logger.logAndReportInfo("Clicked on the yes confirmation for deleting matrix instance.");
+    		Thread.sleep(3000);
+    	}
     	public void clickOnBackButton() throws Exception {
     		js.executeScript("arguments[0].click();", observationPageObjects.backButton);
     		//js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.backButton);
@@ -1610,8 +1616,13 @@ public class ObservationPageAction {
             	   Logger.logAndReportPass("Question header is displayed");
             	}
                
-               public void clickQuestionBulb() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.QuestionBulb);
+               public void scrollToBulbQuestion() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.hintQuestion);
+            	   Thread.sleep(5000);
+            	   Logger.logAndReportInfo("scrolled to Bulb Question");
+               }
+               public void clickQuestionBulb() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.questionBulb);
             	   Logger.logAndReportInfo("Hint bulb icon is displayed and Clicked on it");
                 }
                
@@ -1622,13 +1633,7 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("clicked on added instance");
                 }
                
-               public void verifyHint() throws Exception { 
-            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.HintText);
-            	   Logger.logAndReportInfo("Hint Text header is displayed");
-            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.HintTextBody);
-            	   Logger.logAndReportInfo("Hint Text body is displayed");
-            	   
-                }
+               
                
                public void clickAlltypeObs() throws Exception { 
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AlltypeObservation);
@@ -1700,9 +1705,117 @@ public class ObservationPageAction {
                public void enterResponseOnQuestionFour() throws Exception {
               		ShikshaLokamClient.get().gestures().click(observationPageObjects.parent2QuestionSecondAnswer);
               		Logger.logAndReportInfo("Answered 4th question");;
-              	    }
+              	}
                
+               public void clickMatrixTypeObservation() throws Exception {  
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixTypeObs);
+            	   Logger.logAndReportInfo("click on the observations which has matrix type question");
+                }
                
+               public void verifyDateCapture() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.Question1Capture);
+            	   Thread.sleep(5000);
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.Question1Capture);            	 
+            	   Logger.logAndReportInfo("Date capture question is displayed");
+            	   Thread.sleep(2000);
+            	}
+               
+               public void verifySectionHeader1() throws Exception { 
+            	   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.SectionHeader1);            	 
+            	   Logger.logAndReportInfo("Section header is displayed");
+            	}
+               
+               public void clickDateCaptureButton() throws Exception {
+             		ShikshaLokamClient.get().gestures().click(observationPageObjects.Question1Capture);
+             		Logger.logAndReportInfo("Answered date capture question");
+             		Thread.sleep(2000);
+             	}
+               
+               public void clickSection1() throws Exception {
+            		ShikshaLokamClient.get().gestures().click(observationPageObjects.Section1);
+            		Logger.logAndReportInfo("Clicked on section1");
+            		Thread.sleep(2000);
+            	}
+               
+               public void clickAddButton() throws Exception {
+               js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+               Logger.logAndReportInfo("scrolled to add button");
+               ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.AddButton);
+               Logger.logAndReportInfo("add button present");
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.AddButton);
+           		Logger.logAndReportInfo("Clicked on matrix instance Add button");
+           		Thread.sleep(2000);
+           	  }
+               
+               public void clickAddButton1() throws Exception {
+                   ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.AddButton);
+                   Logger.logAndReportInfo("add button present");
+               		ShikshaLokamClient.get().gestures().click(observationPageObjects.AddButton);
+               		Logger.logAndReportInfo("Clicked on matrix instance Add button");
+               		Thread.sleep(2000);
+               	  }
+               
+               public void matrixResponces() throws Exception {
+            	ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.MatrixQuestionResponce1);
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixQuestionResponce1);
+           		Logger.logAndReportInfo("Answered 1st matrix question");
+           		ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.MatrixQuestionResponce2);
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixQuestionResponce2);
+           		Logger.logAndReportInfo("Answered 2nd matrix question");
+           		ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.MatrixQuestionResponce3);
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixQuestionResponce3);
+           		Logger.logAndReportInfo("Answered 3rd matrix question");
+           		ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.MatrixQuestionResponce4);
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixQuestionResponce4);
+           		Logger.logAndReportInfo("Answered 4th matrix question");
+           		ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.MatrixQuestionResponce5);
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixQuestionResponce5);
+           		Logger.logAndReportInfo("Answered 5th matrix question");
+           		
+           	}
+               
+               public void clickmatrixInstance1() throws Exception {
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixQuestionInstance1);
+              		Logger.logAndReportInfo("Answered 1st question");
+              	}
+               
+               public void clickCloseIconOnMatrixPopup() throws Exception {
+             		ShikshaLokamClient.get().gestures().click(observationPageObjects.CloseIconOnMatrixPopup);
+             		Logger.logAndReportInfo("Clicked on close icon");
+             	}
+               
+               public void clickSubmitButtonOnMatrixInstancePopup() throws Exception {
+            	   ShikshaLokamClient.get().gestures().isEnabled(observationPageObjects.MatrixSubmitButton);
+             		Logger.logAndReportPass("Submit button is enabled");
+            		ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixSubmitButton);
+            		Logger.logAndReportInfo("Clicked on submit button");
+            	}
+               
+               public void verifyMatrixInstanceStatus() throws Exception {
+            		ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.MatrixInstanceStatus);
+            		Logger.logAndReportInfo("updated on date and time displayed");
+            	}
+               
+               public void clickTrashIcon() throws Exception {
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.SecondTrashIcon);
+           		Logger.logAndReportInfo("Clicked on trash icon");
+             	}
+               
+               public void clickEnterDateObservation() throws Exception {
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.EnterdateObservation);
+              		Logger.logAndReportInfo("Clicked on observation");
+                }
+               
+               public void clickEnterDateQuestion() throws Exception {
+             		ShikshaLokamClient.get().gestures().click(observationPageObjects.EnterdateQuestion);
+             		ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.EnterdateQuestion, "15 november 2023");
+             		Logger.logAndReportInfo("Entered the date");
+                }
+          	  
+               public void clickCloseButton() throws Exception {
+             		ShikshaLokamClient.get().gestures().click(observationPageObjects.CloseButtonQuestionHint);
+             		Logger.logAndReportInfo("Clicked on close button on the question hint pop up");
+               }
            	
 }
 

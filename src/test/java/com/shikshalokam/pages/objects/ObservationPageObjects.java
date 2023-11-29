@@ -679,14 +679,14 @@ public class ObservationPageObjects {
     @FindBy(xpath = "//div[5]//div[1]//h4[1]")
     public WebElement SectionHeader;
     
-    @FindBy(xpath = "//div[@id='SA1']//div[@class='sbt-page-content-area']//form[@class='adjust ng-invalid ng-touched ng-dirty']//sl-input//div[@class='ng-star-inserted']//div[@class='ng-star-inserted']//div//div[@class=\"sbt-page-content-questionnaireFormarea'\"]//sl-page-questions[@class='ng-star-inserted']//sl-input//div[@class='ng-star-inserted']//div[@class='ui card question-card sb--card relative9 ng-star-inserted']//div[@class='content']//div[@class='d-flex flex-ai-flex-start flex-jc-space-between']//div[@class='ng-star-inserted']//i[@class='icon large lightbulb']")
-    public WebElement QuestionBulb;
+    @FindBy(xpath = "//div[contains(text(),'6 . ')]")
+    public WebElement hintQuestion;
+    
+    @FindBy(xpath = "//div[contains(text(),'5 . ')]/../following-sibling::div[2]/i[@class='icon large lightbulb']")
+    public WebElement questionBulb;
     
     @FindBy(xpath = "//div[@aria-label='Observation 6 accordion']")
     public WebElement instance6;
-    
-    @FindBy(xpath = "//div[@class='font-weight-bold sb-color-primary modalNote']")
-    public WebElement HintText;
     
     @FindBy(xpath = "//h4[@class='ui header']")
     public WebElement HintTextBody;
@@ -720,6 +720,73 @@ public class ObservationPageObjects {
     
     @FindBy(xpath = "(//div[contains(text(),'Domain')])[1]/../../following-sibling::div/button[.='Not Applicable ']")
     public WebElement DomainNotApplicableButton;
+    
+    @FindBy(xpath = "//h4[@title='Testing Observation with criteriaLevelReport']")
+    public WebElement MatrixTypeObs;
+    
+    @FindBy(xpath = "//div[contains(text(),' 1 . ')]/../../following-sibling::div//button[.=' Capture ']")
+    public WebElement Question1Capture;
+    
+    @FindBy(xpath = "//a[normalize-space()='SECTION 1']")
+    public WebElement Section1;
+    
+    @FindBy(xpath = "//h4[normalize-space()='Section 1']")
+    public WebElement SectionHeader1;
+    
+    @FindBy(xpath = "//button[normalize-space()='Add']")
+    public WebElement AddButton;
+    
+    @FindBy(xpath = "//span[normalize-space()='1']")
+    public WebElement MatrixQuestionInstance1;
+    
+    @FindBy(xpath = "//label[.='Using the textbooks for my class']")
+    public WebElement MatrixQuestionResponce1;
+    
+    @FindBy(xpath = "//label[.='On daily basis according to the class']")
+    public WebElement MatrixQuestionResponce2;
+    
+    @FindBy(xpath = "//label[.='I conduct basic classroom learning']")
+    public WebElement MatrixQuestionResponce3;
+    
+    @FindBy(xpath = "//label[.='I reflect rarely']")
+    public WebElement MatrixQuestionResponce4;
+    
+    @FindBy(xpath = "//label[.='I identified the peers I can reach to but didn’t act on it']")
+    public WebElement MatrixQuestionResponce5;
+    
+    @FindBy(xpath = "//label[.='I identified the peers I can reach to but didn’t act on it']")
+    public WebElement CloseIconOnMatrixPopup;
+    
+    @FindBy(xpath = "//button[@class='sb-btn sb-btn-normal sb-btn-primary'][normalize-space()='Submit']")
+    public WebElement MatrixSubmitButton;
+    
+    @FindBy(xpath = "//span[@class='fs-0-785 modified ng-star-inserted']")
+    public WebElement MatrixInstanceStatus;
+    
+    @FindBy(xpath = "(//i[contains(@class,'trash')])[2]")
+    public WebElement SecondTrashIcon;
+    
+    @FindBy(xpath = "//h4//bdi[text()='OCI-ନିରୀକ୍ଷଣ']")
+    public WebElement EnterdateObservation;
+    
+    @FindBy(xpath = "(//input[@type='text'])[2]")
+    public WebElement EnterdateQuestion;
+    
+    @FindBy(xpath = "//button[normalize-space()='Close']")
+    public WebElement CloseButtonQuestionHint;
+    
+    @FindBy(xpath = "//h4[normalize-space()='Positive Behavioural Expectations']")
+    public WebElement sectionHeader;
+    
+    //div[contains(text(),'5 . ')]/../following-sibling::div[2]/i[@class='icon large lightbulb']
+    
+    
+    
+   
+    
+   
+    
+   
     
     
     

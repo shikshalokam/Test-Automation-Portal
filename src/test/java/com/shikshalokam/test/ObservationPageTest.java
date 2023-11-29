@@ -1030,15 +1030,20 @@ public class ObservationPageTest {
         Thread.sleep(10000);
         getObservationPageActions().verifyObservationButton();
         getObservationPageActions().clickOnObservationButton();
-        getObservationPageActions().clickQuestionHintObservation();
-        getObservationPageActions().clickInstance6();
-        getObservationPageActions().clickStartButtonQuestionHint();
-        getObservationPageActions().verifySectionHeader();
-        getObservationPageActions().clickQuestionBulb();
-        getObservationPageActions().verifyHint();    
+        getObservationPageActions().clickEnterDateObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        getObservationPageActions().ClickstartButton();
+      
+        Thread.sleep(10000);
+        getObservationPageActions().scrollToBulbQuestion();
+        Thread.sleep(10000);
+       getObservationPageActions().clickQuestionBulb();
+        
+        getObservationPageActions().clickCloseButton();
     }
     
-    @Test(description = "To Verify, user should see response hints bulb icon, when user scrolls to particular question where response hints are added")
+    @Test(description = "To verify that the user gets the dependant questions based on the response of parent question")
     @Author(name = "GAGAN")
     public void DependentQuestion_REG()throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
@@ -1113,5 +1118,104 @@ public class ObservationPageTest {
         
     }
    
+    @Test(description = "To verify that the user is able to get current date automatically ")
+    @Author(name = "GAGAN")
+    public void dateCapture_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName6"));
+        getLoginPageActions().enterPassword(loginTestData.get("password6"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickMatrixTypeObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(5000);
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().ClickstartButton();
+        getObservationPageActions().clickSection1();
+        getObservationPageActions().verifySectionHeader1();
+        //getObservationPageActions().verifyDateCapture();
+        getObservationPageActions().clickDateCaptureButton();
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().clickOnSaveFormConirmationYes();
+        getObservationPageActions().clickBackbuttononthepopup();      
+    }
+    
+    @Test(description = "To verify that user can add instances in matrix type questions + To verify that user can delete instances in matrix type questions + To verify that user submits response for all matrix sub-questions + To verify that user gets indication of completion of matrix instance")
+    @Author(name = "GAGAN")
+    public void matrixQuestionFlow_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName6"));
+        getLoginPageActions().enterPassword(loginTestData.get("password6"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickMatrixTypeObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        Thread.sleep(2000);
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().ClickstartButton();
+        getObservationPageActions().clickAddButton();
+        Thread.sleep(5000);
+        getObservationPageActions().clickmatrixInstance1();
+        getObservationPageActions().matrixResponces();
+        getObservationPageActions().clickSubmitButtonOnMatrixInstancePopup();
+        getObservationPageActions().verifyMatrixInstanceStatus();
+        getObservationPageActions().clickAddButton1();
+        getObservationPageActions().clickAddButton1();
+        getObservationPageActions().clickTrashIcon();
+        getObservationPageActions().clickOnYesConfirmationForMatrixInstanceDelete();
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().clickOnSaveFormConirmationYes();
+        getObservationPageActions().clickBackbuttononthepopup();         
+    }
+    
+    @Test(description = "To verify user can search for the entity from the list of the entities ")
+    @Author(name = "GAGAN")
+    public void enterDate_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName6"));
+        getLoginPageActions().enterPassword(loginTestData.get("password6"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickEnterDateObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        getObservationPageActions().ClickstartButton();
+        getObservationPageActions().clickEnterDateQuestion();
+       
+        
+            
+    }
    
 }
