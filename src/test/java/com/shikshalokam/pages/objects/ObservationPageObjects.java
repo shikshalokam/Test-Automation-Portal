@@ -778,8 +778,26 @@ public class ObservationPageObjects {
     @FindBy(xpath = "//h4[normalize-space()='Positive Behavioural Expectations']")
     public WebElement sectionHeader;
     
-    //div[contains(text(),'5 . ')]/../following-sibling::div[2]/i[@class='icon large lightbulb']
+    @FindBy(xpath = "(//a[@class='remove-image'])[2]")
+    public WebElement fileremove;
     
+    @FindBy(xpath = "//button[normalize-space()='Add District']")
+    public WebElement addDistrict;
+    
+    @FindBy(xpath = "//input[@placeholder='Search']")
+    public WebElement searchEntity;
+    
+    @FindBy(xpath = "//label[.='Prakasam, 2818']")
+    public WebElement searchEntityvalue;
+    
+    @FindBy(xpath = "(//h4//bdi[contains(text(),'Baseline Form_ Blended Teacher Training_APSALT_EI_')])[1]")
+    public WebElement AddStateObservation;
+    
+    @FindBy(xpath = "//button[normalize-space()='Add State']")
+    public WebElement addStateButton;
+    
+    @FindBy(xpath = "//div[contains(text(),'No data found')]")
+    public WebElement text;
     
     
    

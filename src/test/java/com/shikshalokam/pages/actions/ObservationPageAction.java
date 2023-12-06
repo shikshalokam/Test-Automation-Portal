@@ -177,7 +177,7 @@ public class ObservationPageAction {
     	
     	public void clickOnStartButtonOnObservation() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.startButtonForObservation);
-    		Logger.logAndReportPass("Clicked on the start button .");
+    		Logger.logAndReportPass("Clicked on the start button");
     	}
     	
     	public void AnswerRadioQuestion2() throws Exception {
@@ -192,12 +192,22 @@ public class ObservationPageAction {
     		
     		
     	}
+   
+    		
+    		public void clickOnObservationParentChild() throws Exception {
+                if(getEnvironmentValue().contains("diksha")) {
+             } else if(getEnvironmentValue().contains("preprod")) {
+             	
+             }
+             else
+             {
+            	 ShikshaLokamClient.get().gestures().click(observationPageObjects.parentChildObservation);
+         		Logger.logAndReportInfo("Clicked on the parent child observation.");
+             }
+         }	
+    		
+    		
     	
-    	public void clickOnObservationParentChild() throws Exception {
-    		//ShikshaLokamClient.get().gestures().waitTillTheElementIsVisibleAndClickable(observationPageObjects.parentChildObservation);
-    		ShikshaLokamClient.get().gestures().click(observationPageObjects.parentChildObservation);
-    		Logger.logAndReportInfo("Clicked on the parent child observation.");
-    	}
     	
     	public void clickOnObservationWithoutRubric2() throws Exception {
     		/*js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.ObsWithoutRubric2);
@@ -1173,10 +1183,19 @@ public class ObservationPageAction {
                    Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.ProgramNamePresentOnCard),"Program name is not displayed.");
            		Logger.logAndReportPass("Program Name displayed succesfully on card i,e Testing program 5.0.2");
            	}
+              
                public void clickObservationWithRubric() throws Exception {
-                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithRubric),"Not clicked on observation");
-           		Logger.logAndReportPass("Clicked on Observation with rubric observation and landed on Observation details page");
-           	}
+                   if(getEnvironmentValue().contains("diksha")) {
+                
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
+                } 
+                else 
+                {
+                	  Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithRubric),"Not clicked on observation");
+                 		Logger.logAndReportPass("Clicked on Observation with rubric observation and landed on Observation details page");       	
+                }
+            }
                
                public void clickObservationWithoutRubric() throws Exception {
                    Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithoutRubric),"Not clicked on observation");
@@ -1239,10 +1258,17 @@ public class ObservationPageAction {
            		Logger.logAndReportInfo("observe again button is not present for single submission observations.");
            	    }
                
-               public void ClickedOnObservationWithoutRubric() throws Exception {  
-                   Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.ObservationWithoutRubricInstanceName),"Not clicked on observation without rubric");
-               	   Logger.logAndReportInfo("Clicked on Observation without rubric");
+               public void ClickedOnObservationWithoutRubric() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
                 }
+                else
+                {
+                	Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.ObservationWithoutRubricInstanceName),"Not clicked on observation without rubric");
+                	   Logger.logAndReportInfo("Clicked on Observation without rubric");
+                }
+            }
                
                public void ClickedOnEditIconOnThreeDots() throws Exception {  
                    Assert.assertTrue(ShikshaLokamClient.get().gestures().click(observationPageObjects.EditOnThreedots),"Not clicked on Edit icon");
@@ -1273,10 +1299,18 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("Clicked on cancel on observation instance name change popup");
                 }
                
-               public void ClickedOnObsevationWithRubricSingleSubmission() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithRubricSingleSubmission);
-            	   Logger.logAndReportInfo("Clicked on observation with rubric single submission");
+               public void ClickedOnObsevationWithRubricSingleSubmission() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
                 }
+                else
+                {
+                	ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithRubricSingleSubmission);
+             	   Logger.logAndReportInfo("Clicked on observation with rubric single submission");
+                 }
+            }
+               
                
                
                public void DefaultEntityAddedForObsWithRubricSingleSubmission() throws Exception {
@@ -1383,10 +1417,19 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("click on No button on Save pop up and user stays on the same page");
                 }
                
-               public void clickOnObservationDomain() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.Domainstatusobs);
-            	   Logger.logAndReportInfo("click on the observations which has domains");
+               public void clickOnObservationDomain() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
                 }
+                else
+                {
+                	ShikshaLokamClient.get().gestures().click(observationPageObjects.Domainstatusobs);
+             	   Logger.logAndReportInfo("click on the observations which has domains");
+                 }
+            } 
+               
+               
                
                public void clickDomainDropdown() throws Exception { 
             	   //js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.addedInstance);
@@ -1509,10 +1552,20 @@ public class ObservationPageAction {
            	   Logger.logAndReportPass("Entered reason for marking as not applicable");
                }
                
-               public void clickAddRemarkObservation() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddRemarkObs);
-            	   Logger.logAndReportInfo("Clicked on Observation which has add remark option");
-                }    
+               public void clickAddRemarkObservation() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
+                }
+                else
+                {
+                	ShikshaLokamClient.get().gestures().click(observationPageObjects.AddRemarkObs);
+             	   Logger.logAndReportInfo("Clicked on Observation which has add remark option");
+                 } 
+            }
+               
+               
+               
                
                public void clickStartButton() throws Exception {  
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.StartButton);
@@ -1633,12 +1686,18 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("clicked on added instance");
                 }
                
-               
-               
-               public void clickAlltypeObs() throws Exception { 
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AlltypeObservation);
-            	   Logger.logAndReportInfo("clicked on Observation");
+               public void clickAlltypeObs() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
                 }
+                else
+                {ShikshaLokamClient.get().gestures().click(observationPageObjects.AlltypeObservation);
+         	   Logger.logAndReportInfo("clicked on Observation");
+             }
+            }
+               
+               
                
                public void clickNoRadioOption() throws Exception { 
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.NoRadioOption);
@@ -1668,7 +1727,7 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("ObservationTextIsDisplayed");
                 }
                
-               public void ClickstartButton() throws Exception {  
+               public void clickstartButton() throws Exception {  
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.StartButton);          	   Thread.sleep(5000);
             	   Logger.logAndReportInfo("Clicked on Start button");
                 }
@@ -1707,10 +1766,20 @@ public class ObservationPageAction {
               		Logger.logAndReportInfo("Answered 4th question");;
               	}
                
-               public void clickMatrixTypeObservation() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixTypeObs);
-            	   Logger.logAndReportInfo("click on the observations which has matrix type question");
+               public void clickMatrixTypeObservation() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
                 }
+                else
+                {
+                	ShikshaLokamClient.get().gestures().click(observationPageObjects.MatrixTypeObs);
+             	   Logger.logAndReportInfo("click on the observations which has matrix type question");
+                 }
+            } 
+               
+               
+               
                
                public void verifyDateCapture() throws Exception { 
             	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.Question1Capture);
@@ -1802,9 +1871,20 @@ public class ObservationPageAction {
              	}
                
                public void clickEnterDateObservation() throws Exception {
-              		ShikshaLokamClient.get().gestures().click(observationPageObjects.EnterdateObservation);
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
+                }
+                else
+                {
+                	ShikshaLokamClient.get().gestures().click(observationPageObjects.EnterdateObservation);
               		Logger.logAndReportInfo("Clicked on observation");
                 }
+            }
+               
+               
+               
+               
                
                public void clickEnterDateQuestion() throws Exception {
              		ShikshaLokamClient.get().gestures().click(observationPageObjects.EnterdateQuestion);
@@ -1816,6 +1896,94 @@ public class ObservationPageAction {
              		ShikshaLokamClient.get().gestures().click(observationPageObjects.CloseButtonQuestionHint);
              		Logger.logAndReportInfo("Clicked on close button on the question hint pop up");
                }
+               
+               public void attachFiles() throws Exception {
+               observationPageObjects.fileUpload1.sendKeys(filepath+"//Fileupload_files//videoupload.mp4");
+        	    Thread.sleep(3000);
+        	    verifyEvidenceUploadedPopup();
+   	            clickOnOkButtonOnEvidenceUploadedPopup();
+   	            Thread.sleep(3000);
+   	        
+   	            observationPageObjects.fileUpload1.sendKeys(filepath+"//Fileupload_files//Shikshalokam.jpg"); 
+    	        verifyEvidenceUploadedPopup();
+    	        clickOnOkButtonOnEvidenceUploadedPopup();
+    	        Thread.sleep(3000);
+               }
+               
+               public void clickFileRemove() throws Exception {
+            		ShikshaLokamClient.get().gestures().click(observationPageObjects.fileremove);
+            		Logger.logAndReportPass("Clicked on cross icon for the attached files");
+              }
+               
+               public void clickOnYesFileRemove() throws Exception {
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.yesConfirmationForObservationDelete);
+           		Logger.logAndReportInfo("Clicked on the Yes on the confirmation popup.");
+           		Thread.sleep(3000);
+              }
+               
+               public void clickOnNoFileRemove() throws Exception {
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.noConfirmationForObservationDelete);
+              		Logger.logAndReportInfo("Clicked on the No on the confirmation popup.");
+              		Thread.sleep(3000);
+                 }
+               
+               public void clickFileUpload() throws Exception {
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.fileUploadicon1);
+              		Logger.logAndReportInfo("Clicked on the file upload option.");
+              		Thread.sleep(3000);
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.acceptCheckBoxOnPrivacyPolicyPopup);
+              		Logger.logAndReportInfo("Clicked on the check box on the privacy policy popup.");
+              		ShikshaLokamClient.get().gestures().isEnabled(observationPageObjects.uploadButtonOnPrivacyPolicyPopup);
+              		Logger.logAndReportPass("upload button is enabled");
+                 
+                 }
+               
+               public void clickAddDistrict() throws Exception {
+             		ShikshaLokamClient.get().gestures().click(observationPageObjects.addDistrict);
+             		Logger.logAndReportInfo("Clicked on Add district button.");
+                }
+               
+               public void clickSearchBar() throws Exception {
+            		ShikshaLokamClient.get().gestures().click(observationPageObjects.searchEntity);
+            		Logger.logAndReportInfo("Clicked on add entity search bar.");
+             		ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.searchEntity, "Prakasam");
+             		Logger.logAndReportInfo("Entered value in the search bar.");
+             		Thread.sleep(3000);              
+             	}
+               
+               public void verifySearchResult() throws Exception {
+            		ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.searchEntityvalue);
+            		Logger.logAndReportPass("Search results shown.");
+                }
+               
+               public void clickBackOnQuestionPage() throws Exception {
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.BackButtonOnQuestionPage);
+           		Logger.logAndReportPass("clicked on back button");
+               }
+               
+               public void clickAddStateObservation() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
+                }
+                else
+                {
+                	ShikshaLokamClient.get().gestures().click(observationPageObjects.AddStateObservation);
+              		Logger.logAndReportPass("clicked on observation which has state entity");
+              		Thread.sleep(3000);   
+               }
+            }
+               
+               public void clickAddStateButton() throws Exception {
+             		ShikshaLokamClient.get().gestures().click(observationPageObjects.addStateButton);
+             		Logger.logAndReportPass("clicked on Add state button");
+             		Thread.sleep(3000); 
+             		ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.text);
+              		Logger.logAndReportPass("No data found message is seen");
+               }
+               
+              
+          	
            	
 }
 

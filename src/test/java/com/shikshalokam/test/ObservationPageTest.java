@@ -425,7 +425,6 @@ public class ObservationPageTest {
         getObservationPageActions().verifyshareButtonGotEnabled();
         getObservationPageActions().clickOnShareButton();
         getObservationPageActions().verifyUserIsAbleToConsumeObservation();
-
 }
     
     //..................................REG..............................................//
@@ -442,11 +441,9 @@ public class ObservationPageTest {
         getLoginPageActions().enterUserName(loginTestData.get("profileCredentials"));
         getLoginPageActions().enterPassword(loginTestData.get("profileCredentialsPassword"));
         getLoginPageActions().clickOnLoginButton();
-      
         Thread.sleep(10000);
         getLoginPageActions().refreshpage();
         Thread.sleep(10000);
-       
         //Teacher
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().selectProfile();
@@ -477,8 +474,7 @@ public class ObservationPageTest {
         getLoginPageActions().verifyAndClickOnSubmitButtonOnPersonaldetailspage();
         getLoginPageActions().clickOnBackbutton();
         getObservationPageActions().verifyNoObservationTab();
-          
-    }
+        }
     
     @Test(description = "To verify user will be able to view meta data 'Name of solution' , 'Program Name', 'Language' , ''Creator Name' on observations listed in tiles form.")
     @Author(name = "GAGAN")
@@ -502,7 +498,7 @@ public class ObservationPageTest {
         getObservationPageActions().verifyLanguageOnCard();
         getObservationPageActions().verifyCreatorNameOnCard();
         getObservationPageActions().verifyProgramNameOnCard();
-    }
+        }
     
     @Test(description = "To verify when user selects an observation, user is re-directed to details page of observation form")
     @Author(name = "GAGAN")
@@ -526,10 +522,7 @@ public class ObservationPageTest {
         getObservationPageActions().verifyTextOnObservationDetailsPage();
         getObservationPageActions().verifyProgramNameResourceName();
         getObservationPageActions().verifyProgramNameResourceName();
-       
-       
-    }
-    
+        }
     
     @Test(description = "To verify user can go back to observation listing page from the details page on clicking back button")
     @Author(name = "GAGAN")
@@ -552,8 +545,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickObservationWithRubric();
         getObservationPageActions().clickOnBackButton();
         getObservationPageActions().verifyObservationButton();
-       
-    }
+        }
     
     @Test(description = "To verify when user clicks on 'Close' button then entity list pop-up window closes")
     @Author(name = "GAGAN")
@@ -579,7 +571,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnAddEntityButton();
         getObservationPageActions().ClickedOnCloseButton();
         getObservationPageActions().verifyTextOnObservationDetailsPage();
-    }
+        }
     
     // Note - In profile already school entity should be selected
     @Test(description = "To verify user can see entity added by default")
@@ -605,8 +597,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnBackButton();
         getObservationPageActions().clickObservationWithoutRubric();
         getObservationPageActions().DefaultEntityAdded();
-        
-    }
+        }
     
     @Test(description = "To verify user is able to select multiple entities or deselect the entities in the list of entities and delete and submit")
     @Author(name = "GAGAN")
@@ -642,8 +633,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnEntityDeleteConfirmationYes();
         Thread.sleep(1000);
         getObservationPageActions().verifyDeleteIconisNotPresent();
-        
-    }
+        }
     
     @Test(description = "To verify user doesn't see the observe again button for observation which user can only submit once")
     @Author(name = "GAGAN")
@@ -666,7 +656,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickObservationWithRubric();
         getObservationPageActions().verifyNoObserveAgainButton();
         getObservationPageActions().verifyThreeDotNotPresent();
-    }
+        }
     
     @Test(description = "To verify user sees pop-up box to edit the instance name with 'Cancel' and 'Update' options.")
     @Author(name = "GAGAN")
@@ -694,7 +684,6 @@ public class ObservationPageTest {
         getObservationPageActions().ClickedOnEditIconOnThreeDots();
         getObservationPageActions().clearObservationInstanceName();
         getObservationPageActions().enterAndVerifyNewInstanceName(observationPageTestData.get("enterInstanceName"),observationPageTestData.get("enteredInstanceName"));
-   
         }
     
  // Note - In profile already school entity should be selected
@@ -718,11 +707,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObservationButton();
         getObservationPageActions().ClickedOnObsevationWithRubricSingleSubmission();
         getObservationPageActions().DefaultEntityAddedForObsWithRubricSingleSubmission();
-        
-    }
-         
-    
-  
+        }
    
     @Test(description = "To verify, user should be able to access the Observations directly (old observations)")
     @Author(name = "GAGAN")
@@ -746,8 +731,7 @@ public class ObservationPageTest {
         getObservationPageActions().verifyNoJoinProgramButton();
         getObservationPageActions().clickOnObserveAgainButton();
         getObservationPageActions().clickOnObserveAgainNoConfirmation();
-        
-    }
+        }
     
     @Test(description = "Observation domain status & save & submit flow")
     @Author(name = "GAGAN")
@@ -780,28 +764,20 @@ public class ObservationPageTest {
         Thread.sleep(1000);
         getObservationPageActions().verifyQuestion4();
         getObservationPageActions().AnswerRadioQuestion4();
-        
         getObservationPageActions().verifySaveButtonenabled();
         getObservationPageActions().verifySubmitButtonDisabled();
-        
         getObservationPageActions().clickOnSaveObservationForm();
         getObservationPageActions().clickNoOnSavePopup();
-        
         getObservationPageActions().clickOnSaveObservationForm();
         getObservationPageActions().verifySaveConfirmationMessage();
-        
-        
         getObservationPageActions().clickOnSaveFormConirmationYes();
         getObservationPageActions().verifysecondSavePopup();
         getObservationPageActions().clickcontinueButtonOnSecondSavePopup();
         getObservationPageActions().verifyQuestion4();
         getObservationPageActions().AnswerRadioQuestion4();
-        
         getObservationPageActions().clickOnSaveObservationForm();
         getObservationPageActions().clickOnSaveFormConirmationYes();
-        
         getObservationPageActions().clickBackbuttononthepopup();
-       
         getObservationPageActions().clickDomainDropdown();
         getObservationPageActions().verifyDomainStatusDraft();
         Thread.sleep(5000);
@@ -816,24 +792,18 @@ public class ObservationPageTest {
         getObservationPageActions().verifySubmitButtonEnabled();
         getObservationPageActions().clickOnSubmitButtonOnQuestionForm();
         getObservationPageActions().clickNoOnSubmitPopup();
-        
         getObservationPageActions().clickOnSubmitButtonOnQuestionForm();
-        
-        
         getObservationPageActions().clickOnYesForSubmitFormConfirmation();
         getObservationPageActions().clickOnOkButtonOnSubmitFormSuccess();
-        
         getObservationPageActions().clickDomainDropdown();
         Thread.sleep(5000);
         getObservationPageActions().verifyDomainStatusCompleted();
         Thread.sleep(5000);
-        
         getObservationPageActions().clickDomainDropdown();
         Thread.sleep(5000);
         getObservationPageActions().verifyandclickViewbutton();
         getObservationPageActions().verifyNoSaveAndNosubmitbutton();
-        
-}
+        }
     
     @Test(description = "Not applicable flow")
     @Author(name = "GAGAN")
@@ -864,7 +834,6 @@ public class ObservationPageTest {
         getObservationPageActions().verifyTextOnNotapplicablePopup();
         getObservationPageActions().clickGoBackButton();
         Thread.sleep(5000);
-        //getObservationPageActions().verifyTextOnObservationDetailsPage();
         getObservationPageActions().verifyAndClickNotapplicableButton();
         getObservationPageActions().clickOnCrossIconOnNotApplicablePopupp();
         getObservationPageActions().verifyAndClickNotapplicableButton();
@@ -874,17 +843,13 @@ public class ObservationPageTest {
         Thread.sleep(5000);
         getObservationPageActions().clickOnSaveonNotapplicablepopup();
         getObservationPageActions().verifyTextOnObservationDetailsPage();
-        //Thread.sleep(5000);
-        //getObservationPageActions().verifyDisabledStartButton();
-        //Thread.sleep(5000);
         getObservationPageActions().verifyAndClickNotapplicableButton();
         getObservationPageActions().verifyTextOnMarkedNotApplicable();
         getObservationPageActions().clickGoBackButton();
         getObservationPageActions().verifyAndClickNotapplicableButton();
         getObservationPageActions().clickOnCrossIconOnNotApplicablePopup();
         getObservationPageActions().verifyTextOnObservationDetailsPage();
-        
-    }
+        }
     
     @Test(description = "To verify that the user is able to add remark in questions + To verify that the user is able to edit added remark + To verify that the user is able to delete added remark")
     @Author(name = "GAGAN")
@@ -917,7 +882,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnSaveObservationForm();
         getObservationPageActions().clickOnSaveFormConirmationYes();
         getObservationPageActions().clickBackbuttononthepopup();
-    }
+        }
     
     @Test(description = "To verify that the user is able to select multiple response in checkbox questions")
     @Author(name = "GAGAN")
@@ -946,8 +911,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnSaveObservationForm();
         getObservationPageActions().clickOnSaveFormConirmationYes();
         getObservationPageActions().clickBackbuttononthepopup();
-        
-    }
+        }
     
     @Test(description = "To verify when user clicks on 'Do not Upload' option from the 'Upload Evidences' pop-up, a toast message should come up ")
     @Author(name = "GAGAN")
@@ -974,14 +938,12 @@ public class ObservationPageTest {
         getObservationPageActions().clickStartButton();
         getObservationPageActions().clickOnFileUpload();
         getObservationPageActions().clickDonotUpload();
-        
         getObservationPageActions().verifyTextonPrivacyPolicy();
         getObservationPageActions().clickOnOkButtonOnEvidenceUploadedPopup();
         getObservationPageActions().clickOnFileUpload();
         getObservationPageActions().clickDonotUpload();
         getObservationPageActions().clickCloseIcon();
-        
-    }
+        }
     
     @Test(description = "To verify that the user is able to view the tip added below the question")
     @Author(name = "GAGAN")
@@ -1008,9 +970,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickStartButton();
         getObservationPageActions().verifyQuestionThree();
         getObservationPageActions().verifyTipForQuestion();
-       
-        
-    }
+        }
     
     @Test(description = "To Verify, user should see response hints bulb icon, when user scrolls to particular question where response hints are added")
     @Author(name = "GAGAN")
@@ -1033,15 +993,15 @@ public class ObservationPageTest {
         getObservationPageActions().clickEnterDateObservation();
         getObservationPageActions().clickOnObserveAgainButton();
         getObservationPageActions().clickOnObserveAgainYesConfirmation();
-        getObservationPageActions().ClickstartButton();
-      
-        Thread.sleep(10000);
+        getObservationPageActions().clickstartButton();
+        Thread.sleep(5000);
         getObservationPageActions().scrollToBulbQuestion();
         Thread.sleep(10000);
-       getObservationPageActions().clickQuestionBulb();
-        
+        getObservationPageActions().clickQuestionBulb();
         getObservationPageActions().clickCloseButton();
-    }
+        getObservationPageActions().clickQuestionBulb();
+        getLoginPageActions().browserBackButton();
+        }
     
     @Test(description = "To verify that the user gets the dependant questions based on the response of parent question")
     @Author(name = "GAGAN")
@@ -1071,8 +1031,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnSaveObservationForm();
         getObservationPageActions().clickOnSaveFormConirmationYes();
         getObservationPageActions().clickBackbuttononthepopup();
-        
-    }
+        }
     
     @Test(description = "To verify user wouldn't get option to mark a domain Not applicable, if the domain status is submitted")
     @Author(name = "GAGAN")
@@ -1097,7 +1056,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObserveAgainYesConfirmation();
         Thread.sleep(5000);
         getObservationPageActions().clickDomainDropdown();
-        getObservationPageActions().ClickstartButton();
+        getObservationPageActions().clickstartButton();
         getObservationPageActions().verifyQuestionOne();
         getObservationPageActions().enterResponseOnQuestionOne();
         getObservationPageActions().verifyQuestionTwo();
@@ -1109,14 +1068,10 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnSubmitButtonOnObservationSaveForm();
         getObservationPageActions().clickOnYesForSubmitFormConfirmation();
         getObservationPageActions().clickOnOkButtonOnSubmitFormSuccess();
-        //getObservationPageActions().clickOnSaveObservationForm();
-        //getObservationPageActions().clickOnSaveFormConirmationYes();
-        //getObservationPageActions().clickBackbuttononthepopup();
         getObservationPageActions().clickDomainDropdown();
         getObservationPageActions().verifyUnavailableOfNotApplicableButton();
         Thread.sleep(5000);
-        
-    }
+        }
    
     @Test(description = "To verify that the user is able to get current date automatically ")
     @Author(name = "GAGAN")
@@ -1141,15 +1096,14 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObserveAgainYesConfirmation();
         Thread.sleep(5000);
         getObservationPageActions().clickDomainDropdown();
-        getObservationPageActions().ClickstartButton();
+        getObservationPageActions().clickstartButton();
         getObservationPageActions().clickSection1();
         getObservationPageActions().verifySectionHeader1();
-        //getObservationPageActions().verifyDateCapture();
         getObservationPageActions().clickDateCaptureButton();
         getObservationPageActions().clickOnSaveObservationForm();
         getObservationPageActions().clickOnSaveFormConirmationYes();
         getObservationPageActions().clickBackbuttononthepopup();      
-    }
+        }
     
     @Test(description = "To verify that user can add instances in matrix type questions + To verify that user can delete instances in matrix type questions + To verify that user submits response for all matrix sub-questions + To verify that user gets indication of completion of matrix instance")
     @Author(name = "GAGAN")
@@ -1174,7 +1128,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObserveAgainYesConfirmation();
         Thread.sleep(2000);
         getObservationPageActions().clickDomainDropdown();
-        getObservationPageActions().ClickstartButton();
+        getObservationPageActions().clickstartButton();
         getObservationPageActions().clickAddButton();
         Thread.sleep(5000);
         getObservationPageActions().clickmatrixInstance1();
@@ -1188,7 +1142,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnSaveObservationForm();
         getObservationPageActions().clickOnSaveFormConirmationYes();
         getObservationPageActions().clickBackbuttononthepopup();         
-    }
+        }
     
     @Test(description = "To verify user can search for the entity from the list of the entities ")
     @Author(name = "GAGAN")
@@ -1211,11 +1165,138 @@ public class ObservationPageTest {
         getObservationPageActions().clickEnterDateObservation();
         getObservationPageActions().clickOnObserveAgainButton();
         getObservationPageActions().clickOnObserveAgainYesConfirmation();
-        getObservationPageActions().ClickstartButton();
+        getObservationPageActions().clickstartButton();
         getObservationPageActions().clickEnterDateQuestion();
-       
-        
-            
-    }
+        }
+   
+    @Test(description = "To verify that user sees a toast message \"Evidence uploaded\" after the evidence has been added successfully + To verify when user selects any evidence (jpeg, jpg, png, pdf) in the file explorer, then user is able to attach evidences. + To verify user sees the 'cross' icon on the image icon for an already added evidence + To verify the confirmation pop-up message comes up when user is deleting an an evidence + To verify user can delete an added evidence after selecting 'Yes' on the pop-up message + To verify when user selects 'No' on the confirmation the evidence is not deleted")
+    @Author(name = "GAGAN")
+    public void attachingAndDeletingFile_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName6"));
+        getLoginPageActions().enterPassword(loginTestData.get("password6"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickEnterDateObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        getObservationPageActions().clickstartButton();
+        getObservationPageActions().attachFiles();
+        getObservationPageActions().clickFileRemove();
+        getObservationPageActions().clickOnNoFileRemove();
+        getObservationPageActions().clickFileRemove();
+        getObservationPageActions().clickOnYesFileRemove();
+        getObservationPageActions().clickOnSaveObservationForm();
+        getObservationPageActions().clickOnSaveFormConirmationYes();
+        getObservationPageActions().clickBackbuttononthepopup();  
+        }
+    
+    @Test(description = "To verify user gets pop up message 'Upload Evidence' while uploading an evidence in the observation form. The message is : I confirm that the Content submitted by me comply with the terms and policies of DIKSHA, including DIKSHA's Content Policy. I have made sure that I do not violate others’ copyright, privacy or third party rights.+ To verify when user accepts policy terms 'Upload' option is enabled.")
+    @Author(name = "GAGAN")
+    public void fileUploadFlow_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName6"));
+        getLoginPageActions().enterPassword(loginTestData.get("password6"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickEnterDateObservation();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickOnObserveAgainYesConfirmation();
+        getObservationPageActions().clickstartButton();
+        getObservationPageActions().clickFileUpload();
+        }
+    
+    @Test(description = "To verify user can search for the entity from the list of the entities")
+    @Author(name = "GAGAN")
+    public void entitySearch_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName6"));
+        getLoginPageActions().enterPassword(loginTestData.get("password6"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickEnterDateObservation();
+        getObservationPageActions().clickAddDistrict();
+        getObservationPageActions().clickSearchBar();
+        getObservationPageActions().verifySearchResult();
+        }
+    
+    @Test(description = "To verify when user selects an observation, user is re-directed to details page of observation form")
+    @Author(name = "GAGAN")
+    public void observationDetailsBack_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+        getLoginPageActions().enterPassword(loginTestData.get("password"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickObservationWithRubric();
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().clickOnStartButtonOnObservation();
+        Thread.sleep(2000);
+        getObservationPageActions().clickBackOnQuestionPage();
+        Thread.sleep(2000);
+        getObservationPageActions().verifyObservationDetailsTitle();
+        }
+   
+    @Test(description = "To verify, when user clicks on Add State, user should see the below message on the screen \"No data Found\"")
+    @Author(name = "GAGAN")
+    public void addStateEntity_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName6"));
+        getLoginPageActions().enterPassword(loginTestData.get("password6"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickAddStateObservation();
+        getObservationPageActions().clickAddStateButton();
+        }
    
 }
