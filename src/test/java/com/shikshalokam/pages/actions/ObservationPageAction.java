@@ -1982,6 +1982,63 @@ public class ObservationPageAction {
               		Logger.logAndReportPass("No data found message is seen");
                }
                
+               public void clickPrivacyPolicyHyperLink() throws Exception {
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.hyperLink);
+              		Logger.logAndReportPass("clicked on privacy policy hyperlink");
+               }
+               
+               public void clickCheckBoxPrivacyPolicy() throws Exception {
+             		ShikshaLokamClient.get().gestures().click(observationPageObjects.privacyCheckbox);
+             		Logger.logAndReportPass("clicked on checkbox on privacy policy popup");
+              }
+               
+               public void verifyAndClickContinueButton() throws Exception {
+            		ShikshaLokamClient.get().gestures().isEnabled(observationPageObjects.continueButtonOnFormSavePopup);
+            		Logger.logAndReportPass("continue button is enabled");
+            		ShikshaLokamClient.get().gestures().click(observationPageObjects.continueButtonOnFormSavePopup);
+            		Logger.logAndReportPass("clicked on continue button");
+            		
+             }
+               
+               public void clickObservation() throws Exception {
+            		ShikshaLokamClient.get().gestures().click(observationPageObjects.joinprogramCloseObs);
+            		Logger.logAndReportPass("clicked on observation");
+             }
+               
+               public void clickCloseIcononJoinProgramPopup() throws Exception {
+           		ShikshaLokamClient.get().gestures().click(observationPageObjects.closeIcon);
+           		Logger.logAndReportPass("clicked on close icon on join program popup");
+            }
+               
+               public void clickAddentitybutton() throws Exception {
+              		ShikshaLokamClient.get().gestures().click(observationPageObjects.addSchoolForEntity);
+              		Logger.logAndReportPass("clicked on add entity button");
+               }
+               
+               public void clickTeacherObservation() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
+                }
+                else
+                {
+                	ShikshaLokamClient.get().gestures().click(observationPageObjects.teacherObservation);
+             	   Logger.logAndReportInfo("clicked on the observation under browse other categories section");
+                 }
+            } 
+               
+               public void clickTeacherObservation2() throws Exception {
+                   if(getEnvironmentValue().contains("diksha")) {
+                } else if(getEnvironmentValue().contains("preprod")) {
+                	
+                }
+                else
+                {
+                	ShikshaLokamClient.get().gestures().click(observationPageObjects.teacherObservation2);
+             	   Logger.logAndReportInfo("clicked on the observation under browse other categories section");
+                 }
+            } 
+                  
               
           	
            	

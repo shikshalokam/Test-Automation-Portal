@@ -799,6 +799,24 @@ public class ObservationPageObjects {
     @FindBy(xpath = "//div[contains(text(),'No data found')]")
     public WebElement text;
     
+    @FindBy(xpath = "//a[contains(text(),'Privacy Policy')]")
+    public WebElement hyperLink;
+    
+    @FindBy(xpath = "//input[@role='checkbox']")
+    public WebElement privacyCheckbox;
+    
+    @FindBy(xpath = "(//bdi[contains(text(),'Observation with Rubrics for Testing Script for 5.')])[1]")
+    public WebElement joinprogramCloseObs;
+    
+    @FindBy(xpath = "//mat-icon[@role='img']")
+    public WebElement closeIcon;
+    
+    @FindBy(xpath = "(//h4//bdi[contains(text(),'Observation for project in task test School Subrol')])[1]")
+    public WebElement teacherObservation;
+    
+    @FindBy(xpath = "(//bdi[contains(text(),'Observation with Rubrics for Testing Script for 5.')])[1]")
+    public WebElement teacherObservation2;
+    
     
    
     

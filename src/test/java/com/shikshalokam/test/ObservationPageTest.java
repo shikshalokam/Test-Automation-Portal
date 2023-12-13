@@ -40,12 +40,12 @@ public class ObservationPageTest {
     }
     
     public void switchEnvironment() throws Exception {
-    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("prod")) {
+    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("diksha")) {
         	getLoginPageActions().clickOnExploreDiksha();
         }}
     	
     	public void switchEnvironmentforHomeButton() throws Exception {
-        	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("prod")) {
+        	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("diksha")) {
             	getLoginPageActions().clickOnHomeButton();
             }
     }
@@ -58,12 +58,7 @@ public class ObservationPageTest {
     public void htLoginAndVerifyObservationTile() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
-        //getLoginPageActions().clickOnExploreDiksha();
-        appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
-        if(appUrl.contentEquals("https://preprod.ntp.net.in/"))
-        {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
+        switchEnvironment();
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
@@ -1298,5 +1293,166 @@ public class ObservationPageTest {
         getObservationPageActions().clickAddStateObservation();
         getObservationPageActions().clickAddStateButton();
         }
+    
+    
+    @Test(description = "Login as Ht & Officials to verify Join Program and PII Pop up")
+    @Author(name = "GAGAN")
+    public void piiTermsAndPolicyPopup_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName7"));
+        getLoginPageActions().enterPassword(loginTestData.get("password7"));
+        getLoginPageActions().clickOnLoginButton();
+        
+        //using refreshpage due to blank screen showing up after login 
+         Thread.sleep(10000);
+         getLoginPageActions().refreshpage();
+         Thread.sleep(5000);  
+        
+        switchEnvironmentforHomeButton();
+        
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        Thread.sleep(3000);
+        getObservationPageActions().verifyObservationTitle();
+        getObservationPageActions().clickOnObservationWithoutRubric2();         //Solution:  Without rubrics 2
+        getObservationPageActions().verifyJoinProgramButton();
+        getObservationPageActions().clickOnJoinProgramButton();
+        getObservationPageActions().verifyPiiPopup();
+        getObservationPageActions().clickPrivacyPolicyHyperLink();
+        getObservationPageActions().verifyAndClickContinueButton();
+        }
+    
+    @Test(description = "To verify, when user clicks on Add {entity} button / Observe again / Start button then Join program pop up should show up with a text message in it.")
+    @Author(name = "GAGAN")
+    public void joinProgramCloseIcon_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+       // observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName7"));
+        getLoginPageActions().enterPassword(loginTestData.get("password7"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getObservationPageActions().clickObservation();
+        getObservationPageActions().clickDomainDropdown();
+        getObservationPageActions().clickstartButton();
+        getObservationPageActions().clickCloseIcononJoinProgramPopup();
+        getObservationPageActions().clickAddentitybutton();
+        getObservationPageActions().clickCloseIcononJoinProgramPopup();
+        getObservationPageActions().clickAddentitybutton();
+        getObservationPageActions().clickCloseIcononJoinProgramPopup();
+        }
+    
+    @Test(description = "To verify, when user comes to the Observation details page (For 1st time, 2nd time and so on) then the Join program pop up & PII pop up should NOT show up")
+    @Author(name = "GAGAN")
+    public void consumeObservationAftergivingconsent_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!L:M");
+       // observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName7"));
+        getLoginPageActions().enterPassword(loginTestData.get("password7"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(5000);  
+        switchEnvironmentforHomeButton();
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        Thread.sleep(3000);
+        getObservationPageActions().verifyObservationTitle();
+        getObservationPageActions().clickOnObservationWithoutRubric2();         //Solution:  Without rubrics 2
+        getObservationPageActions().verifyJoinProgramButton();
+        getObservationPageActions().clickOnJoinProgramButton();
+        getObservationPageActions().verifyPiiPopup();
+        getObservationPageActions().verifyPiiPopupContents();
+        getLoginPageActions().browserBackButton();
+        getObservationPageActions().clickOnObservationWithoutRubric2();           //Solution: Without rubrics 2
+        getObservationPageActions().verifyPiiPopup();
+        getObservationPageActions().checkTheCheckBox();
+        getObservationPageActions().verifyshareButtonGotEnabled();
+        getObservationPageActions().clickOnShareButton();
+        getObservationPageActions().verifyUserIsAbleToConsumeObservation();
+    }
+    
+    @Test(description = "To verify, when user clicks on Add {entity} button / Observe again / Start button then Join program pop up should show up with a text message in it")
+    @Author(name = "GAGAN")
+    public void joinProgrampopupTeacher_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+       // observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(5000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName8"));
+        getLoginPageActions().enterPassword(loginTestData.get("password8"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(10000);
+        switchEnvironmentforHomeButton();
+        getObservationPageActions().verifyBrowseOtherCategories();
+        getObservationPageActions().verifyObservationTileunderBrowseOtherCategories();
+        getObservationPageActions().clickOnObservationTileunderBrowseOtherCategories();
+        getObservationPageActions().clickTeacherObservation();
+        getObservationPageActions().clickAddentitybutton();
+        getObservationPageActions().clickCloseIcononJoinProgramPopup();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickCloseIcononJoinProgramPopup();
+        Thread.sleep(5000);
+        getObservationPageActions().clickAddentitybutton();
+        getObservationPageActions().clickCloseIcononJoinProgramPopup();
+        getObservationPageActions().clickOnObserveAgainButton();
+        getObservationPageActions().clickCloseIcononJoinProgramPopup();
+        }
+    
+    @Test(description = "Verify if user checks the checkbox on Terms and Policies page ,Continue button gets highlited and enabled")
+    @Author(name = "GAGAN")
+    public void piiTermsAndPolicyPopupTeacher_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+       // observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName7"));
+        getLoginPageActions().enterPassword(loginTestData.get("password7"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getLoginPageActions().refreshpage();
+        Thread.sleep(5000);  
+        switchEnvironmentforHomeButton();
+        getObservationPageActions().verifyBrowseOtherCategories();
+        getObservationPageActions().verifyObservationTileunderBrowseOtherCategories();
+        getObservationPageActions().clickOnObservationTileunderBrowseOtherCategories();
+        getObservationPageActions().clickTeacherObservation2();       
+        getObservationPageActions().verifyJoinProgramButton();
+        getObservationPageActions().clickOnJoinProgramButton();
+        getObservationPageActions().verifyPiiPopup();
+        getObservationPageActions().clickPrivacyPolicyHyperLink();
+        getObservationPageActions().verifyAndClickContinueButton();
+        }
+    
+
    
+        
+    
 }
