@@ -34,7 +34,7 @@ public class AdminDashboardTest {
 	    }
 	    
 	    public void switchEnvironment() throws Exception {
-	    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("prod")) {
+	    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("diksha")) {
 	        	getLoginPageActions().clickOnExploreDiksha();
 	        }}
 
