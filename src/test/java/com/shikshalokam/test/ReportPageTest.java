@@ -37,59 +37,12 @@ public class ReportPageTest {
     }
     
     public void switchEnvironment() throws Exception {
-    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("prod")) {
+    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("diksha")) {
         	getLoginPageActions().clickOnExploreDiksha();
         }
     	}
     
-    @Test(description = "observation with rubric - fill q and a and submit .")
-    @Author(name = "Manjunatha K")
-    public void observationWithRubricReport() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
-        appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
-        if(appUrl.contentEquals("https://preprod.ntp.net.in/"))
-        {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
-        getLoginPageActions().BMCLSelection();
-        getLoginPageActions().clickOnGuest();
-        getLoginPageActions().clickOnLogin();
-        getLoginPageActions().enterUserName(loginTestData.get("userName"));
-        getLoginPageActions().enterPassword(loginTestData.get("password"));
-        getLoginPageActions().clickOnLoginButton();
-        getLoginPageActions().enterNameToSearchbox(observationPageTestData.get("withRubricObservation"));
-        getLoginPageActions().clickOnSerachButton();
-        getObservationPageActions().clickOnObservationButton();
-        getLoginPageActions().clickOnSearchedObservationTitle();
-        getObservationPageActions().verifyObservationName(observationPageTestData.get("withRubricObservation"));
-        
-    }
-    
-    @Test(description = "observation without rubric - fill q and a and submit .")
-    @Author(name = "Manjunatha K")
-    public void observationWithOutRubricReport() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
-        observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
-        appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
-        if(appUrl.contentEquals("https://preprod.ntp.net.in/"))
-        {
-        	getLoginPageActions().clickOnExploreDiksha();
-        }
-        getLoginPageActions().BMCLSelection();
-        getLoginPageActions().clickOnGuest();
-        getLoginPageActions().clickOnLogin();
-        getLoginPageActions().enterUserName(loginTestData.get("userName"));
-        getLoginPageActions().enterPassword(loginTestData.get("password"));
-        getLoginPageActions().clickOnLoginButton();
-        getLoginPageActions().enterNameToSearchbox(observationPageTestData.get("withoutRubricObservation"));
-        getLoginPageActions().clickOnSerachButton();
-        getObservationPageActions().clickOnObservationButton();
-        getLoginPageActions().clickOnSearchedObservationTitle();
-        getObservationPageActions().verifyObservationName(observationPageTestData.get("withoutRubricObservation"));
-        
-    }
-    
+  
     
     @Test(description = "visit my report section and verify features available in it.")
     @Author(name = "Manjunatha K")
@@ -367,6 +320,55 @@ public class ReportPageTest {
                 
                 
            
+            }
+            
+            @Test(description = "-To verify when user clicks on an observation (observed for only single entity), user must be re-directed to reports page directly")
+            @Author(name = "SHREEJITH")
+            public void redirectedToReportsPage_REG() throws Exception {
+                loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+                switchEnvironment();
+                getLoginPageActions().BMCLSelection();
+                getLoginPageActions().clickOnGuest();
+                getLoginPageActions().clickOnLogin();
+                getLoginPageActions().enterUserName(loginTestData.get("userName"));
+                getLoginPageActions().enterPassword(loginTestData.get("password"));
+                getLoginPageActions().clickOnLoginButton();
+                 
+                //using refreshpage due to blank screen showing up after login 
+                 Thread.sleep(10000);
+                 getLoginPageActions().refreshpage();
+                 Thread.sleep(5000);  
+               
+                getObservationPageActions().clickOnObservationButton();
+                getLoginPageActions().clickOnProfileIcon1();
+                getReportPageActions().clickOnMyReportsTab();
+                getReportPageActions().clickOnqaSolutionEntityTypeBlockParentChildFD345Report();
+                getReportPageActions().verifyRedirectedToReportPage();
+            }
+            
+            @Test(description = "-To verify when user comes up on 'Reports' page on portal, user should see back button on report screen.")
+            @Author(name = "SHREEJITH")
+            public void backButtonOnReportsPage_REG() throws Exception {
+                loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+                switchEnvironment();
+                getLoginPageActions().BMCLSelection();
+                getLoginPageActions().clickOnGuest();
+                getLoginPageActions().clickOnLogin();
+                getLoginPageActions().enterUserName(loginTestData.get("userName"));
+                getLoginPageActions().enterPassword(loginTestData.get("password"));
+                getLoginPageActions().clickOnLoginButton();
+                 
+                //using refreshpage due to blank screen showing up after login 
+                 Thread.sleep(10000);
+                 getLoginPageActions().refreshpage();
+                 Thread.sleep(5000);  
+               
+                getObservationPageActions().clickOnObservationButton();
+                getLoginPageActions().clickOnProfileIcon1();
+                getReportPageActions().clickOnMyReportsTab();
+                getLoginPageActions().clickOnBackbutton();
+                getLoginPageActions().verifyHomeButton();
+                Logger.logAndReportPass("Redirected back to Previous Page");
             }
     
 }

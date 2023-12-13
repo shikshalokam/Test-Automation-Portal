@@ -34,7 +34,7 @@ public class LoginPageObjects {
     @FindBy(xpath = "//li[contains(.,'Profile')]")
     public WebElement profile;
    
-    @FindBy(xpath = "//p[@class='subtitle']")
+    @FindBy(xpath = "//p[.='Login']")
     public WebElement loginScreen;
 
     @FindBy(xpath = "//input[@id='username']")
@@ -93,6 +93,17 @@ public class LoginPageObjects {
 
     @FindBy(xpath = "//*[@id=\"medium\"]")
     public WebElement mediumDropdown;
+    
+    @FindBy(xpath = "//mat-form-field[@id='board']/div/div/div/mat-select/following-sibling::span/label/mat-label/span[.=' * ']")
+    public WebElement boardAsteriskSymbol;
+    
+    @FindBy(xpath = " //mat-form-field[@id='medium']/div/div/div/mat-select/following-sibling::span/label/mat-label/span[.=' * ']")
+    public WebElement mediumAsteriskSymbol;
+    
+  //mat-form-field[@id='medium']/div/div/div/mat-select/following-sibling::span/label/mat-label/span[.=' * ']
+
+    
+  //mat-form-field[@id="board"]/div/div/div/mat-select/following-sibling::span/label/mat-label/span[.=' * ']
 
 
     @FindBy(xpath = "//span[contains(.,'IGOT-Health')]")
@@ -160,6 +171,10 @@ public class LoginPageObjects {
 
     @FindBy(xpath="//div[contains(text(),'School head OR Officials')]")
     public WebElement schoolHeadIcon;
+  //div[contains(text(),'Other')]
+    
+    @FindBy(xpath="//div[contains(text(),'Other')]")
+    public WebElement otherIcon;
     
     @FindBy(xpath="//button[.=' Continue ']")
     public WebElement continueButton;

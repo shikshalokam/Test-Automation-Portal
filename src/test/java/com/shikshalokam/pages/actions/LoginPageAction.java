@@ -120,6 +120,37 @@ public class LoginPageAction {
     public void enterName(String name) throws Exception {
         ShikshaLokamClient.get().report().log(Status.INFO, "Entered Name as " + name);
     }
+    
+    public void VerifyRoles() throws Exception {
+      
+        if(getEnvironmentValue().contains("diksha")) {
+        	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.schoolHeadIcon),"School head OR Officials - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("School head OR Officials - Role option is displayed on Roles Pop up.");
+             Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.teacherIcon),"Teacher - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("Teacher - Role option is displayed on Roles Pop up.");
+             Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.studentIcon),"Student - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("Student - Role option is displayed on Roles Pop up.");
+             Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.parentIcon),"Parent - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("Parent - Role option is displayed on Roles Pop up.");
+             Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.otherIcon),"Other - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("Other - Role option is displayed on Roles Pop up.");
+           
+        } else if(getEnvironmentValue().contains("preprod")) {
+        	
+        } else {
+        	 Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.schoolHeadIcon),"School head OR Officials - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("School head OR Officials - Role option is displayed on Roles Pop up.");
+             Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.teacherIcon),"Teacher - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("Teacher - Role option is displayed on Roles Pop up.");
+             Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.studentIcon),"Student - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("Student - Role option is displayed on Roles Pop up.");
+             Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.parentIcon),"Parent - Role option is not displayed on Roles Pop up.");
+             Logger.logAndReportPass("Parent - Role option is displayed on Roles Pop up.");
+           
+        
+        }
+        
+    }
 
     public void selectState() throws Exception {
         ShikshaLokamClient.get().gestures().click(loginPageObjects.selectState);
@@ -289,7 +320,7 @@ public class LoginPageAction {
     public void clickOnClassDropDown() throws Exception {
     	Thread.sleep(2000);
     	ShikshaLokamClient.get().gestures().click(loginPageObjects.gradeLevelDropdown);
-    	Logger.logAndReportInfo("Clicked on the board drop down");
+    	Logger.logAndReportInfo("Clicked on the class drop down");
     }
     
     public void selectClass1Option() throws Exception {
@@ -471,7 +502,7 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
     }
 
 	public void verifyWelcomeTitle() throws Exception {
-        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.welcomeTitle),"Welocme title is not displayed.");
+        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.welcomeTitle),"Welcome title is not displayed.");
         Logger.logAndReportPass("Welcome title is displayed succesfully.");
 	}
 	
@@ -609,6 +640,17 @@ ShikshaLokamClient.get().report().log(Status.INFO, "clicked on Browser Back Butt
 		        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.editPersonalDetailsPopup),"Edit Personal Details Pop-up is not displayed.");
 				Logger.logAndReportPass("Edit Personal Details Pop-up is displayed succesfully, therefore navigated to Profile Page");
 			}
-	    
+		 
+		 public void verifyBMCDropdown() throws Exception {
+		        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.boardDropdown),"Board Dropdown is not present.");
+		        Logger.logAndReportPass("Board Dropdown is present.");
+		        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.mediumDropdown),"Medium Dropdown is not present.");
+		        Logger.logAndReportPass("Medium Dropdown is present.");
+		        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.gradeLevelDropdown),"Grade Dropdown is not present.");
+		        Logger.logAndReportPass("Grade Dropdown is present.");
+		        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(loginPageObjects.boardAsteriskSymbol),"Board is not a mandatory field");
+		       Logger.logAndReportPass("Board is a mandatory field");
+		 }
+		 
 	  
 }

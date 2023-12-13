@@ -38,7 +38,7 @@ public class LoginPageTest {
     }
     
     public void switchEnvironment() throws Exception {
-    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("prod")) {
+    	if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("diksha")) {
         	getLoginPageActions().clickOnExploreDiksha();
         }
     }
@@ -103,7 +103,6 @@ public class LoginPageTest {
     @Test(description = "State System Login Enable")
     @Author(name = "Manjunatha K")
     public void loginWithStateSystem() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();
         getLoginPageActions().clickOnGuest();
@@ -112,7 +111,7 @@ public class LoginPageTest {
         getLoginPageActions().verifySelectYourStateTitle();
         getLoginPageActions().verifySubmitButtonStatusOnStateLogin();
         getLoginPageActions().clickOnSelectStateDropDown();
-        if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("prod")) {
+        if(getEnvironmentValue().contains("preprod") || getEnvironmentValue().contains("diksha")) {
         	getLoginPageActions().selectPreprodStateForStateLoginInPreprod();
         } else {
         	getLoginPageActions().selectTNStateForStateLoginInStaging();
@@ -126,7 +125,6 @@ public class LoginPageTest {
     @Test(description = "Forgot password check")
     @Author(name = "Manjunatha K")
     public void forgotPasswordToLogin() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         if(getEnvironmentValue().contains("preprod")) {
         	getLoginPageActions().clickOnExploreDiksha();
         }
@@ -184,6 +182,8 @@ public class LoginPageTest {
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectRoleHTAndOffical();
         getLoginPageActions().clickOnContinue();
+        getLoginPageActions().verifyBMCDropdown();
+        
         getLoginPageActions().clickOnBoardDropDown();
         getLoginPageActions().selectcbseOrNcertBoardOption();
         Thread.sleep(20000);
@@ -200,7 +200,7 @@ public class LoginPageTest {
         getLoginPageActions().verifyHomeButton();
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().verifyNameOnProfile();
-        Assert.assertTrue(true,"User name is not present on profile");
+      //  Assert.assertTrue(true,"User name is not present on profile");
        
     }
     
@@ -209,11 +209,11 @@ public class LoginPageTest {
     @Test(description = "Only Board is mandatory field in BMC Pop-up for HTofficial role")
     @Author(name = "SHREEJITH")
     public void htofficialsAndSubmit() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectRoleHTAndOffical();
-        getLoginPageActions().clickOnContinue();
+       getLoginPageActions().clickOnContinue();
+       getLoginPageActions().verifySubmitButtonisDisabled();
         getLoginPageActions().clickOnBoardDropDown();
         getLoginPageActions().selectcbseOrNcertBoardOption();
         Thread.sleep(5000);
@@ -225,7 +225,6 @@ public class LoginPageTest {
     @Test(description = "Only Board is mandatory field in BMC Pop-up for HTofficial role.")
     @Author(name = "SHREEJITH")
     public void htofficialsAndSubmitfail() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectRoleHTAndOffical();
@@ -234,7 +233,7 @@ public class LoginPageTest {
         getLoginPageActions().selectcbseOrNcertBoardOption();
         Thread.sleep(5000);
         System.out.println("5 Seconds wait is over");
-        getLoginPageActions().verifySubmitButtonEnabled1();
+        getLoginPageActions().verifySubmitButtonisDisabled();
         getLoginPageActions().verifyYourLocationPopUp();
 }
   
@@ -244,7 +243,6 @@ public class LoginPageTest {
     @Test(description = "Board Medium Grade are mandatory fields in BMC Pop-up for Teacher role")
     @Author(name = "SHREEJITH")
     public void teacherAndSubmit() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectTeacher();
@@ -266,7 +264,6 @@ public class LoginPageTest {
     @Test(description = "Board Medium Grade are mandatory fields in BMC Pop-up for Student role")
     @Author(name = "SHREEJITH")
     public void studentAndSubmit() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectStudent();
@@ -286,7 +283,6 @@ public class LoginPageTest {
     @Test(description = "Board Medium Grade are mandatory fields in BMC Pop-up for Parent role")
     @Author(name = "SHREEJITH")
     public void parentAndSubmit() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
         switchEnvironment();
         getLoginPageActions().verifyWelcomeTitle();
         getLoginPageActions().selectParent();
@@ -348,7 +344,34 @@ public class LoginPageTest {
         getObservationPageActions().verifyObservationTileunderBrowseOtherCategories();
         getObservationPageActions().clickOnObservationTileunderBrowseOtherCategories();
         getLoginPageActions().verifyLoginScreen();
+        
     }
+    
+    @Test(description = "To verify user is able to login on portal from menu option")
+    @Author(name = "SHREEJITH")
+    public void loginScreen() throws Exception {
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().verifyLoginScreen();
+    }
+    
+    @Test(description = "-To verify on click of Explore Diksha user should see the pop-up with following roles as option-"
+    		+ "1. Teacher"
+    		+ "2. Student"
+    		+ "3. Parent"
+    		+ "4. School head or official"
+    		+ "5. Other")
+    @Author(name = "SHREEJITH")
+    public void rolesOnPopup() throws Exception {
+    	  switchEnvironment();
+          getLoginPageActions().verifyWelcomeTitle();
+          getLoginPageActions().VerifyRoles();
+    }
+    
+    
     
     //..................................REG..............................................//
   
