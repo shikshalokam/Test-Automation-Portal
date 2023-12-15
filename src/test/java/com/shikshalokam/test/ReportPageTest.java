@@ -58,9 +58,9 @@ public class ReportPageTest {
         getLoginPageActions().clickOnLoginButton();
          
         //using refreshpage due to blank screen showing up after login 
-        /* Thread.sleep(10000);
+         Thread.sleep(10000);
          getLoginPageActions().refreshpage();
-         Thread.sleep(5000);  */
+         Thread.sleep(5000);  
        
         getObservationPageActions().clickOnObservationButton();
         getLoginPageActions().clickOnProfileIcon1();
@@ -92,9 +92,9 @@ public class ReportPageTest {
         getLoginPageActions().clickOnLoginButton();
         
        //using refreshpage due to blank screen showing up after login 
-       /* Thread.sleep(10000);
+        Thread.sleep(10000);
         getLoginPageActions().refreshpage();
-        Thread.sleep(5000);  */
+        Thread.sleep(5000);  
        
       
         getLoginPageActions().clickOnProfileIcon1();
@@ -369,6 +369,59 @@ public class ReportPageTest {
                 getLoginPageActions().clickOnBackbutton();
                 getLoginPageActions().verifyHomeButton();
                 Logger.logAndReportPass("Redirected back to Previous Page");
+            }
+            
+           
+            @Test(description = "-To verify the table consists of 3 columns with following headings:"
+            		+ "1) Serial Number"
+            		+ "2) Title"
+            		+ "3) Latest Submission")
+            @Author(name = "SHREEJITH")
+            public void reportsTableColumns_REG() throws Exception {
+                loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+                appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+                switchEnvironment();
+                getLoginPageActions().BMCLSelection();
+                getLoginPageActions().clickOnGuest();
+                getLoginPageActions().clickOnLogin();
+                getLoginPageActions().enterUserName(loginTestData.get("userName"));
+                getLoginPageActions().enterPassword(loginTestData.get("password"));
+                getLoginPageActions().clickOnLoginButton();
+                 
+                //using refreshpage due to blank screen showing up after login 
+                 Thread.sleep(10000);
+                 getLoginPageActions().refreshpage();
+                 Thread.sleep(5000);  
+               
+                getObservationPageActions().clickOnObservationButton();
+                getLoginPageActions().clickOnProfileIcon1();
+                getReportPageActions().clickOnMyReportsTab();
+                getReportPageActions().verifyMyReportInTableFormat();
+            }
+            
+            @Test(description = "To verify user should be able to view a table which shows the list of Observation submissions made.")
+            @Author(name = "SHREEJITH")
+            public void observationsUnderTitleColumn_REG() throws Exception {
+                loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+                appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+                switchEnvironment();
+                getLoginPageActions().BMCLSelection();
+                getLoginPageActions().clickOnGuest();
+                getLoginPageActions().clickOnLogin();
+                getLoginPageActions().enterUserName(loginTestData.get("userName"));
+                getLoginPageActions().enterPassword(loginTestData.get("password"));
+                getLoginPageActions().clickOnLoginButton();
+                 
+                //using refreshpage due to blank screen showing up after login 
+                 Thread.sleep(10000);
+                 getLoginPageActions().refreshpage();
+                 Thread.sleep(5000);  
+               
+                getObservationPageActions().clickOnObservationButton();
+                getLoginPageActions().clickOnProfileIcon1();
+                getReportPageActions().clickOnMyReportsTab();
+                getReportPageActions().verifyMyReportInTableFormat();
+                getReportPageActions().verifySubmittedObservationsUnderTitleColumn();
             }
     
 }

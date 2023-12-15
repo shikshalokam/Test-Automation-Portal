@@ -25,11 +25,11 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-datasets[1]/div[2]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/form[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]")
      public  WebElement selectprogramFromFilter;
  
-   //span[.=' Testing 4.4 ']
+
      @FindBy(xpath="//span[normalize-space()='Testing 4.4']")
      public  WebElement programTesting4point4;
      
-   //span[.=' Program - HT and officials ']
+
      @FindBy(xpath="//span[normalize-space()='Program - HT and officials']")
      public  WebElement programHtandOfficials;
      
@@ -38,7 +38,7 @@ public class ProgramDashboardObjects {
      
      @FindBy(xpath="//span[normalize-space()='Testing Program 4.4']")
      public  WebElement programTestingProgram4point4;
-   //span[normalize-space()='Testing Program 4.4']
+
  
      @FindBy(xpath="(//span[.='Select resource'])[1]")
      public  WebElement selectresourse;
@@ -46,7 +46,7 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-datasets[1]/div[2]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/form[1]/div[1]/div[1]/div[2]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]/span[1]")
      public  WebElement selectresoursedropdown;
      
-    // (//div[@class='mat-select-arrow-wrapper'])[3]
+
      
      @FindBy(xpath="//button[normalize-space()='Confirm']")
      public  WebElement confirmbuttonOnSelectprogramPopup;
@@ -56,7 +56,7 @@ public class ProgramDashboardObjects {
      
      @FindBy(xpath="//span[normalize-space()='Project link consumption -FD 137']")
      public  WebElement projectlinkconsumptionfd137;
-   //span[normalize-space()='Project link consumption -FD 137']
+
      
      @FindBy(xpath="//span[normalize-space()='Program datasets']")
      public  WebElement Programdatasets;
@@ -64,7 +64,7 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="//span[normalize-space()='Graphs']")
      public  WebElement Graphs;
      
-   //div[.='No. of users who joined program']
+
      @FindBy(xpath=" //div[.='No. of users who joined program']")
      public  WebElement BigNumberChart;
      
@@ -97,7 +97,7 @@ public class ProgramDashboardObjects {
      
      @FindBy(xpath="//div[normalize-space()='*Please select the resource name to get data']")
      public  WebElement SelectResourceMessage;
-   //div[normalize-space()='*Please select a district first from the district filter']
+
      @FindBy(xpath="//div[normalize-space()='*Please select a district first from the district filter']")
      public  WebElement errorMessageToSelectDistrict;
      
@@ -119,7 +119,6 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="//span[normalize-space()='Ambedkar Nagar']")
      public  WebElement Ambedkarnagardistrict;
      
-   //span[.=' Agra '] //span[normalize-space()='Agra']   //span[normalize-space()='Ambedkar Nagar']
      @FindBy(xpath="//span[.='Select organisation']")
      public  WebElement organisationsDropdown;
      
@@ -129,10 +128,7 @@ public class ProgramDashboardObjects {
      
      @FindBy(xpath="//span[normalize-space()='Pre-prod Custodian Organization']")
      public  WebElement preprodcustodianorg;
-   //span[normalize-space()='Pre-prod Custodian Organization']
-     
-     
-   //  /html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-datasets[1]/div[2]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]
+   
      
      @FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/main[1]/app-datasets[1]/div[2]/mat-tab-group[1]/div[1]/mat-tab-body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]")         //(//div[@class='mat-select-arrow-wrapper'])[6]   //span[.='Select report']
      public  WebElement selectReportDropdown; 		 
@@ -144,12 +140,7 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="(//div[@class='mat-select-arrow-wrapper'])[7]")         //(//div[@class='mat-select-arrow-wrapper'])[6]   //span[.='Select report']
      public  WebElement selectReportDropdown2;
      
-     //(//span[.='Status Report'])[1]
-     //div[@id='mat-select-value-3'] //(//div[@class='mat-select-arrow-wrapper'])[6]
-     
-    // @FindBy(xpath="(//div[@class='mat-select-arrow-wrapper'])[7]")         //(//div[@class='mat-select-arrow-wrapper'])[6]   //span[.='Select report']
-     //public  WebElement selectReportDropdown2;
-   //span[@class='mat-option-text'][normalize-space()='User Detail Report']
+ 
      @FindBy(xpath="//span[@class='mat-option-text'][normalize-space()='User Detail Report']")
      public  WebElement udrReport;
      
@@ -194,7 +185,7 @@ public class ProgramDashboardObjects {
      
      @FindBy(xpath="//button[normalize-space()='No']")
      public  WebElement nobutton;
-   //button[normalize-space()='No']
+   
      @FindBy(xpath="//div[.=' Your report has been requested and will be available to download after 24 hours ']")
      public  WebElement reportRequestedPopup;
      
@@ -202,16 +193,15 @@ public class ProgramDashboardObjects {
      public  WebElement okButtonOnReportRequestedPopup;
      
      
-   //button[normalize-space()='OK']
-   //div[.=' Your report has been requested and will be available to download after 24 hours ']
+ 
    
      @FindBy(xpath="(//div[normalize-space()='Are you sure you want to request this report?'])[2]")
      public  WebElement requestReportYesNoPopup;
-                    //span[@class='mat-select-placeholder mat-select-min-line ng-tns-c47-92 ng-star-inserted']
+                   
      @FindBy(xpath="//span[.='Select status']")
      public  WebElement selectstatusDropdown;
     
-   //span[@class='mat-select-placeholder mat-select-min-line ng-tns-c47-92 ng-star-inserted']
+
      @FindBy(xpath="//span[normalize-space()='Started']")
      public  WebElement startedStatus;
      
@@ -224,7 +214,7 @@ public class ProgramDashboardObjects {
      
      @FindBy(xpath="//span[normalize-space()='Completed']")
      public  WebElement completedStatus;
-   //span[normalize-space()='Completed']
+
      
      @FindBy(xpath="//label[normalize-space()='Minimum no. of tasks in the project']")
      public  WebElement mintasksinProject;
@@ -275,21 +265,18 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="//div//mat-icon[.='highlight_off']")
      public WebElement crossIcon;
      
-   //div[.=' District wise Status ']
+  
      @FindBy(xpath="(//div[normalize-space()='District wise Status'])[3]")
      public WebElement districtWiseTableHeader;
     
      @FindBy(xpath="(//div[normalize-space()='Block wise Status'])[3]")
      public WebElement blockWiseTableHeader;
      
-   //div//input[@id='mat-input-14']
+ 
      @FindBy(xpath="//div//input[@class='mat-input-element mat-form-field-autofill-control ng-tns-c191-102 ng-pristine ng-valid cdk-text-field-autofill-monitored ng-touched']")
      public WebElement minNoTaskInProj5;
      
-   //th[normalize-space()='In progress projects with evidence']
-     
-     
-   //span[normalize-space()='Improvement Project - Teacher']
+  
      @FindBy(xpath="//span[normalize-space()='Improvement Project - Teacher']")
      public WebElement impProjTeacher;
      
@@ -301,12 +288,12 @@ public class ProgramDashboardObjects {
      
      @FindBy(xpath="//span[normalize-space()='Survey HT']")
      public WebElement surveyHT;
-   //div//label[.='Detailed report']
+   
      
      @FindBy(xpath="//div//label[.='Detailed report']")
      public WebElement detailedReportHeader;
      
-   //div[normalize-space()='Table view is not available for this report']
+ 
      
      @FindBy(xpath="//div[normalize-space()='Table view is not available for this report']")
      public WebElement tableViewIsNotAvailable;
@@ -368,7 +355,7 @@ public class ProgramDashboardObjects {
      @FindBy(xpath="//span[normalize-space()='Amarapuram']")
      public WebElement amarapuramBlock;
      
-   //span[normalize-space()='Amarapuram, Amadagur']
+  
      @FindBy(xpath="//span[normalize-space()='Amarapuram, Amadagur']")
      public WebElement multipleBlockSelected;
 }

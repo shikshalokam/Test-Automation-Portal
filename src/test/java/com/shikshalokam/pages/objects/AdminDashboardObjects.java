@@ -300,7 +300,7 @@ public class AdminDashboardObjects {
 		  @FindBy(xpath="//div[contains(text(),'Alluri Sita Rama Raju')]")
 		  public  WebElement alluriSitaRamaRajuDistrict1;
 		  
-		//div[contains(text(),'Alluri Sita Rama Raju')]
+	
 		  
 		  @FindBy(xpath="//div[contains(text(),'Amadagur')]")
 		  public  WebElement amadagurBlock1;
@@ -308,8 +308,7 @@ public class AdminDashboardObjects {
 		  @FindBy(xpath="//div[contains(text(),'Staging Custodian Organization')]")
 		  public  WebElement stagingCustodianOrganization1;
 	    
-		//div[.='No. of certificates issued']
-		//div[.='No. of improvements submitted with evidence']
+
 		  
 		  @FindBy(xpath="//div[.='No. of certificates issued']")
 		  public  WebElement noOfCertificatesIssuedLabel;
@@ -317,9 +316,7 @@ public class AdminDashboardObjects {
 		  @FindBy(xpath="//div[.='No. of improvements submitted with evidence']")
 		  public  WebElement noOfImprovementsSubmittedWithEvidenceLabel;
 		  
-		// (//li//input[@aria-label='Alluri Sita Rama Raju'])/following-sibling::div
-		//  (//li//input[@aria-label='CHITTOOR'])/following-sibling::div
-			   
+	
 	   
 	  
 }

@@ -755,10 +755,11 @@ public class AdminDashboardTest {
 	   	    	        getAdminDashboardActions().selectMultipleDistrict();
 	   	    	        
 	   	    	    /*Placeholder camel case issue across all tabs wrt to globalfilters*/
-		    	    //  getAdminDashboardActions().clickOnimprovementProjectsStatusByDistrictTab();
-		    	    //  getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
-		    	    //  getAdminDashboardActions().selectMultipleDistrict1();
-    	    	        getAdminDashboardActions().clickOnimprovementProjectsStatusByBlockTab();
+		    	   /*   getAdminDashboardActions().clickOnimprovementProjectsStatusByDistrictTab();
+		    	     getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
+		    	      getAdminDashboardActions().selectMultipleDistrict1();  */
+    	    	       
+	   	    	        getAdminDashboardActions().clickOnimprovementProjectsStatusByBlockTab();
     	    	        getAdminDashboardActions().clickOnDistrictFilter();
 	   	    	        getAdminDashboardActions().selectMultipleDistrict();
 
@@ -770,9 +771,11 @@ public class AdminDashboardTest {
 	   	    	        Thread.sleep(10000);
 	   	    	        getAdminDashboardActions().clickOnDistrictFilter();
 	   	    	        getAdminDashboardActions().selectMultipleDistrict();
-		    	      //getAdminDashboardActions().clickOnimprovementStatusByDistrictTab();
-		    	      //getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
-		    	      //getAdminDashboardActions().selectMultipleDistrict1();
+	   	    	    
+	   	    	        /*Placeholder camel case issue across all tabs wrt to globalfilters*/ 
+	   	    	   /*   getAdminDashboardActions().clickOnimprovementStatusByDistrictTab();
+		    	      getAdminDashboardActions().clickOnDistrictTabDistrictFilter();
+		    	      getAdminDashboardActions().selectMultipleDistrict1(); */
 	   	    	       
 		    	        getAdminDashboardActions().clickOnBackButton();
 	   	    	        

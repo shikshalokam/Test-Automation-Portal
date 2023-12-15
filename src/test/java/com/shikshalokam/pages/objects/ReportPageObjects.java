@@ -50,14 +50,14 @@ public class ReportPageObjects {
 	@FindBy(xpath = "//mat-select[@aria-label='Select Submission']")
 	public WebElement selectSubmissionDropdown;
 	
-	 @FindBy(xpath="//th[@aria-label='Serial No: activate to sort column descending']")
-     public  WebElement serialNoCloumn;  
+	 @FindBy(xpath="//th[normalize-space()='Serial No']")
+     public  WebElement serialNoColumn;  
 	 
-	 @FindBy(xpath="//th[@aria-label='Title: activate to sort column ascending']")
-     public  WebElement titleCloumn;
+	 @FindBy(xpath="//th[normalize-space()='Title']")
+     public  WebElement titleColumn;
 	 
-	 @FindBy(xpath="//th[@aria-label='Latest Submission: activate to sort column ascending']")
-     public  WebElement latestSubmissionCloumn;
+	 @FindBy(xpath="//th[normalize-space()='Latest Submission']")
+     public  WebElement latestSubmissionColumn;
 	//th[@aria-label='Title: activate to sort column ascending']
 	 
 	 @FindBy(xpath="(//div/h6)[1]")
@@ -109,8 +109,9 @@ public class ReportPageObjects {
 	 @FindBy(xpath="(//label[@class='questions'])[1]")
      public  WebElement question1option;
 	 
+
+	 @FindBy(xpath="//th[normalize-space()='Title']/../../following-sibling::tbody//h6")
+     public  WebElement obseravtionsUnderTitleColumn;
 	
-	
-	//strong[contains(text(),'3)')]
 	
 }

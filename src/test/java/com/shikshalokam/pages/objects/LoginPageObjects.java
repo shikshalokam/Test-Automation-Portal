@@ -100,11 +100,6 @@ public class LoginPageObjects {
     @FindBy(xpath = " //mat-form-field[@id='medium']/div/div/div/mat-select/following-sibling::span/label/mat-label/span[.=' * ']")
     public WebElement mediumAsteriskSymbol;
     
-  //mat-form-field[@id='medium']/div/div/div/mat-select/following-sibling::span/label/mat-label/span[.=' * ']
-
-    
-  //mat-form-field[@id="board"]/div/div/div/mat-select/following-sibling::span/label/mat-label/span[.=' * ']
-
 
     @FindBy(xpath = "//span[contains(.,'IGOT-Health')]")
     public WebElement IGOT_Health;
@@ -345,15 +340,14 @@ public class LoginPageObjects {
     
     @FindBy(xpath = "//i[@class='close inside icon']")
     public WebElement closeIcon;
-  //i[@class='close inside icon']
+
     @FindBy(xpath = "//div//button[normalize-space()='Update']")
     public WebElement updateButton;
     
     @FindBy(xpath = "//p[normalize-space()='Edit Personal Details‎']")
     public WebElement editPersonalDetailsPopup;
     
-  //div//button[normalize-space()='Update']
-  //p[normalize-space()='Edit Personal Details‎']
+
 
 
 

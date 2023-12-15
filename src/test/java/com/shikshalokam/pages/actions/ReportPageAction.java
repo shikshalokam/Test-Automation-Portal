@@ -142,11 +142,11 @@ public class ReportPageAction {
     	}
     	
     	 public void verifyMyReportInTableFormat() throws Exception {
- 	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.serialNoCloumn),"Serial.No Column is not displayed.");
+ 	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.serialNoColumn),"Serial.No Column is not displayed.");
  			Logger.logAndReportInfo("Serial.No Column is displayed.");
- 			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.titleCloumn),"Tile Column is not displayed.");
+ 			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.titleColumn),"Tile Column is not displayed.");
  			Logger.logAndReportInfo("Title Column is displayed.");
- 			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.latestSubmissionCloumn),"Latest Submission Column is not displayed.");
+ 			Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.latestSubmissionColumn),"Latest Submission Column is not displayed.");
  			Logger.logAndReportInfo("Latest Submission Column is displayed.");
  			
  		}
@@ -291,4 +291,9 @@ public class ReportPageAction {
  				Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.ApplyFiltersButton),"Apply Filters Button is not displayed.");
  				Logger.logAndReportPass("Apply Filters Button is displayed succesfully");
  			}
+ 		 
+ 		 public void verifySubmittedObservationsUnderTitleColumn() throws Exception {
+	 	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.obseravtionsUnderTitleColumn),"Observation names doesnt show up under Title Column");
+	 			Logger.logAndReportPass("Observation names shows up under Title Column");
+	 		}
 }
