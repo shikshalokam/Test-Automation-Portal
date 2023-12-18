@@ -141,6 +141,11 @@ public class ReportPageAction {
     		Logger.logAndReportPass("My reports section  is displayed succesfully. ");
     	}
     	
+    	public void verifyMyReportsSectionNotAvailable() throws Exception {
+            Assert.assertFalse(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.myReportsFromProfile),"My reports section is displayed.");
+    		Logger.logAndReportPass("My reports section  is not displayed succesfully. ");
+    	}
+    	
     	 public void verifyMyReportInTableFormat() throws Exception {
  	        Assert.assertTrue(ShikshaLokamClient.get().gestures().isElementPresent(reportPageObjects.serialNoColumn),"Serial.No Column is not displayed.");
  			Logger.logAndReportInfo("Serial.No Column is displayed.");

@@ -847,5 +847,13 @@ public class AdminDashboardAction {
 	    
 	    }
 	    
+	    public void deselectProgram() throws Exception {
+	   	 ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectProgramFilter);
+	        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Program Filter"); 
+	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox1);
+	        ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);
+	        ShikshaLokamClient.get().report().log(Status.INFO, " Deselected Programs"); 
+	    }
+	    
 	    
 }

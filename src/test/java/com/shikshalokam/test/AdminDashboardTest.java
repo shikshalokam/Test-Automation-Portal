@@ -812,5 +812,37 @@ public class AdminDashboardTest {
 	   	    	       
 	   	    	      
 	   	    	  }
+	    	       @Test(description = "Verify that post deselection of the program name, the other filters selected values must get de-selected from the drop down as well as below the drop down.")
+		    	    @Author(name = "SHREEJITH")
+		    	    public void globalFiltersGetsDeselectedAD_REG() throws Exception {
+		    	        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!H:I");
+		    	
+		    	        switchEnvironment();
+		    	        getLoginPageActions().BMCLSelection();
+		    	        Thread.sleep(2000);
+		    	        getLoginPageActions().clickOnGuest();
+		    	        getLoginPageActions().clickOnLogin();
+		    	        getLoginPageActions().enterUserName(loginTestData.get("userName"));
+		    	        getLoginPageActions().enterPassword(loginTestData.get("password"));
+		    	        getLoginPageActions().clickOnLoginButton();
+		    	        
+		    	        
+		    	        Thread.sleep(10000);
+		    	        getLoginPageActions().refreshpage();
+		    	        Thread.sleep(5000); 
+		    	       
+		    	        
+		    	        getLoginPageActions().clickOnGuest();
+		    	        getAdminDashboardActions().clickOnadmindashboard();
+		    	        getAdminDashboardActions().verifyGlobalSearchfilter();
+		    	       
+		    	        getAdminDashboardActions().searchAndSelectImprovementsProjectReport();
+		    	        getAdminDashboardActions().verifyLocalSearchfilter();
+		    	        getAdminDashboardActions().searchAndSelectParameter();
+		    	        Thread.sleep(10000);
+		    	        getAdminDashboardActions().selectProjectFilters();
+		    	        getAdminDashboardActions().deselectProgram();
+		    	        getAdminDashboardActions().verifySelectedFiltersAreRemoved();
+	    	       }
 	    	       
 }

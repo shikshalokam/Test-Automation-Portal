@@ -423,5 +423,47 @@ public class ReportPageTest {
                 getReportPageActions().verifyMyReportInTableFormat();
                 getReportPageActions().verifySubmittedObservationsUnderTitleColumn();
             }
+            
+            @Test(description = "To verify when user selects any other role like 'Parent', 'Student', then user should not be able to view 'My Reports' section when clicked on user icon on top right corner of the screen.")
+            @Author(name = "SHREEJITH")
+            public void myReportsSectionsNotavailable_REG() throws Exception {
+                loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!A:B");
+                appUrl = PropUtlis.readConfig("webAppConfig", "appUrl");
+                switchEnvironment();
+                getLoginPageActions().BMCLSelection();
+                getLoginPageActions().clickOnGuest();
+                getLoginPageActions().clickOnLogin();
+                getLoginPageActions().enterUserName(loginTestData.get("otherpersona"));
+                getLoginPageActions().enterPassword(loginTestData.get("otherpersonaPwd"));
+                getLoginPageActions().clickOnLoginButton();
+                 
+                //using refreshpage due to blank screen showing up after login 
+                 Thread.sleep(10000);
+                 getLoginPageActions().refreshpage();
+                 Thread.sleep(5000);  
+                 
+                 getLoginPageActions().clickOnGuest();
+                 getLoginPageActions().selectProfile();
+                 getLoginPageActions().clickOnEdit();
+                 getLoginPageActions().clickOnSelectroleDropdown();
+                 getLoginPageActions().selectStudentOnProfile();
+                 getLoginPageActions().clickOnSubmitButton();
+                 Thread.sleep(5000);
+                 getLoginPageActions().clickOnGuest();
+                 getReportPageActions().verifyMyReportsSectionNotAvailable();
+                 getLoginPageActions().selectProfile();
+                 getLoginPageActions().clickOnEdit();
+                 getLoginPageActions().clickOnSelectroleDropdown();
+                 getLoginPageActions().selectParentOnProfile();
+                 getLoginPageActions().clickOnSubmitButton();
+                 Thread.sleep(5000);
+                 getLoginPageActions().clickOnGuest();
+                 getReportPageActions().verifyMyReportsSectionNotAvailable();
+                 
+
+            }
+               
+            
+            
     
 }
