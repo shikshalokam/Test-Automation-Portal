@@ -794,8 +794,6 @@ public class ObservationPageTest {
         Thread.sleep(5000);
         getObservationPageActions().verifyDomainStatusCompleted();
         Thread.sleep(5000);
-        getObservationPageActions().clickDomainDropdown();
-        Thread.sleep(5000);
         getObservationPageActions().verifyandclickViewbutton();
         getObservationPageActions().verifyNoSaveAndNosubmitbutton();
         }
@@ -1449,10 +1447,27 @@ public class ObservationPageTest {
         getObservationPageActions().verifyPiiPopup();
         getObservationPageActions().clickPrivacyPolicyHyperLink();
         getObservationPageActions().verifyAndClickContinueButton();
-        }
+        }  
     
-
-   
-        
+    @Test(description = "To verify if user is already logged in and do not see observations, then user is prompted to update the profile.")
+    public void htLoginUpdateProfile_REG() throws Exception {
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
+       // observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
+        switchEnvironment();
+        getLoginPageActions().BMCLSelection();
+        Thread.sleep(3000);
+        getLoginPageActions().clickOnGuest();
+        getLoginPageActions().clickOnLogin();
+        getLoginPageActions().enterUserName(loginTestData.get("userName9"));
+        getLoginPageActions().enterPassword(loginTestData.get("password9"));
+        getLoginPageActions().clickOnLoginButton();
+        Thread.sleep(10000);
+        getObservationPageActions().verifyObservationButton();
+        getObservationPageActions().clickOnObservationButton();
+        getLoginPageActions().verifyUpdateProfilePopup();
+        getLoginPageActions().verifyContentsOfUpdateProfilePopup();
+        getLoginPageActions().clickOnUpdateButton();
+        getLoginPageActions().verifyEditPersonalDetailsPopup();
+        }  
     
 }

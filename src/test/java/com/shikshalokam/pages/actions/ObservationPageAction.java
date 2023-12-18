@@ -1328,7 +1328,7 @@ public class ObservationPageAction {
            	}
                
                public void ClickedOnCloseButton() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.CloseButtonOnAddEntityPage);
+            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.Crossicon);
             	   Logger.logAndReportInfo("Clicked on Close Button on add entity pop up");
                 }
                
@@ -1574,8 +1574,8 @@ public class ObservationPageAction {
                 } 
                
                public void clickAddRemarksButton() throws Exception {  
-            	   //js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.AddRemarksButton);
-            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.question);
+            	   js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.question);
+            	   //ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.question);
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddRemarksButton);
             	   Logger.logAndReportInfo("Clicked on Add remarks button");
                 }
@@ -1585,6 +1585,7 @@ public class ObservationPageAction {
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddremarksTextbox);
                	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.AddremarksTextbox, "Observation remarks automation testing" );
                	   Logger.logAndReportPass("Entered the remarks");
+               	   Thread.sleep(3000);
                	   ShikshaLokamClient.get().gestures().selectAllandDelete();
                	   ShikshaLokamClient.get().gestures().sendValueToTextBox(observationPageObjects.AddremarksTextbox, "Observation remarks portal automation testing" );
             	   Logger.logAndReportPass("Edited the remarks");
@@ -1596,11 +1597,12 @@ public class ObservationPageAction {
                 } 
                
                public void clickradio1andenterremarks() throws Exception {  
-            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.question3);
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.radio1);
-            	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddRemarksButton);
-            	   Logger.logAndReportInfo("Clicked on Add remarks button");
-                }
+            	   js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.question3);
+             	  // ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.question3);
+             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.radio1);
+             	  // ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.AddRemarksButton);
+             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddRemarksButton);
+               }
                
                public void enterTextOnAddremarks2() throws Exception { 
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.AddremarksTextbox2);
@@ -1609,10 +1611,10 @@ public class ObservationPageAction {
                	}
                
                public void clickcheckBox() throws Exception {  
-            	  // js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.checkboxquestion);
+            	  js.executeScript("arguments[0].scrollIntoView(true);",observationPageObjects.checkboxquestion);
             	   //ShikshaLokamClient.get().gestures().isElementPresent(observationPageObjects.checkboxquestion);
             	   //Thread.sleep(5000);
-            	   ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.checkboxquestion);
+            	   //ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.checkboxquestion);
             	   Thread.sleep(5000);
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.checkbox3);
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.checkbox4);
@@ -1675,6 +1677,7 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("scrolled to Bulb Question");
                }
                public void clickQuestionBulb() throws Exception { 
+            	   js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.questionBulb);
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.questionBulb);
             	   Logger.logAndReportInfo("Hint bulb icon is displayed and Clicked on it");
                 }
@@ -1752,6 +1755,9 @@ public class ObservationPageAction {
                 }
                
                public void enterResponseOnQuestionTwo() throws Exception {
+           		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.QuestionTwo);
+            	   //ShikshaLokamClient.get().gestures().scrollToElement(observationPageObjects.parent1QuestionfirstAnswer);
+            	   Thread.sleep(5000);
            		ShikshaLokamClient.get().gestures().click(observationPageObjects.parent1QuestionfirstAnswer);
            		Logger.logAndReportInfo("Answered 2nd question");;
            	    }
@@ -1762,6 +1768,7 @@ public class ObservationPageAction {
                 }
                
                public void enterResponseOnQuestionFour() throws Exception {
+              		js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.DepedentQuestion);
               		ShikshaLokamClient.get().gestures().click(observationPageObjects.parent2QuestionSecondAnswer);
               		Logger.logAndReportInfo("Answered 4th question");;
               	}

@@ -475,13 +475,13 @@ public class ObservationPageObjects {
     @FindBy(xpath = "//bdi[normalize-space()='Observation with rubric(Multiple submission)FD830D']")
     public WebElement ObservationNamePresentOnCard;
    
-    @FindBy(xpath = "//div[@id='3']//span[@title='English'][normalize-space()='English']")
+    @FindBy(xpath = "//div[@id='0']//span[@title='English'][normalize-space()='English']")
     public WebElement LanguagePresentOnCard;
     
-    @FindBy(xpath = "//div[@id='3']//span[@title='Support'][normalize-space()='Support']")
+    @FindBy(xpath = "//div[@id='0']//span[@title='Survey Support'][normalize-space()='Survey Support']")
     public WebElement CreatorNamePresentOnCard;
    
-    @FindBy(xpath = "//div[@id='3']//div[@class='sb--card__meta2 text-left']")
+    @FindBy(xpath = "//div[@id='0']//span[@title='Program - HT and officials'][normalize-space()='Program - HT and officials']")
     public WebElement ProgramNamePresentOnCard;
     
     @FindBy(xpath = "//bdi[normalize-space()='Obs with rubrics HT']")
