@@ -224,6 +224,13 @@ public class ObservationPageAction {
     		
     	}
     	
+    	public void clickOnObservationWithoutRubricJoinProg() throws Exception {
+    		ShikshaLokamClient.get().gestures().click(observationPageObjects.JoinProgramObs);
+    	    Logger.logAndReportInfo("Clicked on Observation Without Rubrics.");
+
+    		
+    	}
+    	
     	//parent child actions
     	/*public void clickOn1stAnswerFor1stParent() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.parent1firstAnswer);
@@ -1677,7 +1684,7 @@ public class ObservationPageAction {
             	   Logger.logAndReportInfo("scrolled to Bulb Question");
                }
                public void clickQuestionBulb() throws Exception { 
-            	   js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.questionBulb);
+            	   //js.executeScript("arguments[0].scrollIntoView(true);", observationPageObjects.questionBulb);
             	   ShikshaLokamClient.get().gestures().click(observationPageObjects.questionBulb);
             	   Logger.logAndReportInfo("Hint bulb icon is displayed and Clicked on it");
                 }

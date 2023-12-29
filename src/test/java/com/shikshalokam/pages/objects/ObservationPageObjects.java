@@ -192,6 +192,9 @@ public class ObservationPageObjects {
     @FindBy(xpath = "(//h4//bdi[.= 'Without rubric 2'])[1]")
     public WebElement ObsWithoutRubric2;
     
+    @FindBy(xpath = "(//h4//bdi[.= 'Without rubric'])[1]")
+    public WebElement JoinProgramObs;
+    
 
     @FindBy(xpath = "//button[normalize-space()='Join program']")
     public WebElement JoinProgramButton;

@@ -989,7 +989,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickstartButton();
         Thread.sleep(5000);
         getObservationPageActions().scrollToBulbQuestion();
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
         getObservationPageActions().clickQuestionBulb();
         getObservationPageActions().clickCloseButton();
         getObservationPageActions().clickQuestionBulb();
@@ -1318,7 +1318,7 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObservationButton();
         Thread.sleep(3000);
         getObservationPageActions().verifyObservationTitle();
-        getObservationPageActions().clickOnObservationWithoutRubric2();         //Solution:  Without rubrics 2
+        getObservationPageActions().clickOnObservationWithoutRubricJoinProg();         //Solution:  Without rubrics 2
         getObservationPageActions().verifyJoinProgramButton();
         getObservationPageActions().clickOnJoinProgramButton();
         getObservationPageActions().verifyPiiPopup();
@@ -1357,15 +1357,15 @@ public class ObservationPageTest {
     @Test(description = "To verify, when user comes to the Observation details page (For 1st time, 2nd time and so on) then the Join program pop up & PII pop up should NOT show up")
     @Author(name = "GAGAN")
     public void consumeObservationAftergivingconsent_REG() throws Exception {
-        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!L:M");
+        loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!F:G");
        // observationPageTestData = TestData.getFullGoogleSheetDataAsMapString("Observation!A:B");
         switchEnvironment();
         getLoginPageActions().BMCLSelection();
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
-        getLoginPageActions().enterUserName(loginTestData.get("userName7"));
-        getLoginPageActions().enterPassword(loginTestData.get("password7"));
+        getLoginPageActions().enterUserName(loginTestData.get("consumeuser"));
+        getLoginPageActions().enterPassword(loginTestData.get("consumepassword"));
         getLoginPageActions().clickOnLoginButton();
         Thread.sleep(10000);
         getLoginPageActions().refreshpage();
@@ -1375,13 +1375,13 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObservationButton();
         Thread.sleep(3000);
         getObservationPageActions().verifyObservationTitle();
-        getObservationPageActions().clickOnObservationWithoutRubric2();         //Solution:  Without rubrics 2
+        getObservationPageActions().clickOnObservationWithoutRubricJoinProg();         //Solution:  Without rubrics 2
         getObservationPageActions().verifyJoinProgramButton();
         getObservationPageActions().clickOnJoinProgramButton();
         getObservationPageActions().verifyPiiPopup();
         getObservationPageActions().verifyPiiPopupContents();
         getLoginPageActions().browserBackButton();
-        getObservationPageActions().clickOnObservationWithoutRubric2();           //Solution: Without rubrics 2
+        getObservationPageActions().clickOnObservationWithoutRubricJoinProg();           //Solution: Without rubrics 2
         getObservationPageActions().verifyPiiPopup();
         getObservationPageActions().checkTheCheckBox();
         getObservationPageActions().verifyshareButtonGotEnabled();
@@ -1431,8 +1431,8 @@ public class ObservationPageTest {
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
-        getLoginPageActions().enterUserName(loginTestData.get("userName7"));
-        getLoginPageActions().enterPassword(loginTestData.get("password7"));
+        getLoginPageActions().enterUserName(loginTestData.get("userName8"));
+        getLoginPageActions().enterPassword(loginTestData.get("password8"));
         getLoginPageActions().clickOnLoginButton();
         Thread.sleep(10000);
         getLoginPageActions().refreshpage();
@@ -1441,7 +1441,7 @@ public class ObservationPageTest {
         getObservationPageActions().verifyBrowseOtherCategories();
         getObservationPageActions().verifyObservationTileunderBrowseOtherCategories();
         getObservationPageActions().clickOnObservationTileunderBrowseOtherCategories();
-        getObservationPageActions().clickTeacherObservation2();       
+        getObservationPageActions().clickTeacherObservation();       
         getObservationPageActions().verifyJoinProgramButton();
         getObservationPageActions().clickOnJoinProgramButton();
         getObservationPageActions().verifyPiiPopup();
