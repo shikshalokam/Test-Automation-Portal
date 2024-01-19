@@ -221,6 +221,12 @@ public class ObservationPageObjects {
     @FindBy(xpath = "(//div[.=' Observation form '])[2]")
     public WebElement observationform;
     
+    @FindBy(xpath = "(//h4//bdi[.= 'Without rubric2'])[1]")
+    public WebElement joinProgramobservation;
+    
+    @FindBy(xpath = "(//h4//bdi[.= 'Without rubric2'])[2]")
+    public WebElement joinProgramobservation2;
+    
     @FindBy(xpath = "//h4[@title='QA solution - entity type block - FD 335']")
     public WebElement BlockEnityNotAddedObsStaging;
     

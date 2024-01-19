@@ -217,6 +217,16 @@ public class ObservationPageAction {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.ObsWithoutRubric2);
     	    Logger.logAndReportInfo("Clicked on Without rubric 2.");
     	}
+    	    
+    	    public void clickOnJoinProgramObsWithoutRubric2() throws Exception {
+        		ShikshaLokamClient.get().gestures().click(observationPageObjects.joinProgramobservation);
+        	    Logger.logAndReportInfo("Clicked on Without rubric2.");
+    	    }
+        	    
+        	    public void clickOnJoinProgramObsWithoutRubric() throws Exception {
+            		ShikshaLokamClient.get().gestures().click(observationPageObjects.joinProgramobservation2);
+            	    Logger.logAndReportInfo("Clicked on Without rubric.");
+    	}
     	public void clickOnObservationWithoutRubricTeacher() throws Exception {
     		ShikshaLokamClient.get().gestures().click(observationPageObjects.obsObservationWithoutRubricTeacher);
     	    Logger.logAndReportInfo("Clicked on Observation Without Rubrics Teacher.");

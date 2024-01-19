@@ -331,13 +331,13 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObservationButton();
         Thread.sleep(3000);
         getObservationPageActions().verifyObservationTitle();
-       getObservationPageActions().clickOnObservationWithoutRubric2();         //Solution:  Without rubrics 2
+       getObservationPageActions().clickOnJoinProgramObsWithoutRubric2();         //Solution:  Without rubrics2
         getObservationPageActions().verifyJoinProgramButton();
         getObservationPageActions().clickOnJoinProgramButton();
         getObservationPageActions().verifyPiiPopup();
         getObservationPageActions().verifyPiiPopupContents();
         getLoginPageActions().browserBackButton();
-        getObservationPageActions().clickOnObservationWithoutRubric2();           //Solution: Without rubrics 2
+        getObservationPageActions().clickOnJoinProgramObsWithoutRubric2();           //Solution: Without rubrics 2
         getObservationPageActions().verifyPiiPopup();
         getObservationPageActions().checkTheCheckBox();
         getObservationPageActions().verifyshareButtonGotEnabled();
@@ -345,7 +345,7 @@ public class ObservationPageTest {
         getObservationPageActions().verifyUserIsAbleToConsumeObservation();
         getObservationPageActions().clickOnBackButton(); 
        Thread.sleep(2000);
-        getObservationPageActions().clickOnObservation2();                              //Solution: Observation 2
+        getObservationPageActions().clickOnJoinProgramObsWithoutRubric();                              //Solution: Observation 2
         getObservationPageActions().clickOnAddSchoolButton();
         getObservationPageActions().verifyJoinProgramPopup();
         getObservationPageActions().verifyJoinProgramPopupContents();
@@ -390,13 +390,13 @@ public class ObservationPageTest {
         getObservationPageActions().clickOnObservationTileunderBrowseOtherCategories();
         Thread.sleep(3000);
         getObservationPageActions().verifyObservationTitle();
-       getObservationPageActions().clickOnObservationWithoutRubricTeacher();   ////Solution:  Observation Without Rubric Teacher
+       getObservationPageActions().clickOnJoinProgramObsWithoutRubric2();   ////Solution:  Observation Without Rubric Teacher
         getObservationPageActions().verifyJoinProgramButton();
         getObservationPageActions().clickOnJoinProgramButton();
         getObservationPageActions().verifyPiiPopup();
         getObservationPageActions().verifyPiiPopupContents();
         getLoginPageActions().browserBackButton();
-        getObservationPageActions().clickOnObservationWithoutRubricTeacher();   //Solution:  Observation Without Rubric Teacher
+        getObservationPageActions().clickOnJoinProgramObsWithoutRubric2();   //Solution:  Observation Without Rubric Teacher
         getObservationPageActions().verifyPiiPopup(); 
         getObservationPageActions().checkTheCheckBox();
         getObservationPageActions().verifyshareButtonGotEnabled();
@@ -404,7 +404,7 @@ public class ObservationPageTest {
         getObservationPageActions().verifyUserIsAbleToConsumeObservation();
         getObservationPageActions().clickOnBackButton(); 
        Thread.sleep(2000);
-        getObservationPageActions().clickOnObservation2();    //Solution: Observation 2
+        getObservationPageActions().clickOnJoinProgramObsWithoutRubric();    //Solution: Observation 2
         getObservationPageActions().clickOnAddSchoolButton();
         getObservationPageActions().verifyJoinProgramPopup();
         getObservationPageActions().verifyJoinProgramPopupContents();

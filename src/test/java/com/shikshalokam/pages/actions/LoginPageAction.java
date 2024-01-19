@@ -116,10 +116,6 @@ public class LoginPageAction {
         ShikshaLokamClient.get().gestures().click(loginPageObjects.courseWindowSubmitButton);
         ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Submit");
     }
-    public void clickOnSubmitButton() throws Exception {
-        ShikshaLokamClient.get().gestures().click(loginPageObjects.submitbuttonpersonadetailspage);
-        ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Submit");
-    }
 
     public void enterName(String name) throws Exception {
         ShikshaLokamClient.get().report().log(Status.INFO, "Entered Name as " + name);
@@ -424,7 +420,7 @@ public class LoginPageAction {
          clickOnContinue();
          clickOnBoardDropDown();
          selectcbseOrNcertBoardOption();
-         Thread.sleep(2000);
+         Thread.sleep(5000);
          clickOnSubmitButtonOnCourseWindow();
          selectState();
          selectDistrict();
