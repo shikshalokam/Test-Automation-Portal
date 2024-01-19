@@ -301,8 +301,8 @@ public class AdminDashboardAction {
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);
      ShikshaLokamClient.get().report().log(Status.INFO, "Selected multiple filters"); 
      //Thread.sleep(2000);
-     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectImprovementProjectsFilter);
-     ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Improvement Projects Filter"); 
+     ShikshaLokamClient.get().gestures().click(adminDashboardObjects.selectObservationFilter);
+     ShikshaLokamClient.get().report().log(Status.INFO, "Clicked on Select Observation Filter"); 
     // Thread.sleep(2000);
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox1);
      ShikshaLokamClient.get().gestures().click(adminDashboardObjects.filterCheckBox2);

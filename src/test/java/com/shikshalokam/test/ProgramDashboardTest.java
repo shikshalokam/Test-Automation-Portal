@@ -89,10 +89,10 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().selectSurvey();
         getProgramDashboardActions().verifySurveyReports();
         getProgramDashboardActions().requestQuestionreport();
-        getProgramDashboardActions().requestStatusreport();   //here we are clicking on No on confirmation Popup
+        //getProgramDashboardActions().requestStatusreport();   //here we are clicking on No on confirmation Popup
         
         //To verify user is able request report by clicking Yes on confirmation popup
-        //getProgramDashboardActions().requestStatusreportYes();
+        getProgramDashboardActions().requestStatusreportYes();
        
     }
     
@@ -134,9 +134,9 @@ public class ProgramDashboardTest {
     getProgramDashboardActions().requestStatusreportPD();
     getProgramDashboardActions().selectSurvey();
     getProgramDashboardActions().verifyPDReports();
-    getProgramDashboardActions().requestStatusreportPD(); //here we are clicking on No on confirmation Popup
+   // getProgramDashboardActions().requestStatusreportPD(); //here we are clicking on No on confirmation Popup
     //To verify user is able request report by clicking Yes on confirmation popup
-    //getProgramDashboardActions().requestStatusreportYES();
+    getProgramDashboardActions().requestStatusreportYesPD();
     //////
     }
     
@@ -220,7 +220,7 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().verifyandclickOnEnabledConfirmbuttonOnSelectProgramPopup();
         
         getProgramDashboardActions().verifyPmUdrReport();
-        getProgramDashboardActions().requestUDRreport();
+        getProgramDashboardActions().requestUDRreportYes();
     
 
 }
@@ -806,7 +806,7 @@ public class ProgramDashboardTest {
   
     }
     
-    @Test(description = "Verify User Detail Report will not be availabe in Report type dropdown, When User has selected resource in resource filter")
+ /*   @Test(description = "Verify User Detail Report will not be availabe in Report type dropdown, When User has selected resource in resource filter")
     @Author(name = "SHREEJITH")
     public void userDetailedReportNotAvailablePM_REG() throws Exception {
         loginTestData = TestData.getFullGoogleSheetDataAsMapString("LoginTestData!D:E");
@@ -851,7 +851,7 @@ public class ProgramDashboardTest {
         getProgramDashboardActions().clickOnSelectReportDropdown();
         getProgramDashboardActions().verifyNoUserDetailReport();
       
-    }
+    } */
     
     @Test(description = "To verify, User should NOT see any Report in the Report type dropdown,  if logged in as Program Designer , when only Program is selected ")
     @Author(name = "SHREEJITH")

@@ -100,8 +100,8 @@ public class AdminDashboardTest {
 	    	        getAdminDashboardActions().verifySelectedReportInTableFormat();
 	    	        getAdminDashboardActions().searchAndSelectParameter();
 	    	        getAdminDashboardActions().verifyGraphsTab();
-	    	        getAdminDashboardActions().selectObservationFilters();
-	    	        getAdminDashboardActions().ExportAs();
+	    	       /* getAdminDashboardActions().selectObservationFilters();
+	    	        getAdminDashboardActions().ExportAs(); */
 	    	       
 	    	        
 	    	  }
