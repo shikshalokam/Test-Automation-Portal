@@ -2,6 +2,7 @@ package com.shikshalokam.test;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import java.util.Map;
 
 import org.testng.annotations.Test;
@@ -1336,8 +1337,8 @@ public class ObservationPageTest {
         Thread.sleep(5000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
-        getLoginPageActions().enterUserName(loginTestData.get("userName7"));
-        getLoginPageActions().enterPassword(loginTestData.get("password7"));
+        getLoginPageActions().enterUserName(loginTestData.get("userName11"));
+        getLoginPageActions().enterPassword(loginTestData.get("password11"));
         getLoginPageActions().clickOnLoginButton();
         Thread.sleep(10000);
         getLoginPageActions().refreshpage();
@@ -1431,8 +1432,8 @@ public class ObservationPageTest {
         Thread.sleep(3000);
         getLoginPageActions().clickOnGuest();
         getLoginPageActions().clickOnLogin();
-        getLoginPageActions().enterUserName(loginTestData.get("userName8"));
-        getLoginPageActions().enterPassword(loginTestData.get("password8"));
+        getLoginPageActions().enterUserName(loginTestData.get("userName10"));
+        getLoginPageActions().enterPassword(loginTestData.get("password10"));
         getLoginPageActions().clickOnLoginButton();
         Thread.sleep(10000);
         getLoginPageActions().refreshpage();

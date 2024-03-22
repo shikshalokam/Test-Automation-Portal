@@ -1,6 +1,7 @@
 package com.shikshalokam.test;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import java.util.Map;
 
 import org.testng.annotations.Test;
